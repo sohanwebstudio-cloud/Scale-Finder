@@ -1,0 +1,36 @@
+{
+  "slug": "baden-powell",
+  "name": "Baden Powell",
+  "shortName": "Baden",
+  "era": "Années 50 à 2000",
+  "genres": ["Afro-samba", "Bossa nova", "Brazilian guitar"],
+  "bio": "Baden Powell a porté la guitare acoustique brésilienne à un niveau de puissance et de densité dramatique exceptionnel. En fusionnant la bossa nova avec des rythmes afro-brésiliens et des harmonies denses d'inspiration classique, il a créé un langage immédiatement identifiable. Son influence sur toute la guitare brésilienne moderne est fondamentale.",
+  "signatureScales": [
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "E",
+      "context": "Pour ses climats afro-brésiliens les plus sombres, mystiques et chargés de tension spirituelle",
+      "example": "Canto de Ossanha"
+    },
+    {
+      "modeKey": "phrygian",
+      "rootName": "A",
+      "context": "Dans ses compositions aux accents hispaniques ou presque bachiennes, quand la guitare devient très dramatique",
+      "example": "Retrato Brasileiro"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Sur des grooves de samba rapides et denses, où la main droite martèle autant qu'elle accompagne",
+      "example": "Samba Triste"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour glisser des phrasés jazzy au milieu d'une vraie transe rythmique de guitare nylon",
+      "example": "Berimbau"
+    }
+  ],
+  "signatureMove": "Sa main droite surpuissante alterne basses martelées, arpèges nerveux et accents percussifs avec une intensité presque orchestrale. La guitare devient chez lui à la fois percussion, chœur harmonique et voix dramatique. Cette force physique est sa signature.",
+  "recommendedListening": ["Canto de Ossanha", "Berimbau", "Retrato Brasileiro", "Samba Triste"]
+}

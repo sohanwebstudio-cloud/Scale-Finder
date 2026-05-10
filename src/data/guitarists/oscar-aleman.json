@@ -1,0 +1,36 @@
+{
+  "slug": "oscar-aleman",
+  "name": "Oscar Alemán",
+  "shortName": "Aleman",
+  "era": "Années 30 à 1980",
+  "genres": ["Swing", "Jazz", "Latin jazz"],
+  "bio": "Oscar Alemán est une légende du jazz argentin et l'un des très grands contemporains de Django Reinhardt dans le Paris des années 30. Son style solaire mêle swing, esprit music-hall, rythmes latins et une joie instrumentale irrésistible. Il occupe une place unique dans l'histoire mondiale de la guitare jazz.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "F",
+      "context": "Pour ses improvisations bondissantes et joyeuses, portées par un vrai sens du spectacle",
+      "example": "Sweet Georgia Brown"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "D",
+      "context": "Dans ses pièces plus argentines et nostalgiques, quand la guitare laisse entrer la couleur de la milonga",
+      "example": "Milonga Triste"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Bb",
+      "context": "Pour jouer le blues avec un esprit très années 30, entre swing, théâtre et énergie de revue",
+      "example": "Bugle Call Rag"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "C",
+      "context": "Sur des thèmes très rythmés où sa guitare dialogue avec la voix, la danse et le geste scénique",
+      "example": "Diga Diga Doo"
+    }
+  ],
+  "signatureMove": "Son thumbpick combiné aux doigts sur guitare National en métal produit un son puissant, percussif et lumineux. Il y intègre le tango et le swing avec une joie contagieuse qui traverse immédiatement l'écoute. Cette vitalité scénique est sa marque.",
+  "recommendedListening": ["Sweet Georgia Brown", "Milonga Triste", "Bugle Call Rag", "Diga Diga Doo"]
+}

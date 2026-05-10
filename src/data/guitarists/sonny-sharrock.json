@@ -1,0 +1,36 @@
+{
+  "slug": "sonny-sharrock",
+  "name": "Sonny Sharrock",
+  "shortName": "Sharrock",
+  "era": "Années 60 à 1994",
+  "genres": ["Free jazz", "Avant-garde", "Noise"],
+  "bio": "Pionnier et enfant terrible de la guitare free jazz, collaborateur de Miles Davis et Pharoah Sanders. Il considérait que la guitare devait sonner comme un saxophone hurlant — sa dissonance extrême et revendiquée a ouvert une voie que Thurston Moore et Nels Cline emprunteront plus tard.",
+  "signatureScales": [
+    {
+      "modeKey": "altered",
+      "rootName": "C",
+      "context": "Pour des avalanches de notes brutales visant l'extase et la transe — l'altered comme point de départ vers une atonalité totale et revendiquée",
+      "example": "Ask the Ages"
+    },
+    {
+      "modeKey": "phrygian",
+      "rootName": "E",
+      "context": "Sur des grooves de basse sombres pour instaurer un climat spirituel lourd — le demi-ton initial phrygien créait immédiatement une tension insupportable",
+      "example": "Many Mansions"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "A",
+      "context": "Utilisée pour déconstruire le blues, le rendant criard et dissonant — il prenait le vocabulaire familier et le tordait jusqu'à le rendre méconnaissable",
+      "example": "Black Woman"
+    },
+    {
+      "modeKey": "lydian_aug",
+      "rootName": "F",
+      "context": "Sur de rares ballades d'avant-garde aux accords majestueux et mystérieux — le #4 et le #5 simultanés créaient une flottaison harmonique unique",
+      "example": "Who Does She Hope To Be?"
+    }
+  ],
+  "signatureMove": "Une dissonance extrême et revendiquée : il refusait les accords conventionnels, préférant frapper littéralement les cordes, créer des \"sheets of sound\" (nappes de sons denses) et utiliser la distorsion de manière atonale. La guitare ne jouait plus de notes — elle émettait des émotions brutes et non filtrées.",
+  "recommendedListening": ["Ask the Ages", "Many Mansions", "Who Does She Hope To Be?", "Black Woman"]
+}

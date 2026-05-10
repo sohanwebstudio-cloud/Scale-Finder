@@ -1,0 +1,36 @@
+{
+  "slug": "toninho-horta",
+  "name": "Toninho Horta",
+  "shortName": "Toninho",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Brazilian jazz", "MPB", "Jazz fusion"],
+  "bio": "Toninho Horta est l'un des compositeurs-guitaristes les plus fondamentaux du Brésil moderne, au cœur de l'esthétique Clube da Esquina. Son langage harmonique a profondément marqué des jazzmen du monde entier, notamment Pat Metheny. Il a forgé une vision très sophistiquée et profondément brésilienne du jazz contemporain.",
+  "signatureScales": [
+    {
+      "modeKey": "lydian",
+      "rootName": "E",
+      "context": "Pour ses accords flottants, denses et chatoyants qui semblent toujours ouvrir l'espace plutôt que le fermer",
+      "example": "Beijo Partido"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Sur des grooves mélancoliques brésiliens, avec des basses syncopées et une mélodie toujours très souple",
+      "example": "Aquelas Coisas Todas"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "Pour amener une couleur jazz contemporaine sur des rythmes de samba sans perdre leur mobilité",
+      "example": "Durango Kid"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "G",
+      "context": "Quand il traverse ses propres harmonies labyrinthiques avec une logique intérieure très sûre",
+      "example": "Moonstone"
+    }
+  ],
+  "signatureMove": "Ses fameux voicings de Minas Gerais utilisent souvent des cordes à vide au milieu de positions très étendues et surprenantes. Ils donnent l'impression que chaque accord respire dans plusieurs directions à la fois. Cette imagination harmonique sans limites est sa marque.",
+  "recommendedListening": ["Beijo Partido", "Aquelas Coisas Todas", "Durango Kid", "Moonstone"]
+}

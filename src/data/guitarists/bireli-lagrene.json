@@ -1,0 +1,36 @@
+{
+  "slug": "bireli-lagrene",
+  "name": "Biréli Lagrène",
+  "shortName": "Bireli",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Gypsy jazz", "Jazz fusion", "Jazz manouche"],
+  "bio": "Biréli Lagrène a hérité très jeune de l'héritage de Django Reinhardt tout en l'ouvrant à la fusion, au funk et au jazz électrique moderne. Sa virtuosité phénoménale n'a jamais empêché un sens du groove et du chant qui le place parmi les plus grands guitaristes européens de son temps. Il incarne à lui seul un pont entre tradition manouche et modernité jazz.",
+  "signatureScales": [
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "D",
+      "context": "Pour la couleur manouche la plus pure, poussée à des vitesses extrêmes sans perdre la netteté de l'attaque",
+      "example": "Minor Swing"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "G",
+      "context": "Quand il injecte des plans bebop très modernes dans des grilles pourtant ancrées dans la tradition",
+      "example": "Isn't She Lovely"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Sur ses fulgurances à l'électrique, avec une attaque claire et une articulation d'une précision redoutable",
+      "example": "Strasbourg - St. Denis"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Pour intégrer des réflexes funk et fusion au milieu d'un jeu acoustique très manouche dans l'esprit",
+      "example": "Donna Lee"
+    }
+  ],
+  "signatureMove": "Son attaque manouche en buté reste centrale, mais il la combine librement avec sweeping, jeu aux doigts et vocabulaire fusion. Très peu de guitaristes passent avec autant d'aisance de Django à Jaco ou à Benson. Cette hybridation virtuose est sa vraie signature.",
+  "recommendedListening": ["Minor Swing", "Isn't She Lovely", "Strasbourg - St. Denis", "Donna Lee"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "tommy-emmanuel",
+  "name": "Tommy Emmanuel",
+  "shortName": "Emmanuel",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Fingerstyle acoustique", "Country", "Blues acoustique"],
+  "bio": "Légende australienne de la guitare acoustique solo, il a redéfini les standards physiques et techniques de l'instrument. Son énergie scénique explosive et sa capacité à incarner simultanément un bassiste, un batteur et un soliste en ont fait l'un des instrumentistes les plus regardés au monde.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Pour des phrasés blues acoustiques joués avec une attaque percussive fulgurante — les cordes claquent sur la touche comme une caisse claire",
+      "example": "Classical Gas (Reprise)"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Sur ses morceaux country rapides avec le \"boom-chick\" — basse alternée et accords syncopés maintenus pendant que le solo chante dessus",
+      "example": "Guitar Boogie"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "D",
+      "context": "Pour ses ballades calmes, harmoniquement très riches et chargées d'émotion — le #4 lydien apporte une lumière mélancolique aux réharmonisations",
+      "example": "Angelina"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Pour intégrer des arrangements pop britanniques avec une clarté diabolique — chaque note tombe exactement à sa place dans un contrepoint rigoureux",
+      "example": "Day Tripper / Lady Madonna"
+    }
+  ],
+  "signatureMove": "Le Travis picking poussé à l'extrême : une ligne de basse alternée continue à la main droite, combinée à des percussions jouées directement sur la caisse de résonance, des harmoniques en cascade et l'énergie scénique d'un groupe de rock complet — le tout en solo intégral, sans looper ni pédales.",
+  "recommendedListening": ["Classical Gas", "Guitar Boogie", "Angelina", "Lewis & Clark"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "trey-anastasio",
+  "name": "Trey Anastasio",
+  "shortName": "Anastasio",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Jam band", "Rock progressif", "Funk-rock"],
+  "bio": "Guitariste américain, compositeur et leader de Phish, architecte du son \"Jam Band\" moderne. Il mêle improvisations fleuves, funk moite et complexité jazz-rock avec un sens aigu de la tension-résolution — ses climax durent parfois plusieurs minutes et laissent le public dans un état de transe collective.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "Sa gamme fétiche pour les improvisations modales joyeuses et lumineuses — le dominant mixolydien permettait une ambiguïté majeur/blues parfaite pour les longues montées",
+      "example": "You Enjoy Myself"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Sur des grooves très syncopés, propices aux pédales wah-wah — le dorien donnait une couleur funk-jazz idéale pour les vamps à groove",
+      "example": "Sand"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "G",
+      "context": "Pour bâtir des solos lents, spatiaux et profondément euphoriques — le #4 lydien ouvrait un espace harmonique flottant propice aux grands climax",
+      "example": "Reba"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "C",
+      "context": "Pour ses passages composés les plus tordus, flirtant avec le jazz d'avant-garde — l'altered apportait une tension maximale avant la résolution cathartique",
+      "example": "Stash"
+    }
+  ],
+  "signatureMove": "L'art délicat de la tension-résolution poussé à l'extrême sur des climax qui durent parfois plusieurs minutes, et un son clair très chantant obtenu par l'empilement systématique de compresseurs et de pédales d'overdrive (Tube Screamer). Il construit ses solos comme des architectes construisent des cathédrales : patiemment, note par note.",
+  "recommendedListening": ["You Enjoy Myself", "Reba", "Sand", "Stash"]
+}

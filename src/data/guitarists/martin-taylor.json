@@ -1,0 +1,36 @@
+{
+  "slug": "martin-taylor",
+  "name": "Martin Taylor",
+  "shortName": "M. Taylor",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Jazz fingerstyle", "Swing", "Jazz manouche"],
+  "bio": "Maître écossais incontesté du jazz fingerstyle contemporain, respecté par des géants comme Joe Pass. Il est capable de faire sonner sa guitare comme un piano stride des années 30 — mélodie, accords et basse marchante simultanés — avec une musicalité et une fluidité confondantes.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Pour jouer des standards de l'ère du swing en solo intégral — la gamme majeure comme base d'une architecture polyphonique complexe à une seule guitare",
+      "example": "I Got Rhythm"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "A",
+      "context": "En hommage profond aux répertoires tziganes et à Django Reinhardt — la seconde augmentée caractéristique donnait instantanément la couleur manouche",
+      "example": "Minor Swing"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "F",
+      "context": "Sur des réharmonisations modernes pleines d'accords altérés fluides — le #4 lydien ouvrait des perspectives harmoniques inattendues sur les standards",
+      "example": "True"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour des progressions bluesy où la ligne de basse marchante répond au solo — le groove stride maintenu pendant que le chant mélodique rebondit dessus",
+      "example": "Sweet Sue, Just You"
+    }
+  ],
+  "signatureMove": "Une indépendance absolue des doigts de la main droite : il fait chanter une mélodie rubato très libre rythmiquement tout en maintenant une walking bass stricte et rigoureuse en dessous. Sa guitare sonne comme un trio complet — contrebasse, comping et soliste — dans les mains d'un seul homme.",
+  "recommendedListening": ["I Got Rhythm", "True", "Minor Swing", "Georgia On My Mind"]
+}

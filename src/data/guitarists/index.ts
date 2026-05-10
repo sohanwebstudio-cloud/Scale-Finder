@@ -6,10 +6,12 @@
 import type { Guitarist } from '@/types';
 import mikeStern from './mike-stern.json';
 import patMetheny from './pat-metheny.json';
+import romeroLubambo from './romero-lubambo.json';
 import billFrisell from './bill-frisell.json';
 import julianLage from './julian-lage.json';
 import giladHekselman from './gilad-hekselman.json';
 import johnAbercrombie from './john-abercrombie.json';
+import joaoGilberto from './joao-gilberto.json';
 import talFarlow from './tal-farlow.json';
 import johnScofield from './john-scofield.json';
 import wayneKrantz from './wayne-krantz.json';
@@ -19,6 +21,7 @@ import chetAtkins from './chet-atkins.json';
 import edBickert from './ed-bickert.json';
 import robbenFord from './robben-ford.json';
 import peterBernstein from './peter-bernstein.json';
+import toninhoHorta from './toninho-horta.json';
 import larryCoryell from './larry-coryell.json';
 import larryCarlton from './larry-carlton.json';
 import dannyGatton from './danny-gatton.json';
@@ -34,6 +37,7 @@ import stevieRayVaughan from './stevie-ray-vaughan.json';
 import yngwieMalmsteen from './yngwie-malmsteen.json';
 import paulGilbert from './paul-gilbert.json';
 import wesMontgomery from './wes-montgomery.json';
+import bireliLagrene from './bireli-lagrene.json';
 import kennyBurrell from './kenny-burrell.json';
 import grantGreen from './grant-green.json';
 import allanHoldsworth from './allan-holdsworth.json';
@@ -55,6 +59,7 @@ import peterGreen from './peter-green.json';
 import royBuchanan from './roy-buchanan.json';
 import ritchieBlackmore from './ritchie-blackmore.json';
 import alDiMeola from './al-di-meola.json';
+import pacoDeLucia from './paco-de-lucia.json';
 import davidGilmour from './david-gilmour.json';
 import carlosSantana from './carlos-santana.json';
 import ericJohnson from './eric-johnson.json';
@@ -66,6 +71,7 @@ import ryCooder from './ry-cooder.json';
 import freddieKing from './freddie-king.json';
 import derekTrucks from './derek-trucks.json';
 import brianSetzer from './brian-setzer.json';
+import oscarAleman from './oscar-aleman.json';
 import albertCollins from './albert-collins.json';
 import mickTaylor from './mick-taylor.json';
 import gregHowe from './greg-howe.json';
@@ -84,17 +90,33 @@ import angusYoung from './angus-young.json';
 import albertKing from './albert-king.json';
 import joeBonamassa from './joe-bonamassa.json';
 import herbEllis from './herb-ellis.json';
+import stocheloRosenberg from './stochelo-rosenberg.json';
 import lageLund from './lage-lund.json';
 import lennyBreau from './lenny-breau.json';
 import frankGambale from './frank-gambale.json';
+import mikeBloomfield from './mike-bloomfield.json';
+import frankZappa from './frank-zappa.json';
+import tommyEmmanuel from './tommy-emmanuel.json';
+import jerryGarcia from './jerry-garcia.json';
+import charlieHunter from './charlie-hunter.json';
+import johnnyWinter from './johnny-winter.json';
+import martinTaylor from './martin-taylor.json';
+import scottyMoore from './scotty-moore.json';
+import sonnySharrock from './sonny-sharrock.json';
+import treyAnastasio from './trey-anastasio.json';
+import yamanduCosta from './yamandu-costa.json';
+import joschoStephan from './joscho-stephan.json';
+import badenPowell from './baden-powell.json';
 
 export const ALL_GUITARISTS: Guitarist[] = [
   mikeStern as Guitarist,
   patMetheny as Guitarist,
+  romeroLubambo as Guitarist,
   billFrisell as Guitarist,
   julianLage as Guitarist,
   giladHekselman as Guitarist,
   johnAbercrombie as Guitarist,
+  joaoGilberto as Guitarist,
   talFarlow as Guitarist,
   johnScofield as Guitarist,
   wayneKrantz as Guitarist,
@@ -104,6 +126,7 @@ export const ALL_GUITARISTS: Guitarist[] = [
   edBickert as Guitarist,
   robbenFord as Guitarist,
   peterBernstein as Guitarist,
+  toninhoHorta as Guitarist,
   larryCoryell as Guitarist,
   larryCarlton as Guitarist,
   dannyGatton as Guitarist,
@@ -119,6 +142,7 @@ export const ALL_GUITARISTS: Guitarist[] = [
   yngwieMalmsteen as Guitarist,
   paulGilbert as Guitarist,
   wesMontgomery as Guitarist,
+  bireliLagrene as Guitarist,
   kennyBurrell as Guitarist,
   grantGreen as Guitarist,
   allanHoldsworth as Guitarist,
@@ -140,6 +164,7 @@ export const ALL_GUITARISTS: Guitarist[] = [
   royBuchanan as Guitarist,
   ritchieBlackmore as Guitarist,
   alDiMeola as Guitarist,
+  pacoDeLucia as Guitarist,
   davidGilmour as Guitarist,
   carlosSantana as Guitarist,
   ericJohnson as Guitarist,
@@ -151,6 +176,7 @@ export const ALL_GUITARISTS: Guitarist[] = [
   freddieKing as Guitarist,
   derekTrucks as Guitarist,
   brianSetzer as Guitarist,
+  oscarAleman as Guitarist,
   albertCollins as Guitarist,
   mickTaylor as Guitarist,
   gregHowe as Guitarist,
@@ -169,9 +195,23 @@ export const ALL_GUITARISTS: Guitarist[] = [
   albertKing as Guitarist,
   joeBonamassa as Guitarist,
   herbEllis as Guitarist,
+  stocheloRosenberg as Guitarist,
   lageLund as Guitarist,
   lennyBreau as Guitarist,
   frankGambale as Guitarist,
+  mikeBloomfield as Guitarist,
+  frankZappa as Guitarist,
+  tommyEmmanuel as Guitarist,
+  jerryGarcia as Guitarist,
+  charlieHunter as Guitarist,
+  johnnyWinter as Guitarist,
+  martinTaylor as Guitarist,
+  scottyMoore as Guitarist,
+  sonnySharrock as Guitarist,
+  treyAnastasio as Guitarist,
+  yamanduCosta as Guitarist,
+  joschoStephan as Guitarist,
+  badenPowell as Guitarist,
 ];
 
 export function getGuitaristBySlug(slug: string): Guitarist | undefined {

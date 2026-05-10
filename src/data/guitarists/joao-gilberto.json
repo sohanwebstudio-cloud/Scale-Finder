@@ -1,0 +1,36 @@
+{
+  "slug": "joao-gilberto",
+  "name": "João Gilberto",
+  "shortName": "Joao",
+  "era": "Années 50 à 2019",
+  "genres": ["Bossa nova", "Brazilian jazz", "Samba"],
+  "bio": "Père fondateur de la bossa nova, João Gilberto a révolutionné la musique brésilienne par une approche rythmique et harmonique d'une subtilité inédite. Sa guitare a redéfini l'accompagnement moderne en faisant dialoguer la samba, l'intimité de la voix et la sophistication du jazz. Son influence sur le jazz mondial et sur toute la chanson brésilienne est immense.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Pour ses mélodies douces et presque chuchotées, posées sur des accords enrichis qui restent d'une grande limpidité",
+      "example": "Chega de Saudade"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "A",
+      "context": "Dans les cadences plus mélancoliques où il laisse toute la place à la saudade sans jamais surjouer",
+      "example": "Desafinado"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "G",
+      "context": "Pour apporter une couleur jazz subtile et suspendue sans rompre la douceur du balancement bossa",
+      "example": "Corcovado"
+    },
+    {
+      "modeKey": "whole_half",
+      "rootName": "F",
+      "context": "Dans ses transitions harmoniques glissantes entre accords, quand la tension doit rester fluide et presque invisible",
+      "example": "The Girl From Ipanema"
+    }
+  ],
+  "signatureMove": "Sa batida à la main droite imite les percussions de la samba tout en portant des accords très riches sur guitare nylon. Tout y est syncopé, murmuré et pourtant d'une stabilité rythmique absolue. Cette économie de volume et cette profondeur de pulsation sont sa signature éternelle.",
+  "recommendedListening": ["Chega de Saudade", "Desafinado", "Corcovado", "The Girl From Ipanema"]
+}

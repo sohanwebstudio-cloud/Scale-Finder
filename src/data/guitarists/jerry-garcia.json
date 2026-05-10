@@ -1,0 +1,36 @@
+{
+  "slug": "jerry-garcia",
+  "name": "Jerry Garcia",
+  "shortName": "Garcia",
+  "era": "Années 60 à 1995",
+  "genres": ["Jam band", "Rock psychédélique", "Country-rock"],
+  "bio": "Leader spirituel et musical du Grateful Dead, il a créé un langage d'improvisation hybride brassant la country, le bluegrass, le blues et le jazz modal de John Coltrane. Sa capacité à construire des solos longs sur 20 ou 30 minutes sans jamais perdre l'auditeur reste unique dans l'histoire du rock.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "B",
+      "context": "La gamme reine des jams psychédéliques majeures et lumineuses du Dead — un cosmos sonore construit note par note sur des durées interminables",
+      "example": "Dark Star"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Pour ses longues improvisations modales teintées de jazz-rock — le dorien donnait la couleur sombre sans fermer les options harmoniques",
+      "example": "Slipknot!"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "G",
+      "context": "Sur des lignes d'inspiration bluegrass très rapides imitant le banjo — son héritage folk et roots transparaissait dans sa vélocité et son attaque",
+      "example": "Dire Wolf"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Pour des jams bluesy lentes, décontractées et extrêmement expressives — chaque bend portait une intention vocale précise",
+      "example": "Sugaree"
+    }
+  ],
+  "signatureMove": "Le phrasé rebondissant (\"bouncy feel\") et l'utilisation continue de notes de passage chromatiques pour relier les accords entre eux. Son son d'une clarté de cristal, sans aucune saturation agressive, lui permettait de jouer avec une nuance et une expressivité que la distorsion aurait masquées.",
+  "recommendedListening": ["Dark Star", "Slipknot!", "Sugaree", "Althea"]
+}

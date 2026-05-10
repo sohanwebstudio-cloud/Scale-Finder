@@ -1,0 +1,36 @@
+{
+  "slug": "scotty-moore",
+  "name": "Scotty Moore",
+  "shortName": "S. Moore",
+  "era": "Années 50 à 2016",
+  "genres": ["Rockabilly", "Rock 'n' roll", "Country"],
+  "bio": "L'un des créateurs du vocabulaire rock 'n' roll, guitariste historique d'Elvis Presley. En fusionnant le fingerpicking propre de Chet Atkins avec l'agressivité du blues de Memphis sublimé par l'écho slapback des studios Sun Records, il a jeté les bases sur lesquelles George Harrison, Keith Richards et Jimmy Page allaient construire.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "La matrice originelle du rockabilly, à mi-chemin entre mineur et majeur — cette ambiguïté fondatrice IS le son Sun Records",
+      "example": "Mystery Train"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Pour les riffs électriques agressifs qui ont fondé le rock — l'écho slapback transformait chaque note en une vague de son qui revenait comme un boomerang",
+      "example": "Jailhouse Rock"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "C",
+      "context": "Sur les ballades de type doo-wop avec des arpèges très ronds — la douceur country qui adoucissait l'image rebelle d'Elvis",
+      "example": "Love Me Tender"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "G",
+      "context": "Pour des solos sautillants qui gardaient une forte identité country/swing — l'héritage de Chet Atkins avant que le rock ne prenne le dessus",
+      "example": "Hound Dog"
+    }
+  ],
+  "signatureMove": "La fusion du fingerpicking propre et country de Chet Atkins avec l'agressivité et la rudesse du blues de Memphis, toujours sublimé par l'effet d'écho slapback des studios Sun Records. Chaque note revenait une fraction de seconde plus tard, créant ce groove élastique et rebondissant qui définirait le rock pour les décennies suivantes.",
+  "recommendedListening": ["Mystery Train", "Jailhouse Rock", "Hound Dog", "Heartbreak Hotel"]
+}

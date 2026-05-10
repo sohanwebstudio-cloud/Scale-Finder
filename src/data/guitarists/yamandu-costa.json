@@ -1,0 +1,36 @@
+{
+  "slug": "yamandu-costa",
+  "name": "Yamandu Costa",
+  "shortName": "Yamandu",
+  "era": "Années 2000 à aujourd'hui",
+  "genres": ["Choro", "Brazilian guitar", "Folk fusion"],
+  "bio": "Yamandu Costa a redonné à la guitare brésilienne à 7 cordes une visibilité spectaculaire par sa virtuosité, son énergie scénique et sa maîtrise des répertoires sud-américains. Son jeu relie choro, tango, chamamé et improvisation avec une intensité presque rock. Il est devenu l'une des grandes figures instrumentales du Brésil contemporain.",
+  "signatureScales": [
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "A",
+      "context": "Pour ses descentes inspirées du choro traditionnel, très rapides mais toujours habitées d'un vrai chant",
+      "example": "El Negro Del Blanco"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Dans ses mélodies romantiques soutenues par des basses marchantes très virtuoses sur la 7e corde",
+      "example": "Brejeiro"
+    },
+    {
+      "modeKey": "phrygian_dom",
+      "rootName": "E",
+      "context": "Pour ses rythmes aux accents hispaniques, attaqués avec une férocité très physique",
+      "example": "Chamamé"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Quand il laisse entrer une légèreté d'improvisation jazz dans les musiques folkloriques",
+      "example": "Mafuá"
+    }
+  ],
+  "signatureMove": "L'usage constant de la 7e corde pour créer de vraies lignes de basse contrapuntiques est au cœur de son identité. Il semble littéralement faire corps avec l'instrument sur scène, comme si la guitare entière dansait avec lui. Cette intensité physique est sa signature.",
+  "recommendedListening": ["El Negro Del Blanco", "Brejeiro", "Chamamé", "Mafuá"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "mike-bloomfield",
+  "name": "Mike Bloomfield",
+  "shortName": "Bloomfield",
+  "era": "Années 60 à 1981",
+  "genres": ["Blues-rock", "Blues", "Folk-rock"],
+  "bio": "Premier véritable \"guitar hero\" américain, pionnier du blues-rock avec The Paul Butterfield Blues Band et Bob Dylan. Il a introduit l'intensité brute du Chicago Blues auprès du public blanc, posant les fondations sur lesquelles Clapton et Hendrix allaient construire.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Pour des riffs agressifs et authentiques inspirés des clubs de Chicago — attaque staccato foudroyante, son de Les Paul sur le micro aigu sans aucune pédale",
+      "example": "Albert's Shuffle"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Pour ses solos fluides, ronds et vocaux en hommage à B.B. King — le blues vocal texan revisité dans un contexte rock",
+      "example": "East-West"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "D",
+      "context": "Sur de longs blues mineurs épiques et déchirants — une tension émotionnelle insoutenable sur des morceaux qui durent plusieurs minutes",
+      "example": "Stop"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Pour ses interventions folk-rock électriques historiques avec Bob Dylan — clarté et tranchant sur des arrangements sobres",
+      "example": "Like a Rolling Stone"
+    }
+  ],
+  "signatureMove": "Un feeling viscéral, des bends staccato foudroyants et un son de Les Paul tranchant joué sur le micro aigu sans aucune pédale d'effet — une pureté absolue qui tranche comme un rasoir dans le mix. Il est l'un des rares guitaristes dont on reconnaît immédiatement l'intention émotionnelle dès la première note.",
+  "recommendedListening": ["Albert's Shuffle", "East-West", "Stop", "Like a Rolling Stone"]
+}

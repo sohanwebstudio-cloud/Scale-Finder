@@ -1,0 +1,36 @@
+{
+  "slug": "charlie-hunter",
+  "name": "Charlie Hunter",
+  "shortName": "Hunter",
+  "era": "Années 90 à aujourd'hui",
+  "genres": ["Jazz-groove", "Funk-jazz", "Soul-jazz"],
+  "bio": "Virtuose américain du jazz-groove contemporain, popularisateur de la guitare hybride à 7 ou 8 cordes. Il joue simultanément et en direct — sans looper — des lignes de basse de bassiste professionnel, des accords syncopés et des solos en single-notes, devenant un groupe funk-jazz à lui tout seul.",
+  "signatureScales": [
+    {
+      "modeKey": "dorian",
+      "rootName": "F",
+      "context": "Pour ses grooves funk-jazz hypnotiques — le dorien fournissait la couleur mineure ouverte parfaite pour improviser en maintenant simultanément la ligne de basse",
+      "example": "Greasy Granny"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Bb",
+      "context": "Sur des morceaux d'inspiration soul-jazz rappelant Jimmy Smith à l'orgue — le mixolydien couvrait naturellement la sonorité des accords de 13e",
+      "example": "Fistful of Haggis"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "C",
+      "context": "Pour des lignes jazz complexes et très denses harmoniquement — l'altered en solo pendant que la basse tient le groove crée une dissonance maîtrisée",
+      "example": "Recess"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "Eb",
+      "context": "Pour des ballades pop réinventées en solo intégral — la clarté du majeur permettait à l'arrangement de respirer malgré la complexité polyphonique",
+      "example": "No Woman, No Cry (Reprise)"
+    }
+  ],
+  "signatureMove": "Il joue simultanément et en direct (sans looper) des lignes de basse dignes d'un bassiste professionnel, des accords syncopés et des solos en single-notes, avec un placement rythmique littéralement implacable. Sa guitare à 8 cordes — 3 cordes de basse + 5 de guitare — est l'outil qui rend cela possible.",
+  "recommendedListening": ["Greasy Granny", "Fistful of Haggis", "Recess", "Come As You Are (Reprise)"]
+}

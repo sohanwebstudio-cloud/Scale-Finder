@@ -1,0 +1,36 @@
+{
+  "slug": "romero-lubambo",
+  "name": "Romero Lubambo",
+  "shortName": "Lubambo",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Brazilian jazz", "Post-bop", "Bossa nova"],
+  "bio": "Romero Lubambo est l'une des références mondiales de la guitare jazz brésilienne moderne, capable de marier harmonie post-bop et rythmes sud-américains avec une rare fluidité. Son accompagnement peut sembler suffire à lui seul à construire tout un groupe. Il a profondément marqué la rencontre entre bossa, samba et jazz new-yorkais.",
+  "signatureScales": [
+    {
+      "modeKey": "lydian",
+      "rootName": "G",
+      "context": "Pour ses mélodies lumineuses et sophistiquées sur des rythmes de bossa très détaillés",
+      "example": "Rio de Janeiro Blue"
+    },
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "C",
+      "context": "Quand son improvisation prend un tour plus new-yorkais et plus dense harmoniquement",
+      "example": "Sampa"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "F",
+      "context": "Sur des sambas rapides, percussives et très vivantes, où l'accompagnement reste constamment inventif",
+      "example": "Partido Alto"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "A",
+      "context": "Pour colorer ses relances harmoniques avec une tension élégante avant de retomber dans le groove",
+      "example": "Lullaby of Birdland"
+    }
+  ],
+  "signatureMove": "Il peut fournir sur guitare classique un accompagnement si riche, complet et indépendant qu'il remplace presque un groupe entier. Tout en maintenant cette trame, il place des solos de pur bebop avec une fluidité remarquable. Cette autonomie orchestrale est sa grande signature.",
+  "recommendedListening": ["Rio de Janeiro Blue", "Sampa", "Partido Alto", "Lullaby of Birdland"]
+}

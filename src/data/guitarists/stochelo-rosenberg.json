@@ -1,0 +1,36 @@
+{
+  "slug": "stochelo-rosenberg",
+  "name": "Stochelo Rosenberg",
+  "shortName": "Stochelo",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Gypsy jazz", "Jazz manouche", "Swing"],
+  "bio": "Stochelo Rosenberg représente pour beaucoup la forme la plus pure et la plus aboutie du jazz manouche moderne. Avec le Rosenberg Trio, il a préservé l'esprit de Django tout en le portant à un niveau de clarté technique et de romantisme exceptionnel. Son influence sur les nouvelles générations manouches est immense.",
+  "signatureScales": [
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "G",
+      "context": "Pour le répertoire tzigane le plus dramatique, joué avec un chant très large dans la main gauche",
+      "example": "For Sephora"
+    },
+    {
+      "modeKey": "whole_half",
+      "rootName": "D",
+      "context": "Balayée sur tout le manche pour prolonger les éclairs diminués hérités directement de Django",
+      "example": "Bossa Dorado"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Sur les valses manouches très rapides, où la limpidité de chaque note reste primordiale",
+      "example": "Les Yeux Noirs"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "F",
+      "context": "Pour ses improvisations swing les plus lumineuses, pleines d'élan et de joie immédiate",
+      "example": "Double Jeu"
+    }
+  ],
+  "signatureMove": "Son vibrato très large, son son acoustique cristallin et son coup de médiator manouche d'une extrême sûreté sont immédiatement reconnaissables. Même à très grande vitesse, tout reste rond, romantique et lisible. Cette perfection de toucher est sa signature.",
+  "recommendedListening": ["For Sephora", "Bossa Dorado", "Les Yeux Noirs", "Double Jeu"]
+}

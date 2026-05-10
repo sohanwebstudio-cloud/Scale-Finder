@@ -1,0 +1,36 @@
+{
+  "slug": "paco-de-lucia",
+  "name": "Paco de Lucía",
+  "shortName": "Paco",
+  "era": "Années 60 à 2014",
+  "genres": ["Flamenco", "Flamenco jazz", "World music"],
+  "bio": "Paco de Lucía a modernisé le flamenco en l'ouvrant au jazz, à l'harmonie contemporaine et à une virtuosité instrumentale sans précédent. Son jeu a profondément transformé la perception mondiale de la guitare flamenca, aussi bien comme instrument soliste que comme partenaire de dialogue avec d'autres traditions. Son influence dépasse largement l'Espagne et le flamenco.",
+  "signatureScales": [
+    {
+      "modeKey": "phrygian",
+      "rootName": "E",
+      "context": "La base de son langage flamenco, attaquée avec une autorité rythmique et une netteté de picado inégalées",
+      "example": "Entre Dos Aguas"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "A",
+      "context": "Pour ses falsetas les plus vertigineuses, quand la tension dramatique doit rester très chantante",
+      "example": "Rio Ancho"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Dans ses improvisations jazz-flamenco en trio, quand il garde l'ouverture modale tout en restant très rythmique",
+      "example": "Mediterranean Sundance"
+    },
+    {
+      "modeKey": "whole_half",
+      "rootName": "B",
+      "context": "Pour concentrer la tension dramatique du cante jondo dans des passages plus sombres et théâtraux",
+      "example": "Zyryab"
+    }
+  ],
+  "signatureMove": "Son picado, joué en buté avec index et majeur, reste l'un des plus rapides et puissants jamais enregistrés. Il y a ajouté des accords venus du jazz, ouvrant le flamenco à une modernité harmonique nouvelle sans perdre la force du compás. Cette alliance de tradition et d'audace définit son jeu.",
+  "recommendedListening": ["Entre Dos Aguas", "Rio Ancho", "Mediterranean Sundance", "Zyryab"]
+}

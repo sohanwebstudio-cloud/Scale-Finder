@@ -1,0 +1,36 @@
+{
+  "slug": "frank-zappa",
+  "name": "Frank Zappa",
+  "shortName": "Zappa",
+  "era": "Années 60 à 1993",
+  "genres": ["Rock expérimental", "Jazz-fusion", "Avant-garde"],
+  "bio": "Génie américain inclassable, compositeur visionnaire mêlant rock satirique, jazz-fusion contemporain et musique orchestrale d'avant-garde. Ses solos — souvent improvisés puis découpés et réintégrés dans des contextes rythmiques totalement différents — sont parmi les plus singuliers de toute l'histoire de la guitare.",
+  "signatureScales": [
+    {
+      "modeKey": "lydian",
+      "rootName": "C",
+      "context": "Pour ses solos instrumentaux extrêmement spatiaux, dissonants et lyriques — le #4 lydien créait une flottaison tonale parfaite sur ses arrangements orchestraux",
+      "example": "Watermelon in Easter Hay"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Sur des jams rock-blues déstructurées pleines de cynisme — la base tonale stable qu'il sabotait avec des détours chromatiques inattendus",
+      "example": "Black Napkins"
+    },
+    {
+      "modeKey": "phrygian_dom",
+      "rootName": "E",
+      "context": "Pour instaurer des sonorités bizarres, tendues et orientales — son goût pour l'exotisme harmonique et la dissonance volontaire",
+      "example": "Peaches en Regalia"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "D",
+      "context": "Pour ses solos agressifs avec une avalanche de notes inattendues — la pentatonique comme tremplin vers des ruptures rythmiques et polyrythmiques",
+      "example": "Muffin Man"
+    }
+  ],
+  "signatureMove": "La technique de \"Xenochrony\" : isoler un solo improvisé et le superposer sur une piste rythmique totalement différente de celle sur laquelle il avait été joué. Couplé à sa wah-wah fixée dans une position précise pour un son nasillard unique et ses polyrythmies asymétriques, son jeu était un acte de composition autant qu'une improvisation.",
+  "recommendedListening": ["Watermelon in Easter Hay", "Black Napkins", "Peaches en Regalia", "Muffin Man"]
+}

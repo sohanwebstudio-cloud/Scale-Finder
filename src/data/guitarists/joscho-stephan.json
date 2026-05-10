@@ -1,0 +1,36 @@
+{
+  "slug": "joscho-stephan",
+  "name": "Joscho Stephan",
+  "shortName": "Joscho",
+  "era": "Années 2000 à aujourd'hui",
+  "genres": ["Gypsy jazz", "Jazz manouche", "Acoustic jazz"],
+  "bio": "Joscho Stephan est l'une des figures de proue de la nouvelle génération du gypsy jazz, capable de respecter la tradition manouche tout en l'ouvrant à la pop, au rock et aux clins d'œil latins. Sa vitesse et sa précision ont frappé tout le milieu, mais son humour musical en fait plus qu'un simple virtuose. Il porte le style vers une fraîcheur très contemporaine.",
+  "signatureScales": [
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "A",
+      "context": "Poussée à des tempos extrêmes dans le répertoire manouche le plus physique, sans jamais sacrifier la clarté",
+      "example": "Bossa Dorado"
+    },
+    {
+      "modeKey": "lydian_dom",
+      "rootName": "E",
+      "context": "Pour injecter des couleurs jazz très modernes sur la pompe manouche la plus classique",
+      "example": "Django's Tiger"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Sur les standards américains joués à l'acoustique avec une précision et une propreté impressionnantes",
+      "example": "All Of Me"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "G",
+      "context": "Dans ses grandes cascades de notes diminuées, résolues avec un sens très théâtral de l'effet",
+      "example": "Train to Paris"
+    }
+  ],
+  "signatureMove": "Sa vitesse d'exécution dans ce style est hors norme, mais il conserve toujours une lisibilité parfaite de la note. Il aime aussi glisser des clins d'œil à Hendrix, à la pop ou au rock en plein milieu d'une valse manouche. Cette combinaison de respect et de malice fait sa signature.",
+  "recommendedListening": ["Bossa Dorado", "Django's Tiger", "All Of Me", "Train to Paris"]
+}

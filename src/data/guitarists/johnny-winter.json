@@ -1,0 +1,36 @@
+{
+  "slug": "johnny-winter",
+  "name": "Johnny Winter",
+  "shortName": "J. Winter",
+  "era": "Années 60 à 2014",
+  "genres": ["Blues-rock", "Texas blues", "Blues"],
+  "bio": "Légende texane du blues-rock et sauveur de carrière de Muddy Waters. Il a poussé la vélocité et l'agressivité du blues à un niveau presque hard rock, jouant avec une intensité physique redoutable à l'aide d'un thumbpick et d'un slide ravageur sur sa Gibson Firebird.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Jouée en slide à la vitesse de l'éclair avec une tension physique extrême — le slide sur Firebird produisait un son strident et ultra-rapide impossible à obtenir autrement",
+      "example": "Highway 61 Revisited"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "A",
+      "context": "Pour des riffs de Texas blues hargneux et mordants — le thumbpick donnait une attaque encore plus agressive que n'importe quel médiator standard",
+      "example": "Mean Town Blues"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Sur des grooves rock 'n' roll sudistes où la guitare hurlait — l'influence de Chuck Berry filtrée par la brutalité du Texas",
+      "example": "Rock and Roll, Hoochie Koo"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "D",
+      "context": "Pour le blues acoustique rural joué sur des guitares à résonateur — une douceur trompeuse avant l'explosion électrique",
+      "example": "Dallas"
+    }
+  ],
+  "signatureMove": "L'utilisation féroce d'un thumbpick (onglet de pouce) couplé à ses doigts, et un jeu en slide ravageur, strident et ultra-rapide, presque exclusivement joué sur une Gibson Firebird. Cette combinaison lui donnait une attaque d'une violence et d'une précision impossibles à reproduire avec une technique standard.",
+  "recommendedListening": ["Highway 61 Revisited", "Mean Town Blues", "Rock and Roll, Hoochie Koo", "Be Careful With A Fool"]
+}
