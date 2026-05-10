@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/guitarist/layout,_N_T_/guitarist/[slug]/layout,_N_T_/guitarist/[slug]/page,_N_T_/guitarist/mike-stern"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/guitarist/$d$slug/__PAGE__",
+    "/guitarist/$d$slug",
+    "/guitarist",
+    "/_index",
+    "/_head"
+  ]
+}

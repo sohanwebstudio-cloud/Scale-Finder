@@ -1,18 +1,12 @@
 import Link from 'next/link';
 import { ALL_GUITARISTS } from '@/data/guitarists';
-import { MusicRoomWrapper } from '@/components/MusicRoomWrapper';
+import { StudioHero } from '@/components/StudioHero';
 
 export default function HomePage() {
   return (
     <div>
-      {/* 3D Room Hero */}
-      <section className="relative" style={{ height: '100vh' }}>
-        <MusicRoomWrapper />
-        <div className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-          <p className="text-xs uppercase tracking-widest text-neutral-600">Scroll</p>
-          <div className="mx-auto mt-2 h-7 w-px bg-gradient-to-b from-neutral-600 to-transparent" />
-        </div>
-      </section>
+      {/* Hero */}
+      <StudioHero />
 
       {/* Guitarists section */}
       <section id="guitaristes" className="mx-auto max-w-7xl px-6 py-24">

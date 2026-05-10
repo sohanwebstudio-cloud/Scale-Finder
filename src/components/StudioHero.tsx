@@ -3,15 +3,18 @@
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+// Corners ordered: TL, TR, BR, BL — in % of container (0–100)
+type Corner = [number, number];
+
 interface Hotspot {
   id: string;
   label: string;
   sub: string;
   href?: string;
   scrollTo?: string;
+  corners: [Corner, Corner, Corner, Corner];
   dotX: number;
   dotY: number;
-  box: { left: number; top: number; width: number; height: number };
 }
 
 const HOTSPOTS: Hotspot[] = [
@@ -20,56 +23,45 @@ const HOTSPOTS: Hotspot[] = [
     label: 'Guitaristes',
     sub: 'Explorer leurs gammes signature',
     scrollTo: 'guitaristes',
+    // Bookshelf — slight perspective taper (right edge leans inward going up)
+    corners: [[0, 0], [23, 0], [21, 100], [0, 100]],
     dotX: 11,
     dotY: 38,
-    box: { left: 0, top: 2, width: 24, height: 92 },
   },
   {
     id: 'guitar',
     label: 'Guitare',
     sub: 'Gammes et modes pour guitare',
     href: '/studio',
-    dotX: 48,
-    dotY: 80,
-    box: { left: 40, top: 50, width: 14, height: 48 },
+    // Stratocaster — narrow vertical zone, center-left
+    corners: [[36, 53], [46, 52], [46, 99], [36, 99]],
+    dotX: 41,
+    dotY: 78,
   },
   {
     id: 'bass',
     label: 'Basse',
     sub: 'Gammes et modes pour basse',
     href: '/studio',
-    dotX: 74,
-    dotY: 63,
-    box: { left: 66, top: 28, width: 13, height: 68 },
+    // Precision Bass — right of mixing console
+    corners: [[51, 36], [63, 35], [63, 99], [51, 99]],
+    dotX: 57,
+    dotY: 65,
   },
 ];
 
-const CORNER = 14;
+function toPoints(corners: [Corner, Corner, Corner, Corner]): string {
+  return corners.map(([x, y]) => `${x},${y}`).join(' ');
+}
 
-function CornerBrackets({ active }: { active: boolean }) {
-  const c = (top: boolean, left: boolean): React.CSSProperties => ({
-    position: 'absolute',
-    width: CORNER,
-    height: CORNER,
-    top: top ? 0 : undefined,
-    bottom: top ? undefined : 0,
-    left: left ? 0 : undefined,
-    right: left ? undefined : 0,
-    borderTop: top ? '2px solid rgba(255,255,255,0.9)' : undefined,
-    borderBottom: top ? undefined : '2px solid rgba(255,255,255,0.9)',
-    borderLeft: left ? '2px solid rgba(255,255,255,0.9)' : undefined,
-    borderRight: left ? undefined : '2px solid rgba(255,255,255,0.9)',
-    opacity: active ? 1 : 0,
-    transition: 'opacity 0.25s ease',
-  });
-  return (
-    <>
-      <div style={c(true, true)} />
-      <div style={c(true, false)} />
-      <div style={c(false, true)} />
-      <div style={c(false, false)} />
-    </>
-  );
+// Axis-aligned L-brackets at each corner, b = arm length in SVG units
+function bracketPath([[x0, y0], [x1, y1], [x2, y2], [x3, y3]]: [Corner, Corner, Corner, Corner], b: number): string {
+  return [
+    `M ${x0 + b},${y0} L ${x0},${y0} L ${x0},${y0 + b}`,
+    `M ${x1 - b},${y1} L ${x1},${y1} L ${x1},${y1 + b}`,
+    `M ${x2 - b},${y2} L ${x2},${y2} L ${x2},${y2 - b}`,
+    `M ${x3 + b},${y3} L ${x3},${y3} L ${x3},${y3 - b}`,
+  ].join(' ');
 }
 
 export function StudioHero() {
@@ -77,14 +69,27 @@ export function StudioHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [dims, setDims] = useState({ w: 1920, h: 1080 });
 
+  // Track container size to compute square grid cells despite viewBox="0 0 100 100" stretch
+  useEffect(() => {
+    function measure() {
+      if (!containerRef.current) return;
+      setDims({ w: containerRef.current.clientWidth, h: containerRef.current.clientHeight });
+    }
+    measure();
+    const ro = new ResizeObserver(measure);
+    if (containerRef.current) ro.observe(containerRef.current);
+    return () => ro.disconnect();
+  }, []);
+
+  // Parallax
   useEffect(() => {
     const container = containerRef.current;
     const image = imageRef.current;
     if (!container || !image) return;
     let rafId: number;
     let tx = 0, ty = 0, cx = 0, cy = 0;
-
     function onMove(e: MouseEvent) {
       tx = ((e.clientX / container!.clientWidth) - 0.5) * 18;
       ty = ((e.clientY / container!.clientHeight) - 0.5) * 10;
@@ -99,6 +104,12 @@ export function StudioHero() {
     rafId = requestAnimationFrame(tick);
     return () => { container.removeEventListener('mousemove', onMove); cancelAnimationFrame(rafId); };
   }, []);
+
+  // Grid cell size in SVG user units so cells appear ~28×28px on screen
+  const cellW = 2800 / dims.w;
+  const cellH = 2800 / dims.h;
+  const BRACKET = 3.5;
+  const STROKE = 0.22;
 
   function handleClick(spot: Hotspot) {
     if (spot.href) router.push(spot.href);
@@ -138,60 +149,94 @@ export function StudioHero() {
         style={{ height: '28%', background: 'linear-gradient(to top, rgba(0,0,0,0.65), transparent)' }}
       />
 
-      {/* Hotspot zones */}
+      {/* SVG hotspot overlay */}
+      <svg
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+      >
+        <defs>
+          <pattern
+            id="hotspot-grid"
+            patternUnits="userSpaceOnUse"
+            width={cellW}
+            height={cellH}
+          >
+            <path
+              d={`M ${cellW} 0 L 0 0 0 ${cellH}`}
+              fill="none"
+              stroke="rgba(255,255,255,0.09)"
+              strokeWidth="0.1"
+            />
+          </pattern>
+        </defs>
+
+        {HOTSPOTS.map((spot) => {
+          const active = activeId === spot.id;
+          const pts = toPoints(spot.corners);
+          const brackets = bracketPath(spot.corners, BRACKET);
+
+          return (
+            <g key={spot.id}>
+              {/* Grid fill */}
+              <polygon
+                points={pts}
+                fill="url(#hotspot-grid)"
+                opacity={active ? 1 : 0}
+                style={{ transition: 'opacity 0.25s ease', pointerEvents: 'none' }}
+              />
+              {/* Outline */}
+              <polygon
+                points={pts}
+                fill="none"
+                stroke="rgba(255,255,255,0.28)"
+                strokeWidth={STROKE}
+                opacity={active ? 1 : 0}
+                style={{ transition: 'opacity 0.25s ease', pointerEvents: 'none' }}
+              />
+              {/* Corner brackets */}
+              <path
+                d={brackets}
+                fill="none"
+                stroke="rgba(255,255,255,0.9)"
+                strokeWidth={STROKE * 1.2}
+                strokeLinecap="square"
+                opacity={active ? 1 : 0}
+                style={{ transition: 'opacity 0.25s ease', pointerEvents: 'none' }}
+              />
+              {/* Hit area — polygon-shaped click target */}
+              <polygon
+                points={pts}
+                fill="transparent"
+                style={{ cursor: 'pointer' }}
+                onMouseEnter={() => setActiveId(spot.id)}
+                onMouseLeave={() => setActiveId(null)}
+                onClick={() => handleClick(spot)}
+              />
+            </g>
+          );
+        })}
+      </svg>
+
+      {/* Dots + tooltips (HTML for legibility) */}
       {HOTSPOTS.map((spot) => {
         const active = activeId === spot.id;
+        const [tl, tr] = spot.corners;
+        const tooltipX = (tl[0] + tr[0]) / 2;
+        const tooltipY = Math.min(tl[1], tr[1]);
+
         return (
-          <button
-            key={spot.id}
-            onClick={() => handleClick(spot)}
-            onMouseEnter={() => setActiveId(spot.id)}
-            onMouseLeave={() => setActiveId(null)}
-            style={{
-              position: 'absolute',
-              left: `${spot.box.left}%`,
-              top: `${spot.box.top}%`,
-              width: `${spot.box.width}%`,
-              height: `${spot.box.height}%`,
-              background: 'transparent',
-              border: 'none',
-              padding: 0,
-              cursor: 'pointer',
-            }}
-          >
-            {/* Grid fill */}
-            <div style={{
-              position: 'absolute', inset: 0,
-              backgroundImage: `
-                linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
-              `,
-              backgroundSize: '28px 28px',
-              opacity: active ? 1 : 0,
-              transition: 'opacity 0.25s ease',
-            }} />
-
-            {/* Border */}
-            <div style={{
-              position: 'absolute', inset: 0,
-              border: '1px solid rgba(255,255,255,0.28)',
-              opacity: active ? 1 : 0,
-              transition: 'opacity 0.25s ease',
-            }} />
-
-            <CornerBrackets active={active} />
-
-            {/* Label */}
+          <div key={spot.id} style={{ pointerEvents: 'none' }}>
+            {/* Tooltip */}
             <div style={{
               position: 'absolute',
-              top: 0,
-              left: '50%',
-              transform: `translate(-50%, -100%)`,
+              left: `${tooltipX}%`,
+              top: `${tooltipY}%`,
+              transform: 'translate(-50%, -100%)',
               paddingBottom: 6,
               opacity: active ? 1 : 0,
               transition: 'opacity 0.2s ease',
               whiteSpace: 'nowrap',
-              pointerEvents: 'none',
             }}>
               <div style={{
                 background: 'rgba(8,6,4,0.88)',
@@ -213,8 +258,8 @@ export function StudioHero() {
             {/* Pulsing dot */}
             <div style={{
               position: 'absolute',
-              left: `${((spot.dotX - spot.box.left) / spot.box.width) * 100}%`,
-              top: `${((spot.dotY - spot.box.top) / spot.box.height) * 100}%`,
+              left: `${spot.dotX}%`,
+              top: `${spot.dotY}%`,
               transform: 'translate(-50%, -50%)',
             }}>
               <span style={{
@@ -234,11 +279,11 @@ export function StudioHero() {
                 transform: active ? 'scale(1.4)' : 'scale(1)',
               }} />
             </div>
-          </button>
+          </div>
         );
       })}
 
-      {/* Scroll */}
+      {/* Scroll indicator */}
       <div className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
         <p className="text-xs uppercase tracking-widest text-neutral-500">Scroll</p>
         <div className="mx-auto mt-2 h-7 w-px bg-gradient-to-b from-neutral-500 to-transparent" />
