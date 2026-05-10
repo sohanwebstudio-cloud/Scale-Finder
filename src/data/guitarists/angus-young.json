@@ -1,0 +1,36 @@
+{
+  "slug": "angus-young",
+  "name": "Angus Young",
+  "shortName": "Angus",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Hard rock", "Blues rock", "Rock 'n' roll"],
+  "bio": "Angus Young a propulsé l'énergie du blues électrique et du rock 'n' roll primitif dans une forme de hard rock d'une efficacité absolue. Avec AC/DC, il a montré qu'un vocabulaire simple, joué avec un sens du rythme inébranlable, pouvait devenir monumental. Son influence sur le riff rock et le solo nerveux est immense.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "A",
+      "context": "La matrice de ses riffs et de ses solos les plus emblématiques, toujours ancrés dans un rebond de rock 'n' roll",
+      "example": "Back In Black"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Pour ses improvisations les plus frénétiques, pleines de sueur, de saturation et de tension physique",
+      "example": "Let There Be Rock"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "B",
+      "context": "Sur les rythmiques boogie-rock rapides où l'ombre de Chuck Berry reste très présente",
+      "example": "Whole Lotta Rosie"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "D",
+      "context": "Mélangée à la mineure pour ramener un vieux goût de blues-rock traditionnel dans les morceaux plus relâchés",
+      "example": "The Jack"
+    }
+  ],
+  "signatureMove": "Son vibrato nerveux, presque convulsif, et son crunch très sec obtenu sans pédales sont au cœur de son identité. Tout part aussi de son sens du rythme : même les solos semblent prolonger le riff plutôt que s'en échapper. Cette franchise électrique est sa vraie signature.",
+  "recommendedListening": ["Back In Black", "Let There Be Rock", "Whole Lotta Rosie", "Highway to Hell"]
+}

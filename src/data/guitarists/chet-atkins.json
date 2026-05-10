@@ -1,0 +1,36 @@
+{
+  "slug": "chet-atkins",
+  "name": "Chet Atkins",
+  "shortName": "Chet",
+  "era": "Années 40 à 2001",
+  "genres": ["Country", "Nashville sound", "Jazz-country"],
+  "bio": "Chet Atkins a façonné le Nashville Sound et élevé la guitare country à un niveau de sophistication harmonique et rythmique exceptionnel. Son jeu relie naturellement country, pop et jazz sans jamais perdre la clarté de la mélodie. Son influence sur des générations de fingerpickers, de George Harrison à Tommy Emmanuel, est immense.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "A",
+      "context": "Pour ses thèmes de country picking les plus lumineux, où virtuosité et sourire mélodique avancent main dans la main",
+      "example": "Yakety Axe"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Dans ses pièces swing et boogie en solo chord-melody, quand la basse et la mélodie doivent cohabiter sans heurt",
+      "example": "Mister Sandman"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Pour glisser quelques licks bluesy et piquants au milieu d'un langage country très propre",
+      "example": "Cannonball Rag"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "C",
+      "context": "Dans ses ballades les plus riches harmoniquement, quand la ligne supérieure doit rester douce et légèrement flottante",
+      "example": "Windy and Warm"
+    }
+  ],
+  "signatureMove": "Son Travis picking poussé à la perfection repose sur un pouce métronomique, souvent étouffé, pendant que les autres doigts syncopent mélodie et accords. Cette indépendance de la main droite donne l'impression d'entendre plusieurs guitaristes à la fois. Peu de musiciens ont porté cette technique à un tel degré d'élégance.",
+  "recommendedListening": ["Yakety Axe", "Mister Sandman", "Windy and Warm", "Cannonball Rag"]
+}

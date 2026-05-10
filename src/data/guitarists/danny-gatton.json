@@ -1,0 +1,36 @@
+{
+  "slug": "danny-gatton",
+  "name": "Danny Gatton",
+  "shortName": "Gatton",
+  "era": "Années 70 à 1994",
+  "genres": ["Telecaster virtuoso", "Country jazz", "Rockabilly"],
+  "bio": "Danny Gatton, surnommé The Telemaster, a fusionné country, jazz, blues et rockabilly avec une aisance que beaucoup considèrent encore comme surnaturelle. Sa culture musicale était si vaste qu'il pouvait passer d'un standard à un boogie furieux sans la moindre rupture de langage. Son statut de guitar hero pour musiciens reste immense.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Pour son rockabilly le plus frénétique, avec des cascades de notes qui gardent pourtant une articulation parfaite",
+      "example": "Elmira St. Boogie"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Sur des blues plus crépusculaires, enrichis de chicken pickin' et d'inflexions très vocales",
+      "example": "Harlem Nocturne"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Quand il joue du jazz pur sur des standards sans jamais perdre le grain nerveux de la Telecaster",
+      "example": "In My Room"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "G",
+      "context": "Pour injecter des frottements complexes et des résolutions pleines d'humour au milieu de ses phrases",
+      "example": "Nit Pickin'"
+    }
+  ],
+  "signatureMove": "Hybrid picking, slide à la bouteille de bière, jazz rapide et country suicidaire peuvent cohabiter chez lui dans la même minute. Sa Telecaster semble entre ses mains capable de tout dire, de tout imiter, de tout accélérer. Cette polyvalence terrifiante constitue sa vraie signature.",
+  "recommendedListening": ["Elmira St. Boogie", "Harlem Nocturne", "Nit Pickin'", "In My Room"]
+}

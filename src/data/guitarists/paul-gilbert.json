@@ -1,0 +1,36 @@
+{
+  "slug": "paul-gilbert",
+  "name": "Paul Gilbert",
+  "shortName": "Gilbert",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Shred", "Hard rock", "Instrumental rock"],
+  "bio": "Paul Gilbert est l'un des grands maîtres du rock virtuose moderne, mais son langage reste toujours attaché au blues, au hard rock des années 70 et au sens mélodique de la pop. Son jeu est à la fois chirurgical et généreux, spectaculaire sans devenir froid. Il a marqué durablement toute une génération de guitaristes techniques.",
+  "signatureScales": [
+    {
+      "modeKey": "aeolian",
+      "rootName": "E",
+      "context": "Pour ses grands sauts de cordes néo-classiques, joués avec une précision presque mécanique mais très musicale",
+      "example": "Technical Difficulties"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Quand il accélère un vocabulaire blues-rock jusqu'à des vitesses délirantes sans perdre le sourire du phrasé",
+      "example": "Colorado Bulldog"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "Sur des solos rock très nets et accrocheurs, où l'articulation reste plus importante que la densité",
+      "example": "Green-Tinted Sixties Mind"
+    },
+    {
+      "modeKey": "lydian_dom",
+      "rootName": "C",
+      "context": "Pour ses incursions les plus complexes et légèrement outside, avec un goût assumé pour la fusion",
+      "example": "Scarified"
+    }
+  ],
+  "signatureMove": "Son alternate picking poussé à la perfection et son usage massif du string skipping lui permettent de garder une articulation tranchante là où d'autres choisiraient le sweeping. Cette netteté fait partie intégrante de son identité. Même dans la virtuosité extrême, on entend toujours le dessin de la phrase.",
+  "recommendedListening": ["Technical Difficulties", "Green-Tinted Sixties Mind", "Colorado Bulldog", "Scarified"]
+}

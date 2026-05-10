@@ -1,0 +1,36 @@
+{
+  "slug": "slash",
+  "name": "Slash",
+  "shortName": "Slash",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Hard rock", "Blues rock", "Rock"],
+  "bio": "Slash a remis le feeling bluesy, le poids de la Les Paul et le grand sens mélodique au centre du hard rock à une époque dominée par la démonstration shred. Avec Guns N' Roses, il a prouvé qu'un solo pouvait être immédiatement mémorable sans sacrifier la rudesse ni l'attitude. Son influence sur le rock grand public et la culture du lead guitar est énorme.",
+  "signatureScales": [
+    {
+      "modeKey": "aeolian",
+      "rootName": "Eb",
+      "context": "Pour ses grands solos lents et épiques en guitare accordée un demi-ton plus bas, avec des phrases qui respirent largement",
+      "example": "Sweet Child O' Mine"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "Db",
+      "context": "Quand il veut installer une couleur dramatique et presque hispanique dans un climat hard rock",
+      "example": "Double Talkin' Jive"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Sur des riffs et des relances de sleazy rock, avec beaucoup d'attaque et une saleté très contrôlée",
+      "example": "Welcome to the Jungle"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour les grandes montées classiques en accords de puissance, quand le solo doit rester héroïque et très chantant",
+      "example": "November Rain"
+    }
+  ],
+  "signatureMove": "Le micro grave de sa Les Paul, souvent assombri par la tonalité fermée, donne à ses solos les plus célèbres ce poids de Woman Tone moderne. Il y ajoute de grands bends lents, tenus jusqu'à faire ployer toute la phrase. Cette combinaison de gras, d'espace et de mélodie est sa signature absolue.",
+  "recommendedListening": ["Sweet Child O' Mine", "November Rain", "Welcome to the Jungle", "Estranged"]
+}

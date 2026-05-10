@@ -1,0 +1,36 @@
+{
+  "slug": "chuck-berry",
+  "name": "Chuck Berry",
+  "shortName": "C. Berry",
+  "era": "Années 50 à 2017",
+  "genres": ["Rock 'n' roll", "Rhythm and blues", "Blues"],
+  "bio": "Pionnier incontesté du rock 'n' roll, Chuck Berry a défini presque à lui seul le vocabulaire rythmique et soliste de la guitare rock. En transformant le boogie-woogie, le blues et le jump blues en riffs nerveux et immédiats, il a donné sa grammaire au rock des années 60. Son influence sur les Beatles, les Rolling Stones et pratiquement tous les groupes à guitares qui ont suivi est immense.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "Bb",
+      "context": "La tonalité reine de ses riffs les plus célèbres, souvent pensée avec la logique des sections de cuivres du rhythm and blues",
+      "example": "Johnny B. Goode"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour transposer à la guitare les cellules boogie-woogie du piano et faire bondir la rythmique",
+      "example": "Roll Over Beethoven"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "Eb",
+      "context": "Quand il veut durcir le trait avec des réponses plus bluesy et percutantes entre les couplets",
+      "example": "Maybellene"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Sur des tempos plus moyens où ses solos prennent un accent presque country, très chantant et très direct",
+      "example": "You Never Can Tell"
+    }
+  ],
+  "signatureMove": "Le double-stop est son sceau absolu : deux cordes frappées ensemble, souvent poussées d'un demi-ton sur la corde voisine pour créer une tension frénétique. Ce geste lui permettait d'être à la fois soliste et rythmicien, avec un son percussif immédiatement rock. Toute la guitare rock classique découle de cette idée.",
+  "recommendedListening": ["Johnny B. Goode", "Roll Over Beethoven", "Maybellene", "Sweet Little Sixteen"]
+}

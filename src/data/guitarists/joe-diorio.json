@@ -1,0 +1,36 @@
+{
+  "slug": "joe-diorio",
+  "name": "Joe Diorio",
+  "shortName": "Diorio",
+  "era": "Années 60 à 2022",
+  "genres": ["Post-bop", "Avant-garde jazz", "Jazz"],
+  "bio": "Joe Diorio a poussé le vocabulaire post-bop vers des territoires beaucoup plus ouverts, jouant un rôle majeur comme musicien et comme pédagogue. Son approche a préparé le terrain pour une guitare moderne plus intervalique, plus polymodale et plus aventureuse. Il reste une figure essentielle pour comprendre l'évolution du jazz guitar après la tradition bebop.",
+  "signatureScales": [
+    {
+      "modeKey": "lydian_aug",
+      "rootName": "C",
+      "context": "Pour ses lignes modernes pleines de sauts d'intervalles, quand il veut rompre immédiatement avec les réflexes habituels",
+      "example": "Narita"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "F",
+      "context": "Jouée en motifs géométriques asymétriques sur dominante, avec une vraie logique architecturale",
+      "example": "Straight and Narrow"
+    },
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "E",
+      "context": "Pour installer des tensions post-bop complexes tout en évitant les clichés du langage plus ancien",
+      "example": "Peaceful Journey"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Bb",
+      "context": "Utilisée de manière très libre pour étirer le blues vers un terrain presque free sans le perdre complètement",
+      "example": "Blues for Bela"
+    }
+  ],
+  "signatureMove": "Ses grands sauts de cordes et ses superpositions polymodales lui permettent de jouer dehors de manière logique, sans perdre le fil rythmique. Même dans les passages les plus abstraits, son discours reste structuré et chantant. Cette audace contrôlée est au cœur de son identité.",
+  "recommendedListening": ["Narita", "Peaceful Journey", "Straight and Narrow", "Blues for Bela"]
+}

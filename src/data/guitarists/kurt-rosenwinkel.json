@@ -1,0 +1,36 @@
+{
+  "slug": "kurt-rosenwinkel",
+  "name": "Kurt Rosenwinkel",
+  "shortName": "Kurt",
+  "era": "Années 90 à aujourd'hui",
+  "genres": ["Post-bop", "Jazz contemporain", "Modern jazz"],
+  "bio": "Kurt Rosenwinkel a profondément redéfini la guitare jazz moderne par la densité de son harmonie, son legato et son sens du son. À partir du post-bop, il a construit un langage très personnel où la guitare semble parfois se fondre avec la voix et les claviers. Son influence sur toute une génération de guitaristes de jazz est considérable.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "Eb",
+      "context": "Pour ses grands arpèges lyriques et majestueux, souvent prolongés par son timbre vocal-guitare très singulier",
+      "example": "Zhivago"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "G",
+      "context": "Quand il traverse des harmonies très complexes et doit maximiser la tension sans perdre la ligne chantante",
+      "example": "The Next Step"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "C",
+      "context": "Pour des climats sombres, introspectifs et cinématographiques où la couleur mineure majeure reste très présente",
+      "example": "Minor Blues"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "F",
+      "context": "Sur de longs vamps modernes et asymétriques où il laisse la phrase harmonique se déployer lentement",
+      "example": "Use of Light"
+    }
+  ],
+  "signatureMove": "Il chante souvent exactement ce qu'il joue, relié au son de sa guitare, ce qui crée un timbre hybride proche d'un synthé vocal ou d'un cor. Ce doublage donne à ses lignes une continuité et une densité très particulières. Peu de guitaristes modernes ont un son aussi immédiatement identifiable.",
+  "recommendedListening": ["Zhivago", "The Next Step", "Minor Blues", "Use of Light"]
+}

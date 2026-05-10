@@ -1,0 +1,36 @@
+{
+  "slug": "ritchie-blackmore",
+  "name": "Ritchie Blackmore",
+  "shortName": "Blackmore",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Hard rock", "Heavy metal", "Blues rock"],
+  "bio": "Ritchie Blackmore est l'un des architectes fondateurs du hard rock et le grand précurseur du metal néo-classique bien avant l'explosion shred des années 80. Avec Deep Purple puis Rainbow, il a mêlé brutalité blues, sens du riff et tournures inspirées de la musique classique européenne. Son influence sur toute la guitare hard rock et metal est immense.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "G",
+      "context": "La base de ses riffs hard rock les plus célèbres, joués avec une attaque sèche et une autorité presque martiale",
+      "example": "Smoke on the Water"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "A",
+      "context": "Pour ses grandes chevauchées solistes d'inspiration classique, où la tension dramatique reste très chantante",
+      "example": "Highway Star"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Dans son blues rock rapide et agressif, quand le médiator attaque presque comme une arme de percussion",
+      "example": "Lazy"
+    },
+    {
+      "modeKey": "phrygian_dom",
+      "rootName": "D",
+      "context": "Pour installer des climats sombres, mystiques et orientalisants dans ses compositions les plus théâtrales",
+      "example": "Gates of Babylon"
+    }
+  ],
+  "signatureMove": "Sa Stratocaster, souvent équipée d'un manche scallopé, lui permettait d'accentuer bends, vibrato et attaques avec une agressivité très personnelle. Son phrasé passe sans prévenir du riff le plus terrien à des tournures presque baroques. Cette imprévisibilité nerveuse est sa vraie signature.",
+  "recommendedListening": ["Highway Star", "Smoke on the Water", "Lazy", "Gates of Babylon"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "ry-cooder",
+  "name": "Ry Cooder",
+  "shortName": "Cooder",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Folk", "Roots music", "Slide guitar"],
+  "bio": "Ry Cooder est l'un des grands explorateurs de la guitare américaine, du blues rural à la musique de film en passant par les traditions caribéennes et cubaines. Son jeu de slide privilégie toujours la couleur, la respiration et la justesse émotionnelle plutôt que l'esbroufe. Son influence dépasse largement la guitare pour toucher l'arrangement, la production et le dialogue entre cultures musicales.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "En open D pour recréer ses grands paysages américains, entre désert, lenteur et résonance ouverte",
+      "example": "Paris, Texas"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "A",
+      "context": "Jouée en slide sur acoustique pour un blues rural très sec, presque poussiéreux dans la texture",
+      "example": "Feelin' Bad Blues"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "C",
+      "context": "Sur des rythmes caribéens ou cubains où il veut garder de la lumière et un flottement harmonique doux",
+      "example": "Chan Chan"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Pour des boogies lents aux accents tex-mex, souvent joués au doigt avec beaucoup de souplesse rythmique",
+      "example": "Tattler"
+    }
+  ],
+  "signatureMove": "C'est un maître du bottleneck expressif, capable de chercher la note exacte avec une délicatesse presque vocale. Ses glissandos ne sont jamais décoratifs : ils racontent le paysage émotionnel du morceau. Cette science de l'ambiance fait toute sa singularité.",
+  "recommendedListening": ["Paris, Texas", "Feelin' Bad Blues", "Chan Chan", "Tattler"]
+}

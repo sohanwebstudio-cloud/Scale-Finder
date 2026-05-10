@@ -1,0 +1,36 @@
+{
+  "slug": "bill-frisell",
+  "name": "Bill Frisell",
+  "shortName": "Frisell",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Jazz contemporain", "Americana", "Avant-garde"],
+  "bio": "Bill Frisell a créé une voix unique où le jazz rencontre la country, le folk et les textures sonores de l'avant-garde. À rebours de la démonstration, il travaille l'espace, la résonance et les intervalles étranges comme des matières premières mélodiques. Son influence sur la guitare contemporaine dépasse largement les frontières du jazz.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "D",
+      "context": "Pour des mélodies folk très aérées où il suggère parfois une couleur hexatonique en évitant certaines notes trop lourdes",
+      "example": "Shenandoah"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Dans ses improvisations libres et atmosphériques, avec beaucoup de silences et de notes tenues",
+      "example": "Rambler"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "G",
+      "context": "Pour suspendre les accords au-dessus de la rythmique avec une lumière douce et une vraie sensation d'ouverture",
+      "example": "Outlaws"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "E",
+      "context": "Quand il rapproche le jazz de l'Americana en gardant des lignes simples, nostalgiques et presque enfantines",
+      "example": "Pipeline"
+    }
+  ],
+  "signatureMove": "Délais, réverbérations et pédale de volume lui servent à effacer l'attaque du médiator pour transformer la guitare en nappe mouvante. Il préfère faire respirer deux ou trois intervalles inhabituels plutôt que remplir l'espace. Ce goût du vide et de la résonance rend son jeu immédiatement identifiable.",
+  "recommendedListening": ["Shenandoah", "Pipeline", "Rambler", "Have A Little Faith In Me"]
+}

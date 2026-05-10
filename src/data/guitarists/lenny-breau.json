@@ -1,0 +1,36 @@
+{
+  "slug": "lenny-breau",
+  "name": "Lenny Breau",
+  "shortName": "Breau",
+  "era": "Années 60 à 1984",
+  "genres": ["Jazz", "Fingerstyle jazz", "Classical crossover"],
+  "bio": "Lenny Breau a réalisé une synthèse rarissime entre guitare classique, flamenco, jazz harmonique et fingerpicking country. Son imagination harmonique, nourrie autant par Bill Evans que par Chet Atkins, a élargi la palette de la guitare bien au-delà des catégories habituelles. Il reste une figure presque mythique pour les guitaristes fascinés par l'instrument total.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "Eb",
+      "context": "Dans ses ballades chord-melody où la guitare imite presque la main gauche et la main droite d'un pianiste à la fois",
+      "example": "The Velvet Touch"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Pour ses improvisations les plus fluides, souvent traversées par ses fameuses cascades d'harmoniques",
+      "example": "Vision"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "G",
+      "context": "Sur ses réharmonisations très denses, quand il veut une lumière douce et suspendue au-dessus d'accords riches",
+      "example": "It Could Happen To You"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Pour ses excursions virtuoses qui rappellent le country picking mais avec un habillage harmonique très jazz",
+      "example": "Freight Train"
+    }
+  ],
+  "signatureMove": "Ses harmoniques artificielles en cascade, jouées à l'octave au milieu de voicings complexes, sont immédiatement reconnaissables. Elles lui permettaient de faire sonner la guitare comme un piano impressionniste ou une harpe miniature. Cette poésie technique reste sa grande signature.",
+  "recommendedListening": ["The Velvet Touch", "Vision", "It Could Happen To You", "Freight Train"]
+}

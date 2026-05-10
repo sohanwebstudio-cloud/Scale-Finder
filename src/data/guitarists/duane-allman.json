@@ -1,0 +1,36 @@
+{
+  "slug": "duane-allman",
+  "name": "Duane Allman",
+  "shortName": "D. Allman",
+  "era": "Années 60 à 1971",
+  "genres": ["Southern rock", "Blues-rock", "Jam rock"],
+  "bio": "Légende du Southern Rock avec les Allman Brothers, Duane Allman a porté le slide électrique à un niveau de chant et de précision inédit. Dans une Amérique où blues, country et improvisation collective se mélangeaient, il a imposé un jeu lyrique capable de tenir de longues jams sans perdre la mélodie. Sa mort à 24 ans a figé une influence pourtant immense sur Derek Trucks, Warren Haynes et toute la tradition jam-band américaine.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "La base de son jeu slide en open E, lumineuse et fluide, pour faire chanter les dominantes sans les durcir",
+      "example": "Statesboro Blues"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "A",
+      "context": "Pour ses improvisations sans slide aux accents country, toujours très mélodiques même dans les longues envolées",
+      "example": "Blue Sky"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Sur les jams modales étirées où il développe des phrases vocales inspirées du jazz modal",
+      "example": "In Memory of Elizabeth Reed"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "D",
+      "context": "Pour les duels de guitares tendus et les relances épaisses au cœur des climats blues-rock",
+      "example": "Whipping Post"
+    }
+  ],
+  "signatureMove": "Son bottleneck porté à l'annulaire en open E lui donnait une intonation presque vocale, avec une clarté remarquable grâce à l'étouffement permanent des cordes parasites. Même dans les grandes montées d'intensité, chaque note restait nette, pleine et chantante. C'est cette justesse expressive qui a redéfini le slide moderne.",
+  "recommendedListening": ["Statesboro Blues", "Blue Sky", "Layla", "Whipping Post"]
+}

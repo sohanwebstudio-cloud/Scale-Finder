@@ -1,0 +1,36 @@
+{
+  "slug": "julian-lage",
+  "name": "Julian Lage",
+  "shortName": "Lage",
+  "era": "Années 2000 à aujourd'hui",
+  "genres": ["Jazz contemporain", "Americana", "Modern jazz"],
+  "bio": "Julian Lage a réconcilié la virtuosité du jazz classique, la sincérité de l'Americana et l'énergie nue d'une Telecaster moderne. Son jeu donne l'impression d'une évidence totale, alors qu'il repose sur un contrôle exceptionnel de la dynamique, du temps et du timbre. Il est devenu l'une des grandes références de la guitare contemporaine toutes esthétiques confondues.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Pour des lignes très fluides, presque violonistiques, où l'articulation rappelle autant le bluegrass que le jazz",
+      "example": "I'll Be Seeing You"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Sur les tempos rapides hybrides jazz-country, avec une attaque franche mais toujours contrôlée au bout des doigts",
+      "example": "The Ramble"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "D",
+      "context": "Pour des ballades crépusculaires où une légère couleur classique vient assombrir une écriture pourtant très dépouillée",
+      "example": "Nocturne"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "F",
+      "context": "Dans ses improvisations modernes les plus calmes, quand il cherche plus l'air et la résonance que la densité",
+      "example": "Splendor"
+    }
+  ],
+  "signatureMove": "Son immense technique acoustique est transposée sur l'électrique sans écran d'effets entre les doigts et l'ampli. Il obtient des contrastes de dynamique énormes uniquement par le toucher, avec une articulation d'une netteté rare. Cette sincérité sonore fait partie de son identité profonde.",
+  "recommendedListening": ["The Ramble", "Nocturne", "I'll Be Seeing You", "Splendor"]
+}

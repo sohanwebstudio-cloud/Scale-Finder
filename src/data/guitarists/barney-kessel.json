@@ -1,0 +1,36 @@
+{
+  "slug": "barney-kessel",
+  "name": "Barney Kessel",
+  "shortName": "Kessel",
+  "era": "Années 40 à 2004",
+  "genres": ["West Coast jazz", "Bebop", "Cool jazz"],
+  "bio": "Barney Kessel est l'un des grands architectes de la guitare jazz de la côte Ouest et l'un des piliers du travail de studio américain d'après-guerre. Son swing, son sens du blues et sa maîtrise des chord solos lui ont permis de tenir à la fois le rôle de soliste et celui d'une petite section de cuivres. Son héritage irrigue autant le jazz que la culture des session players.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Bb",
+      "context": "Pour ses longues lignes bebop très articulées, toujours portées par un swing souple et net",
+      "example": "Jordu"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "F",
+      "context": "Quand il veut teinter le jazz d'un vrai feeling de blues urbain sans rompre l'élan harmonique",
+      "example": "Cry Me a River"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Pour ses cascades d'accords et ses chord solos complexes, avec une logique très chantante malgré la densité",
+      "example": "Autumn Leaves"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "G",
+      "context": "Pour pimenter les cadences ii-V-I classiques avec une tension bebop parfaitement contrôlée",
+      "example": "The Poll Winners"
+    }
+  ],
+  "signatureMove": "Ses chord solos projettent l'impact harmonique d'une section entière tout en gardant un vrai rebond bluesy dans l'attaque. Il jouait avec un médiator franc, jamais timide, ce qui donnait aux accords une autorité rythmique très rare. Cette alliance de sophistication et de nerf fait sa marque.",
+  "recommendedListening": ["The Poll Winners", "Jordu", "Autumn Leaves", "Cry Me a River"]
+}

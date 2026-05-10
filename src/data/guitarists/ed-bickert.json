@@ -1,0 +1,36 @@
+{
+  "slug": "ed-bickert",
+  "name": "Ed Bickert",
+  "shortName": "Bickert",
+  "era": "Années 50 à 2019",
+  "genres": ["Mainstream jazz", "Cool jazz", "Jazz"],
+  "bio": "Ed Bickert est l'un des grands maîtres canadiens du jazz moderne et une figure unique pour avoir bâti tout son univers sur une Telecaster de série. Derrière cette apparente simplicité se cache un sens harmonique d'une sophistication rarissime, particulièrement dans l'accompagnement. Son héritage sur le jeu d'accords jazz est immense.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "Eb",
+      "context": "Pour ses accompagnements en close voicings très serrés, où chaque note semble placée avec une précision d'orfèvre",
+      "example": "Pure Magic"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "F",
+      "context": "Dans ses improvisations les plus chantantes, pleines d'air et de silences stratégiques",
+      "example": "Easy to Love"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Bb",
+      "context": "Sur les cadences résolues avec des accords colorés et des enrichissements inattendus mais toujours doux",
+      "example": "Things Ain't What They Used To Be"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "G",
+      "context": "Pour glisser des dissonances très subtiles dans son jeu d'accords sans jamais casser la ligne",
+      "example": "I'll Be Seeing You"
+    }
+  ],
+  "signatureMove": "Son micro grave de Telecaster, son jeu aux doigts et ses voicings incroyablement resserrés créent un son feutré, sombre et immédiatement identifiable. Il savait accompagner en faisant entendre des harmonies d'une richesse folle sans jamais gêner le soliste. Cette discrétion sophistiquée est sa signature.",
+  "recommendedListening": ["Pure Magic", "Easy to Love", "Things Ain't What They Used To Be", "I'll Be Seeing You"]
+}

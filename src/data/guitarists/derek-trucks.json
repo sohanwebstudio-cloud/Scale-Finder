@@ -1,0 +1,36 @@
+{
+  "slug": "derek-trucks",
+  "name": "Derek Trucks",
+  "shortName": "Trucks",
+  "era": "Années 90 à aujourd'hui",
+  "genres": ["Southern rock", "Blues-rock", "Soul-jazz"],
+  "bio": "Prodige du slide moderne, Derek Trucks a prolongé l'héritage de Duane Allman en y intégrant une oreille venue de la soul, du jazz et de la musique classique indienne. Son approche privilégie le chant intérieur de chaque note plutôt que l'effet brut, même dans les grands climats électriques. Il est devenu une référence absolue pour les guitaristes de slide contemporains.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Sa zone de confort en open E pour relier blues sudiste, soul et lignes de slide extrêmement fluides",
+      "example": "Midnight in Harlem"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "C",
+      "context": "Quand il glisse vers des couleurs plus exotiques inspirées de la musique indienne, avec un vrai contrôle des micro-intervalles",
+      "example": "Sahib Teri Bandi"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "A",
+      "context": "Pour des solos gospel très chantants qui montent lentement en intensité sans perdre la simplicité mélodique",
+      "example": "Bound for Glory"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "D",
+      "context": "Sur les riffs lourds et les passages plus frontalement blues-rock, avec une attaque slide plus rugueuse",
+      "example": "I Pity the Fool"
+    }
+  ],
+  "signatureMove": "Il joue aux doigts, sans médiator, avec un slide en verre qui laisse respirer chaque inflexion comme une voix humaine. En open E, il contrôle les cordes résonnantes avec une précision rare, ce qui lui permet d'obtenir un son d'une pureté presque vocale. Cette combinaison de propreté et de micro-tons est devenue sa signature absolue.",
+  "recommendedListening": ["Midnight in Harlem", "Sahib Teri Bandi", "Anyday", "Bound for Glory"]
+}

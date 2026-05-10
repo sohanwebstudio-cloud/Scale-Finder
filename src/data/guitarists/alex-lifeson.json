@@ -1,0 +1,36 @@
+{
+  "slug": "alex-lifeson",
+  "name": "Alex Lifeson",
+  "shortName": "Lifeson",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Progressive rock", "Hard rock", "Art rock"],
+  "bio": "Alex Lifeson a joué un rôle décisif dans l'identité de Rush en apprenant à remplir un immense espace sonore avec une seule guitare. Son langage relie le riff hard rock, l'ouverture harmonique du progressif et un sens très personnel de la texture. Il reste l'un des grands architectes du rock progressif à la guitare.",
+  "signatureScales": [
+    {
+      "modeKey": "lydian",
+      "rootName": "F#",
+      "context": "Pour ses fameux accords ouverts et chatoyants, où la quarte augmentée donne immédiatement cette sensation de grandeur",
+      "example": "Hemispheres"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Dans ses envolées solistes lyriques, expressives et pleines de bends très chantants",
+      "example": "La Villa Strangiato"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Sur des riffs progressifs asymétriques où il faut garder de l'élan malgré la complexité rythmique",
+      "example": "Tom Sawyer"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Pour ses arpèges plus froids et modaux, souvent noyés dans les effets spatiaux sans perdre leur tension",
+      "example": "YYZ"
+    }
+  ],
+  "signatureMove": "Son fameux accord Lifeson repose souvent sur des cordes aiguës à vide combinées à de grands voicings suspendus et à du chorus. Cette recette crée une résonance large, presque orchestrale, qui permet à une seule guitare de remplir tout le spectre. C'est l'un des sons signatures du rock progressif.",
+  "recommendedListening": ["La Villa Strangiato", "Tom Sawyer", "YYZ", "Limelight"]
+}

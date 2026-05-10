@@ -1,0 +1,36 @@
+{
+  "slug": "albert-collins",
+  "name": "Albert Collins",
+  "shortName": "A. Collins",
+  "era": "Années 50 à 1993",
+  "genres": ["Electric blues", "Texas blues", "Funk blues"],
+  "bio": "Surnommé The Iceman, Albert Collins a développé l'un des sons les plus glacés et mordants de toute l'histoire du blues électrique. Avec son accordage ouvert, son capodastre haut perché et son attaque sans médiator, il a transformé la Telecaster en arme tranchante. Son influence sur le blues moderne et sur les guitaristes de Telecaster est profonde.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "F",
+      "context": "Tout en haut du manche pour obtenir ce timbre aigu, tranchant et presque métallique qui fait sa réputation",
+      "example": "Frosty"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "D",
+      "context": "Pour des bends interminables, tendus à l'extrême, qui font monter la pression sur plusieurs mesures",
+      "example": "Cold Cold Feeling"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Sur des grooves funky-blues appuyés par les cuivres, où il frappe sec et laisse l'ampli mordre",
+      "example": "Master Charge"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Mélangée au mineur pour obtenir un swing R&B chaloupé malgré une attaque très glaciale",
+      "example": "Honey Hush"
+    }
+  ],
+  "signatureMove": "Open F minor, capodastre placé très haut et doigts nus : toute son identité part de là. Il attaquait violemment les cordes sans médiator pour faire jaillir un son dur, sec et perçant que personne ne confond. Cette combinaison de configuration et de toucher est sa vraie signature.",
+  "recommendedListening": ["Frosty", "Cold Cold Feeling", "Master Charge", "If Trouble Was Money"]
+}

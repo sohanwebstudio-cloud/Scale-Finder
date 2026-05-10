@@ -1,0 +1,36 @@
+{
+  "slug": "grant-green",
+  "name": "Grant Green",
+  "shortName": "G. Green",
+  "era": "Années 60 à 1979",
+  "genres": ["Hard bop", "Soul-jazz", "Jazz-funk"],
+  "bio": "Figure incontournable du catalogue Blue Note, Grant Green a imposé un son de guitare jazz plus nu, plus direct et plus obsédant que celui de beaucoup de ses contemporains. Partant du hard bop, il a peu à peu basculé vers le soul-jazz et le funk sans perdre son articulation limpide. Son influence se retrouve autant chez les jazzmen que chez les producteurs attirés par son groove hypnotique.",
+  "signatureScales": [
+    {
+      "modeKey": "dorian",
+      "rootName": "Bb",
+      "context": "Pour de longs grooves funk-jazz où il fait tourner des cellules simples jusqu'à les rendre irrésistibles",
+      "example": "Jan Jan"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "F",
+      "context": "Dans ses blues et medium swings les plus incisifs, avec une articulation sèche presque sans vibrato",
+      "example": "Idle Moments"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "Eb",
+      "context": "Utilisée de manière très rythmique sur les titres soul, pour frapper juste et laisser respirer le placement",
+      "example": "Sookie Sookie"
+    },
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "C",
+      "context": "Quand l'harmonie se densifie et qu'il doit traverser les accords avec la clarté linéaire d'un soufflant",
+      "example": "Matador"
+    }
+  ],
+  "signatureMove": "Plutôt que d'empiler accords et ornements, il misait presque tout sur des lignes single-notes très nettes et répétitives. Son attaque de médiator sèche, souvent relancée sur une même note, fabriquait le groove à elle seule. C'est cette économie qui rend son jeu immédiatement identifiable.",
+  "recommendedListening": ["Idle Moments", "Sookie Sookie", "Jan Jan", "Jean de Fleur"]
+}

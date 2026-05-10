@@ -1,0 +1,36 @@
+{
+  "slug": "john-lee-hooker",
+  "name": "John Lee Hooker",
+  "shortName": "Hooker",
+  "era": "Années 40 à 2001",
+  "genres": ["Blues", "Boogie", "Electric blues"],
+  "bio": "John Lee Hooker est l'une des grandes forces primitives du blues américain et l'un des créateurs du boogie moderne. Son style s'affranchit souvent des cadres classiques du blues à 12 mesures pour privilégier la transe, le poids du groove et la répétition. Son influence traverse aussi bien le blues que le rock hypnotique.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Pour ses riffs d'un seul accord, lourds et caverneux, qui avancent comme une incantation",
+      "example": "Boom Boom"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Sur ses grooves boogie répétitifs, obsédants et très physiques, toujours liés au battement du pied",
+      "example": "Boogie Chillen"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Pour un blues plus rural et plaintif, volontairement poisseux dans la texture et le placement",
+      "example": "Tupelo Blues"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "C",
+      "context": "Quand la guitare sert presque de percussion minimaliste derrière la voix, sans rien surcharger",
+      "example": "Dimples"
+    }
+  ],
+  "signatureMove": "Son groove sur pédale unique, appuyé par le battement lourd de son pied, suffit souvent à faire tenir tout le morceau. Sa guitare trempée d'écho ne cherche pas la virtuosité mais la densité rythmique et la transe. Cette force hypnotique est sa vraie signature.",
+  "recommendedListening": ["Boom Boom", "Boogie Chillen", "Dimples", "Tupelo Blues"]
+}

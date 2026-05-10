@@ -1,0 +1,36 @@
+{
+  "slug": "mick-taylor",
+  "name": "Mick Taylor",
+  "shortName": "M. Taylor",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Blues rock", "Rock", "British blues"],
+  "bio": "Mick Taylor est l'un des grands stylistes discrets du rock britannique, essentiel chez John Mayall puis dans la période la plus inspirée des Rolling Stones. Son toucher lyrique et son phrasé blues d'une grande élégance apportaient une profondeur mélodique rare au sein de contextes rock souvent plus rugueux. Son influence se mesure moins au bruit qu'à la qualité de son chant instrumental.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_minor",
+      "rootName": "G",
+      "context": "Pour ses longs solos dramatiques et fluides, où le vibrato fait presque office de respiration",
+      "example": "Sway"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "A",
+      "context": "Dans ses interventions les plus douces et country, glissées derrière la voix avec beaucoup de délicatesse",
+      "example": "Dead Flowers"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "B",
+      "context": "Sur les grandes montées lyriques aux frontières du jazz-rock, quand il veut étirer la tension sans la durcir",
+      "example": "Time Waits For No One"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Pour ses parties de slide en accordage ouvert, très chantantes et parfaitement intégrées à la chanson",
+      "example": "Love In Vain"
+    }
+  ],
+  "signatureMove": "Son vibrato de main gauche, souple et juste comme un violon, est l'une des grandes signatures cachées du rock anglais. Sur Les Paul comme en slide, il parvenait à faire chanter des phrases blues avec une noblesse rare, sans jamais surjouer. Cette élégance calme le rend immédiatement reconnaissable.",
+  "recommendedListening": ["Sway", "Time Waits For No One", "Snowy Wood", "Love In Vain"]
+}

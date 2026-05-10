@@ -1,0 +1,36 @@
+{
+  "slug": "sylvain-luc",
+  "name": "Sylvain Luc",
+  "shortName": "S. Luc",
+  "era": "Années 90 à 2024",
+  "genres": ["Jazz", "Improvised music", "World jazz"],
+  "bio": "Sylvain Luc a incarné une liberté rare, naviguant entre jazz, chanson, musiques du monde et improvisation totale avec une aisance stupéfiante. Son langage réunissait virtuosité extrême, humour de jeu et sens profond de la mélodie. Il laisse une empreinte majeure sur toute une génération de guitaristes européens.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "D",
+      "context": "Pour ses réarrangements vertigineux où basse indépendante, mélodie et harmonies avancent ensemble avec naturel",
+      "example": "La Javanaise"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Dans ses improvisations rythmiques fulgurantes, notamment en duo, où chaque relance semble surgir d'un jeu collectif",
+      "example": "Stompin' at the Savoy"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour faire entrer le vocabulaire du blues dans des contextes très libres, avec un sens ludique de la surprise",
+      "example": "Ameskeri"
+    },
+    {
+      "modeKey": "phrygian_dom",
+      "rootName": "E",
+      "context": "Quand il cherche une couleur méditerranéenne ou basque dans des envolées très lyriques",
+      "example": "Piazzolla"
+    }
+  ],
+  "signatureMove": "Il utilisait l'instrument dans sa totalité : percussions sur la caisse, harmoniques frappées, bends derrière le sillet et mille détours imprévus. Cette extravagance restait toujours au service du jeu, du dialogue et de l'humour musical. Très peu de guitaristes donnaient autant l'impression que tout pouvait arriver.",
+  "recommendedListening": ["La Javanaise", "Stompin' at the Savoy", "Someday My Prince Will Come", "Souvenirs d'Enfance"]
+}

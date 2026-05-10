@@ -1,0 +1,36 @@
+{
+  "slug": "larry-coryell",
+  "name": "Larry Coryell",
+  "shortName": "Coryell",
+  "era": "Années 60 à 2017",
+  "genres": ["Jazz-rock", "Fusion", "Post-bop"],
+  "bio": "Larry Coryell est l'un des tout premiers musiciens à avoir injecté frontalement distorsion, énergie rock et attitude rebelle dans le jazz. Avant même la fusion codifiée des années 70, il ouvrait déjà des portes vers un jeu plus libre, plus électrique et plus heurté. Son importance historique dans la naissance du jazz-rock est fondamentale.",
+  "signatureScales": [
+    {
+      "modeKey": "half_whole",
+      "rootName": "A",
+      "context": "Pour ses lignes jazz-rock les plus tendues sur dominante, juste avant de retomber dans des résolutions plus traditionnelles",
+      "example": "Spaces (Infinite)"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Quand il injecte brutalement un vocabulaire blues dans des progressions jazz pourtant très sophistiquées",
+      "example": "The Great Escape"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "D",
+      "context": "Sur ses grandes improvisations modales rapides, notamment acoustiques, où l'ouverture harmonique reste très lumineuse",
+      "example": "The Meeting"
+    },
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "C",
+      "context": "Pour un phrasé post-bop angulaire, agressif et chargé de frottements modernes",
+      "example": "Rene's Theme"
+    }
+  ],
+  "signatureMove": "Son jeu reste d'une grande liberté, parfois presque sauvage, avec des écarts inattendus, des dissonances assumées et un son rock qui refuse de se lisser. Il ne cherchait pas à polir la fusion : il la heurtait pour l'inventer. Cette rugosité visionnaire est au cœur de sa signature.",
+  "recommendedListening": ["Spaces (Infinite)", "The Great Escape", "Rene's Theme", "The Meeting"]
+}

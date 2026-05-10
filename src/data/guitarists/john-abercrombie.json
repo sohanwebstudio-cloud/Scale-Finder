@@ -1,0 +1,36 @@
+{
+  "slug": "john-abercrombie",
+  "name": "John Abercrombie",
+  "shortName": "Abercrombie",
+  "era": "Années 70 à 2017",
+  "genres": ["Jazz contemporain", "ECM jazz", "Post-bop"],
+  "bio": "John Abercrombie est l'une des grandes voix du jazz moderne, au croisement du post-bop américain et des paysages sonores du label ECM. Il a exploré les textures atmosphériques sans jamais renoncer à une vraie pensée bebop dans la construction des lignes. Son influence sur la guitare jazz européenne et contemporaine reste considérable.",
+  "signatureScales": [
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "E",
+      "context": "Pour ses envolées post-bop les plus libres, quand il cherche une tension moderne sans perdre la fluidité du chant",
+      "example": "Timeless"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "D",
+      "context": "Sur des nappes spacieuses avec peu de notes, où le timbre et la résonance comptent autant que l'harmonie",
+      "example": "Ralph's Piano Waltz"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "G",
+      "context": "Pour installer une dissonance douce et mystérieuse sur les dominantes tendues avant une résolution subtile",
+      "example": "Night"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "F",
+      "context": "Dans ses compositions aux harmonies très ouvertes, quand il veut faire flotter la ligne au-dessus des accords",
+      "example": "Gateway"
+    }
+  ],
+  "signatureMove": "Il combinait souvent l'usage du pouce avec delay, chorus et parfois des guitares synthé pour obtenir un son sombre, fluide et flottant. Chez lui, la texture n'efface jamais la syntaxe bebop : elle l'enveloppe et l'étire. C'est cette alliance de clarté et d'atmosphère qui fait sa singularité.",
+  "recommendedListening": ["Timeless", "Ralph's Piano Waltz", "Night", "Gateway"]
+}

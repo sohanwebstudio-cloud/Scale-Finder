@@ -1,0 +1,36 @@
+{
+  "slug": "lage-lund",
+  "name": "Lage Lund",
+  "shortName": "L. Lund",
+  "era": "Années 2000 à aujourd'hui",
+  "genres": ["Contemporary jazz", "Post-bop", "Modern jazz"],
+  "bio": "Lage Lund est salué comme l'un des penseurs harmoniques les plus sophistiqués de la guitare jazz contemporaine. Son jeu marie une grande profondeur de réharmonisation à une souplesse rythmique déroutante, sans jamais perdre le chant intérieur de la phrase. Il est devenu une référence de haut niveau pour les musiciens du circuit new-yorkais.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "Db",
+      "context": "Pour naviguer dans ses réharmonisations de standards, très complexes mais toujours finement conduites",
+      "example": "Terrible Animals"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "A",
+      "context": "Jouée avec un phrasé liquide et décalé rythmiquement, presque glissé entre les temps forts",
+      "example": "Idlewild"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "E",
+      "context": "Quand il intègre des clusters et des voicings serrés directement dans ses lignes solos",
+      "example": "Ray Ray"
+    },
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "C",
+      "context": "Pour ses solos post-bop les plus cérébraux, brillants et exempts de clichés attendus",
+      "example": "Hard Eights"
+    }
+  ],
+  "signatureMove": "Ses déplacements rythmiques constants et ses voicings extrêmement resserrés déroutent agréablement l'oreille sans jamais sembler gratuits. Il sait faire entendre la complexité comme un flux naturel. Cette intelligence du détail fait sa vraie signature.",
+  "recommendedListening": ["Terrible Animals", "Idlewild", "Ray Ray", "Hard Eights"]
+}

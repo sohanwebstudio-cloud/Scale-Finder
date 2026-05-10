@@ -1,0 +1,36 @@
+{
+  "slug": "yngwie-malmsteen",
+  "name": "Yngwie Malmsteen",
+  "shortName": "Yngwie",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Neo-classical metal", "Heavy metal", "Shred"],
+  "bio": "Yngwie Malmsteen a cristallisé le métal néo-classique en poussant l'influence de Ritchie Blackmore vers une virtuosité directement inspirée de Paganini et de Bach. Son arrivée a profondément transformé les attentes techniques des guitaristes metal et instrumental rock. Peu de musiciens ont imposé une esthétique aussi identifiable aussi vite.",
+  "signatureScales": [
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "A",
+      "context": "Sa gamme reine pour les arpèges imbriqués, les séquences rapides et toute la dramaturgie néo-classique de son style",
+      "example": "Far Beyond The Sun"
+    },
+    {
+      "modeKey": "phrygian_dom",
+      "rootName": "E",
+      "context": "Pour ses atmosphères les plus baroques et orientales, avec une tension héroïque très marquée",
+      "example": "Black Star"
+    },
+    {
+      "modeKey": "whole_half",
+      "rootName": "B",
+      "context": "Utilisée comme matériau de sweep et de liaison pour faire circuler ses phrases entre les arpèges diminués",
+      "example": "Arpeggios From Hell"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "D",
+      "context": "Sur les riffs heavy les plus massifs, quand il veut une assise plus simple avant de relancer la virtuosité",
+      "example": "Rising Force"
+    }
+  ],
+  "signatureMove": "Ses manches scallopés, son son Strat saturé très crémeux et ses balayages d'arpèges à vitesse terrifiante forment un ensemble immédiatement reconnaissable. Mais au-delà de la technique, tout est pensé comme une déclamation dramatique, presque orchestrale. C'est cette grandiloquence maîtrisée qui définit son jeu.",
+  "recommendedListening": ["Far Beyond The Sun", "Black Star", "Arpeggios From Hell", "Rising Force"]
+}

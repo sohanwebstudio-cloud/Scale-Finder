@@ -1,0 +1,36 @@
+{
+  "slug": "roy-buchanan",
+  "name": "Roy Buchanan",
+  "shortName": "Buchanan",
+  "era": "Années 60 à 1988",
+  "genres": ["Blues-rock", "Country rock", "Electric blues"],
+  "bio": "Roy Buchanan est l'un de ces guitaristes de guitaristes dont la légende s'est construite bien avant la célébrité grand public. Sur Telecaster, il a poussé l'expressivité électrique à un niveau presque douloureux, entre country, blues et pure expérimentation de toucher. Jeff Beck, Gary Moore et quantité de solistes émotionnels lui doivent beaucoup.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "B",
+      "context": "Sur les blues mineurs habités, où il pousse la tension avec des harmoniques sifflantes et des bends à la limite de la rupture",
+      "example": "The Messiah Will Come Again"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Pour son blues-rock rural agressif, mêlé à des éclats de country-picking très rapides",
+      "example": "Sweet Dreams"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Sur des shuffles nerveux où il malmène littéralement les cordes avec des bends massifs",
+      "example": "Pete's Blue"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "D",
+      "context": "Dans ses ballades instrumentales, pour garder un chant simple et lumineux avant de le faire dérailler par le toucher",
+      "example": "Wayfaring Pilgrim"
+    }
+  ],
+  "signatureMove": "Ses pinch harmonics extrêmes et l'usage du potard de volume avec le petit doigt lui permettaient de faire pleurer une Telecaster comme très peu de guitaristes. Il pouvait effacer l'attaque, puis faire surgir un cri harmonique au milieu d'une phrase parfaitement chantée. Cette dramaturgie du toucher est sa vraie signature.",
+  "recommendedListening": ["The Messiah Will Come Again", "Sweet Dreams", "Pete's Blue", "Green Onions"]
+}

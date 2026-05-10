@@ -1,0 +1,36 @@
+{
+  "slug": "billy-gibbons",
+  "name": "Billy Gibbons",
+  "shortName": "Gibbons",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Blues-rock", "Texas blues", "Boogie rock"],
+  "bio": "Billy Gibbons a imposé avec ZZ Top une vision du blues-rock texan lourde, minimale et incroyablement groovy. Là où d'autres en font beaucoup, il sait faire parler quelques notes grasses, bien placées, avec un sens du son et de la pulsation hors pair. Son influence sur le riff blues-rock moderne est considérable.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "C",
+      "context": "Pour ses riffs les plus poisseux et lourds, construits comme des moteurs à groove plus que comme des démonstrations",
+      "example": "La Grange"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "F",
+      "context": "Dans ses solos chargés d'harmoniques sifflantes, de bends courts et d'un grain très sale",
+      "example": "Tush"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Sur ses boogies où la guitare se fond dans la batterie et la basse pour faire avancer tout le morceau",
+      "example": "Sharp Dressed Man"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "A",
+      "context": "Quand il veut ramener un climat Texas blues plus chaud, plus triste et plus aéré dans le médium",
+      "example": "Blue Jean Blues"
+    }
+  ],
+  "signatureMove": "Ses pinch harmonics qui couinent au milieu d'un fuzz gras et poussiéreux sont devenues indissociables de son identité. Il peut faire sonner une seule note comme un événement, notamment grâce à son toucher et à son sens du placement. Cette économie chargée de swagger est sa vraie force.",
+  "recommendedListening": ["La Grange", "Tush", "Sharp Dressed Man", "Blue Jean Blues"]
+}

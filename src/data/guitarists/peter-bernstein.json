@@ -1,0 +1,36 @@
+{
+  "slug": "peter-bernstein",
+  "name": "Peter Bernstein",
+  "shortName": "Bernstein",
+  "era": "Années 90 à aujourd'hui",
+  "genres": ["Post-bop", "Mainstream jazz", "Jazz"],
+  "bio": "Peter Bernstein est l'un des gardiens les plus respectés de la tradition post-bop new-yorkaise, héritier direct de Jim Hall et Wes Montgomery. Son jeu privilégie la clarté mélodique, la chaleur du son archtop et une continuité de phrase qui semble toujours naturelle. Son influence sur la guitare jazz contemporaine tient autant à son goût qu'à son autorité rythmique.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Pour ses lignes de bop lyriques et très narratives, qui avancent avec un swing naturel sans jamais sonner scolaires",
+      "example": "Bone in the Hole"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "F",
+      "context": "Sur les standards mineurs où il cherche un phrasé presque vocal, très souple dans le temps",
+      "example": "Stranger in Paradise"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "G",
+      "context": "Pour résoudre ses lignes post-bop avec une élégance classique, sans durcir inutilement la tension",
+      "example": "Jive Coffee"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Bb",
+      "context": "Dans les blues jazz les plus terriens, quand il veut rester au cœur de la tradition sans aucune affectation",
+      "example": "Blues for Jimmy"
+    }
+  ],
+  "signatureMove": "Sa signature tient à un time d'une solidité et d'une souplesse exceptionnelles, particulièrement en trio. Il refuse toute démonstration inutile et laisse la logique mélodique parler d'elle-même. Cette simplicité apparente demande en réalité une maîtrise immense.",
+  "recommendedListening": ["Bone in the Hole", "Stranger in Paradise", "Jive Coffee", "Blues for Jimmy"]
+}

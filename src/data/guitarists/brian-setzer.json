@@ -1,0 +1,36 @@
+{
+  "slug": "brian-setzer",
+  "name": "Brian Setzer",
+  "shortName": "Setzer",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Rockabilly", "Swing revival", "Rock 'n' roll"],
+  "bio": "Brian Setzer a remis le rockabilly au premier plan tout en faisant dialoguer cette énergie avec le swing de big band et une vraie culture jazz. Avec les Stray Cats puis dans ses grands ensembles, il a montré qu'une guitare électrique pouvait mener la danse avec autant de classe que de fureur. Son influence est centrale sur tous les guitaristes rockabilly et swing contemporains.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_major",
+      "rootName": "E",
+      "context": "Pour ses rythmes rockabilly rapides, joués avec hargne mais toujours articulés de manière très claire",
+      "example": "Stray Cat Strut"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Quand il glisse des tournures swing et jazzy façon Charlie Christian au milieu de riffs rock nerveux",
+      "example": "Rock This Town"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "A",
+      "context": "Sur des ballades doo-wop ou des passages de chord-melody où la clarté harmonique doit rester très chantante",
+      "example": "Sleepwalk"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "D",
+      "context": "Pour les phrases plus surf et plus twang, intensifiées par le vibrato Bigsby et le slapback",
+      "example": "Rumble in Brighton"
+    }
+  ],
+  "signatureMove": "Le claquement d'une Gretsch demi-caisse dans un slapback echo très court est indissociable de son identité. Il y mélange le picking de Chet Atkins, la nervosité du punk et des réflexes harmoniques de swingman. Ce mélange de classe et d'agressivité le rend unique.",
+  "recommendedListening": ["Stray Cat Strut", "Rock This Town", "Sleepwalk", "Rumble in Brighton"]
+}

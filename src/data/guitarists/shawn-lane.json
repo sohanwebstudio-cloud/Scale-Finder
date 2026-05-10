@@ -1,0 +1,36 @@
+{
+  "slug": "shawn-lane",
+  "name": "Shawn Lane",
+  "shortName": "S. Lane",
+  "era": "Années 80 à 2003",
+  "genres": ["Fusion", "Instrumental rock", "Shred"],
+  "bio": "Shawn Lane est l'un des phénomènes les plus fascinants de la guitare fusion, admiré autant pour sa vitesse hors normes que pour la richesse de son imagination harmonique. Son jeu semblait défier la tension physique tout en gardant une clarté mélodique très rare à ces tempos. Il reste une référence quasi mythique pour les guitaristes les plus techniques.",
+  "signatureScales": [
+    {
+      "modeKey": "lydian",
+      "rootName": "C",
+      "context": "Pour ses nappes de notes ultra-rapides qui gardent malgré tout une lumière et une lisibilité étonnantes",
+      "example": "Get You Back"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "F",
+      "context": "Quand il pousse la tension dramatique au maximum avec de grands sauts d'intervalles presque pianistiques",
+      "example": "Illusions"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Pour ses éclairs de virtuosité les plus directement rock, plus bruts et plus instinctifs",
+      "example": "Not Again"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "A",
+      "context": "Sur des couleurs fusion modernes très tendues, héritées de l'ouverture harmonique d'Allan Holdsworth",
+      "example": "Epilogue (for Lisa)"
+    }
+  ],
+  "signatureMove": "Son sweep picking et son legato semblaient couler sans aucune résistance physique, comme si l'instrument disparaissait sous les doigts. Il y ajoutait de grands écarts inspirés du piano, donnant à ses phrases une architecture unique. Cette fluidité irréelle le distingue immédiatement.",
+  "recommendedListening": ["Get You Back", "Illusions", "Epilogue (for Lisa)", "Not Again"]
+}

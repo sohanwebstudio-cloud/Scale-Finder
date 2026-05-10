@@ -1,0 +1,36 @@
+{
+  "slug": "john-mayer",
+  "name": "John Mayer",
+  "shortName": "Mayer",
+  "era": "Années 2000 à aujourd'hui",
+  "genres": ["Blues-rock", "Pop rock", "Soul"],
+  "bio": "John Mayer a remis un vocabulaire blues très assumé au centre de la pop moderne sans le vider de sa nuance. Entre songwriting grand public, trio électrique et longues jams, il a construit un langage où Stevie Ray Vaughan, Hendrix et Clapton restent audibles sans devenir pastiche. Son influence sur toute une génération de guitaristes internet et de musiciens pop-blues est considérable.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Pour ses envolées blues les plus intenses avec un son Stratocaster serré et beaucoup de dynamique dans l'attaque",
+      "example": "Slow Dancing in a Burning Room"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "A",
+      "context": "Sur des progressions pop-rock mélancoliques où il laisse beaucoup d'air entre les phrases",
+      "example": "Gravity"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "C",
+      "context": "Pour ses phrasés soul en double-stops hendrixiens, plus doux et plus chantants que franchement blues",
+      "example": "Waiting on the World to Change"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Dans les jams longues orientées folk-rock ou psychédéliques, quand il veut garder le mouvement sans fermer l'harmonie",
+      "example": "Althea"
+    }
+  ],
+  "signatureMove": "Sa main droite percussive alterne claques, ghost notes et attaques très nuancées, comme un pont entre R&B acoustique et blues électrique. Il peut passer d'un jeu aux doigts presque murmuré à un médiator beaucoup plus mordant sans casser la ligne. Cette gestion des nuances est l'une des raisons pour lesquelles son jeu paraît si vivant.",
+  "recommendedListening": ["Slow Dancing in a Burning Room", "Gravity", "Neon", "Vultures"]
+}

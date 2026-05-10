@@ -1,0 +1,36 @@
+{
+  "slug": "wayne-krantz",
+  "name": "Wayne Krantz",
+  "shortName": "Krantz",
+  "era": "Années 90 à aujourd'hui",
+  "genres": ["Jazz fusion", "Jazz contemporain", "Avant-garde"],
+  "bio": "Wayne Krantz a fait de l'improvisation contemporaine un laboratoire rythmique radical, loin des automatismes du jazz fusion classique. Au sein de son trio new-yorkais, il a imposé un jeu où l'invention instantanée prime sur les plans mémorisés et les grandes démonstrations linéaires. Son influence est décisive sur les guitaristes modernes attirés par la liberté rythmique et l'abstraction funk.",
+  "signatureScales": [
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Déconstruite en petits fragments angulaires sur des grooves funk mutés, plutôt que déroulée comme une gamme continue",
+      "example": "Whippersnapper"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "E",
+      "context": "Pour fabriquer une dissonance volontaire sur E7b9 puis retomber exactement sur le temps avec autorité",
+      "example": "It's No Secret"
+    },
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "A",
+      "context": "Explorée de manière fractale, avec de grands sauts d'intervalles et des cellules qui se recombinent rythmiquement",
+      "example": "Good Piranha / Bad Piranha"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Utilisée en motifs répétitifs et syncopés pour générer des ostinatos plus que des lignes fluides",
+      "example": "Greenwich Mean"
+    }
+  ],
+  "signatureMove": "Sa marque de fabrique est l'abandon presque total des licks préfabriqués au profit de contraintes volontaires sur de petites zones du manche. Avec un son clair de Stratocaster très sec, il fait naître le discours du rythme avant la hauteur. Cette discipline radicale le rend immédiatement identifiable.",
+  "recommendedListening": ["Whippersnapper", "Good Piranha / Bad Piranha", "Greenwich Mean", "It's No Secret"]
+}

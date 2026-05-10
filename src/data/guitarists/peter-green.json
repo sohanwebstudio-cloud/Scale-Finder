@@ -1,0 +1,36 @@
+{
+  "slug": "peter-green",
+  "name": "Peter Green",
+  "shortName": "P. Green",
+  "era": "Années 60 à 2020",
+  "genres": ["British blues", "Blues rock", "Blues"],
+  "bio": "Fondateur de Fleetwood Mac, Peter Green est l'une des grandes voix mélancoliques du British Blues. Là où d'autres cherchaient la puissance, il a imposé un jeu dépouillé, fragile et bouleversant, porté par un son d'une douceur presque douloureuse. Son influence s'entend chez Gary Moore, Snowy White et tous les guitaristes pour qui l'émotion prime sur la démonstration.",
+  "signatureScales": [
+    {
+      "modeKey": "aeolian",
+      "rootName": "D",
+      "context": "Pour ses compositions les plus sombres et planantes, où chaque phrase semble peser émotionnellement plus que la précédente",
+      "example": "Black Magic Woman"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "A",
+      "context": "Sur les blues lents où il dit l'essentiel avec très peu de notes et un vibrato d'une grande retenue",
+      "example": "Need Your Love So Bad"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "E",
+      "context": "Pour les shuffles plus enjoués hérités de B.B. King, avec un chant léger et souple dans le phrasé",
+      "example": "Stop Messin' Round"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Dans les longues improvisations instrumentales où il laisse la réverbération et le sustain nourrir une tension mystique",
+      "example": "The Supernatural"
+    }
+  ],
+  "signatureMove": "Son fameux out of phase tone sur Les Paul lui donnait une voix fine, nasillarde et immédiatement reconnaissable, mais c'est surtout son économie de notes qui frappait. Il laissait de grands espaces, puis plaçait une note qui semblait contenir tout le morceau. Cette tristesse lumineuse est sa vraie empreinte.",
+  "recommendedListening": ["Black Magic Woman", "Need Your Love So Bad", "The Supernatural", "Albatross"]
+}

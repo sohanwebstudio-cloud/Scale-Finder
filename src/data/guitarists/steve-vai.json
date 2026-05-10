@@ -1,0 +1,36 @@
+{
+  "slug": "steve-vai",
+  "name": "Steve Vai",
+  "shortName": "Vai",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Instrumental rock", "Hard rock", "Shred"],
+  "bio": "Virtuose excentrique du rock instrumental, Steve Vai a poussé la guitare électrique dans un territoire à la fois théâtral, spirituel et totalement débridé. Héritier de Joe Satriani et ancien compagnon de route de Frank Zappa, il a mêlé une technique hors norme à un vrai sens du spectacle et de l'humour. Son influence sur toute la guitare shred et instrumentale moderne est majeure.",
+  "signatureScales": [
+    {
+      "modeKey": "lydian",
+      "rootName": "E",
+      "context": "Son terrain favori pour créer des atmosphères oniriques, suspendues et presque mystiques au-dessus d'accords majeurs ouverts",
+      "example": "For the Love of God"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Pour des grooves rock plus relâchés où il peut glisser des effets, des bruits de bouche et des accents très théâtraux",
+      "example": "The Attitude Song"
+    },
+    {
+      "modeKey": "phrygian_dom",
+      "rootName": "B",
+      "context": "Quand il veut une couleur orientale, sombre et agressive, souvent renforcée par des inflexions de vibrato extrêmes",
+      "example": "Bad Horsie"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "D",
+      "context": "Pour les montées néo-classiques sweepées où la tension harmonique reste chantante malgré la vitesse",
+      "example": "Tender Surrender"
+    }
+  ],
+  "signatureMove": "Sa vraie signature reste l'usage théâtral de la tige de vibrato Floyd Rose, combiné à du tapping à plusieurs doigts et à un phrasé volontairement bizarre, presque cartoon par moments. Chez lui, la technique sert autant à faire rire, surprendre ou léviter qu'à impressionner. Peu de guitaristes ont rendu la virtuosité aussi expressive et visuelle.",
+  "recommendedListening": ["For the Love of God", "Tender Surrender", "The Attitude Song", "Bad Horsie"]
+}

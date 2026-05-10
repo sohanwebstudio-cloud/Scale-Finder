@@ -1,0 +1,36 @@
+{
+  "slug": "tal-farlow",
+  "name": "Tal Farlow",
+  "shortName": "Farlow",
+  "era": "Années 50 à 1998",
+  "genres": ["Bebop", "Jazz", "Mainstream jazz"],
+  "bio": "Tal Farlow a été l'un des premiers grands maîtres du bebop à la guitare électrique, capable de rivaliser avec les soufflants sur les tempos les plus redoutables. Surnommé The Octopus pour ses mains immenses, il a ouvert des possibilités techniques et harmoniques inédites sur l'instrument. Son importance dans l'histoire de la guitare jazz est majeure.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "F",
+      "context": "Pour ses lignes bop volubiles à très grande vitesse, où chaque note reste articulée avec une précision remarquable",
+      "example": "Fascinating Rhythm"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Bb",
+      "context": "Dans ses cadences bluesy, toujours portées par un swing élégant et très fluide",
+      "example": "Yardbird Suite"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Sur les longues progressions mineures où il déroule des cascades de notes presque sans reprendre souffle",
+      "example": "Autumn In New York"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "G",
+      "context": "Pour inventer des résolutions chromatiques audacieuses en plein cœur du vocabulaire bebop",
+      "example": "Meteor"
+    }
+  ],
+  "signatureMove": "Ses voicings impossibles pour presque tous les autres guitaristes viennent directement de l'ampleur exceptionnelle de ses mains. Il utilisait aussi des harmoniques artificielles frappées pour créer des effets de carillon très personnels. Cette combinaison de virtuosité et d'invention est sa marque.",
+  "recommendedListening": ["Fascinating Rhythm", "Autumn In New York", "Yardbird Suite", "Meteor"]
+}

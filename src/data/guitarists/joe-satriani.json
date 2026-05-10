@@ -1,0 +1,36 @@
+{
+  "slug": "joe-satriani",
+  "name": "Joe Satriani",
+  "shortName": "Satch",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Instrumental rock", "Hard rock", "Guitar virtuoso"],
+  "bio": "Joe Satriani a montré qu'une guitare instrumentale très technique pouvait rester immédiatement mélodique et populaire. Dans les années 80 et 90, son legato, ses effets et sa science des modes ont redéfini la pédagogie du rock moderne autant que son esthétique. Comme musicien et professeur, son influence sur plusieurs générations de guitaristes est énorme.",
+  "signatureScales": [
+    {
+      "modeKey": "lydian",
+      "rootName": "G",
+      "context": "Son terrain favori pour les thèmes lumineux et spatiaux, avec cette sensation d'apesanteur très typique de son univers",
+      "example": "Flying in a Blue Dream"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "E",
+      "context": "Pour les ballades rock épiques où il fait chanter les notes longues, les harmoniques et le legato",
+      "example": "Always With Me, Always With You"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "C",
+      "context": "Sur des grooves rock plus joueurs, quand il veut garder l'élan rythmique tout en ouvrant l'espace pour le tapping",
+      "example": "Surfing With The Alien"
+    },
+    {
+      "modeKey": "phrygian_dom",
+      "rootName": "A",
+      "context": "Pour injecter une couleur exotique et tendue dans ses riffs et ses plans les plus spectaculaires",
+      "example": "Crystal Planet"
+    }
+  ],
+  "signatureMove": "Son legato ultra-fluide et sa manière de faire chanter chaque refrain instrumental sont au cœur de son identité. Il aime aussi déplacer les couleurs modales au-dessus d'une même basse en pédale, ce qui donne à ses morceaux leur sensation de voyage harmonique. Derrière la virtuosité, tout est pensé pour rester mémorable.",
+  "recommendedListening": ["Surfing With The Alien", "Always With Me, Always With You", "Flying in a Blue Dream", "Summer Song"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "herb-ellis",
+  "name": "Herb Ellis",
+  "shortName": "H. Ellis",
+  "era": "Années 40 à 2010",
+  "genres": ["Bebop", "Mainstream jazz", "Blues jazz"],
+  "bio": "Herb Ellis représente le versant le plus charnel et terrien du jazz des années 50, notamment au sein du trio d'Oscar Peterson. Son jeu relie sans effort le swing bebop, le sens du riff et un goût très assumé pour le blues texan. Il a montré qu'on pouvait rester savant sans jamais perdre la poussière du plancher.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_minor",
+      "rootName": "Bb",
+      "context": "Quand il mélange vocabulaire bebop et grain poisseux du blues pour obtenir un swing extrêmement physique",
+      "example": "Nothin' But the Blues"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "F",
+      "context": "Pour se couler avec fluidité dans les tempos rapides et très nets du trio d'Oscar Peterson",
+      "example": "Tenderly"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Sur des standards où il cherche un phrasé clair, chantant et articulé sans lourdeur",
+      "example": "Soft Winds"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Ab",
+      "context": "Pour ses solos plus riffés, presque pensés comme des réponses de section de cuivres",
+      "example": "Ellis In Wonderland"
+    }
+  ],
+  "signatureMove": "Son attaque de médiator tranchante et son swing féroce lui permettent d'injecter des inflexions blues très terriennes au cœur des progressions bebop les plus rapides. Il n'efface jamais le grain de la note au profit de la pure abstraction. Cette franchise sonore fait sa marque.",
+  "recommendedListening": ["Nothin' But the Blues", "Tenderly", "Soft Winds", "Ellis In Wonderland"]
+}

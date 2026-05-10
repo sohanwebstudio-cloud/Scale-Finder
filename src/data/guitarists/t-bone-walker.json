@@ -1,0 +1,36 @@
+{
+  "slug": "t-bone-walker",
+  "name": "T-Bone Walker",
+  "shortName": "T-Bone",
+  "era": "Années 20 à 1975",
+  "genres": ["Electric blues", "Jump blues", "Blues"],
+  "bio": "T-Bone Walker est l'un des pères fondateurs du blues électrique moderne et l'un des premiers grands solistes amplifiés de l'histoire de la guitare. En important dans le blues un phrasé de soufflant, du swing et des accords enrichis, il a posé les bases directes du langage de B.B. King, Chuck Berry et d'une grande partie du rock naissant. Son rôle historique est absolument central.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour articuler ses accords de 9e glissés et relancer le rythme avec le rebond d'une section de cuivres",
+      "example": "Call It Stormy Monday"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "C",
+      "context": "Dans ses phrasés sautillants et swinguants, souvent pensés à l'unisson des cuivres du jump blues",
+      "example": "T-Bone Shuffle"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "Bb",
+      "context": "Là où apparaissent ses bends les plus modernes, avec un vrai chant de note au cœur du blues urbain",
+      "example": "Mean Old World"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "F",
+      "context": "Pour ses licks répétitifs sur les cordes aiguës, matrice directe de nombreux plans rock 'n' roll",
+      "example": "Strollin' With Bones"
+    }
+  ],
+  "signatureMove": "Il a inventé une grande partie du phrasé blues moderne en single-notes, tout en intégrant des accords enrichis comme le fameux T-Bone chord de 9e. Son swing irrésistible donnait à la guitare une fonction de soliste comparable à celle d'un saxophone. Cette élégance amplifiée a changé l'histoire de l'instrument.",
+  "recommendedListening": ["Call It Stormy Monday", "T-Bone Shuffle", "Mean Old World", "Strollin' With Bones"]
+}

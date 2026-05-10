@@ -1,0 +1,36 @@
+{
+  "slug": "buddy-guy",
+  "name": "Buddy Guy",
+  "shortName": "Buddy",
+  "era": "Années 50 à aujourd'hui",
+  "genres": ["Chicago blues", "Electric blues", "Blues-rock"],
+  "bio": "Buddy Guy est le trait d'union explosif entre le Chicago Blues classique de Muddy Waters et la liberté incendiaire du blues-rock moderne. Son jeu a porté l'intensité, le volume et l'imprévisibilité du blues à un niveau qui a profondément marqué Hendrix, Clapton et Stevie Ray Vaughan. Même au sein de la tradition, il a toujours joué comme si tout pouvait déraper à la seconde suivante.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Sa base pour les solos les plus féroces, avec des bends extrêmes et des attaques qui font presque décrocher l'ampli",
+      "example": "Damn Right, I've Got the Blues"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Sur des riffs funk-blues syncopés où il garde la carrure du R&B tout en laissant la guitare mordre",
+      "example": "Mustang Sally"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "G",
+      "context": "Pour ses attaques staccato les plus agressives, piquées et saturées, au bord de la rupture",
+      "example": "Stone Crazy"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Dans les blues mineurs plus lourds et pluvieux, quand il veut faire monter la tension sans lâcher le groove",
+      "example": "Feels Like Rain"
+    }
+  ],
+  "signatureMove": "Son jeu peut passer en une fraction de seconde du murmure au hurlement, avec des coups de médiator d'une violence très contrôlée. Cette imprévisibilité permanente donne l'impression qu'il improvise au bord du chaos sans jamais perdre le fil. Peu de guitaristes de blues ont été aussi théâtralement vivants.",
+  "recommendedListening": ["Damn Right, I've Got the Blues", "Stone Crazy", "Feels Like Rain", "First Time I Met the Blues"]
+}

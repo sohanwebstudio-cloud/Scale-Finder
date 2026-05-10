@@ -1,0 +1,36 @@
+{
+  "slug": "gilad-hekselman",
+  "name": "Gilad Hekselman",
+  "shortName": "Hekselman",
+  "era": "Années 2000 à aujourd'hui",
+  "genres": ["Contemporary jazz", "Modern jazz", "Post-bop"],
+  "bio": "Gilad Hekselman a profondément renouvelé la guitare en trio grâce à une approche pianistique, polyphonique et très moderne du son. Son jeu donne souvent l'impression que plusieurs voix indépendantes circulent en même temps sur l'instrument. Il fait partie des guitaristes qui ont le plus redéfini les attentes de la guitare jazz contemporaine.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "G",
+      "context": "Pour ses mélodies les plus claires et cristallines, posées au-dessus de structures harmoniques pourtant très complexes",
+      "example": "Hearts Wide Open"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "C",
+      "context": "Dans ses climats plus sombres, quand il superpose ligne de basse indépendante et chant mélodique",
+      "example": "March of the Sad Ones"
+    },
+    {
+      "modeKey": "lydian_dom",
+      "rootName": "F",
+      "context": "Pour des improvisations fluides enrichies de glissés et de micro-bends qui élargissent la couleur sans la casser",
+      "example": "Hazelnut Eye"
+    },
+    {
+      "modeKey": "phrygian",
+      "rootName": "E",
+      "context": "Quand il veut faire entrer une couleur plus proche du Moyen-Orient dans un langage harmonique très contemporain",
+      "example": "Verona"
+    }
+  ],
+  "signatureMove": "Son contrepoint improvisé, capable de faire entendre basse autonome et ligne mélodique en même temps, est au cœur de sa singularité. Il y ajoute une utilisation experte des octavers et de micro-bends très expressifs. Cette sensation de piano polyphonique transposé sur la guitare est immédiatement reconnaissable.",
+  "recommendedListening": ["Hearts Wide Open", "March of the Sad Ones", "Hazelnut Eye", "Verona"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "jonathan-kreisberg",
+  "name": "Jonathan Kreisberg",
+  "shortName": "Kreisberg",
+  "era": "Années 2000 à aujourd'hui",
+  "genres": ["Contemporary jazz", "Post-bop", "Modern jazz"],
+  "bio": "Jonathan Kreisberg fait partie des grandes figures de la guitare jazz new-yorkaise contemporaine, en équilibre entre grande tradition bebop et modernité métrique. Son jeu combine une précision technique redoutable avec une vraie sophistication rythmique sur des formes parfois asymétriques. Il est devenu une référence pour les guitaristes cherchant un post-bop actuel mais profondément enraciné.",
+  "signatureScales": [
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "D",
+      "context": "Pour ses lignes post-bop angulaires et très précises, particulièrement efficaces sur les harmonies modernes",
+      "example": "South of Everywhere"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "F",
+      "context": "Sur des vamps impairs où il veut que la mélodie flotte au-dessus de la pulsation sans perdre l'assise",
+      "example": "The South of Everywhere"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "A",
+      "context": "Pour ses arpèges rapides de tension maximale juste avant les retours les plus francs sur le 1",
+      "example": "Shadowless"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Dans les grooves fluides où il croise consciemment le flux de la batterie plutôt que de simplement le suivre",
+      "example": "One"
+    }
+  ],
+  "signatureMove": "Son legato très fluide se combine à un aller-retour extrêmement rapide sans jamais brouiller l'articulation. Cette propreté lui permet de faire entendre des arpèges complexes avec une assise rythmique imperturbable, même en 5/4 ou 7/4. C'est cette stabilité dans la sophistication qui le distingue.",
+  "recommendedListening": ["South of Everywhere", "Shadowless", "One", "Twenty One"]
+}

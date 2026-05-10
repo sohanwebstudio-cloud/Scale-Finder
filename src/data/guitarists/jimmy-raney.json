@@ -1,0 +1,36 @@
+{
+  "slug": "jimmy-raney",
+  "name": "Jimmy Raney",
+  "shortName": "Raney",
+  "era": "Années 40 à 1995",
+  "genres": ["Cool jazz", "Bebop", "Jazz"],
+  "bio": "Jimmy Raney est l'un des pionniers les plus raffinés du bebop à la guitare et une figure majeure du cool jazz. Son approche intellectuelle, contrapuntique et très linéaire a déplacé l'instrument vers une pensée de voice-leading et de continuité mélodique inédite. Il reste une référence pour les guitaristes attirés par la logique interne du langage.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "F",
+      "context": "Pour ses longues lignes contrapuntiques, menées sans rupture avec une logique presque ininterrompue",
+      "example": "Motion"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "D",
+      "context": "Dans les progressions les plus complexes, quand il cherche une rigueur harmonique très contrôlée",
+      "example": "Signal"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "G",
+      "context": "Pour traverser des grilles bebop denses en maximisant la tension sans jamais forcer le ton",
+      "example": "Stella By Starlight"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Dans ses dialogues croisés et ses progressions mineures, avec un soin extrême porté au mouvement interne des voix",
+      "example": "Fascinating Rhythm"
+    }
+  ],
+  "signatureMove": "Il joue très peu d'accords dans ses solos et préfère une fluidité linéaire feutrée, presque sans attaque apparente. Toute son attention semble tournée vers la beauté du contrepoint et la perfection de la conduite des voix. Cette élégance cérébrale est sa vraie signature.",
+  "recommendedListening": ["Motion", "Signal", "Stella By Starlight", "Indian Summer"]
+}

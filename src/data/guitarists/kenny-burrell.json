@@ -1,0 +1,36 @@
+{
+  "slug": "kenny-burrell",
+  "name": "Kenny Burrell",
+  "shortName": "Burrell",
+  "era": "Années 50 à aujourd'hui",
+  "genres": ["Hard bop", "Soul-jazz", "Blues jazz"],
+  "bio": "Kenny Burrell est l'un des grands élégants de la guitare jazz américaine, capable de faire cohabiter le raffinement bebop et la gravité du blues urbain. À une époque où le jazz pouvait devenir démonstratif, il a toujours privilégié le son, le placement et la profondeur du groove. Son approche a marqué aussi bien le jazz mainstream que les guitaristes blues sensibles à l'harmonie.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_minor",
+      "rootName": "F",
+      "context": "Pour faire entrer la plainte du blues dans des grilles de jazz sans perdre la sophistication harmonique",
+      "example": "Midnight Blue"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Sur les thèmes hard-bop lents et terriens où il laisse les notes respirer dans le médium",
+      "example": "Chitlins Con Carne"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour ses blues jazz swinguants, où il articule les dominantes avec clarté sans jamais surjouer",
+      "example": "The Breezin' Blues"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "Eb",
+      "context": "Dans les balades où il privilégie des phrases simples et des accords choisis avec beaucoup d'élégance",
+      "example": "My Favorite Things"
+    }
+  ],
+  "signatureMove": "Sa vraie signature est l'intégration organique des bends, des inflexions et du toucher blues dans une syntaxe jazz très propre. Il ne cherche presque jamais l'esbroufe : il pose quelques notes, puis laisse le groove parler. Cette retenue donne à son jeu une profondeur immédiatement reconnaissable.",
+  "recommendedListening": ["Midnight Blue", "Chitlins Con Carne", "Mule", "My Favorite Things"]
+}

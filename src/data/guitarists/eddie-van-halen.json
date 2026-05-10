@@ -1,0 +1,36 @@
+{
+  "slug": "eddie-van-halen",
+  "name": "Eddie Van Halen",
+  "shortName": "Eddie",
+  "era": "Années 70 à 2020",
+  "genres": ["Hard rock", "Arena rock", "Shred"],
+  "bio": "Eddie Van Halen a redéfini la guitare rock moderne par son toucher, son son et son sens rythmique autant que par sa virtuosité. Avec Van Halen, il a fait exploser les standards du solo rock en mêlant swing, tapping et énergie brute dans un langage immédiatement reconnaissable. Son influence sur tous les guitaristes rock et metal des décennies suivantes est immense.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Sa base pour les solos explosifs, enrichie par des grands écarts, du tapping et une agressivité très chantante",
+      "example": "Eruption"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Sur les riffs majeurs bondissants où les cordes à vide et le swing de main droite donnent toute l'élasticité du groove",
+      "example": "Panama"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "Db",
+      "context": "Pour des grooves lourds et syncopés, palm-mutés, où il garde une tension moderne sans refermer l'harmonie",
+      "example": "Ain't Talkin' 'Bout Love"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Quand il veut un côté plus clair, joueur et presque country-pop dans le milieu du rock le plus massif",
+      "example": "Finish What Ya Started"
+    }
+  ],
+  "signatureMove": "Le two-hand tapping popularisé à l'échelle mondiale, le Brown Sound d'un ampli poussé à bloc et un swing rythmique implacable sont indissociables de son jeu. Même dans les plans les plus pyrotechniques, tout rebondit avec une sensation presque jazz. C'est cette combinaison de feu et de groove qui a tout changé.",
+  "recommendedListening": ["Eruption", "Panama", "Ain't Talkin' 'Bout Love", "Hot for Teacher"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "steve-lukather",
+  "name": "Steve Lukather",
+  "shortName": "Lukather",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Rock FM", "Jazz-rock", "Session rock"],
+  "bio": "Steve Lukather a construit une carrière rare où la virtuosité du rock, la science harmonique du jazz et l'efficacité de studio cohabitent sans friction. Avec Toto comme dans des centaines de sessions majeures, il a imposé un jeu capable d'être lyrique, précis et immédiatement utile à la chanson. Son influence s'étend autant au rock mélodique qu'à la culture des guitaristes de studio.",
+  "signatureScales": [
+    {
+      "modeKey": "aeolian",
+      "rootName": "F#",
+      "context": "Pour ses grands solos de rock mélodique, remplis de lyrisme, de bends majestueux et de longues montées émotionnelles",
+      "example": "Rosanna"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Sur des vamps pop-rock accrocheurs où il faut garder l'énergie rythmique sans alourdir l'harmonie",
+      "example": "Hold The Line"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Pour ses passages plus jazzy et fluides, souvent avec un son clair très propre et un phrasé qui coule sans effort",
+      "example": "Georgy Porgy"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "B",
+      "context": "Quand il accélère franchement sur des contextes rock FM ou funk, avec un aller-retour très affuté",
+      "example": "Beat It"
+    }
+  ],
+  "signatureMove": "Sa signature tient à une polyvalence totale : il peut faire surgir l'agressivité du hard rock puis glisser vers des couleurs plus sophistiquées sans jamais perdre le centre du morceau. Les traitements de studio, chorus et racks d'effets servent chez lui à sculpter un son large, immédiatement radio-compatible. Très peu de guitaristes de session ont eu cette identité aussi nette.",
+  "recommendedListening": ["Rosanna", "Hold The Line", "Georgy Porgy", "I'll Be Over You"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "andy-summers",
+  "name": "Andy Summers",
+  "shortName": "Summers",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Post-punk", "Pop rock", "New wave"],
+  "bio": "Andy Summers a révolutionné le rôle de la guitare dans la pop et le rock post-punk en abandonnant la masse des power chords pour des accords plus larges, plus aérés et plus riches. Avec The Police, il a fusionné reggae, jazz, minimalisme et travail de texture dans une écriture immédiatement identifiable. Son influence sur la guitare de groupe moderne est énorme.",
+  "signatureScales": [
+    {
+      "modeKey": "aeolian",
+      "rootName": "Db",
+      "context": "Pour ses arpèges étendus, froids et baignés de chorus, où la couleur mineure reste ouverte et suspendue",
+      "example": "Message in a Bottle"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Dans ses rythmiques syncopées inspirées du reggae et du ska, quand la guitare doit pulser sans envahir",
+      "example": "Walking on the Moon"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "G",
+      "context": "Pour installer une ambiance pop-jazz sophistiquée, douce et légèrement obsédante au-dessus de la chanson",
+      "example": "Every Breath You Take"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Quand il réduit le discours à quelques notes qui dialoguent avec le delay et l'espace autour d'elles",
+      "example": "Roxanne"
+    }
+  ],
+  "signatureMove": "Accords add9 élargis, arpèges étouffés et usage constant du chorus, du delay et du flanger composent son langage. Il remplit l'espace non par la saturation mais par la résonance et la précision du choix d'accords. Cette manière de faire respirer la guitare est sa grande signature.",
+  "recommendedListening": ["Message in a Bottle", "Walking on the Moon", "Every Breath You Take", "Roxanne"]
+}

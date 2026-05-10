@@ -1,0 +1,36 @@
+{
+  "slug": "john-frusciante",
+  "name": "John Frusciante",
+  "shortName": "Frusciante",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Funk rock", "Alternative rock", "Rock"],
+  "bio": "John Frusciante a défini une grande partie de l'identité sonore des Red Hot Chili Peppers en mariant le funk percussif, la fragilité mélodique et une esthétique presque post-punk du dépouillement. Là où beaucoup de guitaristes rock cherchent la saturation continue, il sait faire parler le vide, les cocottes et la mélodie nue. Son influence sur la guitare alternative et funk-rock est immense.",
+  "signatureScales": [
+    {
+      "modeKey": "aeolian",
+      "rootName": "A",
+      "context": "Pour ses solos les plus vocaux et mélancoliques, où quelques notes suffisent à porter toute l'émotion",
+      "example": "Californication"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Sur des grooves funk-rock féroces, joués avec une attaque sèche et très physique sur la Stratocaster",
+      "example": "Give It Away"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Pour assouplir des jams très rythmiques avec une fluidité harmonique qui reste toujours dansante",
+      "example": "Dani California"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "F",
+      "context": "Dans ses ballades en accords arpégés façon Hendrix, quand la clarté harmonique doit rester lumineuse et simple",
+      "example": "Under the Bridge"
+    }
+  ],
+  "signatureMove": "Ses cocottes funk tranchantes, souvent jouées sur l'ensemble des cordes avec un étouffement très précis, sont devenues sa carte de visite rythmique. Mais il sait aussi basculer vers des solos où seule compte l'émotion mélodique, sans jamais chercher la démonstration. Cette tension entre sécheresse funk et fragilité lyrique le rend unique.",
+  "recommendedListening": ["Under the Bridge", "Californication", "Can't Stop", "Dani California"]
+}
