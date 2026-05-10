@@ -1,0 +1,36 @@
+{
+  "slug": "james-burton",
+  "name": "James Burton",
+  "shortName": "Burton",
+  "era": "Années 50 à aujourd'hui",
+  "genres": ["Rockabilly", "Country", "Rock'n'roll"],
+  "bio": "L'architecte de la guitare solo dans le rockabilly et la country moderne — Ricky Nelson, Elvis Presley. Il a posé les fondations d'un langage que tous les guitaristes de rock des années 60 et 70 ont pillé sans vergogne, et le mot \"influent\" ne rend même pas service à l'ampleur du personnage.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Pour le solo de rockabilly absolu, sec et précis — ses bends de plusieurs tons (rendus possibles par des cordes de banjo pour les aigus) donnaient une expression vocale terrifiante",
+      "example": "Hello Mary Lou"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Pour des grooves marécageux très répétitifs de swamp rock — le mixolydien comme hypnose rythmique, chaque note posée avec une économie absolue",
+      "example": "Suzie Q"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "C",
+      "context": "Sur des tempos de train (\"train beats\") joués derrière Elvis Presley — la pentatonique majeure pour un jeu lumineux et percutant qui ne volait jamais la vedette au chanteur",
+      "example": "Promised Land"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "G",
+      "context": "Pour un accompagnement discret, lyrique et bourré de feeling — le majeur pur, avec des ornements délicats qui transforment une simple ballade en moment suspendu",
+      "example": "Fools Rush In"
+    }
+  ],
+  "signatureMove": "Le pionnier du chicken pickin' : doigts nus avec médiator plat, cordes de banjo pour les aigus. Ses bends ravageurs de plusieurs tons avec des cordes ultra-légères lui donnaient une expressivité vocale unique — il pliait des notes comme d'autres respirent, et ça se tenait toujours à l'intérieur du groove.",
+  "recommendedListening": ["Hello Mary Lou", "Suzie Q", "Promised Land", "Fools Rush In"]
+}

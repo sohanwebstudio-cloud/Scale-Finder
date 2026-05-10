@@ -1,0 +1,36 @@
+{
+  "slug": "vince-gill",
+  "name": "Vince Gill",
+  "shortName": "Gill",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Country", "Country-pop", "Soft rock"],
+  "bio": "L'une des voix les plus célèbres de la country, mais aussi l'un de ses solistes les plus fluides et musicaux. Il refuse l'esbroufe pour privilégier la perfection de la note — dans un genre qui valorise souvent la vitesse, il prouve que l'émotion se mesure au millimètre, pas à la seconde.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "A",
+      "context": "Pour des solos de country pure, lumineux et parfaitement exécutés — chaque note de la pentatonique majeure placée avec une intention mélodique d'une clarté absolue",
+      "example": "Liza Jane"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "Pour amener de la soul et de la douceur sur des ballades intenses — son attaque très douce transforme le mixolydien en quelque chose de presque vocal, jamais agressif",
+      "example": "Whenever You Come Around"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Jouée avec un son tranchant de Telecaster sur des tempos très rapides — le contraste entre son toucher délicat et l'énergie de la blue note crée une tension fascinante",
+      "example": "One More Last Chance"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "G",
+      "context": "Pour des licks de chicken pickin' rythmés intégrés à des refrains pop-country — l'ionien comme couleur principale de ses contributions les plus accessibles et radio-friendly",
+      "example": "Oklahoma Borderline"
+    }
+  ],
+  "signatureMove": "Un phrasé extraordinairement chantant avec une attaque très douce et une maîtrise des nuances de volume qui construisent des solos ressemblant à de véritables refrains. Il pense mélodiquement d'abord — chaque note sert l'émotion de la chanson, pas la démonstration technique du soliste.",
+  "recommendedListening": ["Liza Jane", "Whenever You Come Around", "One More Last Chance", "Oklahoma Borderline"]
+}

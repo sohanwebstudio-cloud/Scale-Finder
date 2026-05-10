@@ -1,0 +1,36 @@
+{
+  "slug": "doc-watson",
+  "name": "Doc Watson",
+  "shortName": "Watson",
+  "era": "Années 50 à 2012",
+  "genres": ["Bluegrass", "Folk", "Country traditionnel"],
+  "bio": "Le vénérable grand-père du flatpicking traditionnel. Aveugle depuis l'enfance, il a transposé le répertoire immémorial des violoneux (fiddle tunes) sur la guitare acoustique avec une régularité et une clarté métronomiques qui ont créé un standard que tous les flatpickers mesurent encore aujourd'hui.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "G",
+      "context": "La tonalité reine pour ses interprétations de mélodies de violon ultra-rapides — l'ionien comme langue maternelle du répertoire Appalachien, dit avec une précision d'horloger",
+      "example": "Black Mountain Rag"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "C",
+      "context": "Pour un blues acoustique rural et syncopé mêlant médiator et doigts — la pentatonique majeure comme vocabulaire naturel du blues folk américain le plus ancien",
+      "example": "Deep River Blues"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Sur des chansons traditionnelles sombres héritées du folk irlandais — le dorien pour colorer des mélodies ancestrales avec une mélancolie modale qui transcende le simple mineur",
+      "example": "Shady Grove"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "Pour des chansons de cowboys épiques au rythme de chevauchée — le mixolydien comme énergie naturelle des tempos de reel irlandais transposés sur le sol américain",
+      "example": "Tennessee Stud"
+    }
+  ],
+  "signatureMove": "Une attaque de médiator d'une régularité et d'une clarté métronomiques, avec des notes chromatiques de passage glissées pour imiter le swing naturel des violoneux sur des tempos vertigineux. Il ne cherchait pas la virtuosité — il cherchait la vérité de la mélodie, et c'est pour ça qu'il est irremplaçable.",
+  "recommendedListening": ["Black Mountain Rag", "Deep River Blues", "Shady Grove", "Tennessee Stud"]
+}

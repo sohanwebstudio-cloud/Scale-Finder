@@ -1,0 +1,36 @@
+{
+  "slug": "brad-paisley",
+  "name": "Brad Paisley",
+  "shortName": "Paisley",
+  "era": "Années 90 à aujourd'hui",
+  "genres": ["Country", "Country-rock", "Country pop"],
+  "bio": "Superstar de la country moderne — derrière le chanteur à succès se cache l'un des guitaristes les plus redoutables et techniquement terrifiants de sa génération. Ses solos instrumentaux, souvent humoristiques, cachent une maîtrise technique proche des grands du shred.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour des instrumentaux monstrueux de virtuosité et d'humour — le mixolydien comme base pour ses délires de chicken pickin' poussés à la vitesse d'un processeur moderne",
+      "example": "Nervous Breakdown"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "A",
+      "context": "Pour des licks clairs, compressés et typiques de la Bakersfield sound — la pentatonique majeure dans toute sa sincérité country, exécutée avec une propreté impeccable",
+      "example": "The World"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "D",
+      "context": "Pour amener l'énergie du hard-rock dans un contexte purement country — la blue note comme pont entre deux univers que peu de guitaristes réussissent à marier",
+      "example": "Cliffs of Rock City"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "E",
+      "context": "Pour un jeu frénétique en chicken pickin' sur des tempos de hoedown — l'ionien clair comme bille, découpé note par note à une cadence absurde",
+      "example": "Mr. Policeman"
+    }
+  ],
+  "signatureMove": "Le G-Bender : un système mécanique intégré dans sa guitare qui tire la corde de Sol lorsqu'il appuie sur la sangle, imitant parfaitement les pleurs de la pedal steel guitar — le tout au milieu de plans joués à la vitesse de l'éclair. Il a démocratisé cet outil et en a fait une arme signature.",
+  "recommendedListening": ["Nervous Breakdown", "Cliffs of Rock City", "The World", "Mr. Policeman"]
+}

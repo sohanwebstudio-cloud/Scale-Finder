@@ -1,0 +1,36 @@
+{
+  "slug": "jerry-reed",
+  "name": "Jerry Reed",
+  "shortName": "Reed",
+  "era": "Années 60 à 2008",
+  "genres": ["Country", "Swamp rock", "Country-pop"],
+  "bio": "Légende de la country américaine surnommé \"The Swamp Man\". Il a inventé un style de fingerpicking syncopé, dissonant et extraordinairement complexe que personne n'a jamais vraiment réussi à reproduire — pas par manque d'effort, mais parce que son cerveau fonctionnait sur un plan rythmique différent du commun des mortels.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Pour le son typique du swamp rock, poisseux, drôle et rythmé — il habitait la blue note avec un naturel déconcertant, le tout enveloppé dans un groove syncopé dévastateur",
+      "example": "Amos Moses"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Jouée avec un drive incroyable pour propulser le morceau tout seul — sa main droite générait un accompagnement rythmique si dense qu'on cherchait le bassiste qui n'existait pas",
+      "example": "Guitar Man"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Pour ses instrumentaux virtuoses impossibles à reproduire — le dorien lui donnait une couleur jazz-country unique, qu'il explorait avec une liberté rythmique totalement libre",
+      "example": "Jerry's Breakdown"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "G",
+      "context": "Pour intégrer des éléments de ragtime et de banjo à la guitare — le majeur pur comme fondation pour ses arrangements où la main droite jouait simultanément basse, accord et mélodie",
+      "example": "East Bound and Down"
+    }
+  ],
+  "signatureMove": "Un doigté de main droite à la rythmique infernale — souvent sur guitare nylon — mêlant accords de jazz (clawhammer), dissonances bluesy de demi-tons frottés et accordages ouverts très particuliers. Sa main droite jouait simultanément basse, accord et mélodie avec une indépendance que les guitaristes classiques enviaient.",
+  "recommendedListening": ["Jerry's Breakdown", "Amos Moses", "Guitar Man", "East Bound and Down"]
+}

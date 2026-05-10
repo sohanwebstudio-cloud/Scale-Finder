@@ -1,0 +1,36 @@
+{
+  "slug": "tony-rice",
+  "name": "Tony Rice",
+  "shortName": "Rice",
+  "era": "Années 70 à 2020",
+  "genres": ["Bluegrass", "Newgrass", "Folk progressif"],
+  "bio": "L'innovateur absolu du flatpicking sur guitare acoustique dans le bluegrass. Il a sorti le genre de son carcan traditionnel pour l'emmener vers des territoires harmoniques dignes du jazz — le \"Dawg music\" avec David Grisman — en apportant des voicings complexes et des phrasés modaux dans le monde très conservateur des Appalaches.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "G",
+      "context": "Pour ses phrasés en \"cross-picking\" ultra-rapides et limpides — l'ionien comme fondation du répertoire traditionnel, exécuté avec une puissance acoustique terrifiante sur sa Martin D-28",
+      "example": "Church Street Blues"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Sur les classiques de bluegrass repensés avec une approche jazz modale — le dorien apportait une couleur mineure ouverte, bien loin du sentiment folk conventionnel",
+      "example": "Manzanita"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "C",
+      "context": "Pour des improvisations fluides, bluesy et percussives — le mixolydien comme carrefour naturel entre le bluegrass et le swing",
+      "example": "Freeborn Man"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "A",
+      "context": "Sur de sublimes ballades folk mélancoliques aux arpèges très ouverts — le mineur naturel pour creuser l'émotion des vieilles chansons des Appalaches",
+      "example": "Shenandoah"
+    }
+  ],
+  "signatureMove": "Une puissance acoustique terrifiante sur sa Martin D-28 (appartenue à Clarence White), couplée à l'introduction de voicings jazz — 9èmes, quartes empilées — dans un univers où les accords de base régnaient en maîtres. Ses phrasés en crosspicking ont créé une nouvelle grammaire pour la guitare acoustique.",
+  "recommendedListening": ["Church Street Blues", "Manzanita", "Freeborn Man", "Shenandoah"]
+}

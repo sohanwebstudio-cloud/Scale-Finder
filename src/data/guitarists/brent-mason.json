@@ -1,0 +1,36 @@
+{
+  "slug": "brent-mason",
+  "name": "Brent Mason",
+  "shortName": "Mason",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Country", "Nashville", "Country-pop"],
+  "bio": "Le guitariste de studio le plus enregistré de l'histoire de Nashville — Alan Jackson, Shania Twain, George Strait, pratiquement toute la country des années 90 porte ses empreintes digitales. Il a défini le son de la country moderne avec une Telecaster modifiée et un jeu au thumbpick d'une précision redoutable.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Avec un mélange constant de tierce mineure et majeure pour le groove country ultime — il navigue entre les deux avec une fluidité qui rend chaque phrase immédiatement reconnaissable",
+      "example": "Hot Wired"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "A",
+      "context": "Pour les riffs iconiques et sautillants de la country des années 90 — la pentatonique majeure comme langage commun du mainstream Nashville, exécutée avec une précision de studio",
+      "example": "Chattahoochee"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Sur des grooves instrumentaux frénétiques aux accents funk-country — la blue note comme épice principale dans un contexte rythmique très syncopé",
+      "example": "Pick It Apart"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "D",
+      "context": "Pour intégrer de véritables plans jazz au milieu de ballades country — l'ionien comme pont entre le langage bebop et l'esthétique Nashville",
+      "example": "Blowin' Smoke"
+    }
+  ],
+  "signatureMove": "Le thumbpick couplé à des faux ongles en acrylique sur l'index et le majeur pour un claquant parfait — le fameux chicken pickin'. Sa Telecaster modifiée avec micro central, son son compressé et ses articulations d'une clarté absolue ont modelé le son de Nashville pendant trois décennies.",
+  "recommendedListening": ["Hot Wired", "Chattahoochee", "Pick It Apart", "Blowin' Smoke"]
+}

@@ -48,6 +48,16 @@ const HOTSPOTS: Hotspot[] = [
     dotX: 77,
     dotY: 74,
   },
+  {
+    id: 'mixer',
+    label: 'Accordeur',
+    sub: 'Accordeur chromatique de précision',
+    href: '/tuner',
+    // Mixing console — center of image
+    corners: [[44, 50], [73, 48], [75, 84], [42, 84]],
+    dotX: 57,
+    dotY: 61,
+  },
 ];
 
 function toPoints(corners: [Corner, Corner, Corner, Corner]): string {

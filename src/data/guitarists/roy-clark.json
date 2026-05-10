@@ -1,0 +1,36 @@
+{
+  "slug": "roy-clark",
+  "name": "Roy Clark",
+  "shortName": "Clark",
+  "era": "Années 50 à 2018",
+  "genres": ["Country", "Western swing", "Folk"],
+  "bio": "Virtuose souriant et pilier de la célèbre émission télévisée Hee Haw. Derrière son attitude très comique se cachait l'un des musiciens les plus féroces de l'histoire de la musique américaine — un guitariste qui jouait aussi bien du banjo, de la mandoline et du violon, et qui aurait pulvérisé n'importe qui en concert.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "C",
+      "context": "Sur ses medleys de fiddle tunes où ses doigts volent littéralement sur le manche — la pentatonique majeure comme socle de ses démonstrations de cross-picking à des tempos suicidaires",
+      "example": "Fiddle Medley (Live)"
+    },
+    {
+      "modeKey": "phrygian_dom",
+      "rootName": "E",
+      "context": "Pour ses incroyables excursions hispanisantes jouées sur guitare électrique — le phrygien dominant comme passerelle entre le répertoire flamenco et la technique country américaine",
+      "example": "Malagueña"
+    },
+    {
+      "modeKey": "bebop_dom",
+      "rootName": "G",
+      "context": "Pour des classiques du ragtime joués à des tempos suicidaires — les 8 notes du bebop dominant lui permettaient de lier ses phrases en cascade sans jamais marquer de pause",
+      "example": "12th Street Rag"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Pour des épopées instrumentales à tendance western — la blue note comme touche finale sur des arrangements grands comme l'Ouest, joués avec un flegme déconcertant",
+      "example": "Ghost Riders in the Sky"
+    }
+  ],
+  "signatureMove": "L'omniprésence du cross-picking rapide avec un aller-retour féroce, et une capacité à passer de la guitare au banjo ou à la mandoline sans changer d'état d'esprit — toujours la même précision chirurgicale, le même sourire. Il rendait l'impossible accessible, ce qui est peut-être la forme de virtuosité la plus redoutable.",
+  "recommendedListening": ["Malagueña (Live)", "12th Street Rag", "Fiddle Medley", "Ghost Riders in the Sky"]
+}

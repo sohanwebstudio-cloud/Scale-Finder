@@ -1,0 +1,36 @@
+{
+  "slug": "johnny-hiland",
+  "name": "Johnny Hiland",
+  "shortName": "Hiland",
+  "era": "Années 90 à aujourd'hui",
+  "genres": ["Country", "Shred-country", "Country-rock"],
+  "bio": "Le monstre absolu de la technique country moderne, figure de proue du Shred-Country. Il est capable de jouer les plans les plus traditionnels de la country avec la virtuosité d'Yngwie Malmsteen — une combinaison qui aurait dû être ridicule et qui s'avère complètement dévastante.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "En hommage direct à Danny Gatton, avec une pluie de notes ininterrompues — le mixolydien comme fusée-porteuse de ses phrases country à vitesse absurde, chaque note articulée avec une netteté effrayante",
+      "example": "Gatton to It"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Pour des improvisations blues-rock musclées et saturées — la blue note comme carburant dans un contexte où le gain est calibré chirurgicalement pour lisser les plans les plus rapides",
+      "example": "Truth Hurts"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour le son classique du country-picking poussé à la vitesse de la lumière — il navigue les sauts de position avec une fluidité qui rend les plans impossibles à transcrire par ralenti",
+      "example": "Barnyard Breakdown"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "D",
+      "context": "Sur la reprise de classiques du bluegrass joués en aller-retour strict — l'ionien pur pour démontrer que la technique ne sert la tradition que lorsqu'elle lui reste fidèle",
+      "example": "Orange Blossom Special"
+    }
+  ],
+  "signatureMove": "Un chicken pickin' d'une netteté effrayante à des vitesses où la plupart des guitaristes perdent toute articulation. Il utilise l'overdrive avec une précision rare dans le genre pour lisser ses plans fulgurants sans en éroder la clarté — chaque note sonne comme une frappe sur un pad de batterie électronique.",
+  "recommendedListening": ["Barnyard Breakdown", "Gatton to It", "Truth Hurts", "Orange Blossom Special"]
+}

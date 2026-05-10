@@ -107,6 +107,16 @@ import treyAnastasio from './trey-anastasio.json';
 import yamanduCosta from './yamandu-costa.json';
 import joschoStephan from './joscho-stephan.json';
 import badenPowell from './baden-powell.json';
+import albertLee from './albert-lee.json';
+import brentMason from './brent-mason.json';
+import tonyRice from './tony-rice.json';
+import bradPaisley from './brad-paisley.json';
+import jamesBurton from './james-burton.json';
+import jerryReed from './jerry-reed.json';
+import vinceGill from './vince-gill.json';
+import docWatson from './doc-watson.json';
+import johnnyHiland from './johnny-hiland.json';
+import royClark from './roy-clark.json';
 
 export const ALL_GUITARISTS: Guitarist[] = [
   mikeStern as Guitarist,
@@ -212,6 +222,16 @@ export const ALL_GUITARISTS: Guitarist[] = [
   yamanduCosta as Guitarist,
   joschoStephan as Guitarist,
   badenPowell as Guitarist,
+  albertLee as Guitarist,
+  brentMason as Guitarist,
+  tonyRice as Guitarist,
+  bradPaisley as Guitarist,
+  jamesBurton as Guitarist,
+  jerryReed as Guitarist,
+  vinceGill as Guitarist,
+  docWatson as Guitarist,
+  johnnyHiland as Guitarist,
+  royClark as Guitarist,
 ];
 
 export function getGuitaristBySlug(slug: string): Guitarist | undefined {

@@ -95,6 +95,33 @@ const HOTSPOTS = [
         ],
         dotX: 77,
         dotY: 74
+    },
+    {
+        id: 'mixer',
+        label: 'Accordeur',
+        sub: 'Accordeur chromatique de précision',
+        href: '/tuner',
+        // Mixing console — center of image
+        corners: [
+            [
+                44,
+                50
+            ],
+            [
+                73,
+                48
+            ],
+            [
+                75,
+                84
+            ],
+            [
+                42,
+                84
+            ]
+        ],
+        dotX: 57,
+        dotY: 61
     }
 ];
 function toPoints(corners) {
@@ -173,12 +200,12 @@ function StudioHero() {
                     draggable: false
                 }, void 0, false, {
                     fileName: "[project]/src/components/StudioHero.tsx",
-                    lineNumber: 105,
+                    lineNumber: 115,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/StudioHero.tsx",
-                lineNumber: 96,
+                lineNumber: 106,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -188,7 +215,7 @@ function StudioHero() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/StudioHero.tsx",
-                lineNumber: 114,
+                lineNumber: 124,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -199,7 +226,7 @@ function StudioHero() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/StudioHero.tsx",
-                lineNumber: 118,
+                lineNumber: 128,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -222,12 +249,12 @@ function StudioHero() {
                         onClick: ()=>handleClick(spot)
                     }, spot.id, false, {
                         fileName: "[project]/src/components/StudioHero.tsx",
-                        lineNumber: 130,
+                        lineNumber: 140,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/StudioHero.tsx",
-                lineNumber: 124,
+                lineNumber: 134,
                 columnNumber: 7
             }, this),
             HOTSPOTS.map((spot)=>{
@@ -269,7 +296,7 @@ function StudioHero() {
                                             children: spot.label
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/StudioHero.tsx",
-                                            lineNumber: 165,
+                                            lineNumber: 175,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -281,13 +308,13 @@ function StudioHero() {
                                             children: spot.sub
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/StudioHero.tsx",
-                                            lineNumber: 168,
+                                            lineNumber: 178,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/StudioHero.tsx",
-                                    lineNumber: 158,
+                                    lineNumber: 168,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -301,13 +328,13 @@ function StudioHero() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/StudioHero.tsx",
-                                    lineNumber: 172,
+                                    lineNumber: 182,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/StudioHero.tsx",
-                            lineNumber: 149,
+                            lineNumber: 159,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -332,7 +359,7 @@ function StudioHero() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/StudioHero.tsx",
-                                    lineNumber: 182,
+                                    lineNumber: 192,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -349,19 +376,19 @@ function StudioHero() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/StudioHero.tsx",
-                                    lineNumber: 190,
+                                    lineNumber: 200,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/StudioHero.tsx",
-                            lineNumber: 176,
+                            lineNumber: 186,
                             columnNumber: 13
                         }, this)
                     ]
                 }, spot.id, true, {
                     fileName: "[project]/src/components/StudioHero.tsx",
-                    lineNumber: 147,
+                    lineNumber: 157,
                     columnNumber: 11
                 }, this);
             }),
@@ -373,20 +400,20 @@ function StudioHero() {
                         children: "Scroll"
                     }, void 0, false, {
                         fileName: "[project]/src/components/StudioHero.tsx",
-                        lineNumber: 205,
+                        lineNumber: 215,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mx-auto mt-2 h-7 w-px bg-gradient-to-b from-neutral-500 to-transparent"
                     }, void 0, false, {
                         fileName: "[project]/src/components/StudioHero.tsx",
-                        lineNumber: 206,
+                        lineNumber: 216,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/StudioHero.tsx",
-                lineNumber: 204,
+                lineNumber: 214,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -398,13 +425,13 @@ function StudioHero() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/StudioHero.tsx",
-                lineNumber: 209,
+                lineNumber: 219,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/StudioHero.tsx",
-        lineNumber: 91,
+        lineNumber: 101,
         columnNumber: 5
     }, this);
 }
