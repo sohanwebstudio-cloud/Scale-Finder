@@ -23,30 +23,30 @@ const HOTSPOTS: Hotspot[] = [
     label: 'Guitaristes',
     sub: 'Explorer leurs gammes signature',
     scrollTo: 'guitaristes',
-    // Bookshelf — slight perspective taper (right edge leans inward going up)
-    corners: [[0, 0], [23, 0], [21, 100], [0, 100]],
-    dotX: 11,
-    dotY: 38,
+    // Bookshelf — perspective trapezoid following the left wall
+    corners: [[0, 0], [22, 0], [20, 100], [0, 100]],
+    dotX: 10,
+    dotY: 37,
   },
   {
     id: 'guitar',
     label: 'Guitare',
     sub: 'Gammes et modes pour guitare',
     href: '/studio',
-    // Stratocaster — narrow vertical zone, center-left
-    corners: [[36, 53], [46, 52], [46, 99], [36, 99]],
-    dotX: 41,
-    dotY: 78,
+    // Stratocaster — leaning against the stairs, center-left
+    corners: [[41, 26], [49, 25], [50, 98], [40, 98]],
+    dotX: 45,
+    dotY: 76,
   },
   {
     id: 'bass',
     label: 'Basse',
     sub: 'Gammes et modes pour basse',
     href: '/studio',
-    // Precision Bass — right of mixing console
-    corners: [[51, 36], [63, 35], [63, 99], [51, 99]],
-    dotX: 57,
-    dotY: 65,
+    // Precision Bass — far right, next to the neon sign
+    corners: [[73, 34], [81, 33], [82, 98], [72, 98]],
+    dotX: 77,
+    dotY: 74,
   },
 ];
 
@@ -54,34 +54,11 @@ function toPoints(corners: [Corner, Corner, Corner, Corner]): string {
   return corners.map(([x, y]) => `${x},${y}`).join(' ');
 }
 
-// Axis-aligned L-brackets at each corner, b = arm length in SVG units
-function bracketPath([[x0, y0], [x1, y1], [x2, y2], [x3, y3]]: [Corner, Corner, Corner, Corner], b: number): string {
-  return [
-    `M ${x0 + b},${y0} L ${x0},${y0} L ${x0},${y0 + b}`,
-    `M ${x1 - b},${y1} L ${x1},${y1} L ${x1},${y1 + b}`,
-    `M ${x2 - b},${y2} L ${x2},${y2} L ${x2},${y2 - b}`,
-    `M ${x3 + b},${y3} L ${x3},${y3} L ${x3},${y3 - b}`,
-  ].join(' ');
-}
-
 export function StudioHero() {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const [activeId, setActiveId] = useState<string | null>(null);
-  const [dims, setDims] = useState({ w: 1920, h: 1080 });
-
-  // Track container size to compute square grid cells despite viewBox="0 0 100 100" stretch
-  useEffect(() => {
-    function measure() {
-      if (!containerRef.current) return;
-      setDims({ w: containerRef.current.clientWidth, h: containerRef.current.clientHeight });
-    }
-    measure();
-    const ro = new ResizeObserver(measure);
-    if (containerRef.current) ro.observe(containerRef.current);
-    return () => ro.disconnect();
-  }, []);
 
   // Parallax
   useEffect(() => {
@@ -104,12 +81,6 @@ export function StudioHero() {
     rafId = requestAnimationFrame(tick);
     return () => { container.removeEventListener('mousemove', onMove); cancelAnimationFrame(rafId); };
   }, []);
-
-  // Grid cell size in SVG user units so cells appear ~28×28px on screen
-  const cellW = 2800 / dims.w;
-  const cellH = 2800 / dims.h;
-  const BRACKET = 3.5;
-  const STROKE = 0.22;
 
   function handleClick(spot: Hotspot) {
     if (spot.href) router.push(spot.href);
@@ -149,91 +120,37 @@ export function StudioHero() {
         style={{ height: '28%', background: 'linear-gradient(to top, rgba(0,0,0,0.65), transparent)' }}
       />
 
-      {/* SVG hotspot overlay */}
+      {/* SVG hotspot — invisible polygon click zones only */}
       <svg
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
       >
-        <defs>
-          <pattern
-            id="hotspot-grid"
-            patternUnits="userSpaceOnUse"
-            width={cellW}
-            height={cellH}
-          >
-            <path
-              d={`M ${cellW} 0 L 0 0 0 ${cellH}`}
-              fill="none"
-              stroke="rgba(255,255,255,0.09)"
-              strokeWidth="0.1"
-            />
-          </pattern>
-        </defs>
-
-        {HOTSPOTS.map((spot) => {
-          const active = activeId === spot.id;
-          const pts = toPoints(spot.corners);
-          const brackets = bracketPath(spot.corners, BRACKET);
-
-          return (
-            <g key={spot.id}>
-              {/* Grid fill */}
-              <polygon
-                points={pts}
-                fill="url(#hotspot-grid)"
-                opacity={active ? 1 : 0}
-                style={{ transition: 'opacity 0.25s ease', pointerEvents: 'none' }}
-              />
-              {/* Outline */}
-              <polygon
-                points={pts}
-                fill="none"
-                stroke="rgba(255,255,255,0.28)"
-                strokeWidth={STROKE}
-                opacity={active ? 1 : 0}
-                style={{ transition: 'opacity 0.25s ease', pointerEvents: 'none' }}
-              />
-              {/* Corner brackets */}
-              <path
-                d={brackets}
-                fill="none"
-                stroke="rgba(255,255,255,0.9)"
-                strokeWidth={STROKE * 1.2}
-                strokeLinecap="square"
-                opacity={active ? 1 : 0}
-                style={{ transition: 'opacity 0.25s ease', pointerEvents: 'none' }}
-              />
-              {/* Hit area — polygon-shaped click target */}
-              <polygon
-                points={pts}
-                fill="transparent"
-                style={{ cursor: 'pointer' }}
-                onMouseEnter={() => setActiveId(spot.id)}
-                onMouseLeave={() => setActiveId(null)}
-                onClick={() => handleClick(spot)}
-              />
-            </g>
-          );
-        })}
+        {HOTSPOTS.map((spot) => (
+          <polygon
+            key={spot.id}
+            points={toPoints(spot.corners)}
+            fill="transparent"
+            style={{ cursor: 'pointer' }}
+            onMouseEnter={() => setActiveId(spot.id)}
+            onMouseLeave={() => setActiveId(null)}
+            onClick={() => handleClick(spot)}
+          />
+        ))}
       </svg>
 
       {/* Dots + tooltips (HTML for legibility) */}
       {HOTSPOTS.map((spot) => {
         const active = activeId === spot.id;
-        const [tl, tr] = spot.corners;
-        const tooltipX = (tl[0] + tr[0]) / 2;
-        const tooltipY = Math.min(tl[1], tr[1]);
 
         return (
           <div key={spot.id} style={{ pointerEvents: 'none' }}>
-            {/* Tooltip */}
+            {/* Tooltip — anchored above the dot */}
             <div style={{
               position: 'absolute',
-              left: `${tooltipX}%`,
-              top: `${tooltipY}%`,
-              transform: 'translate(-50%, -100%)',
-              paddingBottom: 6,
+              left: `${spot.dotX}%`,
+              top: `${spot.dotY}%`,
+              transform: 'translate(-50%, calc(-100% - 18px))',
               opacity: active ? 1 : 0,
               transition: 'opacity 0.2s ease',
               whiteSpace: 'nowrap',
@@ -252,7 +169,7 @@ export function StudioHero() {
                   {spot.sub}
                 </p>
               </div>
-              <div style={{ width: 0, height: 0, margin: '0 auto', borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: '5px solid rgba(255,255,255,0.22)' }} />
+              <div style={{ width: 0, height: 0, margin: '0 auto', borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: '5px solid rgba(8,6,4,0.88)' }} />
             </div>
 
             {/* Pulsing dot */}
