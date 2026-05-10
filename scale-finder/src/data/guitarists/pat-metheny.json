@@ -1,0 +1,36 @@
+{
+  "slug": "pat-metheny",
+  "name": "Pat Metheny",
+  "shortName": "Metheny",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Jazz fusion", "Jazz contemporain", "Folk jazz"],
+  "bio": "Guitariste américain à la sonorité reconnaissable entre toutes. Son langage repose sur les modes lydien et lydien dominante, qui donnent à ses lignes leur caractère 'flottant' et lumineux.",
+  "signatureScales": [
+    {
+      "modeKey": "lydian",
+      "rootName": "F",
+      "context": "Sur les accords majeur 7 statiques",
+      "example": "Bright Size Life"
+    },
+    {
+      "modeKey": "lydian_dom",
+      "rootName": "G",
+      "context": "Sur les V7 où il veut un son brillant plutôt que tendu",
+      "example": "Phase Dance"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Sur les vamps mineures longues",
+      "example": "Question and Answer"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Pour les lignes folk/country qu'il glisse partout",
+      "example": "Last Train Home"
+    }
+  ],
+  "signatureMove": "Substitue souvent une pentatonique majeure démarrée sur la 9e, 5e ou 13e d'un accord pour créer des superpositions modales colorées sans jamais sonner 'jazz scolaire'.",
+  "recommendedListening": ["Bright Size Life", "Question and Answer", "Phase Dance", "Last Train Home"]
+}

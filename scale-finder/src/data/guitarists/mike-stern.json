@@ -1,0 +1,36 @@
+{
+  "slug": "mike-stern",
+  "name": "Mike Stern",
+  "shortName": "Stern",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Jazz fusion", "Bebop électrique"],
+  "bio": "Guitariste de jazz fusion américain, ancien sideman de Miles Davis. Son style fond la pentatonique blues dans le langage bebop, avec un usage massif des gammes altérées sur les V7.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Sur les vamps dominantes (A7, comme dans Chromazone)",
+      "example": "Chromazone"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "E",
+      "context": "Sur les V7 avant résolution mineure",
+      "example": "Upside Downside"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Sur les vamps mineures (Am7)",
+      "example": "Play"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Toujours en superposition, pour la couleur blues",
+      "example": "Quasi tous ses solos"
+    }
+  ],
+  "signatureMove": "Mélange constant de la pentatonique mineure avec l'altered scale. Tu joues blues, puis tu glisses dans le altered sur le V7, puis retour blues à la résolution.",
+  "recommendedListening": ["Chromazone", "Upside Downside", "Play", "Time in Place"]
+}

@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+:root {
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Menlo", monospace;
+}

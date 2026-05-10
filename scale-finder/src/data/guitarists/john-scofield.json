@@ -1,0 +1,36 @@
+{
+  "slug": "john-scofield",
+  "name": "John Scofield",
+  "shortName": "Scofield",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Jazz fusion", "Jazz funk", "Blues jazz"],
+  "bio": "Guitariste américain au phrasé bluesy reconnaissable. Sa marque : une utilisation massive de la gamme altérée et de chromatismes, mêlée à un feeling blues très ancré.",
+  "signatureScales": [
+    {
+      "modeKey": "altered",
+      "rootName": "G",
+      "context": "Sur les V7, son outil n°1 pour le 'son outside'",
+      "example": "Quasi tous ses solos sur dominants"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "C",
+      "context": "Comme base, qu'il fait dérailler vers l'altered",
+      "example": "A Go Go"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Sur les grooves mineurs funk",
+      "example": "Chank"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Sur les dominantes statiques (sans résolution attendue)",
+      "example": "Boozer"
+    }
+  ],
+  "signatureMove": "Démarre une phrase dans la pentatonique blues, puis dévie sur la gamme altérée pendant 1-2 mesures, puis résout en revenant sur la blues. Crée une tension narrative très identifiable.",
+  "recommendedListening": ["A Go Go", "Bump", "Time on My Hands", "Que Alegria"]
+}
