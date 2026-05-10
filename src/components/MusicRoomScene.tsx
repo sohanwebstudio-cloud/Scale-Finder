@@ -22,23 +22,23 @@ function CameraRig() {
 function Room() {
   return (
     <>
-      {/* Floor */}
+      {/* Floor — warm dark wood with slight reflectivity */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
         <planeGeometry args={[16, 12]} />
-        <meshStandardMaterial color="#080605" roughness={0.85} metalness={0.18} />
+        <meshStandardMaterial color="#1a110a" roughness={0.6} metalness={0.08} />
       </mesh>
 
       {/* Back wall base */}
       <mesh position={[0, 2.5, -5]}>
         <planeGeometry args={[16, 5]} />
-        <meshStandardMaterial color="#0a0807" roughness={1} />
+        <meshStandardMaterial color="#1c1208" roughness={1} />
       </mesh>
 
-      {/* Back wall wood panels — alternating dark tones for depth */}
+      {/* Back wall wood panels — visible warm oak tones */}
       {Array.from({ length: 9 }, (_, i) => (
         <mesh key={i} position={[-5.6 + i * 1.4, 2.5, -4.96]}>
           <planeGeometry args={[1.3, 5]} />
-          <meshStandardMaterial color={i % 2 === 0 ? '#0d0b09' : '#100e0b'} roughness={0.92} />
+          <meshStandardMaterial color={i % 2 === 0 ? '#2a1c0e' : '#321f0f'} roughness={0.88} />
         </mesh>
       ))}
 
@@ -46,41 +46,46 @@ function Room() {
       {Array.from({ length: 8 }, (_, i) => (
         <mesh key={i} position={[-4.9 + i * 1.4, 2.5, -4.94]}>
           <planeGeometry args={[0.04, 5]} />
-          <meshStandardMaterial color="#060504" roughness={1} />
+          <meshStandardMaterial color="#12090300" roughness={1} />
         </mesh>
       ))}
 
       {/* Left wall */}
       <mesh rotation={[0, Math.PI / 2, 0]} position={[-8, 2.5, -1]}>
         <planeGeometry args={[12, 5]} />
-        <meshStandardMaterial color="#0d0b09" roughness={1} />
+        <meshStandardMaterial color="#221710" roughness={0.95} />
       </mesh>
 
       {/* Right wall */}
       <mesh rotation={[0, -Math.PI / 2, 0]} position={[8, 2.5, -1]}>
         <planeGeometry args={[12, 5]} />
-        <meshStandardMaterial color="#0d0b09" roughness={1} />
+        <meshStandardMaterial color="#221710" roughness={0.95} />
       </mesh>
 
       {/* Ceiling */}
       <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, 5, -1]}>
         <planeGeometry args={[16, 12]} />
-        <meshStandardMaterial color="#070605" roughness={1} />
+        <meshStandardMaterial color="#180f08" roughness={1} />
       </mesh>
 
       {/* Ceiling structural beams */}
       {[-3.5, -1, 1, 3.5].map((x, i) => (
         <mesh key={i} position={[x, 4.82, -1]}>
           <boxGeometry args={[0.1, 0.38, 12]} />
-          <meshStandardMaterial color="#0e0c0a" roughness={0.9} />
+          <meshStandardMaterial color="#2a1c0e" roughness={0.85} />
         </mesh>
       ))}
 
       {/* Floor baseboard */}
       <mesh position={[0, 0.05, -4.97]}>
         <boxGeometry args={[16, 0.1, 0.06]} />
-        <meshStandardMaterial color="#161412" />
+        <meshStandardMaterial color="#3a2510" />
       </mesh>
+
+      {/* Floor bounce light — warms up the ground */}
+      <pointLight position={[0, 0.1, -1]} color="#c87820" intensity={1.2} distance={8} decay={2} />
+      <pointLight position={[-4, 0.1, -1]} color="#b86010" intensity={0.8} distance={6} decay={2} />
+      <pointLight position={[4, 0.1, -1]} color="#b86010" intensity={0.8} distance={6} decay={2} />
     </>
   );
 }
@@ -352,29 +357,29 @@ function WallSconce({ position, rotY = 0 }: { position: [number, number, number]
     <group position={position} rotation={[0, rotY, 0]}>
       <mesh>
         <boxGeometry args={[0.08, 0.14, 0.06]} />
-        <meshStandardMaterial color="#1a1818" roughness={0.3} metalness={0.7} />
+        <meshStandardMaterial color="#2a2220" roughness={0.3} metalness={0.7} />
       </mesh>
       <mesh position={[0, -0.12, 0.05]}>
         <coneGeometry args={[0.09, 0.16, 8, 1, true]} />
-        <meshStandardMaterial color="#f97316" emissive="#f97316" emissiveIntensity={1.2} side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#f97316" emissive="#f97316" emissiveIntensity={2} side={THREE.DoubleSide} />
       </mesh>
-      <pointLight color="#f97316" intensity={2} distance={4} decay={2} />
+      <pointLight color="#f97316" intensity={5} distance={6} decay={1.8} />
     </group>
   );
 }
 
-function CeilingLamp({ x = 0 }: { x?: number }) {
+function CeilingLamp({ x = 0, z = -2.2 }: { x?: number; z?: number }) {
   return (
-    <group position={[x, 4.68, -2.2]}>
+    <group position={[x, 4.68, z]}>
       <mesh position={[0, 0.2, 0]}>
         <cylinderGeometry args={[0.007, 0.007, 0.4, 4]} />
-        <meshStandardMaterial color="#222222" />
+        <meshStandardMaterial color="#333333" />
       </mesh>
       <mesh rotation={[Math.PI, 0, 0]}>
         <coneGeometry args={[0.26, 0.28, 12, 1, true]} />
-        <meshStandardMaterial color="#1a1108" side={THREE.DoubleSide} roughness={0.4} metalness={0.3} />
+        <meshStandardMaterial color="#2a1a08" side={THREE.DoubleSide} roughness={0.4} metalness={0.3} />
       </mesh>
-      <pointLight color="#f97316" intensity={1.4} distance={5.5} decay={1.8} />
+      <pointLight color="#f97316" intensity={4.5} distance={7} decay={1.6} />
     </group>
   );
 }
@@ -420,23 +425,27 @@ export function MusicRoomScene({ onGuitaristClick, onStudioClick }: Props) {
   return (
     <Canvas
       camera={{ position: [0, 1.6, 5.5], fov: 65 }}
-      style={{ background: '#060504' }}
+      style={{ background: '#120c06' }}
       dpr={[1, 1.5]}
     >
-      <fog attach="fog" args={['#060504', 9, 20]} />
+      <fog attach="fog" args={['#120c06', 11, 22]} />
 
-      <ambientLight intensity={0.05} color="#f5ddc8" />
+      <ambientLight intensity={0.22} color="#f5c890" />
+      {/* Key fill light from above-front to reveal the space */}
+      <directionalLight position={[0, 6, 4]} intensity={0.35} color="#ffd580" />
 
       <CameraRig />
       <Room />
       <NeonSign />
-      <CeilingLamp x={-3.5} />
-      <CeilingLamp x={0} />
-      <CeilingLamp x={3.5} />
-      <WallSconce position={[-7.8, 2.6, -2]} rotY={Math.PI / 2} />
-      <WallSconce position={[7.8, 2.6, -2]} rotY={-Math.PI / 2} />
-      <WallSconce position={[-7.8, 2.6, 0]} rotY={Math.PI / 2} />
-      <WallSconce position={[7.8, 2.6, 0]} rotY={-Math.PI / 2} />
+      <CeilingLamp x={-3.5} z={-2.5} />
+      <CeilingLamp x={0} z={-2.5} />
+      <CeilingLamp x={3.5} z={-2.5} />
+      <CeilingLamp x={-1.8} z={-0.5} />
+      <CeilingLamp x={1.8} z={-0.5} />
+      <WallSconce position={[-7.8, 2.6, -2.5]} rotY={Math.PI / 2} />
+      <WallSconce position={[7.8, 2.6, -2.5]} rotY={-Math.PI / 2} />
+      <WallSconce position={[-7.8, 2.6, 0.5]} rotY={Math.PI / 2} />
+      <WallSconce position={[7.8, 2.6, 0.5]} rotY={-Math.PI / 2} />
       <VinylSection onClick={onGuitaristClick} />
       <StudioSection onClick={onStudioClick} />
       <AtmosphericParticles />
@@ -444,12 +453,12 @@ export function MusicRoomScene({ onGuitaristClick, onStudioClick }: Props) {
       <EffectComposer>
         <Bloom
           mipmapBlur
-          intensity={1.4}
-          luminanceThreshold={0.15}
-          luminanceSmoothing={0.9}
-          radius={0.75}
+          intensity={1.1}
+          luminanceThreshold={0.25}
+          luminanceSmoothing={0.85}
+          radius={0.65}
         />
-        <Vignette eskil={false} offset={0.22} darkness={0.92} />
+        <Vignette eskil={false} offset={0.25} darkness={0.6} />
       </EffectComposer>
     </Canvas>
   );
