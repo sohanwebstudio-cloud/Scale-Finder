@@ -16,6 +16,7 @@ import allanHoldsworth from './allan-holdsworth.json';
 import scottHenderson from './scott-henderson.json';
 import jeffBeck from './jeff-beck.json';
 import georgeBenson from './george-benson.json';
+import muddyWaters from './muddy-waters.json';
 import bbKing from './bb-king.json';
 import alDiMeola from './al-di-meola.json';
 import davidGilmour from './david-gilmour.json';
@@ -51,6 +52,7 @@ export const ALL_GUITARISTS: Guitarist[] = [
   scottHenderson as Guitarist,
   jeffBeck as Guitarist,
   georgeBenson as Guitarist,
+  muddyWaters as Guitarist,
   bbKing as Guitarist,
   alDiMeola as Guitarist,
   davidGilmour as Guitarist,

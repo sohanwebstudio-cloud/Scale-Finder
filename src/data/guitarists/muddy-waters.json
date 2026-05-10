@@ -1,0 +1,36 @@
+{
+  "slug": "muddy-waters",
+  "name": "Muddy Waters",
+  "shortName": "Muddy",
+  "era": "Années 40 à 1983",
+  "genres": ["Chicago blues", "Electric blues", "Delta blues"],
+  "bio": "Père du Chicago Blues électrique, Muddy Waters a transformé le langage brut du Delta en une musique urbaine lourde, amplifiée et pleine d'autorité. Dans le Chicago d'après-guerre, son slide, ses riffs massifs et sa présence vocale ont redéfini ce que pouvait être un blues band moderne. Son impact sur Howlin' Wolf, B.B. King, les Rolling Stones et tout le British Blues est direct et fondateur.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "La fondation de son jeu poisseux et lourd sur les blues électriques en E — souvent attaquée en slide avec une intonation volontairement rugueuse",
+      "example": "Mannish Boy"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Pour faire avancer les shuffles sur les accords de dominante sans perdre la carrure terrienne du riff",
+      "example": "I'm Ready"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Mélangée au vocabulaire mineur pour garder ce balancement plaintif hérité du Delta tout en allégeant certaines réponses vocales",
+      "example": "Hoochie Coochie Man"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "C",
+      "context": "Sur les tempos lents et hypnotiques — la blue note épaissit encore le groove et renforce le caractère charnel de ses lignes",
+      "example": "Rollin' Stone"
+    }
+  ],
+  "signatureMove": "L'utilisation pionnière de la saturation naturelle de l'ampli, combinée à un bottleneck incisif et à des riffs lourds joués sur les cordes graves, souvent soutenus au pouce pendant qu'il chantait. Chez lui, la guitare ne brode pas : elle frappe, traîne et pousse le groupe comme une seconde voix. Cette autorité brute est devenue la matrice du Chicago Blues électrique.",
+  "recommendedListening": ["Mannish Boy", "Hoochie Coochie Man", "Rollin' Stone", "I'm Ready"]
+}
