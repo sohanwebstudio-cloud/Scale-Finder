@@ -14,10 +14,10 @@ export interface PitchResult {
 }
 
 export function detectPitchYIN(
-  buffer: Float32Array,
+  buffer: Float32Array<ArrayBuffer>,
   sampleRate: number,
   refA = 440,
-  threshold = 0.12,
+  threshold = 0.10,
 ): PitchResult | null {
   const N = buffer.length;
   const halfN = N >> 1;
@@ -70,6 +70,7 @@ export function detectPitchYIN(
   }
 
   const confidence = Math.max(0, 1 - cmnd[bestTau]);
+  if (confidence < 0.5) return null;
 
   // Step 4: Parabolic interpolation for sub-sample precision
   let refined = bestTau;

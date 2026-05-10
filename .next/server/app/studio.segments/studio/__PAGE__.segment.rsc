@@ -1,7 +1,0 @@
-1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/13l-782b6neb~.js"],""]
-3:I[70891,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/13l-782b6neb~.js"],"ScaleDetectorSection"]
-4:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
-5:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-7xl px-6 py-12","children":[["$","$L2",null,{"href":"/","className":"mb-8 inline-block text-sm text-neutral-500 transition-colors hover:text-orange-400","children":"← Retour"}],["$","header",null,{"className":"mb-10","children":[["$","p",null,{"className":"mb-2 text-xs uppercase tracking-widest text-orange-500","children":"Studio"}],["$","h1",null,{"className":"mb-3 text-4xl font-medium tracking-tight","children":"Scale Studio"}],["$","p",null,{"className":"text-base text-neutral-400","children":"Détecte les gammes à l'oreille ou explore-les directement sur le manche."}]]}],["$","$L3",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/13l-782b6neb~.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"CdOZFMFgi3Fvb_DvzqiIG"}
-6:null
