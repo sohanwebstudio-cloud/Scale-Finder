@@ -1,0 +1,36 @@
+{
+  "slug": "guthrie-govan",
+  "name": "Guthrie Govan",
+  "shortName": "Govan",
+  "era": "Années 90 à aujourd'hui",
+  "genres": ["Fusion", "Rock progressif", "Jazz-rock"],
+  "bio": "Virtuose britannique moderne (The Aristocrats). Souvent considéré comme le guitariste le plus complet techniquement aujourd'hui, il peut absorber et reproduire n'importe quel style à la perfection — mais préfère utiliser ses capacités au service de l'humour et de la surprise.",
+  "signatureScales": [
+    {
+      "modeKey": "dorian",
+      "rootName": "E",
+      "context": "Pour ses improvisations fusion fluides sur des grooves de basse — le cadre dans lequel tout peut arriver",
+      "example": "Wonderful Slippery Thing"
+    },
+    {
+      "modeKey": "lydian_dom",
+      "rootName": "A",
+      "context": "Pour ses approches très \"out\" pleines de notes étrangères — le #11 comme porte d'entrée vers l'outside",
+      "example": "Waves"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "C",
+      "context": "Utilisé avec des sauts de cordes massifs (string skipping) pour des angles harmoniques inattendus",
+      "example": "Fives"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour ses plans country-rock déjantés et ultra-rapides — le côté humoristique de son répertoire",
+      "example": "Bad Asteroid"
+    }
+  ],
+  "signatureMove": "Un éclectisme technique absolu : tapping à huit doigts, sweeping, legato ultra-fluide, hybrid picking — tout ça dans le même solo, souvent dans la même phrase. Ce qui le distingue : jamais de démonstration gratuite. Chaque technique sert le propos musical, souvent avec une touche d'humour absurde.",
+  "recommendedListening": ["Wonderful Slippery Thing", "Waves", "Fives", "Bad Asteroid"]
+}

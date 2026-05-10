@@ -1,0 +1,36 @@
+{
+  "slug": "frank-gambale",
+  "name": "Frank Gambale",
+  "shortName": "Gambale",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Jazz-fusion", "Fusion", "Jazz-rock"],
+  "bio": "Guitariste australien de jazz-fusion (Chick Corea Elektric Band). Il a popularisé et porté à son paroxysme la technique du sweep picking, transformant radicalement la façon dont la guitare peut sonner à haute vitesse dans un contexte jazz.",
+  "signatureScales": [
+    {
+      "modeKey": "altered",
+      "rootName": "C",
+      "context": "Joué en sweeping sur 6 cordes pour naviguer les cadences complexes à des vitesses impossibles",
+      "example": "Got a Match?"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "E",
+      "context": "Pour des improvisations fluides à haute vitesse sur des vamps mineures — le jazz à la vitesse du rock",
+      "example": "High 5"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "A",
+      "context": "Pour de grands arpèges majeurs sweepés sur 6 cordes sans interruption — des cascades de lumière",
+      "example": "Magritte"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "G",
+      "context": "Pour imiter les \"sheets of sound\" de Coltrane — nappes de sons denses jouées à la vitesse d'un synthé",
+      "example": "6/8 Sleaze"
+    }
+  ],
+  "signatureMove": "Le sweep picking non pas pour des arpèges basiques, mais pour jouer des gammes entières en un seul mouvement de médiator — le médiator glisse continuellement dans un sens ou l'autre. Résultat : un son fluide et dense semblable à un synthé, impossible à distinguer du sweep d'un clavier.",
+  "recommendedListening": ["Got a Match? (avec Chick Corea)", "High 5", "Magritte", "6/8 Sleaze"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "greg-howe",
+  "name": "Greg Howe",
+  "shortName": "Howe",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Fusion", "Shred jazz", "Funk"],
+  "bio": "Virtuose américain de la scène fusion. Contrairement aux shredders néo-classiques de sa génération, il s'est imposé avec un vocabulaire profondément ancré dans le jazz, le funk et le groove — de la vitesse avec du sens.",
+  "signatureScales": [
+    {
+      "modeKey": "dorian",
+      "rootName": "E",
+      "context": "Pour des improvisations ultra-rapides et bondissantes — legato et tapping à grande vitesse",
+      "example": "Jump Start"
+    },
+    {
+      "modeKey": "lydian_dom",
+      "rootName": "F",
+      "context": "Sur des grooves funk/fusion lourds pour sonner jazz et moderne — le #11 qui ouvre tout",
+      "example": "Kick It All Over"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "C",
+      "context": "Utilisée en tapping et sweep-picking pour passer les dominantes complexes sans accroc",
+      "example": "Sunny (reprise)"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Pour des improvisations pleines de feeling avec de larges bends façon blues — l'ancrage soul",
+      "example": "Extraction"
+    }
+  ],
+  "signatureMove": "Le \"hammer-on from nowhere\" : frapper des notes avec la main gauche sans attaque préalable de la main droite — un legato si fluide qu'il sonne comme un synthé. Greffé sur une rythmique funk agressive avec des accords enrichis (9e, 13e), c'est un combo unique dans le monde du shred.",
+  "recommendedListening": ["Jump Start", "Kick It All Over", "Sunny (Live)", "Extraction"]
+}

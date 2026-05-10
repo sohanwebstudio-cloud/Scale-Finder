@@ -1,0 +1,36 @@
+{
+  "slug": "eric-johnson",
+  "name": "Eric Johnson",
+  "shortName": "Johnson",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Rock instrumental", "Fusion", "Blues-rock"],
+  "bio": "Virtuose américain, perfectionniste absolu du son et de la fusion rock/jazz/country. Son toucher d'une propreté clinique en fait une référence dans le monde de la guitare instrumentale — il est capable d'entendre la différence entre deux types de piles 9V.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Pour ses cascades pentatoniques cristallines par groupes de cinq notes — le son violon légendaire",
+      "example": "Cliffs of Dover"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "Pour sonner ouvert et majestueux sur des grooves rock — le b7 apporte l'énergie sans brutalité",
+      "example": "Trademark"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "A",
+      "context": "Pour des accords ouverts aux voicings très écartés rappelant le piano — atmosphères planantes",
+      "example": "Manhattan"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Jouée en hybrid picking (médiator + doigts) pour un son country/blues piquant et précis",
+      "example": "Steve's Boogie"
+    }
+  ],
+  "signatureMove": "Le \"Violin Tone\" : Fuzz Face + Tube Driver + delay analogique pour des cascades pentatoniques lisses comme de la soie. Et l'obsession du son — il change de batteries avant chaque concert car une pile usée \"tue le bloom\" de son Fuzz. Niveau 100 du perfectionnisme.",
+  "recommendedListening": ["Cliffs of Dover", "Manhattan", "Trademark", "Desert Rose"]
+}

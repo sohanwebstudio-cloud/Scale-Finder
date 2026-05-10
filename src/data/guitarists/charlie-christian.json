@@ -1,0 +1,36 @@
+{
+  "slug": "charlie-christian",
+  "name": "Charlie Christian",
+  "shortName": "Christian",
+  "era": "Années 30 à 1942",
+  "genres": ["Swing", "Bebop (précurseur)", "Jazz électrique"],
+  "bio": "Guitariste américain, le véritable père de la guitare électrique soliste dans le jazz. Engagé par Benny Goodman à 22 ans, il a transformé la guitare d'un instrument rythmique en voix soliste à part entière, préfigurant le bebop avant même que le terme existe.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Ab",
+      "context": "Pour naviguer les grilles de swing de manière fluide — chromatismes de passage intégrés naturellement",
+      "example": "Rose Room"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "Eb",
+      "context": "Pour des thèmes percutants joués avec le swing de l'époque — l'immédiateté du blues dans le jazz",
+      "example": "Flying Home"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "C",
+      "context": "Pour des arpèges brisés soulignant les changements d'accords — le vocabulaire des saxophonistes transposé à la guitare",
+      "example": "Solo Flight"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "F",
+      "context": "Sur les standards mineurs — posant les bases du jeu en single-notes moderne que tout le monde utilise encore",
+      "example": "Swing to Bop"
+    }
+  ],
+  "signatureMove": "Il jouait comme un saxophoniste — des longues lignes liées, des notes de passage chromatiques entre les degrés de l'accord, un balancement rythmique issu de Lester Young. En seulement 4 ans de carrière (mort à 25 ans), il a inventé le langage de la guitare électrique jazz.",
+  "recommendedListening": ["Swing to Bop", "Solo Flight", "Rose Room", "Flying Home"]
+}

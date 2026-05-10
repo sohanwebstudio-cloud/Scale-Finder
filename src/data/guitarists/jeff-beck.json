@@ -1,0 +1,36 @@
+{
+  "slug": "jeff-beck",
+  "name": "Jeff Beck",
+  "shortName": "Beck",
+  "era": "Années 60 à 2023",
+  "genres": ["Rock", "Blues-rock", "Fusion"],
+  "bio": "Guitariste britannique, l'un des piliers du rock et de la fusion. Il a abandonné le médiator dans les années 80 pour jouer aux doigts, développant l'un des sons les plus expressifs et vocaux jamais entendus sur une guitare électrique.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "C",
+      "context": "Pour ses grooves rock/funk fusion avec un phrasé très syncopé — le B7 sous-jacent résonne naturellement",
+      "example": "Freeway Jam"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "B",
+      "context": "Utilisée avec des micro-bends au vibrato pour un expressivité vocale extrême — imite la voix humaine",
+      "example": "Cause We've Ended as Lovers"
+    },
+    {
+      "modeKey": "mixolydian_b6",
+      "rootName": "A",
+      "context": "Pour des atmosphères exotiques teintées de musique indienne ou orientale — le b6 apporte tout le mystère",
+      "example": "Nadia"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "G",
+      "context": "Sur des rythmiques électro/techno pour des improvisations libres — couleur mineure jazz ouverte",
+      "example": "Stratus (Live)"
+    }
+  ],
+  "signatureMove": "Le trio magique : tige de vibrato + potard de volume + jeu aux doigts. Il sculpte chaque note en temps réel — swells, pitch bends, vibrato de tige millimétrés. Aucun guitariste au monde n'a développé un son aussi vocal et humain sans chanter.",
+  "recommendedListening": ["Cause We've Ended as Lovers", "Freeway Jam", "Nadia", "Led Boots"]
+}

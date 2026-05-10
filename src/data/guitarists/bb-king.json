@@ -1,0 +1,36 @@
+{
+  "slug": "bb-king",
+  "name": "B.B. King",
+  "shortName": "B.B. King",
+  "era": "Années 40 à 2015",
+  "genres": ["Blues", "R&B"],
+  "bio": "Guitariste et chanteur américain, le \"Roi du Blues\". Il a défini le vocabulaire de la guitare solo dans le blues, influençant absolument tous les guitaristes de rock et de blues qui ont suivi. Son vibrato de la main gauche — ample, lent et immédiatement reconnaissable — est l'un des sons les plus célèbres de l'histoire de la musique.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "C",
+      "context": "La \"B.B. Box\" — doigté spécifique autour de la corde de Si qui combine pentatoniques majeure et mineure",
+      "example": "The Thrill is Gone"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "F",
+      "context": "Pour sonner doux, chaloupé et optimiste sur le degré I du blues — chaleur et humanité maximales",
+      "example": "Sweet Little Angel"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "Bb",
+      "context": "Pour les moments de tension et les relances vocales — la blue note porte toute l'émotion",
+      "example": "Every Day I Have the Blues"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour souligner le changement vers l'accord de dominante (V) avec douceur et swing",
+      "example": "Lucille"
+    }
+  ],
+  "signatureMove": "Ne jamais jouer une note sans la faire vibrer. Son vibrato de poignet ample (\"comme un papillon\" selon ses propres mots) et sa règle d'or — une seule note bien jouée vaut mieux que dix notes quelconques — font de lui le maître absolu de l'économie expressive.",
+  "recommendedListening": ["The Thrill is Gone", "Sweet Little Angel", "Lucille", "Every Day I Have the Blues"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "al-di-meola",
+  "name": "Al Di Meola",
+  "shortName": "Di Meola",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Fusion", "Jazz-rock", "Flamenco"],
+  "bio": "Virtuose américain de la fusion et du jazz-rock (Return to Forever). Il a intégré les rythmes latins, le flamenco et la musique classique à une approche électrique d'une précision chirurgicale.",
+  "signatureScales": [
+    {
+      "modeKey": "phrygian_dom",
+      "rootName": "E",
+      "context": "Pour ses fusions flamenco-jazz aux sonorités hispaniques — tension intense avant la résolution",
+      "example": "Mediterranean Sundance"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "A",
+      "context": "Pour des descentes néo-classiques ultra-rapides en alternate picking strict",
+      "example": "Race With Devil on Spanish Highway"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Pour ses improvisations jazz-rock rapides sur des grooves latins syncopés",
+      "example": "Spain"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "G",
+      "context": "Sur les accords ouverts pour des atmosphères planantes avant l'explosion technique",
+      "example": "Elegant Gypsy Suite"
+    }
+  ],
+  "signatureMove": "Un alternate picking (aller-retour strict) extrêmement rapide et percussif au médiator, couplé à un palm muting précis pour un staccato sec et articulé. La vitesse n'est jamais sacrifiée à l'expressivité — chaque note est intentionnelle.",
+  "recommendedListening": ["Mediterranean Sundance", "Race With Devil on Spanish Highway", "Spain", "Elegant Gypsy Suite"]
+}

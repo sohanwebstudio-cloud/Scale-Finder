@@ -1,0 +1,36 @@
+{
+  "slug": "gary-moore",
+  "name": "Gary Moore",
+  "shortName": "Moore",
+  "era": "Années 70 à 2011",
+  "genres": ["Blues", "Hard rock", "Blues-rock"],
+  "bio": "Guitariste nord-irlandais passé du hard rock (Thin Lizzy) au blues flamboyant. Il possédait l'un des sons les plus puissants, soutenus et émotionnels de l'histoire de la guitare — une Les Paul à fond dans un Marshall, avec une âme dedans.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "A",
+      "context": "Jouée avec un gain très élevé et des attaques de médiator lourdes — le blues qui fait pleurer",
+      "example": "Still Got The Blues"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "D",
+      "context": "Sur ses ballades au ton dramatique et déchirant — la mélancolie irlandaise à son paroxysme",
+      "example": "Parisienne Walkways"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Pour le blues-rock au tempo rapide — Texas blues amplifié à des niveaux stéroïdés",
+      "example": "Texas Strut"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "B",
+      "context": "Sur des ambiances planantes et douces avant l'explosion du solo — la tension qui précède l'orage",
+      "example": "The Loner"
+    }
+  ],
+  "signatureMove": "Des bends vertigineux tenus avec un sustain infini grâce à sa Les Paul Standard 1959 + Marshall JCM800 poussé à 10. Sa marque absolue : une longue note tenue qui monte, monte, monte, sans jamais faiblir — puis le silence. Dévastateur.",
+  "recommendedListening": ["Still Got The Blues", "Parisienne Walkways", "The Loner", "Over the Hills and Far Away"]
+}

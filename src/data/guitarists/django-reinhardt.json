@@ -1,0 +1,36 @@
+{
+  "slug": "django-reinhardt",
+  "name": "Django Reinhardt",
+  "shortName": "Django",
+  "era": "Années 30 à 1953",
+  "genres": ["Jazz manouche", "Swing", "Gypsy jazz"],
+  "bio": "Génie franco-belge et créateur du jazz manouche. Il a révolutionné la guitare jazz européenne tout en ayant perdu l'usage de deux doigts de sa main gauche dans un incendie — utilisant uniquement l'index et le majeur pour les notes, les autres doigts servant d'appui.",
+  "signatureScales": [
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "D",
+      "context": "La couleur fondamentale du jazz manouche — la seconde augmentée donne ce caractère tzigane immédiat",
+      "example": "Minor Swing"
+    },
+    {
+      "modeKey": "whole_half",
+      "rootName": "E",
+      "context": "Arpèges de dim7 balayés frénétiquement de haut en bas pour créer une urgence dramatique",
+      "example": "Nuages"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Bb",
+      "context": "Pour ses improvisations swinguantes inspirées du jazz américain — le pont entre deux continents",
+      "example": "Djangology"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "F",
+      "context": "Pour des thèmes joyeux et des accords en triades rapides — le côté solaire de son répertoire",
+      "example": "Belleville"
+    }
+  ],
+  "signatureMove": "La pompe manouche : une rythmique en quatre temps où les temps forts sont accentués à l'intérieur et les temps faibles à l'extérieur — donnant l'impression d'une section percussive complète sans batterie. Et ses chromatismes éblouissants joués avec seulement deux doigts valides.",
+  "recommendedListening": ["Minor Swing", "Nuages", "Djangology", "Belleville"]
+}

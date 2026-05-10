@@ -1,0 +1,36 @@
+{
+  "slug": "larry-carlton",
+  "name": "Larry Carlton",
+  "shortName": "Carlton",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Jazz-rock", "Fusion", "R&B studio"],
+  "bio": "Guitariste américain surnommé \"Mr. 335\" pour son usage de la Gibson ES-335. Pilier du son de studio californien (Steely Dan, The Crusaders), il est l'une des références absolues du jazz-rock pour son toucher lyrrique et son contrôle exceptionnel de la dynamique.",
+  "signatureScales": [
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Sur les accords mineurs pour des lignes douces et chantantes à la guitare semi-creuse",
+      "example": "Room 335"
+    },
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "E",
+      "context": "Utilisé comme source altérée sur B7 — apporte des couleurs jazz sur les progressions blues",
+      "example": "Kid Charlemagne"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "Pour le blues-rock sophistiqué avec bends subtils et phrasé très mélodique",
+      "example": "Don't Give It Up"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Pour des mélodies pop-jazz lumineuses et immédiatement accrocheuses",
+      "example": "Smiles and Smiles to Go"
+    }
+  ],
+  "signatureMove": "Un toucher d'une finesse extrême : il contrôle le volume à la pédale en temps réel pour sculpter chaque note. Sa grande marque : insérer la gamme mineure mélodique sur les V7 pour passer du blues à un son jazz en une phrase.",
+  "recommendedListening": ["Room 335", "Kid Charlemagne (Steely Dan)", "Smiles and Smiles to Go", "Don't Give It Up"]
+}

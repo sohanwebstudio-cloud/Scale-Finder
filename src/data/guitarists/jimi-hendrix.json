@@ -1,0 +1,36 @@
+{
+  "slug": "jimi-hendrix",
+  "name": "Jimi Hendrix",
+  "shortName": "Hendrix",
+  "era": "Années 60 à 1970",
+  "genres": ["Rock", "Blues psychédélique", "R&B"],
+  "bio": "Guitariste américain révolutionnaire qui a redéfini le rock, le blues et les prémices de la fusion. Son langage repose sur le rythme, le fuzz, les feedbacks et une approche unique des accords où la rythmique et le solo ne font qu'un.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Sur l'accord 7#9 (\"l'accord Hendrix\") pour un son agressif et saturé au fuzz",
+      "example": "Purple Haze"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Sur les ballades mineures et jams psychédéliques lents — donne une couleur ouverte et mélancolique",
+      "example": "Little Wing"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "C",
+      "context": "Sur les blues majeurs à tempo moyen, avec unissons et doubles notes en main gauche et droite",
+      "example": "Voodoo Child (Slight Return)"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "A",
+      "context": "Pour les ballades R&B/Soul harmonisées en doubles notes dans le style Curtis Mayfield",
+      "example": "Castles Made of Sand"
+    }
+  ],
+  "signatureMove": "Le jeu \"rythmique-soliste\" : il joue simultanément basse, accords et mélodie en tenant parfois la tonique avec le pouce par-dessus le manche. L'accord 7#9 (\"accord Hendrix\") et l'usage radical du fuzz + feedback sont sa marque absolue.",
+  "recommendedListening": ["Little Wing", "Voodoo Child (Slight Return)", "Purple Haze", "Castles Made of Sand"]
+}

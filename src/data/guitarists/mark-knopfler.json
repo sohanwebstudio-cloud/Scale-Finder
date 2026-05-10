@@ -1,0 +1,36 @@
+{
+  "slug": "mark-knopfler",
+  "name": "Mark Knopfler",
+  "shortName": "Knopfler",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Rock", "Folk", "Blues-rock"],
+  "bio": "Guitariste et chanteur britannique (Dire Straits). Il a redonné ses lettres de noblesse au son pur de la Stratocaster dans les années 80 avec un style inimitable hérité du folk, du blues et de la country, sans jamais utiliser de médiator.",
+  "signatureScales": [
+    {
+      "modeKey": "aeolian",
+      "rootName": "D",
+      "context": "Pour ses solos mélancoliques, très articulés et fluides — la tristesse élégante de Dire Straits",
+      "example": "Sultans of Swing"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Sur des morceaux très dynamiques aux accents country-rock — l'ouverture du b7 sans brutalité",
+      "example": "Walk of Life"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "G",
+      "context": "Utilisée avec sa guitare National (résonateur) pour le blues du bayou — son slide acoustique caractéristique",
+      "example": "Romeo and Juliet"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Pour de longues progressions dramatiques aux constructions épiques et cinématographiques",
+      "example": "Telegraph Road"
+    }
+  ],
+  "signatureMove": "Le fingerpicking exclusif (zéro médiator) — il tire les cordes avec le pouce et l'index pour un son percussif et doux simultanément. Chaque doigt est utilisé comme un instrument distinct. Sa Stratocaster en neck pickup + ampli propre = le son des années 80 le plus reconnaissable au monde.",
+  "recommendedListening": ["Sultans of Swing", "Brothers in Arms", "Telegraph Road", "Tunnel of Love"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "jim-hall",
+  "name": "Jim Hall",
+  "shortName": "Hall",
+  "era": "Années 50 à 2013",
+  "genres": ["Jazz cool", "Post-bop", "Jazz chambre"],
+  "bio": "Maître américain du jazz \"cool\". Il a influencé des générations de guitaristes (Pat Metheny, Bill Frisell) par son approche intellectuelle, subtile et profondément mélodique — pensant chaque solo comme une œuvre compositionnelle.",
+  "signatureScales": [
+    {
+      "modeKey": "ionian",
+      "rootName": "F",
+      "context": "Jouée avec un sens exceptionnel de l'espacement et des silences — la note qu'il ne joue pas est aussi importante",
+      "example": "Concierto de Aranjuez"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Pour ses duos intimes au phrasé d'une logique implacable — chaque phrase répond à la précédente",
+      "example": "My Funny Valentine"
+    },
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "C",
+      "context": "Utilisée subtilement pour créer des dissonances douces sans jamais choquer l'oreille",
+      "example": "Undercurrent"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "Bb",
+      "context": "Pour des résolutions d'accords très denses et colorées — le jazz harmonique à son sommet",
+      "example": "St. Thomas"
+    }
+  ],
+  "signatureMove": "Un refus absolu des clichés rapides. Il développe ses solos comme un compositeur classique — thème, variation, développement, récapitulation. Son écoute interactive avec les autres musiciens (Bill Evans, Sonny Rollins) est légendaire : il répond, il ne joue pas contre.",
+  "recommendedListening": ["Concierto de Aranjuez", "My Funny Valentine", "Romance de Los Pinos", "St. Thomas"]
+}

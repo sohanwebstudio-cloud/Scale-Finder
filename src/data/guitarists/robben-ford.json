@@ -1,0 +1,36 @@
+{
+  "slug": "robben-ford",
+  "name": "Robben Ford",
+  "shortName": "Ford",
+  "era": "Années 70 à aujourd'hui",
+  "genres": ["Blues-jazz", "Blues", "Soul"],
+  "bio": "Guitariste américain maître du blues-jazz, connu pour sa capacité à fondre le vocabulaire blues traditionnel dans une sophistication harmonique jazz. Son toucher élégant et son son incisif en font l'un des grands ponts entre les deux univers.",
+  "signatureScales": [
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Sur les accords de dominante blues pour un son ouvert et joyeux",
+      "example": "Help The Poor"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "D",
+      "context": "Sur les accords de dominante altérés — crée une tension jazz qui se résout façon blues",
+      "example": "Revelation"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "A",
+      "context": "Mélangée à la pentatonique majeure pour le phrasé blues classique signature",
+      "example": "Talk to Your Daughter"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Sur les grooves mineurs pour un son jazz-funk fluide et sophistiqué",
+      "example": "Rugged Road"
+    }
+  ],
+  "signatureMove": "Mélange constant des pentatoniques mineure et majeure avec insertion de la gamme diminuée sur les dominantes — un son blues raffiné où la tension jazz se résout toujours de manière organique.",
+  "recommendedListening": ["Help The Poor", "Talk to Your Daughter", "Revelation", "Rugged Road"]
+}

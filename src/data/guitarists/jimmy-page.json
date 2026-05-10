@@ -1,0 +1,36 @@
+{
+  "slug": "jimmy-page",
+  "name": "Jimmy Page",
+  "shortName": "Page",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Hard rock", "Blues-rock", "Folk rock"],
+  "bio": "Guitariste britannique, architecte et producteur de Led Zeppelin. Il a mélangé le blues lourd, le folk celtique et les influences orientales pour créer la matrice du hard rock moderne — autant compositeur et producteur génial que guitariste.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "La base de ses solos rock massifs et de ses riffs lourds — l'énergie brute avant la sophistication",
+      "example": "Whole Lotta Love"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Pour les ambiances grandioses et orchestrales aux arrangements complexes",
+      "example": "Kashmir"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "En accordage DADGAD pour ses pièces acoustiques folk britanniques et orientales — un univers à part",
+      "example": "Black Mountain Side"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Pour des progressions mélancoliques se transformant progressivement en rock épique",
+      "example": "Stairway to Heaven"
+    }
+  ],
+  "signatureMove": "Le \"sloppy magic\" : ses solos sont toujours sur le fil du rasoir, jamais parfaitement propres — mais cette irrégularité EST l'émotion. Son jeu à l'archet de violon sur sa Les Paul et ses riffs monumentaux doublés en studio (souvent légèrement désaccordés) créent un mur de son insurpassable.",
+  "recommendedListening": ["Whole Lotta Love", "Stairway to Heaven", "Kashmir", "Black Mountain Side"]
+}

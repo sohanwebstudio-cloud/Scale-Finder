@@ -1,0 +1,36 @@
+{
+  "slug": "john-mclaughlin",
+  "name": "John McLaughlin",
+  "shortName": "McLaughlin",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Jazz-fusion", "Jazz-rock", "Musique indienne"],
+  "bio": "Pionnier britannique du jazz-rock et fondateur du Mahavishnu Orchestra. Il a fusionné l'énergie du rock avec la complexité harmonique du jazz et les cycles rythmiques de la musique indienne pour créer un langage radicalement nouveau.",
+  "signatureScales": [
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "E",
+      "context": "Pour des atmosphères sombres, tendues et orientales — la seconde augmentée comme point de tension",
+      "example": "Birds of Fire"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "A",
+      "context": "Pour ses lignes de jazz-fusion angulaires sur des accords altérés — densité chromatique maximale",
+      "example": "Meeting of the Spirits"
+    },
+    {
+      "modeKey": "mixolydian_b6",
+      "rootName": "D",
+      "context": "Pour amener des couleurs inhabituelles et mystiques sur des vamps — le b6 comme fenêtre vers l'Inde",
+      "example": "Miles Beyond"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "G",
+      "context": "Sur de vastes accords majeurs pour ses arpèges très ouverts et lumineux à double manche",
+      "example": "A Lotus on Irish Streams"
+    }
+  ],
+  "signatureMove": "Un alternate picking féroce à des vitesses supersoniques, couplé à une connaissance intime des cycles rythmiques indiens (talās). Il pense en groupes de 5, 7 ou 11 notes là où les autres comptent à 4. La guitare à double manche (6 + 12 cordes) est son orchestre personnel.",
+  "recommendedListening": ["Birds of Fire", "Meeting of the Spirits", "Extrapolation", "A Lotus on Irish Streams"]
+}

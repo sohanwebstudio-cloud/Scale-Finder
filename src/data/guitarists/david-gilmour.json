@@ -1,0 +1,36 @@
+{
+  "slug": "david-gilmour",
+  "name": "David Gilmour",
+  "shortName": "Gilmour",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Rock progressif", "Psychédélique", "Blues-rock"],
+  "bio": "Guitariste britannique, voix mélodique de Pink Floyd. Son jeu est l'antithèse de la démonstration technique : tout repose sur l'espace, le son, la justesse et l'émotion. Ses bends lents et ses delays légendaires ont défini le son de toute une époque.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "B",
+      "context": "La colonne vertébrale de ses solos les plus célèbres — jouée de manière très aérée, chaque note compte",
+      "example": "Comfortably Numb"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Pour les jams atmosphériques et sombres caractéristiques de Pink Floyd — la quinte juste donne de l'air",
+      "example": "Another Brick in the Wall Pt. 2"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Pour des thèmes acoustiques et lumineux, souvent mélangée avec des slides chaleureux",
+      "example": "Wish You Were Here"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "C",
+      "context": "Pour construire des solos longs et épiques avec chromatismes lents — la narration avant la pyrotechnie",
+      "example": "Shine On You Crazy Diamond"
+    }
+  ],
+  "signatureMove": "Une gestion magistrale du son : Stratocaster, fuzz Big Muff, delay Binson Echorec. Des bends lents et dramatiques atteignant parfois deux tons ou plus. La règle absolue de Gilmour : laisser respirer. Un seul bend au bon endroit vaut mille notes.",
+  "recommendedListening": ["Comfortably Numb", "Shine On You Crazy Diamond", "Time", "Wish You Were Here"]
+}

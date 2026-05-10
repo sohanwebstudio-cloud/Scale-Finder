@@ -1,0 +1,36 @@
+{
+  "slug": "wes-montgomery",
+  "name": "Wes Montgomery",
+  "shortName": "Montgomery",
+  "era": "Années 50 à 1968",
+  "genres": ["Bebop", "Hard bop", "Soul-jazz"],
+  "bio": "Guitariste américain légendaire, l'une des plus grandes figures du jazz. Il jouait exclusivement avec la pulpe de son pouce, ce qui lui donnait un son particulièrement rond et chaud. Son architecture des solos en trois phases — single notes, octaves, block chords — est devenue la référence absolue.",
+  "signatureScales": [
+    {
+      "modeKey": "dorian",
+      "rootName": "F",
+      "context": "Pour ses lignes single-notes rapides et swinguantes dans le langage bebop",
+      "example": "Four on Six"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Bb",
+      "context": "Sur les blues jazz pour ses fameuses phrases en octaves — sa marque de fabrique absolue",
+      "example": "West Coast Blues"
+    },
+    {
+      "modeKey": "bebop_dom",
+      "rootName": "C",
+      "context": "Pour créer des lignes chromatiques fluides sur les progressions ii-V-I",
+      "example": "Impressions"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "Eb",
+      "context": "Pour ses ballades jouées entièrement en block chords — la troisième phase de son solo type",
+      "example": "Polka Dots and Moonbeams"
+    }
+  ],
+  "signatureMove": "Le solo en trois actes : d'abord des lignes bebop en single-notes, puis le passage aux octaves (son son signature au pouce), et enfin les block chords pour l'apothéose. Jouer avec le pouce lui donnait un son que personne n'a réussi à imiter.",
+  "recommendedListening": ["Four on Six", "West Coast Blues", "Impressions", "Bumpin' on Sunset"]
+}

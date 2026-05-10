@@ -1,0 +1,36 @@
+{
+  "slug": "scott-henderson",
+  "name": "Scott Henderson",
+  "shortName": "Henderson",
+  "era": "Années 80 à aujourd'hui",
+  "genres": ["Jazz-fusion", "Blues-fusion"],
+  "bio": "Guitariste américain (Tribal Tech), maître de la fusion jazz-blues. Il combine le phrasé sauvage et blues de Stevie Ray Vaughan avec l'esprit harmonique analytique du jazz moderne, créant un son à la fois viscéral et sophistiqué.",
+  "signatureScales": [
+    {
+      "modeKey": "half_whole",
+      "rootName": "E",
+      "context": "Pour ses lignes jazz-fusion très tendues sur les accords 7#9 avant la résolution blues",
+      "example": "Dolemite"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Jouée de manière brute avec forte distorsion et usage intensif du vibrato bras",
+      "example": "Tore Down House"
+    },
+    {
+      "modeKey": "lydian_dom",
+      "rootName": "F",
+      "context": "Pour un son fusion moderne sur des grooves funk — le #11 donne une couleur jazz-funk caractéristique",
+      "example": "Face First"
+    },
+    {
+      "modeKey": "altered",
+      "rootName": "C",
+      "context": "Pour naviguer les progressions d'accords complexes avec fluidité — le \"super locrien\" du jazz",
+      "example": "Big Girl"
+    }
+  ],
+  "signatureMove": "L'utilisation intensive de la tige de vibrato façon Jeff Beck pour imiter la voix humaine. Sa capacité à jouer très \"out\" (en dehors de la tonalité) avant de retomber parfaitement sur un plan blues terrien est sa signature : la tension extrême, puis la résolution viscérale.",
+  "recommendedListening": ["Dolemite", "Tore Down House", "Face First", "Well to the Bone"]
+}

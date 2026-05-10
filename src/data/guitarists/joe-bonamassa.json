@@ -1,0 +1,36 @@
+{
+  "slug": "joe-bonamassa",
+  "name": "Joe Bonamassa",
+  "shortName": "Bonamassa",
+  "era": "Années 90 à aujourd'hui",
+  "genres": ["Blues-rock", "Blues", "Rock"],
+  "bio": "Virtuose américain et encyclopédie vivante de la guitare vintage. Prodige du blues-rock, il perpétue la tradition britannique (Cream, Fleetwood Mac) avec une technique foudroyante et une collection de guitares et d'amplis vintage qui ferait pâlir n'importe quel musée.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Pour des solos intenses pleins de gain — rafales de notes rapides en economy picking",
+      "example": "Sloe Gin"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "A",
+      "context": "Sur de lourds riffs blues-rock — le groove stoner des années 70 réinterprété au 21e siècle",
+      "example": "The Ballad of John Henry"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "D",
+      "context": "Pour improviser sur des grooves longs inspirés de Cream et du blues britannique années 70",
+      "example": "Just Got Paid"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "B",
+      "context": "Pour apporter une couleur dramatique et orientale à ses compositions — l'influence néo-classique",
+      "example": "Dust Bowl"
+    }
+  ],
+  "signatureMove": "Les cascades pentatoniques à vitesse extrême en economy picking (jamais de mouvement inutile du médiator) inspirées d'Eric Johnson. Couplées à une connaissance encyclopédique du matériel vintage — il sait exactement quel ampli, quel câble et quelle guitare utiliser pour chaque son.",
+  "recommendedListening": ["Sloe Gin", "The Ballad of John Henry", "Dust Bowl", "Drive"]
+}

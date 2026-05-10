@@ -1,0 +1,36 @@
+{
+  "slug": "carlos-santana",
+  "name": "Carlos Santana",
+  "shortName": "Santana",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Rock latin", "Blues-rock psychédélique", "Fusion"],
+  "bio": "Pionnier mexicain-américain du rock latin. Il a fusionné les rythmes afro-cubains avec l'énergie du blues-rock psychédélique pour créer un son immédiatement reconnaissable entre tous — des notes qui sonnent comme une prière.",
+  "signatureScales": [
+    {
+      "modeKey": "dorian",
+      "rootName": "A",
+      "context": "Son mode de prédilection absolu pour improviser sur des montunos latins — warmth et ouverture",
+      "example": "Oye Como Va"
+    },
+    {
+      "modeKey": "harmonic_minor",
+      "rootName": "C",
+      "context": "Pour des mélodies passionnées et dramatiques — la seconde augmentée apporte tout le mystère",
+      "example": "Europa"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Jouée avec fougue et saturation sur des percussions latines rapides — l'énergie brute du rock",
+      "example": "Black Magic Woman"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour des improvisations joyeuses aux accents rock des années 60 — le VI7 qui balance",
+      "example": "Soul Sacrifice"
+    }
+  ],
+  "signatureMove": "Un sustain infini obtenu en cherchant le larsen contrôlé avec son Mesa/Boogie poussé à fond. Chaque note est tenue, chantée, vibrée comme une voix humaine. Son phrasé spirituel — jamais pressé, jamais gratuit — est l'expression directe d'une foi musicale absolue.",
+  "recommendedListening": ["Oye Como Va", "Europa", "Black Magic Woman", "Samba Pa Ti"]
+}

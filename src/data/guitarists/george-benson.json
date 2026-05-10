@@ -1,0 +1,36 @@
+{
+  "slug": "george-benson",
+  "name": "George Benson",
+  "shortName": "Benson",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Jazz", "Soul-jazz", "R&B"],
+  "bio": "Guitariste et chanteur américain, virtuose du jazz et du R&B. Possédant l'un des jeux en single-notes les plus rapides et précis du jazz, influencé par Charlie Christian et Wes Montgomery, il est aussi célèbre pour sa technique unique de scat à l'unisson avec sa guitare.",
+  "signatureScales": [
+    {
+      "modeKey": "dorian",
+      "rootName": "F",
+      "context": "Pour des rafales de notes extrêmement rapides et articulées — son picking est d'une précision chirurgicale",
+      "example": "Breezin'"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "Bb",
+      "context": "Pour ses plans soul-jazz très groove — la blue note crée l'accroche émotionnelle immédiate",
+      "example": "On Broadway"
+    },
+    {
+      "modeKey": "ionian",
+      "rootName": "Eb",
+      "context": "Sur les ii-V-I classiques pour un phrasé jazz pur — chromatismes bebop intégrés naturellement",
+      "example": "Take Five"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour ses montées en accords et phrasés en octaves façon Wes Montgomery — le son soul-jazz par excellence",
+      "example": "Give Me The Night"
+    }
+  ],
+  "signatureMove": "Le scat à l'unisson : il chante exactement les notes qu'il joue à la guitare, avec un swing et une fluidité phénoménale. Cette technique crée une signature sonore immédiatement reconnaissable — deux instruments qui ne font qu'un.",
+  "recommendedListening": ["Breezin'", "On Broadway", "Give Me The Night", "Affirmation"]
+}

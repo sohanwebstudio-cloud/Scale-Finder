@@ -1,0 +1,36 @@
+{
+  "slug": "rory-gallagher",
+  "name": "Rory Gallagher",
+  "shortName": "Gallagher",
+  "era": "Années 60 à 1995",
+  "genres": ["Blues-rock", "Hard rock", "Folk blues"],
+  "bio": "Légende irlandaise du blues-rock. Il poussait l'énergie du blues vers le hard rock, se produisant toujours sur scène avec sa Stratocaster de 1961 complètement usée par l'acidité de sa sueur — une guitare vivante, aussi brûlée que lui.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "A",
+      "context": "Jouée à toute vitesse avec une hargne typiquement celtique et blues — l'énergie brute avant tout",
+      "example": "Bullfrog Blues"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "E",
+      "context": "Mélangée avec le jeu en slide (bottleneck) agressif sur les cordes aiguës — le cri du blues irlandais",
+      "example": "Bad Penny"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "G",
+      "context": "Pour l'intégration de plans folk/rock aux accents irlandais — la gamme qui sent la tourbe et la pluie",
+      "example": "Tattoo'd Lady"
+    },
+    {
+      "modeKey": "aeolian",
+      "rootName": "D",
+      "context": "Sur des ballades plus lourdes avec un grain de saturation brut et râpeux — la mélancolie celte",
+      "example": "A Million Miles Away"
+    }
+  ],
+  "signatureMove": "Une énergie live destructrice — il transpirait littéralement à travers sa guitare. Son utilisation agressive du bottleneck en accordage ouvert et ses pinch harmonics qui faisaient hurler son Vox AC30 : un jeu physique, viscéral, sans filet. Jamais de backing track, jamais d'artifice.",
+  "recommendedListening": ["Bullfrog Blues", "Bad Penny", "Tattoo'd Lady", "A Million Miles Away"]
+}

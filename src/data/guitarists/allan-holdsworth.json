@@ -1,0 +1,36 @@
+{
+  "slug": "allan-holdsworth",
+  "name": "Allan Holdsworth",
+  "shortName": "Holdsworth",
+  "era": "Années 70 à 2017",
+  "genres": ["Jazz-fusion", "Rock progressif"],
+  "bio": "Guitariste britannique au langage harmonique le plus complexe de l'histoire de la guitare. Sa technique de legato quasi-exclusive (très peu d'attaques au médiator) lui permettait d'imiter le phrasé d'un saxophoniste comme Coltrane — des lignes impossibles, aux intervalles irréalisables pour tout autre guitariste.",
+  "signatureScales": [
+    {
+      "modeKey": "melodic_minor",
+      "rootName": "C",
+      "context": "Il voyait le mineur mélodique comme une famille d'accords fluides plutôt qu'une gamme — source de toutes ses gammes altérées",
+      "example": "Fred"
+    },
+    {
+      "modeKey": "whole_tone",
+      "rootName": "G",
+      "context": "Pour créer des atmosphères suspendues et flottantes, sans résolution tonale évidente",
+      "example": "Metal Fatigue"
+    },
+    {
+      "modeKey": "half_whole",
+      "rootName": "A",
+      "context": "Pour des arpèges d'accords complexes joués en sweep picking/legato à grande vitesse",
+      "example": "Pud Wud"
+    },
+    {
+      "modeKey": "lydian",
+      "rootName": "D",
+      "context": "Pour ses accords larges aux extensions ouvertes utilisés en rythmique — son harmonie verticale unique",
+      "example": "Looking Glass"
+    }
+  ],
+  "signatureMove": "Un legato absolu : il attaque à peine au médiator, tout se passe en hammer-on/pull-off. Ses accords sont théoriquement injouables (écartements de main extrêmes). Il refuse totalement les pentatoniques classiques — ses sources sont les gammes jazz les plus avancées.",
+  "recommendedListening": ["Metal Fatigue", "Fred", "Pud Wud", "City Nights"]
+}

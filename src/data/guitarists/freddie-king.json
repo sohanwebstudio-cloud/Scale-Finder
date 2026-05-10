@@ -1,0 +1,36 @@
+{
+  "slug": "freddie-king",
+  "name": "Freddie King",
+  "shortName": "F. King",
+  "era": "Années 50 à 1976",
+  "genres": ["Blues", "Texas blues", "Blues-rock"],
+  "bio": "Le \"Texas Cannonball\", l'un des Trois Kings du blues. Il a fait le pont entre le blues de Chicago et le blues-rock électrique explosif qui allait conquérir l'Angleterre. Son influence directe sur Eric Clapton, Peter Green et Mick Taylor est considérable.",
+  "signatureScales": [
+    {
+      "modeKey": "blues_major",
+      "rootName": "E",
+      "context": "Mélange hybride pentatoniques majeure/mineure — le rebond et l'optimisme signature du Texas Blues",
+      "example": "Hide Away"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "Pour relancer la section rythmique sur des grooves appuyés — le turnaround Texas par excellence",
+      "example": "Going Down"
+    },
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "C",
+      "context": "Pour des licks répétitifs sur la corde de mi aigu joués avec une attaque féroce aux onglets",
+      "example": "The Stumble"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Sur les blues lents traditionnels — soulignant l'interaction vocale avec le piano",
+      "example": "Have You Ever Loved A Woman"
+    }
+  ],
+  "signatureMove": "Il jouait avec un onglet en plastique au pouce et un onglet en métal à l'index (\"thumbpick & fingerpick\") — une attaque dure, mordante, parfaitement adaptée aux instrumentaux rapides. Son style physique et implacable a directement alimenté la British Blues Invasion.",
+  "recommendedListening": ["Hide Away", "Going Down", "The Stumble", "San-Ho-Zay"]
+}

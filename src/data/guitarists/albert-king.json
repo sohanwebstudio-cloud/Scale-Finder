@@ -1,0 +1,36 @@
+{
+  "slug": "albert-king",
+  "name": "Albert King",
+  "shortName": "A. King",
+  "era": "Années 50 à 1992",
+  "genres": ["Blues", "Soul blues", "R&B"],
+  "bio": "L'un des \"Trois Kings\" du blues américain. Droitier jouant sur une Flying V de gaucher sans inverser les cordes, son approche physique des bends — tirer vers le bas avec une force brutale — a directement influencé Stevie Ray Vaughan et Eric Clapton.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "Db",
+      "context": "La position phare pour ses bends déchirants sur la corde de mi aigu — cordes tirées vers le bas à l'extrême",
+      "example": "Born Under a Bad Sign"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "G",
+      "context": "Pour ses plans blues plus chaleureux en accompagnement des cuivres de Stax",
+      "example": "Crosscut Saw"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "A",
+      "context": "Pour des relances agressives entre ses lignes de chant — la blue note comme coup de poing",
+      "example": "I'll Play the Blues for You"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "E",
+      "context": "Pour marquer les retours d'accords en milieu de grille avec douceur et swing",
+      "example": "The Hunter"
+    }
+  ],
+  "signatureMove": "L'\"Albert King Box\" : une position très restreinte de la gamme mineure travaillée dans tous les sens. Il tirait les cordes vers le bas (au lieu de les pousser vers le haut) — une technique unique dictée par sa guitare de gaucher jouée à l'envers, produisant des bends d'une force et d'une expressivité inégalées.",
+  "recommendedListening": ["Born Under a Bad Sign", "Crosscut Saw", "I'll Play the Blues for You", "The Sky Is Crying"]
+}

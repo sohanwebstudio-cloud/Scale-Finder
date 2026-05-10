@@ -1,0 +1,36 @@
+{
+  "slug": "stevie-ray-vaughan",
+  "name": "Stevie Ray Vaughan",
+  "shortName": "SRV",
+  "era": "Années 70 à 1990",
+  "genres": ["Texas blues", "Blues-rock"],
+  "bio": "Guitariste américain et figure de proue du renouveau du Texas Blues dans les années 80. Son jeu d'une intensité physique rare combine vitesse, précision et un son énorme obtenu avec des cordes épaisses accordées un demi-ton plus bas, hérité d'Albert King et Jimi Hendrix.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "E",
+      "context": "Jouée avec les cordes à vide pour un maximum de résonance et de gras — base de tout son vocabulaire",
+      "example": "Pride and Joy"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "E",
+      "context": "Mélangée à la mineure pour apporter un côté chaloupé et soul au phrasé blues",
+      "example": "Mary Had A Little Lamb"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "Ab",
+      "context": "Sur les shuffles rapides pour souligner les changements d'accords avec énergie",
+      "example": "Crossfire"
+    },
+    {
+      "modeKey": "dorian",
+      "rootName": "C",
+      "context": "Sur les rares morceaux mineurs — avec beaucoup de legato et de douceur expressive",
+      "example": "Texas Flood"
+    }
+  ],
+  "signatureMove": "Une attaque de médiator féroce, des bends d'une précision redoutable (souvent sur deux cordes simultanément) et un shuffle rythmique implacable. Il joue avec des cordes .013 accordées un demi-ton plus bas pour obtenir ce son massif et organique.",
+  "recommendedListening": ["Pride and Joy", "Texas Flood", "Little Wing (reprise)", "Crossfire"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "eric-clapton",
+  "name": "Eric Clapton",
+  "shortName": "Clapton",
+  "era": "Années 60 à aujourd'hui",
+  "genres": ["Blues-rock", "Blues", "Rock"],
+  "bio": "Guitariste britannique légendaire, surnommé \"Slowhand\". Fondateur de Cream et pilier du British Blues, son jeu a défini l'utilisation de la guitare électrique dans le rock des années 60 et 70.",
+  "signatureScales": [
+    {
+      "modeKey": "pentatonic_minor",
+      "rootName": "A",
+      "context": "La base absolue de son vocabulaire rock et blues — bends précis et phrasé très vocal",
+      "example": "Crossroads"
+    },
+    {
+      "modeKey": "pentatonic_major",
+      "rootName": "E",
+      "context": "Mélangée à la mineure pour un son blues plus chaleureux et \"roots\" — l'âme du British Blues",
+      "example": "Layla"
+    },
+    {
+      "modeKey": "mixolydian",
+      "rootName": "D",
+      "context": "Sur des riffs rock lourds basés sur l'accord de dominante — la structure de Cream",
+      "example": "Sunshine of Your Love"
+    },
+    {
+      "modeKey": "blues_minor",
+      "rootName": "C",
+      "context": "Sur les ballades blues larmoyantes avec de nombreux micro-bends et un vibrato ample et vocal",
+      "example": "Bell Bottom Blues"
+    }
+  ],
+  "signatureMove": "Le \"Woman Tone\" : micro chevalet coupé avec le potard de tonalité de sa Gibson SG baissé à zéro — un son flûté, presque de synthétiseur. Ajoutez un vibrato de main gauche très ample et un phrasé blues d'une grande économie : il ne joue que les notes absolument nécessaires.",
+  "recommendedListening": ["Crossroads", "Layla", "Sunshine of Your Love", "Bell Bottom Blues"]
+}
