@@ -25,6 +25,8 @@ export function AudioDetector({ onScaleSelected }: Props) {
   const rafRef = useRef<number | null>(null);
   const matchIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const semisRef = useRef<Map<number, number>>(new Map());
+  const stableKeyRef = useRef<string>('');
+  const stableCountRef = useRef<number>(0);
 
   const stop = useCallback(() => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
@@ -85,10 +87,29 @@ export function AudioDetector({ onScaleSelected }: Props) {
       loop();
 
       matchIntervalRef.current = setInterval(() => {
+        // Décroissance temporelle : les notes jouées il y a longtemps s'effacent progressivement
+        for (const [semi, count] of semisRef.current) {
+          const next = count * 0.6;
+          if (next < 0.5) semisRef.current.delete(semi);
+          else semisRef.current.set(semi, next);
+        }
+
         const snapshot = new Map(semisRef.current);
         setDetectedSemis(snapshot);
-        if (snapshot.size >= 3) setMatches(matchScales(snapshot));
-      }, 800);
+
+        if (snapshot.size >= 3) {
+          const newMatches = matchScales(snapshot);
+          const topKey = newMatches[0] ? `${newMatches[0].rootName}-${newMatches[0].modeKey}` : '';
+          // Stabilité : n'afficher que si le résultat #1 est identique 2 fois de suite
+          if (topKey === stableKeyRef.current) {
+            stableCountRef.current++;
+            if (stableCountRef.current >= 2) setMatches(newMatches);
+          } else {
+            stableKeyRef.current = topKey;
+            stableCountRef.current = 1;
+          }
+        }
+      }, 1000);
 
       setSource(mode);
       setIsListening(true);
@@ -101,6 +122,8 @@ export function AudioDetector({ onScaleSelected }: Props) {
 
   function reset() {
     semisRef.current = new Map();
+    stableKeyRef.current = '';
+    stableCountRef.current = 0;
     setDetectedSemis(new Map());
     setMatches([]);
   }
