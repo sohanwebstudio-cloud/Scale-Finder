@@ -23,11 +23,28 @@ function buildScaleSet(rootIdx: number, intervals: number[]): Set<number> {
 }
 
 /**
- * Score Jaccard entre les notes détectées et chaque gamme.
- * Retourne les 5 meilleures correspondances, triées par score décroissant.
+ * Analyse tonale pondérée par fréquence de jeu.
+ *
+ * Score = (poids notes dans la gamme - pénalité notes hors gamme) / total
+ * + bonus si la note la plus jouée est la tonique candidate.
+ *
+ * Bien meilleur que Jaccard binaire : une note jouée 40x compte 40x plus
+ * qu'une note entendue une seule fois, et les fausses notes pénalisent.
  */
-export function matchScales(detectedSemis: Set<number>): ScaleMatchResult[] {
-  if (detectedSemis.size === 0) return [];
+export function matchScales(detectedCounts: Map<number, number>): ScaleMatchResult[] {
+  if (detectedCounts.size === 0) return [];
+
+  const totalCount = [...detectedCounts.values()].reduce((a, b) => a + b, 0);
+
+  // Note la plus jouée = candidat naturel à la tonique
+  let dominantSemi = -1;
+  let dominantCount = 0;
+  for (const [semi, count] of detectedCounts) {
+    if (count > dominantCount) {
+      dominantCount = count;
+      dominantSemi = semi;
+    }
+  }
 
   const results: ScaleMatchResult[] = [];
 
@@ -35,21 +52,30 @@ export function matchScales(detectedSemis: Set<number>): ScaleMatchResult[] {
     for (const mode of MODES) {
       const scaleSet = buildScaleSet(root.idx, mode.intervals);
 
+      let inScore = 0;
+      let outScore = 0;
       let matchCount = 0;
-      for (const semi of detectedSemis) {
-        if (scaleSet.has(semi)) matchCount++;
+
+      for (const [semi, count] of detectedCounts) {
+        if (scaleSet.has(semi)) {
+          inScore += count;
+          matchCount++;
+        } else {
+          outScore += count;
+        }
       }
 
-      // Jaccard : intersection / union
-      const union = new Set([...scaleSet, ...detectedSemis]);
-      const score = matchCount / union.size;
+      let score = (inScore - outScore * 0.6) / totalCount;
+
+      // Bonus tonique : la note dominante correspond à la racine candidate
+      if (dominantSemi === root.idx) score *= 1.25;
 
       results.push({
         rootName: root.name,
         rootIdx: root.idx,
         modeKey: mode.key,
         modeName: mode.name,
-        score,
+        score: Math.max(0, score),
         matchCount,
       });
     }

@@ -87,8 +87,7 @@ export function AudioDetector({ onScaleSelected }: Props) {
       matchIntervalRef.current = setInterval(() => {
         const snapshot = new Map(semisRef.current);
         setDetectedSemis(snapshot);
-        const semis = new Set(snapshot.keys());
-        if (semis.size >= 3) setMatches(matchScales(semis));
+        if (snapshot.size >= 3) setMatches(matchScales(snapshot));
       }, 800);
 
       setSource(mode);
@@ -194,7 +193,7 @@ export function AudioDetector({ onScaleSelected }: Props) {
                   <div>
                     <p className="text-sm font-medium">{m.rootName} {m.modeName}</p>
                     <p className="text-xs text-neutral-500">
-                      {Math.round(m.score * 100)}% — {m.matchCount}/{detectedSemis.size} notes
+                      {Math.min(100, Math.round(m.score * 100))}% — {m.matchCount}/{detectedSemis.size} notes
                     </p>
                   </div>
                 </div>
