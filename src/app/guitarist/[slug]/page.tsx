@@ -109,6 +109,26 @@ export default async function GuitaristPage({
           </section>
         )}
 
+      {/* Exercices main gauche */}
+      <section className="mb-10">
+        <Link
+          href="/exercises"
+          className="group flex items-center justify-between rounded-xl border border-neutral-800 bg-neutral-900 p-5 transition-colors hover:border-orange-500/40 hover:bg-neutral-900/80"
+        >
+          <div>
+            <p className="mb-1 text-xs uppercase tracking-wider text-orange-500">Technique</p>
+            <h2 className="mb-1 text-base font-medium">Exercices Main Gauche</h2>
+            <p className="text-sm text-neutral-400">
+              7 exercices pour l&apos;indépendance, la coordination et la force — avec métronome
+              intégré et tablatures.
+            </p>
+          </div>
+          <span className="ml-4 shrink-0 text-xl text-orange-400 transition-transform group-hover:translate-x-1">
+            →
+          </span>
+        </Link>
+      </section>
+
       {/* Explorateur interactif */}
       <section>
         <h2 className="mb-1 text-xs uppercase tracking-wider text-neutral-500">
