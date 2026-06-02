@@ -1,11 +1,21 @@
+/**
+ * Types partagés dans toute l'app.
+ */
+
+export type NoteName = string;
+
+export interface Note {
+  name: NoteName;
+  semi: number;
+}
+
 export type ModeKey =
   | 'ionian' | 'dorian' | 'phrygian' | 'lydian' | 'mixolydian' | 'aeolian' | 'locrian'
-  | 'altered' | 'lydian_dom' | 'half_whole'
-  | 'pentatonic_minor' | 'pentatonic_major' | 'blues_minor' | 'blues_major'
-  | 'melodic_minor' | 'lydian_aug' | 'mixolydian_b6' | 'locrian_2'
+  | 'melodic_minor' | 'lydian_aug' | 'lydian_dom' | 'mixolydian_b6' | 'locrian_2' | 'altered'
   | 'harmonic_minor' | 'phrygian_dom'
-  | 'whole_tone' | 'whole_half'
+  | 'whole_tone' | 'half_whole' | 'whole_half'
   | 'bebop_dom'
+  | 'pentatonic_minor' | 'pentatonic_major' | 'blues_minor' | 'blues_major'
   | 'arp_maj' | 'arp_min' | 'arp_dom7' | 'arp_maj7' | 'arp_m7' | 'arp_m7b5' | 'arp_dim7' | 'arp_mmaj7';
 
 export type ScaleCategory =
@@ -23,18 +33,7 @@ export interface Mode {
   chord: string;
   desc: string;
   category: ScaleCategory;
-  /** Offsets de lettres pour l'épellation (optionnel — consécutif par défaut) */
   letterOffsets?: number[];
-}
-
-export interface KeyRoot {
-  idx: number;
-  name: string;
-}
-
-export interface Note {
-  name: string;
-  semi: number;
 }
 
 export interface ColorPair {
@@ -44,21 +43,27 @@ export interface ColorPair {
   darkText: string;
 }
 
+export interface KeyRoot {
+  idx: number;
+  name: string;
+}
+
 export interface SignatureScale {
-  rootName: string;
   modeKey: ModeKey;
-  context?: string;
+  rootName: string;
+  context: string;
   example?: string;
 }
 
 export interface Guitarist {
   slug: string;
   name: string;
-  shortName?: string;
+  shortName: string;
   era: string;
   genres: string[];
   bio: string;
   signatureScales: SignatureScale[];
   signatureMove: string;
   recommendedListening?: string[];
+  imageUrl?: string;
 }
