@@ -87,8 +87,7 @@ export function AudioDetector({ onScaleSelected }: Props) {
       matchIntervalRef.current = setInterval(() => {
         const snapshot = new Map(semisRef.current);
         setDetectedSemis(snapshot);
-        const semis = new Set(snapshot.keys());
-        if (semis.size >= 3) setMatches(matchScales(semis));
+        if (snapshot.size >= 3) setMatches(matchScales(snapshot));
       }, 800);
 
       setSource(mode);
