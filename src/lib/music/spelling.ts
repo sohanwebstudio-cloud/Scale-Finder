@@ -12,6 +12,7 @@ export function spellScale(
   rootIdx: number,
   intervals: number[],
   rootName: string,
+  letterOffsets?: number[],
 ): Note[] {
   const rootLetter = rootName.charAt(0);
   const startLetterIdx = LETTERS.indexOf(rootLetter as (typeof LETTERS)[number]);
@@ -23,11 +24,10 @@ export function spellScale(
   const result: Note[] = [{ name: rootName, semi: rootIdx }];
   let semi = rootIdx;
 
-  // On boucle sur intervals.length - 1 pour rester sur l'octave
-  // (le dernier intervalle ramènerait à la tonique)
   for (let i = 0; i < intervals.length - 1; i++) {
     semi = (semi + intervals[i]) % 12;
-    const nextLetter = LETTERS[(startLetterIdx + i + 1) % 7];
+    const offset = letterOffsets ? letterOffsets[i + 1] : i + 1;
+    const nextLetter = LETTERS[(startLetterIdx + offset) % 7];
     const naturalSemi = NATURAL_SEMI[nextLetter];
 
     let diff = semi - naturalSemi;

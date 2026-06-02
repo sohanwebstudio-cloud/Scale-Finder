@@ -3,113 +3,114 @@
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-// Corners ordered: TL, TR, BR, BL — in % of container (0–100)
-type Corner = [number, number];
-
 interface Hotspot {
   id: string;
+  x: number;
+  y: number;
   label: string;
   sub: string;
   href?: string;
   scrollTo?: string;
-  corners: [Corner, Corner, Corner, Corner];
-  dotX: number;
-  dotY: number;
 }
 
 const HOTSPOTS: Hotspot[] = [
   {
     id: 'library',
+    x: 12,
+    y: 35,
     label: 'Guitaristes',
     sub: 'Explorer leurs gammes signature',
     scrollTo: 'guitaristes',
-    // Bookshelf — perspective trapezoid following the left wall
-    corners: [[0, 0], [22, 0], [20, 100], [0, 100]],
-    dotX: 10,
-    dotY: 37,
+  },
+  {
+    id: 'console',
+    x: 57,
+    y: 62,
+    label: 'Scale Studio',
+    sub: 'Trouver la gamme pour n\'importe quelle tonique',
+    href: '/studio',
   },
   {
     id: 'guitar',
+    x: 48,
+    y: 78,
     label: 'Guitare',
     sub: 'Gammes et modes pour guitare',
     href: '/studio',
-    // Stratocaster — leaning against the stairs, center-left
-    corners: [[41, 26], [49, 25], [50, 98], [40, 98]],
-    dotX: 45,
-    dotY: 76,
   },
   {
     id: 'bass',
+    x: 74,
+    y: 62,
     label: 'Basse',
     sub: 'Gammes et modes pour basse',
     href: '/studio',
-    // Precision Bass — far right, next to the neon sign
-    corners: [[73, 34], [81, 33], [82, 98], [72, 98]],
-    dotX: 77,
-    dotY: 74,
-  },
-  {
-    id: 'mixer',
-    label: 'Accordeur',
-    sub: 'Accordeur chromatique de précision',
-    href: '/tuner',
-    // Mixing console — center of image
-    corners: [[44, 50], [73, 48], [75, 84], [42, 84]],
-    dotX: 57,
-    dotY: 61,
   },
 ];
-
-function toPoints(corners: [Corner, Corner, Corner, Corner]): string {
-  return corners.map(([x, y]) => `${x},${y}`).join(' ');
-}
 
 export function StudioHero() {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeHotspot, setActiveHotspot] = useState<string | null>(null);
 
-  // Parallax
   useEffect(() => {
     const container = containerRef.current;
     const image = imageRef.current;
     if (!container || !image) return;
+
     let rafId: number;
-    let tx = 0, ty = 0, cx = 0, cy = 0;
-    function onMove(e: MouseEvent) {
-      tx = ((e.clientX / container!.clientWidth) - 0.5) * 18;
-      ty = ((e.clientY / container!.clientHeight) - 0.5) * 10;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    function onMouseMove(e: MouseEvent) {
+      const { clientWidth, clientHeight } = container!;
+      targetX = ((e.clientX / clientWidth) - 0.5) * 18;
+      targetY = ((e.clientY / clientHeight) - 0.5) * 10;
     }
-    function tick() {
-      cx += (tx - cx) * 0.06;
-      cy += (ty - cy) * 0.06;
-      image!.style.transform = `translate(calc(-50% + ${-cx}px), calc(-50% + ${-cy}px)) scale(1.06)`;
-      rafId = requestAnimationFrame(tick);
+
+    function animate() {
+      currentX += (targetX - currentX) * 0.06;
+      currentY += (targetY - currentY) * 0.06;
+      image!.style.transform = `translate(calc(-50% + ${-currentX}px), calc(-50% + ${-currentY}px)) scale(1.06)`;
+      rafId = requestAnimationFrame(animate);
     }
-    container.addEventListener('mousemove', onMove);
-    rafId = requestAnimationFrame(tick);
-    return () => { container.removeEventListener('mousemove', onMove); cancelAnimationFrame(rafId); };
+
+    container.addEventListener('mousemove', onMouseMove);
+    rafId = requestAnimationFrame(animate);
+    return () => {
+      container.removeEventListener('mousemove', onMouseMove);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
-  function handleClick(spot: Hotspot) {
-    if (spot.href) router.push(spot.href);
-    else if (spot.scrollTo) document.getElementById(spot.scrollTo)?.scrollIntoView({ behavior: 'smooth' });
+  function handleHotspotClick(hotspot: Hotspot) {
+    if (hotspot.href) {
+      router.push(hotspot.href);
+    } else if (hotspot.scrollTo) {
+      document.getElementById(hotspot.scrollTo)?.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   return (
     <div
       ref={containerRef}
-      style={{ position: 'relative', height: '100vh', background: '#0a0806', overflow: 'hidden' }}
+      className="relative overflow-hidden"
+      style={{ height: '100vh', background: '#0a0806' }}
     >
       {/* Parallax image */}
       <div
         ref={imageRef}
         style={{
-          position: 'absolute', top: '50%', left: '50%',
-          width: '106%', height: '106%',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: '106%',
+          height: '106%',
           transform: 'translate(-50%, -50%) scale(1.06)',
-          willChange: 'transform', pointerEvents: 'none',
+          willChange: 'transform',
         }}
       >
         <img
@@ -120,95 +121,90 @@ export function StudioHero() {
         />
       </div>
 
-      {/* Vignette */}
+      {/* Dark gradient edges */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)' }}
+        style={{
+          background:
+            'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%)',
+        }}
       />
       <div
         className="pointer-events-none absolute bottom-0 left-0 right-0"
-        style={{ height: '28%', background: 'linear-gradient(to top, rgba(0,0,0,0.65), transparent)' }}
+        style={{ height: '30%', background: 'linear-gradient(to top, rgba(0,0,0,0.75), transparent)' }}
       />
 
-      {/* SVG hotspot — invisible polygon click zones only */}
-      <svg
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
-      >
-        {HOTSPOTS.map((spot) => (
-          <polygon
-            key={spot.id}
-            points={toPoints(spot.corners)}
-            fill="transparent"
-            style={{ cursor: 'pointer' }}
-            onMouseEnter={() => setActiveId(spot.id)}
-            onMouseLeave={() => setActiveId(null)}
-            onClick={() => handleClick(spot)}
-          />
-        ))}
-      </svg>
-
-      {/* Dots + tooltips (HTML for legibility) */}
-      {HOTSPOTS.map((spot) => {
-        const active = activeId === spot.id;
-
-        return (
-          <div key={spot.id} style={{ pointerEvents: 'none' }}>
-            {/* Tooltip — anchored above the dot */}
-            <div style={{
-              position: 'absolute',
-              left: `${spot.dotX}%`,
-              top: `${spot.dotY}%`,
-              transform: 'translate(-50%, calc(-100% - 18px))',
-              opacity: active ? 1 : 0,
-              transition: 'opacity 0.2s ease',
-              whiteSpace: 'nowrap',
-            }}>
-              <div style={{
-                background: 'rgba(8,6,4,0.88)',
-                border: '1px solid rgba(255,255,255,0.22)',
-                backdropFilter: 'blur(10px)',
-                borderRadius: 6,
-                padding: '5px 11px',
-              }}>
-                <p style={{ margin: 0, fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.95)' }}>
-                  {spot.label}
-                </p>
-                <p style={{ margin: '2px 0 0', fontSize: 10, color: 'rgba(255,255,255,0.45)' }}>
-                  {spot.sub}
-                </p>
-              </div>
-              <div style={{ width: 0, height: 0, margin: '0 auto', borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: '5px solid rgba(8,6,4,0.88)' }} />
-            </div>
-
-            {/* Pulsing dot */}
-            <div style={{
-              position: 'absolute',
-              left: `${spot.dotX}%`,
-              top: `${spot.dotY}%`,
+      {/* Hotspots */}
+      {HOTSPOTS.map((spot) => (
+        <button
+          key={spot.id}
+          onClick={() => handleHotspotClick(spot)}
+          onMouseEnter={() => setActiveHotspot(spot.id)}
+          onMouseLeave={() => setActiveHotspot(null)}
+          className="group absolute"
+          style={{ left: `${spot.x}%`, top: `${spot.y}%`, transform: 'translate(-50%, -50%)' }}
+        >
+          {/* Outer pulse ring */}
+          <span
+            className="absolute inset-0 rounded-full"
+            style={{
+              width: 36,
+              height: 36,
+              top: '50%',
+              left: '50%',
               transform: 'translate(-50%, -50%)',
-            }}>
-              <span style={{
-                position: 'absolute', width: 32, height: 32,
-                top: '50%', left: '50%',
-                transform: 'translate(-50%, -50%)',
-                borderRadius: '50%',
-                background: 'rgba(255,255,255,0.12)',
-                animation: active ? 'none' : 'pulse-ring 2.2s ease-out infinite',
-              }} />
-              <span style={{
-                display: 'block', width: 10, height: 10, borderRadius: '50%',
-                background: active ? '#fff' : 'rgba(255,255,255,0.8)',
-                border: '1.5px solid rgba(255,255,255,0.5)',
-                boxShadow: active ? '0 0 14px rgba(255,255,255,0.7)' : '0 0 6px rgba(255,255,255,0.4)',
-                transition: 'all 0.2s',
-                transform: active ? 'scale(1.4)' : 'scale(1)',
-              }} />
+              background: 'rgba(249, 115, 22, 0.15)',
+              animation: 'ping 2s cubic-bezier(0,0,0.2,1) infinite',
+            }}
+          />
+          {/* Dot */}
+          <span
+            className="relative flex items-center justify-center rounded-full border border-orange-400/60 transition-all duration-200"
+            style={{
+              width: 14,
+              height: 14,
+              background: activeHotspot === spot.id ? '#f97316' : 'rgba(249,115,22,0.7)',
+              boxShadow: activeHotspot === spot.id
+                ? '0 0 0 4px rgba(249,115,22,0.25), 0 0 16px rgba(249,115,22,0.6)'
+                : '0 0 8px rgba(249,115,22,0.4)',
+              transform: activeHotspot === spot.id ? 'scale(1.3)' : 'scale(1)',
+            }}
+          />
+
+          {/* Tooltip */}
+          <div
+            className="pointer-events-none absolute bottom-full left-1/2 mb-3 -translate-x-1/2 transition-all duration-200"
+            style={{
+              opacity: activeHotspot === spot.id ? 1 : 0,
+              transform: `translateX(-50%) translateY(${activeHotspot === spot.id ? 0 : 6}px)`,
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <div
+              className="rounded-lg px-3 py-2 text-left"
+              style={{
+                background: 'rgba(10,8,6,0.88)',
+                border: '1px solid rgba(249,115,22,0.35)',
+                backdropFilter: 'blur(8px)',
+              }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider text-orange-400">
+                {spot.label}
+              </p>
+              <p className="mt-0.5 text-xs text-neutral-400">{spot.sub}</p>
             </div>
+            {/* Arrow */}
+            <div
+              className="mx-auto mt-0 h-0 w-0"
+              style={{
+                borderLeft: '5px solid transparent',
+                borderRight: '5px solid transparent',
+                borderTop: '5px solid rgba(249,115,22,0.35)',
+              }}
+            />
           </div>
-        );
-      })}
+        </button>
+      ))}
 
       {/* Scroll indicator */}
       <div className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
@@ -217,9 +213,8 @@ export function StudioHero() {
       </div>
 
       <style>{`
-        @keyframes pulse-ring {
-          0%   { transform: translate(-50%,-50%) scale(0.7); opacity: 0.9; }
-          100% { transform: translate(-50%,-50%) scale(3.2); opacity: 0; }
+        @keyframes ping {
+          75%, 100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
         }
       `}</style>
     </div>

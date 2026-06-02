@@ -1,37 +1,12 @@
 import Link from 'next/link';
 import { ALL_GUITARISTS } from '@/data/guitarists';
 import { StudioHero } from '@/components/StudioHero';
-import { GuitaristGrid } from '@/components/GuitaristGrid';
 
 export default function HomePage() {
   return (
     <div>
       {/* Hero */}
       <StudioHero />
-
-      {/* Exercises entry */}
-      <section className="mx-auto max-w-7xl px-6 pb-6">
-        <Link
-          href="/exercises"
-          className="group flex items-center justify-between rounded-2xl border border-neutral-800 bg-neutral-900 px-7 py-5 transition-colors hover:border-orange-500/40"
-        >
-          <div className="flex items-center gap-5">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-orange-500/10 text-xl text-orange-400">
-              ♩
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-wider text-orange-500 mb-0.5">Technique</p>
-              <p className="font-medium text-neutral-100">Exercices Guitare</p>
-              <p className="text-sm text-neutral-500">
-                Technique main gauche · Accords jazz · Grilles blues · Métronome intégré
-              </p>
-            </div>
-          </div>
-          <span className="ml-4 shrink-0 text-orange-400 transition-transform group-hover:translate-x-1 text-lg">
-            →
-          </span>
-        </Link>
-      </section>
 
       {/* Guitarists section */}
       <section id="guitaristes" className="mx-auto max-w-7xl px-6 py-24">
@@ -44,7 +19,36 @@ export default function HomePage() {
           </p>
         </header>
 
-        <GuitaristGrid guitarists={ALL_GUITARISTS} />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {ALL_GUITARISTS.map((guitarist) => (
+            <Link
+              key={guitarist.slug}
+              href={`/guitarist/${guitarist.slug}`}
+              className="group rounded-xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-neutral-800/80"
+            >
+              <div className="mb-3 flex items-baseline justify-between gap-2">
+                <h3 className="text-lg font-medium text-neutral-100 transition-colors group-hover:text-orange-400">
+                  {guitarist.name}
+                </h3>
+                <span className="shrink-0 text-xs text-neutral-600">{guitarist.era}</span>
+              </div>
+              <div className="mb-3 flex flex-wrap gap-1.5">
+                {guitarist.genres.map((g) => (
+                  <span
+                    key={g}
+                    className="rounded-full bg-orange-950/50 px-2.5 py-0.5 text-xs text-orange-400/70"
+                  >
+                    {g}
+                  </span>
+                ))}
+              </div>
+              <p className="text-sm leading-relaxed text-neutral-400">{guitarist.bio}</p>
+              <p className="mt-4 text-xs text-orange-500 opacity-0 transition-opacity group-hover:opacity-100">
+                Explorer →
+              </p>
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   );

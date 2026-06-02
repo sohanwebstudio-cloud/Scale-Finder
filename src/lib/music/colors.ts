@@ -33,6 +33,15 @@ export const MODE_COLORS: Record<ModeKey, ColorPair> = {
   whole_half:  { bg: '#F7EDFC', text: '#531A72', darkBg: '#531A72', darkText: '#DCB0F5' },
   // Bebop
   bebop_dom: { bg: '#FFF8E1', text: '#5C3D00', darkBg: '#5C3D00', darkText: '#FFD880' },
+  // Arpeggios
+  arp_maj:   { bg: '#E8F4FD', text: '#0B3D6B', darkBg: '#0B3D6B', darkText: '#A8D8F5' },
+  arp_min:   { bg: '#EDEDED', text: '#2A2A2A', darkBg: '#2A2A2A', darkText: '#C8C8C8' },
+  arp_dom7:  { bg: '#FDF0DC', text: '#5C3500', darkBg: '#5C3500', darkText: '#F9C870' },
+  arp_maj7:  { bg: '#EAF0FF', text: '#1A2E7A', darkBg: '#1A2E7A', darkText: '#AABCF5' },
+  arp_m7:    { bg: '#E2F4ED', text: '#0A4A2C', darkBg: '#0A4A2C', darkText: '#97D8B5' },
+  arp_m7b5:  { bg: '#FCEAEA', text: '#6B1A1A', darkBg: '#6B1A1A', darkText: '#F5A8A8' },
+  arp_dim7:  { bg: '#F3EDFB', text: '#4A1270', darkBg: '#4A1270', darkText: '#CFA8ED' },
+  arp_mmaj7: { bg: '#E4F5F0', text: '#0D4A38', darkBg: '#0D4A38', darkText: '#90D5BC' },
 };
 
 export function getModeColors(modeKey: ModeKey, isDark = false): { bg: string; text: string } {

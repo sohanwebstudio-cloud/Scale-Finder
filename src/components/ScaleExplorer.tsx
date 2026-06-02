@@ -6,20 +6,30 @@ import { KEY_ROOTS } from '@/lib/music/notes';
 import { MODES, getMode } from '@/lib/music/scales';
 import { spellScale } from '@/lib/music/spelling';
 import { getModeColors } from '@/lib/music/colors';
-import type { ModeKey, SignatureScale } from '@/types';
+import type { ModeKey, ScaleCategory, SignatureScale } from '@/types';
 
 interface ScaleExplorerProps {
-  /**
-   * Si fourni, le sélecteur s'initialise sur cette gamme.
-   * Sert quand on arrive depuis la page d'un guitariste.
-   */
   initialScale?: SignatureScale;
 }
+
+interface CategorySection {
+  id: ScaleCategory;
+  label: string;
+}
+
+const CATEGORIES: CategorySection[] = [
+  { id: 'classique_majeur', label: 'Classiques — Majeur' },
+  { id: 'classique_mineur', label: 'Classiques — Mineur' },
+  { id: 'blues',            label: 'Blues & Pentatoniques' },
+  { id: 'jazz',             label: 'Jazz & Avancé' },
+  { id: 'symetrique',       label: 'Symétriques' },
+  { id: 'arpege',           label: 'Arpeggios' },
+];
 
 export function ScaleExplorer({ initialScale }: ScaleExplorerProps) {
   const initialKeyIdx = initialScale
     ? (KEY_ROOTS.find((k) => k.name === initialScale.rootName)?.idx ?? 9)
-    : 9; // A par défaut
+    : 9;
 
   const initialModeKey: ModeKey = initialScale?.modeKey ?? 'mixolydian';
 
@@ -28,10 +38,7 @@ export function ScaleExplorer({ initialScale }: ScaleExplorerProps) {
 
   const root = KEY_ROOTS[keyIdx];
   const mode = getMode(modeKey);
-  const notes = spellScale(root.idx, mode.intervals, root.name);
-
-  // Couleur statique pour le rendu serveur initial
-  // (le Fretboard se réajuste côté client via useEffect)
+  const notes = spellScale(root.idx, mode.intervals, root.name, mode.letterOffsets);
   const colors = getModeColors(modeKey, false);
 
   return (
@@ -59,27 +66,34 @@ export function ScaleExplorer({ initialScale }: ScaleExplorerProps) {
         </div>
       </div>
 
-      {/* Sélecteur mode */}
-      <div>
-        <p className="mb-2 text-xs uppercase tracking-wider text-neutral-500">
-          Mode
-        </p>
-        <div className="flex flex-wrap gap-1">
-          {MODES.map((m) => (
-            <button
-              key={m.key}
-              type="button"
-              onClick={() => setModeKey(m.key)}
-              className={`rounded-md border px-3 py-1.5 text-sm transition-colors ${
-                m.key === modeKey
-                  ? 'border-orange-500 bg-orange-500 font-medium text-neutral-950'
-                  : 'border-neutral-800 bg-transparent text-neutral-100 hover:bg-neutral-800'
-              }`}
-            >
-              {m.name}
-            </button>
-          ))}
-        </div>
+      {/* Sélecteur mode — par catégories */}
+      <div className="space-y-4">
+        <p className="text-xs uppercase tracking-wider text-neutral-500">Mode</p>
+
+        {CATEGORIES.map((cat) => {
+          const catModes = MODES.filter((m) => m.category === cat.id);
+          return (
+            <div key={cat.id}>
+              <p className="mb-1.5 text-xs font-medium text-neutral-600">{cat.label}</p>
+              <div className="flex flex-wrap gap-1">
+                {catModes.map((m) => (
+                  <button
+                    key={m.key}
+                    type="button"
+                    onClick={() => setModeKey(m.key)}
+                    className={`rounded-md border px-3 py-1.5 text-sm transition-colors ${
+                      m.key === modeKey
+                        ? 'border-orange-500 bg-orange-500 font-medium text-neutral-950'
+                        : 'border-neutral-800 bg-transparent text-neutral-100 hover:bg-neutral-800'
+                    }`}
+                  >
+                    {m.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Info bar */}

@@ -1,7 +1,21 @@
-node_modules
-.next
-out
-dist
-*.tsbuildinfo
-.env*
-!.env.example
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+
+# Build
+dist/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Misc
+.DS_Store
+*.pem
+npm-debug.log*
+pnpm-debug.log*

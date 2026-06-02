@@ -48,8 +48,10 @@ export function matchScales(detectedCounts: Map<number, number>): ScaleMatchResu
 
   const results: ScaleMatchResult[] = [];
 
+  const detectableModes = MODES.filter((m) => m.category !== 'arpege');
+
   for (const root of KEY_ROOTS) {
-    for (const mode of MODES) {
+    for (const mode of detectableModes) {
       const scaleSet = buildScaleSet(root.idx, mode.intervals);
 
       let inScore = 0;

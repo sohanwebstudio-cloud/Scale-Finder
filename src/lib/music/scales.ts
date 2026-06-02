@@ -1,31 +1,19 @@
 /**
- * Définitions des modes et gammes.
+ * Définitions des modes, gammes et arpeggios.
  * Source unique de vérité pour les intervalles.
  */
 
 import type { Mode, ModeKey } from '@/types';
 
 export const MODES: Mode[] = [
+  // ── Classiques majeurs (modes de la gamme majeure — couleur lumineuse) ──
   {
     key: 'ionian',
     name: 'Ionien',
     intervals: [2, 2, 1, 2, 2, 2, 1],
     chord: 'maj7',
     desc: 'Le majeur classique, sage',
-  },
-  {
-    key: 'dorian',
-    name: 'Dorien',
-    intervals: [2, 1, 2, 2, 2, 1, 2],
-    chord: 'm7',
-    desc: 'Mineur jazz, ouvert',
-  },
-  {
-    key: 'phrygian',
-    name: 'Phrygien',
-    intervals: [1, 2, 2, 2, 1, 2, 2],
-    chord: 'm7',
-    desc: 'Sombre, couleur espagnole',
+    category: 'classique_majeur',
   },
   {
     key: 'lydian',
@@ -33,6 +21,7 @@ export const MODES: Mode[] = [
     intervals: [2, 2, 2, 1, 2, 2, 1],
     chord: 'maj7#11',
     desc: 'Lumineux, flottant',
+    category: 'classique_majeur',
   },
   {
     key: 'mixolydian',
@@ -40,6 +29,24 @@ export const MODES: Mode[] = [
     intervals: [2, 2, 1, 2, 2, 1, 2],
     chord: '7',
     desc: 'Blues, dominant',
+    category: 'classique_majeur',
+  },
+  // ── Classiques mineurs (modes de la gamme majeure — couleur sombre) ──
+  {
+    key: 'dorian',
+    name: 'Dorien',
+    intervals: [2, 1, 2, 2, 2, 1, 2],
+    chord: 'm7',
+    desc: 'Mineur jazz, ouvert',
+    category: 'classique_mineur',
+  },
+  {
+    key: 'phrygian',
+    name: 'Phrygien',
+    intervals: [1, 2, 2, 2, 1, 2, 2],
+    chord: 'm7',
+    desc: 'Sombre, couleur espagnole',
+    category: 'classique_mineur',
   },
   {
     key: 'aeolian',
@@ -47,6 +54,7 @@ export const MODES: Mode[] = [
     intervals: [2, 1, 2, 2, 1, 2, 2],
     chord: 'm7',
     desc: 'Mineur naturel',
+    category: 'classique_mineur',
   },
   {
     key: 'locrian',
@@ -54,27 +62,16 @@ export const MODES: Mode[] = [
     intervals: [1, 2, 2, 1, 2, 2, 2],
     chord: 'm7b5',
     desc: 'Demi-diminué, instable',
+    category: 'classique_mineur',
   },
+  // ── Blues & Pentatoniques ──
   {
-    key: 'altered',
-    name: 'Altered',
-    intervals: [1, 2, 1, 2, 2, 2, 2],
-    chord: '7alt',
-    desc: 'Tension max, outside',
-  },
-  {
-    key: 'lydian_dom',
-    name: 'Lydien dominante',
-    intervals: [2, 2, 2, 1, 2, 1, 2],
-    chord: '7#11',
-    desc: 'Brillant, #4 + b7',
-  },
-  {
-    key: 'half_whole',
-    name: 'Diminué demi-ton/ton',
-    intervals: [1, 2, 1, 2, 1, 2, 1, 2],
-    chord: '7b9',
-    desc: '8 notes, très chromatique',
+    key: 'pentatonic_major',
+    name: 'Pentatonique majeure',
+    intervals: [2, 2, 3, 2, 3],
+    chord: 'maj7',
+    desc: 'Sons country/folk',
+    category: 'blues',
   },
   {
     key: 'pentatonic_minor',
@@ -82,20 +79,7 @@ export const MODES: Mode[] = [
     intervals: [3, 2, 2, 3, 2],
     chord: 'm7',
     desc: 'La base du blues/rock',
-  },
-  {
-    key: 'pentatonic_major',
-    name: 'Pentatonique majeure',
-    intervals: [2, 2, 3, 2, 3],
-    chord: 'maj7',
-    desc: 'Sons country/folk',
-  },
-  {
-    key: 'blues_minor',
-    name: 'Blues mineure',
-    intervals: [3, 2, 1, 1, 3, 2],
-    chord: 'm7',
-    desc: 'Pentatonique + blue note',
+    category: 'blues',
   },
   {
     key: 'blues_major',
@@ -103,14 +87,48 @@ export const MODES: Mode[] = [
     intervals: [2, 1, 1, 3, 2, 3],
     chord: '7',
     desc: 'Le son blues classique',
+    category: 'blues',
   },
-  // --- Mineur mélodique et ses modes ---
+  {
+    key: 'blues_minor',
+    name: 'Blues mineure',
+    intervals: [3, 2, 1, 1, 3, 2],
+    chord: 'm7',
+    desc: 'Pentatonique + blue note',
+    category: 'blues',
+  },
+  // ── Jazz & Avancé ──
   {
     key: 'melodic_minor',
     name: 'Mineur mélodique',
     intervals: [2, 1, 2, 2, 2, 2, 1],
     chord: 'mMaj7',
-    desc: 'Jazz minor — base de l\'impro moderne',
+    desc: "Jazz minor — base de l'impro moderne",
+    category: 'jazz',
+  },
+  {
+    key: 'harmonic_minor',
+    name: 'Mineur harmonique',
+    intervals: [2, 1, 2, 2, 1, 3, 1],
+    chord: 'mMaj7',
+    desc: 'Seconde augmentée caractéristique',
+    category: 'jazz',
+  },
+  {
+    key: 'altered',
+    name: 'Altered',
+    intervals: [1, 2, 1, 2, 2, 2, 2],
+    chord: '7alt',
+    desc: 'Tension max, outside',
+    category: 'jazz',
+  },
+  {
+    key: 'lydian_dom',
+    name: 'Lydien dominante',
+    intervals: [2, 2, 2, 1, 2, 1, 2],
+    chord: '7#11',
+    desc: 'Brillant, #4 + b7',
+    category: 'jazz',
   },
   {
     key: 'lydian_aug',
@@ -118,6 +136,7 @@ export const MODES: Mode[] = [
     intervals: [2, 2, 2, 2, 1, 2, 1],
     chord: 'maj7#5',
     desc: 'Mode 3 du mél. mineur, très flottant',
+    category: 'jazz',
   },
   {
     key: 'mixolydian_b6',
@@ -125,6 +144,7 @@ export const MODES: Mode[] = [
     intervals: [2, 2, 1, 2, 1, 2, 2],
     chord: '7b6',
     desc: 'Mode 5 du mél. mineur',
+    category: 'jazz',
   },
   {
     key: 'locrian_2',
@@ -132,14 +152,7 @@ export const MODES: Mode[] = [
     intervals: [2, 1, 2, 1, 2, 2, 2],
     chord: 'm7b5',
     desc: 'Demi-diminué jazz — sur les m7b5',
-  },
-  // --- Mineur harmonique et dérivés ---
-  {
-    key: 'harmonic_minor',
-    name: 'Mineur harmonique',
-    intervals: [2, 1, 2, 2, 1, 3, 1],
-    chord: 'mMaj7',
-    desc: 'Seconde augmentée caractéristique',
+    category: 'jazz',
   },
   {
     key: 'phrygian_dom',
@@ -147,29 +160,113 @@ export const MODES: Mode[] = [
     intervals: [1, 3, 1, 2, 1, 2, 2],
     chord: '7b9',
     desc: 'Mode 5 du harm. mineur — son flamenco/jazz',
+    category: 'jazz',
   },
-  // --- Gammes symétriques ---
-  {
-    key: 'whole_tone',
-    name: 'Gamme par tons',
-    intervals: [2, 2, 2, 2, 2, 2],
-    chord: '7#5',
-    desc: '6 notes, ambiguïté tonale totale',
-  },
-  {
-    key: 'whole_half',
-    name: 'Diminué ton/demi-ton',
-    intervals: [2, 1, 2, 1, 2, 1, 2, 1],
-    chord: 'dim7',
-    desc: '8 notes — sur les accords diminués',
-  },
-  // --- Bebop ---
   {
     key: 'bebop_dom',
     name: 'Bebop dominant',
     intervals: [2, 2, 1, 2, 2, 1, 1, 2],
     chord: '7',
     desc: '8 notes — le son bebop',
+    category: 'jazz',
+  },
+  // ── Symétriques ──
+  {
+    key: 'whole_tone',
+    name: 'Gamme par tons',
+    intervals: [2, 2, 2, 2, 2, 2],
+    chord: '7#5',
+    desc: '6 notes, ambiguïté tonale totale',
+    category: 'symetrique',
+  },
+  {
+    key: 'half_whole',
+    name: 'Diminué ½T/T',
+    intervals: [1, 2, 1, 2, 1, 2, 1, 2],
+    chord: '7b9',
+    desc: '8 notes, très chromatique',
+    category: 'symetrique',
+  },
+  {
+    key: 'whole_half',
+    name: 'Diminué T/½T',
+    intervals: [2, 1, 2, 1, 2, 1, 2, 1],
+    chord: 'dim7',
+    desc: '8 notes — sur les accords diminués',
+    category: 'symetrique',
+  },
+  // ── Arpeggios ──
+  {
+    key: 'arp_maj',
+    name: 'Arp. Majeur',
+    intervals: [4, 3, 5],
+    chord: '',
+    desc: 'Triode majeure 1–3–5',
+    category: 'arpege',
+    letterOffsets: [0, 2, 4],
+  },
+  {
+    key: 'arp_min',
+    name: 'Arp. Mineur',
+    intervals: [3, 4, 5],
+    chord: 'm',
+    desc: 'Triode mineure 1–b3–5',
+    category: 'arpege',
+    letterOffsets: [0, 2, 4],
+  },
+  {
+    key: 'arp_dom7',
+    name: 'Arp. Dom7',
+    intervals: [4, 3, 3, 2],
+    chord: '7',
+    desc: 'Dominante 1–3–5–b7',
+    category: 'arpege',
+    letterOffsets: [0, 2, 4, 6],
+  },
+  {
+    key: 'arp_maj7',
+    name: 'Arp. Maj7',
+    intervals: [4, 3, 4, 1],
+    chord: 'maj7',
+    desc: 'Majeur 7e 1–3–5–7',
+    category: 'arpege',
+    letterOffsets: [0, 2, 4, 6],
+  },
+  {
+    key: 'arp_m7',
+    name: 'Arp. m7',
+    intervals: [3, 4, 3, 2],
+    chord: 'm7',
+    desc: 'Mineur 7e 1–b3–5–b7',
+    category: 'arpege',
+    letterOffsets: [0, 2, 4, 6],
+  },
+  {
+    key: 'arp_m7b5',
+    name: 'Arp. m7b5',
+    intervals: [3, 3, 4, 2],
+    chord: 'm7b5',
+    desc: 'Demi-diminué 1–b3–b5–b7',
+    category: 'arpege',
+    letterOffsets: [0, 2, 4, 6],
+  },
+  {
+    key: 'arp_dim7',
+    name: 'Arp. dim7',
+    intervals: [3, 3, 3, 3],
+    chord: 'dim7',
+    desc: 'Diminué 7e 1–b3–b5–bb7',
+    category: 'arpege',
+    letterOffsets: [0, 2, 4, 6],
+  },
+  {
+    key: 'arp_mmaj7',
+    name: 'Arp. mMaj7',
+    intervals: [3, 4, 4, 1],
+    chord: 'mMaj7',
+    desc: 'Mineur majeur 7e 1–b3–5–7',
+    category: 'arpege',
+    letterOffsets: [0, 2, 4, 6],
   },
 ];
 
