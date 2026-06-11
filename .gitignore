@@ -19,3 +19,5 @@ dist/
 *.pem
 npm-debug.log*
 pnpm-debug.log*
+.vercel
+tsconfig.tsbuildinfo
