@@ -42,97 +42,105 @@ export function ScaleExplorer({ initialScale }: ScaleExplorerProps) {
   const colors = getModeColors(modeKey, false);
 
   return (
-    <div className="space-y-6">
-      {/* Sélecteur tonique */}
-      <div>
-        <p className="mb-2 text-xs uppercase tracking-wider text-neutral-500">
-          Tonique
-        </p>
+    <div className="border border-ink bg-paper">
+      <div className="border-b border-ink px-5 py-3">
+        <h3 className="text-[11px] font-medium uppercase tracking-[0.18em]">
+          Explorateur de gammes
+        </h3>
+      </div>
+
+      <div className="space-y-6 p-5 sm:p-6">
+        {/* Sélecteur tonique */}
+        <div>
+          <p className="mb-2 text-[11px] uppercase tracking-[0.18em] text-neutral-500">
+            Tonique
+          </p>
+          <div className="flex flex-wrap gap-1">
+            {KEY_ROOTS.map((k, i) => (
+              <button
+                key={k.idx}
+                type="button"
+                onClick={() => setKeyIdx(i)}
+                className={`min-w-[44px] border px-3 py-1.5 text-sm transition-colors ${
+                  i === keyIdx
+                    ? 'border-ink bg-ink font-medium text-paper'
+                    : 'border-neutral-300 bg-paper hover:border-ink hover:bg-cream'
+                }`}
+              >
+                {k.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Sélecteur mode — par catégories */}
+        <div className="space-y-4">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-neutral-500">Mode</p>
+
+          {CATEGORIES.map((cat) => {
+            const catModes = MODES.filter((m) => m.category === cat.id);
+            return (
+              <div key={cat.id}>
+                <p className="mb-1.5 text-xs font-medium text-neutral-500">{cat.label}</p>
+                <div className="flex flex-wrap gap-1">
+                  {catModes.map((m) => (
+                    <button
+                      key={m.key}
+                      type="button"
+                      onClick={() => setModeKey(m.key)}
+                      className={`border px-3 py-1.5 text-sm transition-colors ${
+                        m.key === modeKey
+                          ? 'border-ink bg-ink font-medium text-paper'
+                          : 'border-neutral-300 bg-paper hover:border-ink hover:bg-cream'
+                      }`}
+                    >
+                      {m.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Info bar */}
+        <div className="flex flex-wrap items-center justify-between gap-4 border border-ink bg-cream px-5 py-3">
+          <div>
+            <p className="text-base font-medium">
+              {root.name} {mode.name}
+            </p>
+            <p className="text-xs text-neutral-500">{mode.desc}</p>
+          </div>
+          <span
+            className="border border-ink px-2.5 py-1 font-mono text-xs font-medium"
+            style={{ background: colors.bg, color: colors.text }}
+          >
+            {root.name}
+            {mode.chord}
+          </span>
+        </div>
+
+        {/* Notes */}
         <div className="flex flex-wrap gap-1">
-          {KEY_ROOTS.map((k, i) => (
-            <button
-              key={k.idx}
-              type="button"
-              onClick={() => setKeyIdx(i)}
-              className={`min-w-[44px] rounded-md border px-3 py-1.5 text-sm transition-colors ${
-                i === keyIdx
-                  ? 'border-orange-500 bg-orange-500 font-medium text-neutral-950'
-                  : 'border-neutral-800 bg-transparent text-neutral-100 hover:bg-neutral-800'
-              }`}
+          {notes.map((n, i) => (
+            <span
+              key={`${n.name}-${i}`}
+              className="inline-flex h-8 min-w-[38px] items-center justify-center px-2 font-mono text-xs font-medium"
+              style={{
+                background: colors.bg,
+                color: colors.text,
+                outline: i === 0 ? `1.5px solid ${colors.text}` : `1px solid ${colors.text}33`,
+                outlineOffset: '-1px',
+              }}
             >
-              {k.name}
-            </button>
+              {n.name}
+            </span>
           ))}
         </div>
+
+        {/* Manche */}
+        <Fretboard notes={notes} rootIdx={root.idx} modeKey={modeKey} />
       </div>
-
-      {/* Sélecteur mode — par catégories */}
-      <div className="space-y-4">
-        <p className="text-xs uppercase tracking-wider text-neutral-500">Mode</p>
-
-        {CATEGORIES.map((cat) => {
-          const catModes = MODES.filter((m) => m.category === cat.id);
-          return (
-            <div key={cat.id}>
-              <p className="mb-1.5 text-xs font-medium text-neutral-600">{cat.label}</p>
-              <div className="flex flex-wrap gap-1">
-                {catModes.map((m) => (
-                  <button
-                    key={m.key}
-                    type="button"
-                    onClick={() => setModeKey(m.key)}
-                    className={`rounded-md border px-3 py-1.5 text-sm transition-colors ${
-                      m.key === modeKey
-                        ? 'border-orange-500 bg-orange-500 font-medium text-neutral-950'
-                        : 'border-neutral-800 bg-transparent text-neutral-100 hover:bg-neutral-800'
-                    }`}
-                  >
-                    {m.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Info bar */}
-      <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-neutral-900 px-5 py-3">
-        <div>
-          <p className="text-base font-medium">
-            {root.name} {mode.name}
-          </p>
-          <p className="text-xs text-neutral-500">{mode.desc}</p>
-        </div>
-        <span
-          className="rounded-md px-2.5 py-1 font-mono text-xs font-medium"
-          style={{ background: colors.bg, color: colors.text }}
-        >
-          {root.name}
-          {mode.chord}
-        </span>
-      </div>
-
-      {/* Notes */}
-      <div className="flex flex-wrap gap-1">
-        {notes.map((n, i) => (
-          <span
-            key={`${n.name}-${i}`}
-            className="inline-flex h-7 min-w-[36px] items-center justify-center rounded px-2 font-mono text-xs font-medium"
-            style={{
-              background: colors.bg,
-              color: colors.text,
-              outline: i === 0 ? `1.5px solid ${colors.text}` : 'none',
-              outlineOffset: '-1.5px',
-            }}
-          >
-            {n.name}
-          </span>
-        ))}
-      </div>
-
-      {/* Manche */}
-      <Fretboard notes={notes} rootIdx={root.idx} modeKey={modeKey} />
     </div>
   );
 }

@@ -8,5 +8,10 @@ export const metadata: Metadata = {
 }
 
 export default function ExercisesPage() {
-  return <ExercisesClient />
+  // ExercisesClient est conçu sur fond sombre — îlot dark dans le cadre clair
+  return (
+    <div className="border border-ink bg-neutral-950 text-neutral-100">
+      <ExercisesClient />
+    </div>
+  )
 }

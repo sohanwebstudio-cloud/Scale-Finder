@@ -1,163 +1,44 @@
-# Scale Finder — CLAUDE.md
+# Scale Finder
 
-## Purpose
-
-App web pour guitaristes jazz : sélectionner un guitariste de référence, visualiser ses gammes signature, et explorer interactivement ces gammes sur un manche SVG (tonique + mode modifiables en temps réel).
-
----
-
-## Stack
-
-| Outil | Version |
-|-------|---------|
-| Next.js | 15 (App Router) |
-| React | 19 |
-| TypeScript | 5 (strict) |
-| Tailwind CSS | v4 (PostCSS) |
-| Données | JSON statique (pas de DB en v1) |
-
----
+App Next.js d'apprentissage guitare : détection de tonalité à l'oreille, suggestion de gammes, exploration sur manche interactif, accordeur, exercices.
 
 ## Commandes
 
 ```bash
-npm install        # première installation
-npm run dev        # http://localhost:3000
-npm run build      # build production
-npm run type-check # vérification TypeScript sans build
-npm run lint       # ESLint
+npm run dev          # dev server
+npm run build        # build production
+npm run type-check   # tsc --noEmit
+npm run lint
 ```
 
----
+## Stack
+
+- Next.js 16 (App Router, pages statiques), React 19, TypeScript strict
+- Tailwind CSS v4 — tokens design dans `src/app/globals.css` via `@theme`
+- Déploiement Vercel
+- three.js présent dans les deps mais utilisé uniquement par `MusicRoomScene` (non monté)
+
+## Design system « riso print »
+
+Fond papier clair, hairlines noires, accents rose/cyan/rouge façon risographie.
+Tokens : `bg-paper`, `text-ink`, `bg-cream`, `riso-pink`, `riso-pink-deep`, `riso-cyan`, `riso-red`.
+Conventions : sections = boîtes `border border-ink` séparées par `space-y-2 sm:space-y-3` ; grilles hairline = `grid gap-px bg-neutral-200` avec enfants `bg-paper` ; labels en `text-[11px] uppercase tracking-[0.18em]`.
+Pages `/tuner` et `/exercises` : îlots sombres autonomes dans le cadre clair.
 
 ## Architecture
 
-Le projet est organisé en 4 couches strictement séparées. Ne pas mélanger les responsabilités.
-
-```
-src/
-├── app/                    # Layer 1 : Routes (Server Components par défaut)
-│   ├── page.tsx            # Home — liste des guitaristes
-│   ├── layout.tsx          # Root layout + metadata
-│   └── guitarist/[slug]/
-│       └── page.tsx        # Page détail — statiquement générée au build
-│
-├── components/             # Layer 2 : Composants React (Client uniquement)
-│   ├── ScaleExplorer.tsx   # État tonique/mode + affichage gamme
-│   └── Fretboard.tsx       # Rendu SVG du manche (6 cordes, 15 cases)
-│
-├── lib/music/              # Layer 3 : Logique musicale pure (0 React)
-│   ├── notes.ts            # Notes, demi-tons, KEY_ROOTS
-│   ├── scales.ts           # 14 modes/gammes avec intervalles
-│   ├── spelling.ts         # Épellation correcte (Db Dorian ≠ C# Dorian)
-│   └── colors.ts           # Palette couleur par mode (clair/sombre)
-│
-├── data/guitarists/        # Layer 4 : Data statique JSON
-│   ├── index.ts            # Export centralisé de tous les guitaristes
-│   ├── mike-stern.json
-│   ├── pat-metheny.json
-│   └── john-scofield.json
-│
-└── types/
-    └── index.ts            # Interfaces TypeScript partagées
-```
-
----
-
-## Logique musicale (`src/lib/music/`)
-
-Ces fichiers sont **purs** — aucune dépendance React, aucun side-effect. Testables en isolation.
-
-| Fichier | Rôle |
-|---------|------|
-| `notes.ts` | Mappe les noms de notes (C, Db, F#...) vers des indices demi-ton (0–11). Définit `KEY_ROOTS`. |
-| `scales.ts` | 14 définitions de gammes/modes avec leurs intervalles (ex: Dorian = [0,2,3,5,7,9,10]). |
-| `spelling.ts` | `spellScale(root, mode)` → retourne les noms de notes correctement orthographiés selon la tonalité. |
-| `colors.ts` | `getModeColors(modeKey, isDark)` → palette {bg, text, border} selon le mode et le thème. |
-
-**Règle** : toute nouvelle logique musicale va dans `lib/music/`. Jamais dans un composant.
-
----
-
-## Ajouter un guitariste
-
-1. Créer `src/data/guitarists/[slug].json` en suivant le format existant :
-
-```json
-{
-  "slug": "wes-montgomery",
-  "name": "Wes Montgomery",
-  "era": "1950s–1960s",
-  "genres": ["bebop", "hard bop", "soul jazz"],
-  "bio": "...",
-  "signatureMove": "...",
-  "signatureScales": [
-    {
-      "name": "Nom affiché",
-      "root": "F",
-      "mode": "dorian",
-      "context": "Pourquoi il utilisait ça",
-      "recommendedListening": ["Morceaux représentatifs"]
-    }
-  ]
-}
-```
-
-2. L'importer dans `src/data/guitarists/index.ts` :
-
-```ts
-import wesData from './wes-montgomery.json'
-export const guitarists = [...existing, wesData]
-```
-
-Les pages Next.js utilisent `generateStaticParams()` — le build génère automatiquement la page statique.
-
-**Valeurs valides pour `mode`** (voir `scales.ts`) :
-`ionian` `dorian` `phrygian` `lydian` `mixolydian` `aeolian` `locrian` `altered` `lydianDominant` `halfWhole` `minorPentatonic` `majorPentatonic` `minorBlues` `majorBlues`
-
-**Valeurs valides pour `root`** : `C` `Db` `D` `Eb` `E` `F` `F#` `G` `Ab` `A` `Bb` `B`
-
----
+- `src/lib/music/` — logique musicale pure, zéro dépendance UI :
+  - `key-detect.ts` — détection de tonalité Krumhansl-Schmuckler (corrélation de Pearson entre distribution des classes de hauteur et 24 profils ; ensemble Krumhansl-Kessler + Temperley + Albrecht-Shanahan)
+  - `scale-match.ts` — `analyzeScales()` : tonalités candidates + gammes suggérées (couverture pondérée × alignement tonal × prior de simplicité)
+  - `pitch-acf.ts` — détection de pitch ACF/FFT (utilisée par l'accordeur ET le détecteur)
+  - `yin.ts` — détecteur YIN alternatif (dispo, non branché)
+  - `smoother.ts` — `OutlierRemovingSmoother`, rejette les frames aberrantes
+  - `scales.ts` — source unique de vérité des modes/intervalles ; `notes.ts`, `spelling.ts` (épellation correcte), `colors.ts` (palette par mode)
+- `src/data/guitarists/` — un JSON par guitariste + `index.ts` central
+- `src/components/` — `AudioDetector` (micro/onglet → tonalité + gammes), `ScaleExplorer` + `Fretboard` (SVG), `RetroTuner`, `ExercisesClient`
 
 ## Conventions
 
-**Server vs Client components :**
-- Tout ce qui est dans `src/app/` est Server Component par défaut → pas de hooks, pas d'état
-- Ajouter `"use client"` uniquement si le composant a besoin d'état, d'effets, ou d'event listeners
-- `ScaleExplorer` et `Fretboard` sont Client — le reste est Server
-
-**Imports :**
-- Utiliser l'alias `@/*` (= `./src/*`) pour tous les imports internes
-- Exemple : `import { spellScale } from '@/lib/music/spelling'`
-
-**Nommage :**
-- Composants React : PascalCase (`Fretboard.tsx`)
-- Logique pure : camelCase (`spelling.ts`)
-- Data JSON : kebab-case (`mike-stern.json`)
-- Slugs URL = nom du fichier JSON sans extension
-
-**Tailwind v4 :** pas de `tailwind.config.js` — la config passe par `globals.css` et les directives PostCSS.
-
----
-
-## Ce qui n'existe pas (volontairement)
-
-| Feature | Statut | Note |
-|---------|--------|------|
-| Base de données | Absent | JSON statique suffisant en v1. Postgres/Prisma quand >20 guitaristes + features user |
-| Audio | Absent | Tone.js prévu en v3 mais non prioritaire |
-| CMS | Absent | Sanity ou Notion-as-CMS envisagé pour contributeurs externes |
-| Authentification | Absent | Pas de compte utilisateur en v1 |
-| Tests | Absent | La logique `lib/music/` est testable en isolation quand nécessaire |
-
----
-
-## Roadmap
-
-**v1 (actuel)** — MVP statique, 3 guitaristes seed, manche interactif
-
-**v2** — 20+ guitaristes, progressions d'accords, licks en tablature SVG, filtres par genre/époque
-
-**v3** — Audio (Tone.js), backing tracks, lecture en boucle
-
-**vDB** — Postgres + Prisma quand les features nécessitent de la persistence utilisateur
+- UI et commentaires en français
+- Pas de sur-ingénierie, zéro commentaire évident
+- Ne pas toucher `package.json` / lockfile sans demande explicite

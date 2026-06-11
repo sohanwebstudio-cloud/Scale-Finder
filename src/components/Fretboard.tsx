@@ -2,7 +2,6 @@
 
 import type { ModeKey, Note } from '@/types';
 import { getModeColors } from '@/lib/music/colors';
-import { useEffect, useState } from 'react';
 
 interface FretboardProps {
   notes: Note[];
@@ -25,17 +24,7 @@ const SINGLE_INLAY_FRETS = [3, 5, 7, 9, 15];
 const DOUBLE_INLAY_FRETS = [12];
 
 export function Fretboard({ notes, rootIdx, modeKey, numFrets = 15 }: FretboardProps) {
-  const [isDark, setIsDark] = useState(true);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDark(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-
-  const colors = getModeColors(modeKey, isDark);
+  const colors = getModeColors(modeKey, false);
   const semiMap = new Map<number, string>();
   notes.forEach((n) => semiMap.set(n.semi, n.name));
 
@@ -56,12 +45,12 @@ export function Fretboard({ notes, rootIdx, modeKey, numFrets = 15 }: FretboardP
   // Open-string note x: between the label column and the nut, comfortably spaced
   const openNoteX = (labelColW + nutX) / 2; // ≈ 34px, label ends ~20px
 
-  const inkPrimary = '#E8E6DC';
-  const inkMuted = '#5A5957';
-  const woodFill = '#1C1B18';
-  const fretColor = '#3A3936';
-  const stringColor = '#4A4947';
-  const dotColor = '#2E2D2A';
+  const inkPrimary = '#141414';
+  const inkMuted = '#8a8678';
+  const woodFill = '#f1efe8';
+  const fretColor = '#b8b3a4';
+  const stringColor = '#6b675c';
+  const dotColor = '#dcd8ca';
 
   const midY = topPad + fretboardHeight / 2;
 

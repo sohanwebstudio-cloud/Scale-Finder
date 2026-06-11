@@ -20,7 +20,7 @@ export function ScaleDetectorSection({ initialScale }: Props) {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-2 sm:space-y-3">
       <AudioDetector onScaleSelected={handleScaleSelected} />
       <ScaleExplorer key={explorerKey} initialScale={activeScale} />
     </div>

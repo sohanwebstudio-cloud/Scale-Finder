@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/*
+ * Design system « riso print » — fond papier, encre noire, hairlines,
+ * accents rose / cyan / rouge façon impression risographie.
+ */
+@theme {
+  --color-paper: #fbfaf7;
+  --color-ink: #141414;
+  --color-cream: #f1efe8;
+  --color-riso-pink: #f6a8d2;
+  --color-riso-pink-deep: #ec5fa3;
+  --color-riso-cyan: #5bc8ec;
+  --color-riso-red: #e0301e;
+
+  --font-sans: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
+}
+
 :root {
   --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Menlo", monospace;
 }
