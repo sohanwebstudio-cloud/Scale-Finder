@@ -310,9 +310,7 @@ export function RetroTuner() {
     : FAINT;
 
   return (
-    <div className="mx-auto max-w-xl px-4 py-10 sm:py-14">
-      {/* Device body */}
-      <div className="border border-ink bg-paper">
+    <div className="border border-ink bg-paper">
 
         {/* Header */}
         <div className="flex items-center justify-between border-b border-ink px-5 py-3">
@@ -334,6 +332,7 @@ export function RetroTuner() {
           </div>
         </div>
 
+        <div className="mx-auto max-w-xl">
         {/* Gauge */}
         <div className="border-b border-ink" style={{ background: CREAM }}>
           <svg viewBox="0 0 500 300" style={{ width: '100%', display: 'block' }} aria-hidden>
@@ -510,13 +509,13 @@ export function RetroTuner() {
           </div>
         </div>
 
+        </div>
         {/* Bottom strip */}
         <div className="border-t border-ink px-5 py-2.5 text-center">
           <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-400">
             SF-01 · Chromatic
           </p>
         </div>
-      </div>
     </div>
   );
 }
