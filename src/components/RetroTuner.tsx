@@ -312,210 +312,214 @@ export function RetroTuner() {
   return (
     <div className="border border-ink bg-paper">
 
-        {/* Header */}
-        <div className="flex items-center justify-between border-b border-ink px-5 py-3">
-          <div>
-            <p className="text-[9px] uppercase tracking-[0.35em] text-neutral-500">Scale Finder</p>
-            <p className="text-sm font-bold uppercase tracking-[0.25em]">Accordeur chromatique</p>
-          </div>
-          <div className="flex items-center gap-2">
-            {listening && (
-              <span className="text-[10px] uppercase tracking-wider text-neutral-500">
-                {source === 'tab' ? 'Onglet' : 'Micro'}
-              </span>
-            )}
-            <div
-              ref={ledRef}
-              className="h-2.5 w-2.5 rounded-full border border-ink transition-colors duration-300"
-              style={{ background: listening ? AMBER : CREAM }}
-            />
-          </div>
+      {/* Header — pleine largeur */}
+      <div className="flex items-center justify-between border-b border-ink px-4 py-3 sm:px-6">
+        <div>
+          <p className="text-[9px] uppercase tracking-[0.35em] text-neutral-500">Scale Finder</p>
+          <p className="text-sm font-bold uppercase tracking-[0.25em]">Accordeur chromatique</p>
         </div>
+        <div className="flex items-center gap-2">
+          {listening && (
+            <span className="text-[10px] uppercase tracking-wider text-neutral-500">
+              {source === 'tab' ? 'Onglet' : 'Micro'}
+            </span>
+          )}
+          <div
+            ref={ledRef}
+            className="h-2.5 w-2.5 border border-ink transition-colors duration-300"
+            style={{ background: listening ? AMBER : CREAM }}
+          />
+        </div>
+      </div>
 
-        <div className="mx-auto max-w-xl">
-        {/* Gauge */}
-        <div className="border-b border-ink" style={{ background: CREAM }}>
-          <svg viewBox="0 0 500 300" style={{ width: '100%', display: 'block' }} aria-hidden>
-            <path d={arcPath(RARC, -DEG_MAX, DEG_MAX)} fill="none" stroke={PAPER} strokeWidth="40" strokeLinecap="butt" />
-            {ZONES.map((z, i) => (
-              <path key={i} d={arcPath(RARC, z.a1, z.a2)} fill="none" stroke={z.color} strokeWidth="24" strokeLinecap="butt" />
-            ))}
-            <path d={arcPath(RARC + 19, -DEG_MAX, DEG_MAX)} fill="none" stroke={INK} strokeWidth="1" />
-            <path d={arcPath(RARC - 11, -DEG_MAX, DEG_MAX)} fill="none" stroke={FAINT} strokeWidth="1" />
-            {MAJOR_TICKS.map(c => {
-              const a = centsToAngle(c);
-              const outer = polar(RARC + 19, a), inner = polar(RARC - 16, a), lbl = polar(RARC - 36, a);
-              return (
-                <g key={c}>
-                  <line x1={outer.x.toFixed(1)} y1={outer.y.toFixed(1)} x2={inner.x.toFixed(1)} y2={inner.y.toFixed(1)} stroke={INK} strokeWidth="1.5" />
-                  <text x={lbl.x.toFixed(1)} y={lbl.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle"
-                    fill={MUTED} fontSize="13" fontFamily="var(--font-mono)" fontWeight="bold">
-                    {c === 0 ? '0' : Math.abs(c)}
-                  </text>
-                </g>
-              );
-            })}
-            {MINOR_TICKS.map(c => {
-              const a = centsToAngle(c), o = polar(RARC + 19, a), inn = polar(RARC + 4, a);
-              return <line key={c} x1={o.x.toFixed(1)} y1={o.y.toFixed(1)} x2={inn.x.toFixed(1)} y2={inn.y.toFixed(1)} stroke={FAINT} strokeWidth="1" />;
-            })}
-            {(() => {
-              const fl = polar(RARC - 58, -DEG_MAX + 8), sh = polar(RARC - 58, DEG_MAX - 8);
-              return (
-                <>
-                  <text x={fl.x.toFixed(1)} y={fl.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle" fill={MUTED} fontSize="11" letterSpacing="2">FLAT</text>
-                  <text x={sh.x.toFixed(1)} y={sh.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle" fill={MUTED} fontSize="11" letterSpacing="2">SHARP</text>
-                </>
-              );
-            })()}
-            <text
-              x={CX} y={CY - RARC + 52} textAnchor="middle" dominantBaseline="middle"
-              fill={inTune && display ? GREEN : 'transparent'}
-              fontSize="11" letterSpacing="3" fontWeight="bold"
-              style={{ transition: 'fill 0.3s' }}
-            >IN TUNE</text>
-            {/* Halo rose décalé — clin d'œil au décalage d'impression riso */}
-            <g ref={needleGlowRef} style={{ transformOrigin: `${CX}px ${CY}px`, opacity: 0 }}>
-              <polygon points={`${CX - 8},${CY} ${CX - 3},${CY - RNEEDLE} ${CX + 2},${CY}`} fill={PINK} />
-            </g>
-            <g ref={needleRef} style={{ transformOrigin: `${CX}px ${CY}px` }}>
-              <polygon
-                points={`${CX - 3},${CY} ${CX},${CY - RNEEDLE} ${CX + 3},${CY}`}
-                fill={listening ? (display ? RED : FAINT) : FAINT}
+      {/* Corps — 2 colonnes sur lg */}
+      <div className="lg:grid lg:grid-cols-5">
+
+        {/* Colonne gauche : jauge + cordes */}
+        <div className="border-b border-ink lg:col-span-3 lg:border-b-0 lg:border-r">
+
+          {/* Jauge SVG — pleine largeur de la colonne */}
+          <div style={{ background: CREAM }}>
+            <svg viewBox="0 0 500 300" style={{ width: '100%', display: 'block' }} aria-hidden>
+              <path d={arcPath(RARC, -DEG_MAX, DEG_MAX)} fill="none" stroke={PAPER} strokeWidth="40" strokeLinecap="butt" />
+              {ZONES.map((z, i) => (
+                <path key={i} d={arcPath(RARC, z.a1, z.a2)} fill="none" stroke={z.color} strokeWidth="24" strokeLinecap="butt" />
+              ))}
+              <path d={arcPath(RARC + 19, -DEG_MAX, DEG_MAX)} fill="none" stroke={INK} strokeWidth="1" />
+              <path d={arcPath(RARC - 11, -DEG_MAX, DEG_MAX)} fill="none" stroke={FAINT} strokeWidth="1" />
+              {MAJOR_TICKS.map(c => {
+                const a = centsToAngle(c);
+                const outer = polar(RARC + 19, a), inner = polar(RARC - 16, a), lbl = polar(RARC - 36, a);
+                return (
+                  <g key={c}>
+                    <line x1={outer.x.toFixed(1)} y1={outer.y.toFixed(1)} x2={inner.x.toFixed(1)} y2={inner.y.toFixed(1)} stroke={INK} strokeWidth="1.5" />
+                    <text x={lbl.x.toFixed(1)} y={lbl.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle"
+                      fill={MUTED} fontSize="13" fontFamily="var(--font-mono)" fontWeight="bold">
+                      {c === 0 ? '0' : Math.abs(c)}
+                    </text>
+                  </g>
+                );
+              })}
+              {MINOR_TICKS.map(c => {
+                const a = centsToAngle(c), o = polar(RARC + 19, a), inn = polar(RARC + 4, a);
+                return <line key={c} x1={o.x.toFixed(1)} y1={o.y.toFixed(1)} x2={inn.x.toFixed(1)} y2={inn.y.toFixed(1)} stroke={FAINT} strokeWidth="1" />;
+              })}
+              {(() => {
+                const fl = polar(RARC - 58, -DEG_MAX + 8), sh = polar(RARC - 58, DEG_MAX - 8);
+                return (
+                  <>
+                    <text x={fl.x.toFixed(1)} y={fl.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle" fill={MUTED} fontSize="11" letterSpacing="2">FLAT</text>
+                    <text x={sh.x.toFixed(1)} y={sh.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle" fill={MUTED} fontSize="11" letterSpacing="2">SHARP</text>
+                  </>
+                );
+              })()}
+              <text
+                x={CX} y={CY - RARC + 52} textAnchor="middle" dominantBaseline="middle"
+                fill={inTune && display ? GREEN : 'transparent'}
+                fontSize="11" letterSpacing="3" fontWeight="bold"
+                style={{ transition: 'fill 0.3s' }}
+              >IN TUNE</text>
+              <g ref={needleGlowRef} style={{ transformOrigin: `${CX}px ${CY}px`, opacity: 0 }}>
+                <polygon points={`${CX - 8},${CY} ${CX - 3},${CY - RNEEDLE} ${CX + 2},${CY}`} fill={PINK} />
+              </g>
+              <g ref={needleRef} style={{ transformOrigin: `${CX}px ${CY}px` }}>
+                <polygon
+                  points={`${CX - 3},${CY} ${CX},${CY - RNEEDLE} ${CX + 3},${CY}`}
+                  fill={listening ? (display ? RED : FAINT) : FAINT}
+                  style={{ transition: 'fill 0.4s' }}
+                />
+              </g>
+              <circle cx={CX} cy={CY} r="12" fill={PAPER} stroke={INK} strokeWidth="1.5" />
+              <circle cx={CX} cy={CY} r="5"
+                fill={display ? activeColor : FAINT}
                 style={{ transition: 'fill 0.4s' }}
               />
-            </g>
-            <circle cx={CX} cy={CY} r="12" fill={PAPER} stroke={INK} strokeWidth="1.5" />
-            <circle cx={CX} cy={CY} r="5"
-              fill={display ? activeColor : FAINT}
-              style={{ transition: 'fill 0.4s' }}
-            />
-          </svg>
+            </svg>
+          </div>
+
+          {/* Indicateur de cordes — visible uniquement avec un preset */}
+          {selectedPreset && (
+            <div className="flex justify-center gap-2 border-t border-ink px-5 py-4">
+              {selectedPreset.strings.map((name, i) => {
+                const active = activeString === i;
+                return (
+                  <div key={i} className="flex flex-col items-center gap-1">
+                    <div
+                      className="flex h-10 w-10 items-center justify-center border transition-colors"
+                      style={{
+                        borderColor: active ? '#ec5fa3' : FAINT,
+                        borderWidth: active ? 2 : 1,
+                        background: active ? PINK : PAPER,
+                      }}
+                    >
+                      <span
+                        className="font-mono font-bold transition-colors"
+                        style={{ fontSize: name.length > 2 ? 9 : 12, color: active ? INK : MUTED }}
+                      >{name}</span>
+                    </div>
+                    <span className="text-[9px] text-neutral-400">{6 - i}</span>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
-        {/* String indicator — only visible when a preset is selected */}
-        {selectedPreset && (
-          <div className="flex justify-center gap-2 border-b border-ink bg-paper px-5 py-3">
-            {selectedPreset.strings.map((name, i) => {
-              const active = activeString === i;
-              return (
-                <div key={i} className="flex flex-col items-center gap-1">
-                  <div
-                    className="flex h-9 w-9 items-center justify-center border transition-colors"
-                    style={{
-                      borderColor: active ? '#ec5fa3' : FAINT,
-                      borderWidth: active ? 2 : 1,
-                      background: active ? PINK : PAPER,
-                    }}
-                  >
-                    <span
-                      className="font-mono font-bold transition-colors"
-                      style={{ fontSize: name.length > 2 ? 9 : 11, color: active ? INK : MUTED }}
-                    >{name}</span>
-                  </div>
-                  <span className="text-[8px] text-neutral-400">{6 - i}</span>
-                </div>
-              );
-            })}
-          </div>
-        )}
+        {/* Colonne droite : affichage + contrôles + presets */}
+        <div className="flex flex-col lg:col-span-2">
 
-        {/* Display */}
-        <div className="border-b border-ink p-5">
-          <div className="mb-5 flex items-center gap-4">
-            <div
-              className="min-w-[130px] border border-ink px-6 py-3 text-center transition-colors"
-              style={{ background: CREAM }}
-            >
+          {/* Note + freq + écart */}
+          <div className="border-b border-ink p-5 sm:p-6">
+            <div className="mb-4 border border-ink py-5 text-center" style={{ background: CREAM }}>
               <div
-                className="font-mono text-7xl font-bold leading-none tracking-tight transition-colors duration-300"
+                className="font-mono text-8xl font-bold leading-none tracking-tight transition-colors duration-300"
                 style={{ color: display ? activeColor : FAINT }}
               >
                 {display?.note ?? '—'}
-                <sup className="ml-1 align-super text-3xl tracking-normal">
+                <sup className="ml-1 align-super text-4xl tracking-normal">
                   {display?.octave ?? ''}
                 </sup>
               </div>
             </div>
-            <div className="flex flex-1 flex-col gap-2">
+            <div className="grid grid-cols-2 gap-2">
               <DisplayBox label="Fréquence" value={freqLabel} color={display ? INK : FAINT} />
               <DisplayBox label="Écart" value={centsLabel} color={centsColor} />
             </div>
           </div>
 
-          {/* Controls */}
-          <div className="flex flex-wrap items-center gap-2">
-            {!listening ? (
-              <>
+          {/* Contrôles */}
+          <div className="border-b border-ink p-5">
+            <div className="flex flex-wrap items-center gap-2">
+              {!listening ? (
+                <>
+                  <button
+                    onClick={() => start('mic')}
+                    className="bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-riso-pink hover:text-ink"
+                  >
+                    Micro
+                  </button>
+                  <button
+                    onClick={() => start('tab')}
+                    className="border border-ink px-5 py-2.5 text-sm font-medium transition-colors hover:bg-cream"
+                  >
+                    Onglet
+                  </button>
+                </>
+              ) : (
                 <button
-                  onClick={() => start('mic')}
-                  className="bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-riso-pink hover:text-ink"
+                  onClick={stop}
+                  className="bg-riso-red px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-ink"
                 >
-                  Micro
+                  ■ Arrêter
                 </button>
-                <button
-                  onClick={() => start('tab')}
-                  className="border border-ink px-5 py-2.5 text-sm font-medium transition-colors hover:bg-cream"
+              )}
+              <div className="ml-auto flex items-center gap-2">
+                <span className="text-xs uppercase tracking-wider text-neutral-500">A =</span>
+                <select
+                  value={refA}
+                  onChange={e => setRefA(Number(e.target.value))}
+                  className="cursor-pointer border border-ink bg-paper px-3 py-2 font-mono text-sm outline-none"
                 >
-                  Onglet
-                </button>
-              </>
-            ) : (
-              <button
-                onClick={stop}
-                className="bg-riso-red px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-ink"
+                  {REF_PITCHES.map(p => <option key={p} value={p}>{p} Hz</option>)}
+                </select>
+              </div>
+            </div>
+            {error && <p className="mt-3 text-sm text-riso-red">{error}</p>}
+          </div>
+
+          {/* Presets d'accordage */}
+          <div className="flex-1 p-5">
+            <p className="mb-3 text-[11px] uppercase tracking-[0.18em] text-neutral-500">Accordage</p>
+            <div className="flex flex-wrap gap-1.5">
+              <PresetButton
+                active={selectedPreset === null}
+                onClick={() => { setSelectedPreset(null); setActiveString(-1); activeStringRef.current = -1; }}
               >
-                ■ Arrêter
-              </button>
-            )}
-            <div className="ml-auto flex items-center gap-2">
-              <span className="text-xs uppercase tracking-wider text-neutral-500">A =</span>
-              <select
-                value={refA}
-                onChange={e => setRefA(Number(e.target.value))}
-                className="cursor-pointer border border-ink bg-paper px-3 py-2 font-mono text-sm outline-none"
-              >
-                {REF_PITCHES.map(p => <option key={p} value={p}>{p} Hz</option>)}
-              </select>
+                <span className="block text-xs">Chromatique</span>
+              </PresetButton>
+              {TUNING_PRESETS.map(preset => (
+                <PresetButton
+                  key={preset.id}
+                  active={selectedPreset?.id === preset.id}
+                  onClick={() => { setSelectedPreset(preset); setActiveString(-1); activeStringRef.current = -1; }}
+                >
+                  <span className="block text-xs">{preset.name}</span>
+                  {preset.artists && (
+                    <span className="mt-0.5 block text-[9px] opacity-60">{preset.artists}</span>
+                  )}
+                </PresetButton>
+              ))}
             </div>
           </div>
-          {error && <p className="mt-3 text-sm text-riso-red">{error}</p>}
         </div>
+      </div>
 
-        {/* Tuning preset selector */}
-        <div className="px-5 py-4">
-          <p className="mb-3 text-[11px] uppercase tracking-[0.18em] text-neutral-500">
-            Accordage
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            <PresetButton
-              active={selectedPreset === null}
-              onClick={() => { setSelectedPreset(null); setActiveString(-1); activeStringRef.current = -1; }}
-            >
-              <span className="block text-xs">Chromatique</span>
-            </PresetButton>
-            {TUNING_PRESETS.map(preset => (
-              <PresetButton
-                key={preset.id}
-                active={selectedPreset?.id === preset.id}
-                onClick={() => { setSelectedPreset(preset); setActiveString(-1); activeStringRef.current = -1; }}
-              >
-                <span className="block text-xs">{preset.name}</span>
-                {preset.artists && (
-                  <span className="mt-0.5 block text-[9px] opacity-60">{preset.artists}</span>
-                )}
-              </PresetButton>
-            ))}
-          </div>
-        </div>
-
-        </div>
-        {/* Bottom strip */}
-        <div className="border-t border-ink px-5 py-2.5 text-center">
-          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-400">
-            SF-01 · Chromatic
-          </p>
-        </div>
+      {/* Pied de page */}
+      <div className="border-t border-ink px-5 py-2.5 text-center">
+        <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-400">
+          SF-01 · Chromatic
+        </p>
+      </div>
     </div>
   );
 }
