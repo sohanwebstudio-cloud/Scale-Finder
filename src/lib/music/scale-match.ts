@@ -30,6 +30,7 @@ const CATEGORY_PRIOR: Record<ScaleCategory, number> = {
   blues: 1,
   jazz: 0.92,
   symetrique: 0.85,
+  exotique: 0.80,
   arpege: 0,
 };
 

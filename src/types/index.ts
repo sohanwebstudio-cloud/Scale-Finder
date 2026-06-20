@@ -16,6 +16,7 @@ export type ModeKey =
   | 'whole_tone' | 'half_whole' | 'whole_half'
   | 'bebop_dom'
   | 'pentatonic_minor' | 'pentatonic_major' | 'blues_minor' | 'blues_major'
+  | 'rock_n_roll' | 'bebop_dorian' | 'bebop_mixolydian' | 'persian' | 'gypsy_major' | 'gypsy_minor'
   | 'arp_maj' | 'arp_min' | 'arp_dom7' | 'arp_maj7' | 'arp_m7' | 'arp_m7b5' | 'arp_dim7' | 'arp_mmaj7';
 
 export type ScaleCategory =
@@ -24,6 +25,7 @@ export type ScaleCategory =
   | 'blues'
   | 'jazz'
   | 'symetrique'
+  | 'exotique'
   | 'arpege';
 
 export interface Mode {

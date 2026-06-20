@@ -23,6 +23,7 @@ const CATEGORIES: CategorySection[] = [
   { id: 'blues',            label: 'Blues & Pentatoniques' },
   { id: 'jazz',             label: 'Jazz & Avancé' },
   { id: 'symetrique',       label: 'Symétriques' },
+  { id: 'exotique',         label: 'Exotiques' },
   { id: 'arpege',           label: 'Arpeggios' },
 ];
 

@@ -32,7 +32,14 @@ export const MODE_COLORS: Record<ModeKey, ColorPair> = {
   whole_tone:  { bg: '#F5FBE4', text: '#2E5C05', darkBg: '#2E5C05', darkText: '#C3E880' },
   whole_half:  { bg: '#F7EDFC', text: '#531A72', darkBg: '#531A72', darkText: '#DCB0F5' },
   // Bebop
-  bebop_dom: { bg: '#FFF8E1', text: '#5C3D00', darkBg: '#5C3D00', darkText: '#FFD880' },
+  bebop_dom:        { bg: '#FFF8E1', text: '#5C3D00', darkBg: '#5C3D00', darkText: '#FFD880' },
+  // Exotiques
+  rock_n_roll:      { bg: '#FFF0E0', text: '#7A2E00', darkBg: '#7A2E00', darkText: '#FFBA80' },
+  bebop_dorian:     { bg: '#E2F6EE', text: '#0A4A35', darkBg: '#0A4A35', darkText: '#90DDBC' },
+  bebop_mixolydian: { bg: '#FFF5D6', text: '#6B4100', darkBg: '#6B4100', darkText: '#FDD87A' },
+  persian:          { bg: '#F3E8FF', text: '#5B0E91', darkBg: '#5B0E91', darkText: '#D9A8FF' },
+  gypsy_major:      { bg: '#FFEAEA', text: '#7A0000', darkBg: '#7A0000', darkText: '#FFAAAA' },
+  gypsy_minor:      { bg: '#FFF3E0', text: '#6B3500', darkBg: '#6B3500', darkText: '#FFC97A' },
   // Arpeggios
   arp_maj:   { bg: '#E8F4FD', text: '#0B3D6B', darkBg: '#0B3D6B', darkText: '#A8D8F5' },
   arp_min:   { bg: '#EDEDED', text: '#2A2A2A', darkBg: '#2A2A2A', darkText: '#C8C8C8' },

@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { detectPitchACF } from '@/lib/music/pitch-acf';
 import { OutlierRemovingSmoother } from '@/lib/music/smoother';
-import Link from 'next/link';
 
 // ── Gauge geometry ─────────────────────────────────────────────────────────
 const CX = 250, CY = 320, RARC = 235, RNEEDLE = 215, DEG_MAX = 65;
@@ -112,13 +111,24 @@ function freqToMidi(freq: number, refA: number) {
   return 69 + 12 * Math.log2(freq / refA);
 }
 
-// ── Zone arcs (dim, static) ───────────────────────────────────────────────
+// ── Palette riso ──────────────────────────────────────────────────────────
+const INK    = '#141414';
+const MUTED  = '#8a8678';
+const FAINT  = '#c9c4b4';
+const CREAM  = '#f1efe8';
+const PAPER  = '#fbfaf7';
+const GREEN  = '#1f9e54';
+const AMBER  = '#d98e04';
+const RED    = '#e0301e';
+const PINK   = '#f6a8d2';
+
+// ── Zone arcs (static) ────────────────────────────────────────────────────
 const ZONES = [
-  { a1: -DEG_MAX,          a2: centsToAngle(-15), color: '#5a0e00' },
-  { a1: centsToAngle(-15), a2: centsToAngle(-5),  color: '#5a3300' },
-  { a1: centsToAngle(-5),  a2: centsToAngle(5),   color: '#004a1e' },
-  { a1: centsToAngle(5),   a2: centsToAngle(15),  color: '#5a3300' },
-  { a1: centsToAngle(15),  a2: DEG_MAX,           color: '#5a0e00' },
+  { a1: -DEG_MAX,          a2: centsToAngle(-15), color: '#f2b3a9' },
+  { a1: centsToAngle(-15), a2: centsToAngle(-5),  color: '#f6dca4' },
+  { a1: centsToAngle(-5),  a2: centsToAngle(5),   color: '#b9e2c4' },
+  { a1: centsToAngle(5),   a2: centsToAngle(15),  color: '#f6dca4' },
+  { a1: centsToAngle(15),  a2: DEG_MAX,           color: '#f2b3a9' },
 ];
 const MAJOR_TICKS = [-50, -25, 0, 25, 50];
 const MINOR_TICKS = [-40, -30, -20, -10, 10, 20, 30, 40];
@@ -255,7 +265,7 @@ export function RetroTuner() {
       if (needleRef.current) needleRef.current.style.transform = transform;
       if (needleGlowRef.current) {
         needleGlowRef.current.style.transform = transform;
-        needleGlowRef.current.style.opacity = freq !== null ? '0.55' : '0';
+        needleGlowRef.current.style.opacity = freq !== null ? '0.6' : '0';
       }
 
       // Every 6 frames: update React state (~100ms)
@@ -269,9 +279,7 @@ export function RetroTuner() {
         setDisplay({ note, octave, freq: Math.round(freq * 10) / 10, cents });
         setInTune(tune);
         if (ledRef.current) {
-          const c = tune ? '#00ff88' : '#ffaa00';
-          ledRef.current.style.background = c;
-          ledRef.current.style.boxShadow = `0 0 14px ${c}, 0 0 28px ${c}66`;
+          ledRef.current.style.background = tune ? GREEN : AMBER;
         }
 
         // Active string detection (only when a preset is selected)
@@ -294,93 +302,55 @@ export function RetroTuner() {
   useEffect(() => () => stop(), [stop]);
 
   // ── Derived display ───────────────────────────────────────────────────
-  const amber = '#ffaa00';
-  const green = '#00ff88';
-  const activeColor = inTune ? green : amber;
-  const dimColor    = inTune ? '#004a1e' : '#2a1a00';
+  const activeColor = inTune ? GREEN : AMBER;
   const centsLabel  = display ? `${display.cents >= 0 ? '+' : ''}${display.cents.toFixed(1)} ¢` : '— ¢';
   const freqLabel   = display ? `${display.freq} Hz` : '——— Hz';
   const centsColor  = display
-    ? Math.abs(display.cents) <= 5 ? green : Math.abs(display.cents) > 20 ? '#ff4400' : amber
-    : '#2a1a00';
+    ? Math.abs(display.cents) <= 5 ? GREEN : Math.abs(display.cents) > 20 ? RED : AMBER
+    : FAINT;
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'radial-gradient(ellipse at 50% 30%, #100c08 0%, #050402 70%)',
-      display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-      padding: '24px 16px',
-      fontFamily: "'Courier New', monospace",
-    }}>
-      <Link href="/" style={{
-        alignSelf: 'flex-start', maxWidth: 500, width: '100%',
-        margin: '0 auto 12px', display: 'block',
-        color: '#554433', fontSize: 11, textDecoration: 'none',
-        letterSpacing: '0.15em', textTransform: 'uppercase',
-      }}>← Studio</Link>
-
+    <div className="mx-auto max-w-xl px-4 py-10 sm:py-14">
       {/* Device body */}
-      <div style={{
-        width: '100%', maxWidth: 500,
-        background: 'linear-gradient(160deg, #181410 0%, #0e0b08 100%)',
-        borderRadius: 18, border: '1px solid #2a1e0e',
-        boxShadow: '0 60px 120px rgba(0,0,0,0.95), 0 0 0 1px rgba(255,255,255,0.02) inset, 0 1px 0 rgba(255,200,100,0.04) inset',
-        overflow: 'hidden',
-      }}>
+      <div className="border border-ink bg-paper">
 
         {/* Header */}
-        <div style={{
-          background: '#0d0a07', padding: '14px 20px',
-          borderBottom: '1px solid #1e1509',
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        }}>
+        <div className="flex items-center justify-between border-b border-ink px-5 py-3">
           <div>
-            <p style={{ margin: 0, fontSize: 9, letterSpacing: '0.35em', textTransform: 'uppercase', color: '#554422' }}>Scale Finder</p>
-            <p style={{ margin: '2px 0 0', fontSize: 14, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#886633', fontWeight: 700 }}>
-              Chromatic Tuner
-            </p>
+            <p className="text-[9px] uppercase tracking-[0.35em] text-neutral-500">Scale Finder</p>
+            <p className="text-sm font-bold uppercase tracking-[0.25em]">Accordeur chromatique</p>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <div className="flex items-center gap-2">
             {listening && (
-              <span style={{ fontSize: 10, letterSpacing: '0.1em', color: '#664422' }}>
-                {source === 'tab' ? 'ONGLET' : 'MICRO'}
+              <span className="text-[10px] uppercase tracking-wider text-neutral-500">
+                {source === 'tab' ? 'Onglet' : 'Micro'}
               </span>
             )}
-            <div ref={ledRef} style={{
-              width: 10, height: 10, borderRadius: '50%',
-              background: listening ? amber : '#1a1208',
-              boxShadow: listening ? `0 0 14px ${amber}` : 'none',
-              transition: 'background 0.4s, box-shadow 0.4s',
-            }} />
+            <div
+              ref={ledRef}
+              className="h-2.5 w-2.5 rounded-full border border-ink transition-colors duration-300"
+              style={{ background: listening ? AMBER : CREAM }}
+            />
           </div>
         </div>
 
         {/* Gauge */}
-        <div style={{ background: '#080604', position: 'relative', borderBottom: '1px solid #1a1208' }}>
+        <div className="border-b border-ink" style={{ background: CREAM }}>
           <svg viewBox="0 0 500 300" style={{ width: '100%', display: 'block' }} aria-hidden>
-            <defs>
-              <filter id="t-glow-soft">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b" />
-                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
-              <filter id="t-needle-blur">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
-              </filter>
-            </defs>
-            <path d={arcPath(RARC, -DEG_MAX, DEG_MAX)} fill="none" stroke="#120e08" strokeWidth="40" strokeLinecap="butt" />
+            <path d={arcPath(RARC, -DEG_MAX, DEG_MAX)} fill="none" stroke={PAPER} strokeWidth="40" strokeLinecap="butt" />
             {ZONES.map((z, i) => (
-              <path key={i} d={arcPath(RARC, z.a1, z.a2)} fill="none" stroke={z.color} strokeWidth="24" strokeLinecap="butt" opacity="0.9" />
+              <path key={i} d={arcPath(RARC, z.a1, z.a2)} fill="none" stroke={z.color} strokeWidth="24" strokeLinecap="butt" />
             ))}
-            <path d={arcPath(RARC + 19, -DEG_MAX, DEG_MAX)} fill="none" stroke="#2a1e0a" strokeWidth="1" />
-            <path d={arcPath(RARC - 11, -DEG_MAX, DEG_MAX)} fill="none" stroke="#1a1408" strokeWidth="1" />
+            <path d={arcPath(RARC + 19, -DEG_MAX, DEG_MAX)} fill="none" stroke={INK} strokeWidth="1" />
+            <path d={arcPath(RARC - 11, -DEG_MAX, DEG_MAX)} fill="none" stroke={FAINT} strokeWidth="1" />
             {MAJOR_TICKS.map(c => {
               const a = centsToAngle(c);
               const outer = polar(RARC + 19, a), inner = polar(RARC - 16, a), lbl = polar(RARC - 36, a);
               return (
                 <g key={c}>
-                  <line x1={outer.x.toFixed(1)} y1={outer.y.toFixed(1)} x2={inner.x.toFixed(1)} y2={inner.y.toFixed(1)} stroke="#7a5520" strokeWidth="2" />
+                  <line x1={outer.x.toFixed(1)} y1={outer.y.toFixed(1)} x2={inner.x.toFixed(1)} y2={inner.y.toFixed(1)} stroke={INK} strokeWidth="1.5" />
                   <text x={lbl.x.toFixed(1)} y={lbl.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle"
-                    fill="#5a3a12" fontSize="13" fontFamily="'Courier New', monospace" fontWeight="bold">
+                    fill={MUTED} fontSize="13" fontFamily="var(--font-mono)" fontWeight="bold">
                     {c === 0 ? '0' : Math.abs(c)}
                   </text>
                 </g>
@@ -388,38 +358,37 @@ export function RetroTuner() {
             })}
             {MINOR_TICKS.map(c => {
               const a = centsToAngle(c), o = polar(RARC + 19, a), inn = polar(RARC + 4, a);
-              return <line key={c} x1={o.x.toFixed(1)} y1={o.y.toFixed(1)} x2={inn.x.toFixed(1)} y2={inn.y.toFixed(1)} stroke="#3a2510" strokeWidth="1" />;
+              return <line key={c} x1={o.x.toFixed(1)} y1={o.y.toFixed(1)} x2={inn.x.toFixed(1)} y2={inn.y.toFixed(1)} stroke={FAINT} strokeWidth="1" />;
             })}
             {(() => {
               const fl = polar(RARC - 58, -DEG_MAX + 8), sh = polar(RARC - 58, DEG_MAX - 8);
               return (
                 <>
-                  <text x={fl.x.toFixed(1)} y={fl.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle" fill="#663300" fontSize="11" fontFamily="'Courier New', monospace" letterSpacing="2">FLAT</text>
-                  <text x={sh.x.toFixed(1)} y={sh.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle" fill="#663300" fontSize="11" fontFamily="'Courier New', monospace" letterSpacing="2">SHARP</text>
+                  <text x={fl.x.toFixed(1)} y={fl.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle" fill={MUTED} fontSize="11" letterSpacing="2">FLAT</text>
+                  <text x={sh.x.toFixed(1)} y={sh.y.toFixed(1)} textAnchor="middle" dominantBaseline="middle" fill={MUTED} fontSize="11" letterSpacing="2">SHARP</text>
                 </>
               );
             })()}
             <text
               x={CX} y={CY - RARC + 52} textAnchor="middle" dominantBaseline="middle"
-              fill={inTune && display ? green : 'transparent'}
-              fontSize="11" fontFamily="'Courier New', monospace" letterSpacing="3"
-              filter={inTune && display ? 'url(#t-glow-soft)' : undefined}
+              fill={inTune && display ? GREEN : 'transparent'}
+              fontSize="11" letterSpacing="3" fontWeight="bold"
               style={{ transition: 'fill 0.3s' }}
             >IN TUNE</text>
-            <g ref={needleGlowRef} style={{ transformOrigin: `${CX}px ${CY}px`, opacity: 0 }} filter="url(#t-needle-blur)">
-              <polygon points={`${CX - 5},${CY} ${CX},${CY - RNEEDLE} ${CX + 5},${CY}`} fill={amber} />
+            {/* Halo rose décalé — clin d'œil au décalage d'impression riso */}
+            <g ref={needleGlowRef} style={{ transformOrigin: `${CX}px ${CY}px`, opacity: 0 }}>
+              <polygon points={`${CX - 8},${CY} ${CX - 3},${CY - RNEEDLE} ${CX + 2},${CY}`} fill={PINK} />
             </g>
             <g ref={needleRef} style={{ transformOrigin: `${CX}px ${CY}px` }}>
               <polygon
                 points={`${CX - 3},${CY} ${CX},${CY - RNEEDLE} ${CX + 3},${CY}`}
-                fill={listening ? (display ? activeColor : '#4a2e08') : '#2a1a08'}
+                fill={listening ? (display ? RED : FAINT) : FAINT}
                 style={{ transition: 'fill 0.4s' }}
               />
             </g>
-            <circle cx={CX} cy={CY} r="12" fill="#080604" stroke="#2a1e0a" strokeWidth="2" />
+            <circle cx={CX} cy={CY} r="12" fill={PAPER} stroke={INK} strokeWidth="1.5" />
             <circle cx={CX} cy={CY} r="5"
-              fill={display ? activeColor : '#2a1a08'}
-              filter={display ? 'url(#t-glow-soft)' : undefined}
+              fill={display ? activeColor : FAINT}
               style={{ transition: 'fill 0.4s' }}
             />
           </svg>
@@ -427,33 +396,25 @@ export function RetroTuner() {
 
         {/* String indicator — only visible when a preset is selected */}
         {selectedPreset && (
-          <div style={{
-            background: '#070502', padding: '12px 20px',
-            borderBottom: '1px solid #1a1208',
-            display: 'flex', justifyContent: 'center', gap: 6,
-          }}>
+          <div className="flex justify-center gap-2 border-b border-ink bg-paper px-5 py-3">
             {selectedPreset.strings.map((name, i) => {
               const active = activeString === i;
               return (
-                <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-                  <div style={{
-                    width: 38, height: 38, borderRadius: '50%',
-                    background: '#050402',
-                    border: `1.5px solid ${active ? amber : '#2a1a08'}`,
-                    boxShadow: active ? `0 0 10px ${amber}99, 0 0 22px ${amber}44` : 'none',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    transition: 'border-color 0.15s, box-shadow 0.15s',
-                  }}>
-                    <span style={{
-                      fontSize: name.length > 2 ? 9 : 11,
-                      fontFamily: "'Courier New', monospace", fontWeight: 700,
-                      color: active ? amber : '#3a2510',
-                      transition: 'color 0.15s',
-                    }}>{name}</span>
+                <div key={i} className="flex flex-col items-center gap-1">
+                  <div
+                    className="flex h-9 w-9 items-center justify-center border transition-colors"
+                    style={{
+                      borderColor: active ? '#ec5fa3' : FAINT,
+                      borderWidth: active ? 2 : 1,
+                      background: active ? PINK : PAPER,
+                    }}
+                  >
+                    <span
+                      className="font-mono font-bold transition-colors"
+                      style={{ fontSize: name.length > 2 ? 9 : 11, color: active ? INK : MUTED }}
+                    >{name}</span>
                   </div>
-                  <span style={{ fontSize: 8, color: '#2a1508', letterSpacing: '0.05em' }}>
-                    {6 - i}
-                  </span>
+                  <span className="text-[8px] text-neutral-400">{6 - i}</span>
                 </div>
               );
             })}
@@ -461,69 +422,78 @@ export function RetroTuner() {
         )}
 
         {/* Display */}
-        <div style={{ padding: '20px 24px', background: '#090705' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 20 }}>
-            <div style={{
-              flex: '0 0 auto', background: '#050402',
-              border: `1px solid ${display ? dimColor : '#1a1208'}`,
-              borderRadius: 10, padding: '10px 24px', textAlign: 'center', minWidth: 130,
-              boxShadow: display
-                ? `0 0 40px ${dimColor}, 0 0 80px ${dimColor}66, inset 0 0 30px rgba(0,0,0,0.9)`
-                : 'inset 0 0 30px rgba(0,0,0,0.9)',
-              transition: 'all 0.4s',
-            }}>
-              <div style={{
-                fontSize: 72, fontWeight: 700, lineHeight: 1, letterSpacing: '-0.03em',
-                color: display ? activeColor : '#1e1208',
-                textShadow: display ? `0 0 20px ${activeColor}cc, 0 0 50px ${activeColor}44` : 'none',
-                transition: 'all 0.4s',
-              }}>
+        <div className="border-b border-ink p-5">
+          <div className="mb-5 flex items-center gap-4">
+            <div
+              className="min-w-[130px] border border-ink px-6 py-3 text-center transition-colors"
+              style={{ background: CREAM }}
+            >
+              <div
+                className="font-mono text-7xl font-bold leading-none tracking-tight transition-colors duration-300"
+                style={{ color: display ? activeColor : FAINT }}
+              >
                 {display?.note ?? '—'}
-                <sup style={{ fontSize: 30, verticalAlign: 'super', marginLeft: 4, letterSpacing: 0 }}>
+                <sup className="ml-1 align-super text-3xl tracking-normal">
                   {display?.octave ?? ''}
                 </sup>
               </div>
             </div>
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <DisplayBox label="Fréquence" value={freqLabel} color={display ? amber : '#1e1208'} />
+            <div className="flex flex-1 flex-col gap-2">
+              <DisplayBox label="Fréquence" value={freqLabel} color={display ? INK : FAINT} />
               <DisplayBox label="Écart" value={centsLabel} color={centsColor} />
             </div>
           </div>
 
           {/* Controls */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-            {!listening
-              ? <><RetroButton onClick={() => start('mic')}>🎙 Micro</RetroButton><RetroButton onClick={() => start('tab')}>🖥 Onglet</RetroButton></>
-              : <RetroButton onClick={stop} danger>⏹ Arrêter</RetroButton>
-            }
-            <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ fontSize: 11, color: '#664422', letterSpacing: '0.15em' }}>A =</span>
-              <select value={refA} onChange={e => setRefA(Number(e.target.value))} style={{
-                background: '#0d0a07', color: '#aa7733',
-                border: '1px solid #3a2510', borderRadius: 6,
-                padding: '7px 10px', fontSize: 13,
-                fontFamily: "'Courier New', monospace",
-                outline: 'none', cursor: 'pointer',
-                appearance: 'none', WebkitAppearance: 'none',
-              }}>
+          <div className="flex flex-wrap items-center gap-2">
+            {!listening ? (
+              <>
+                <button
+                  onClick={() => start('mic')}
+                  className="bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-riso-pink hover:text-ink"
+                >
+                  Micro
+                </button>
+                <button
+                  onClick={() => start('tab')}
+                  className="border border-ink px-5 py-2.5 text-sm font-medium transition-colors hover:bg-cream"
+                >
+                  Onglet
+                </button>
+              </>
+            ) : (
+              <button
+                onClick={stop}
+                className="bg-riso-red px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-ink"
+              >
+                ■ Arrêter
+              </button>
+            )}
+            <div className="ml-auto flex items-center gap-2">
+              <span className="text-xs uppercase tracking-wider text-neutral-500">A =</span>
+              <select
+                value={refA}
+                onChange={e => setRefA(Number(e.target.value))}
+                className="cursor-pointer border border-ink bg-paper px-3 py-2 font-mono text-sm outline-none"
+              >
                 {REF_PITCHES.map(p => <option key={p} value={p}>{p} Hz</option>)}
               </select>
             </div>
           </div>
-          {error && <p style={{ marginTop: 12, fontSize: 12, color: '#ff4400', letterSpacing: '0.05em' }}>{error}</p>}
+          {error && <p className="mt-3 text-sm text-riso-red">{error}</p>}
         </div>
 
         {/* Tuning preset selector */}
-        <div style={{ padding: '14px 20px 18px', borderTop: '1px solid #1a1208', background: '#0a0705' }}>
-          <p style={{ margin: '0 0 10px', fontSize: 9, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#664433' }}>
+        <div className="px-5 py-4">
+          <p className="mb-3 text-[11px] uppercase tracking-[0.18em] text-neutral-500">
             Accordage
           </p>
-          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          <div className="flex flex-wrap gap-1.5">
             <PresetButton
               active={selectedPreset === null}
               onClick={() => { setSelectedPreset(null); setActiveString(-1); activeStringRef.current = -1; }}
             >
-              <span style={{ display: 'block', fontSize: 10, letterSpacing: '0.08em' }}>Chromatique</span>
+              <span className="block text-xs">Chromatique</span>
             </PresetButton>
             {TUNING_PRESETS.map(preset => (
               <PresetButton
@@ -531,28 +501,22 @@ export function RetroTuner() {
                 active={selectedPreset?.id === preset.id}
                 onClick={() => { setSelectedPreset(preset); setActiveString(-1); activeStringRef.current = -1; }}
               >
-                <span style={{ display: 'block', fontSize: 10, letterSpacing: '0.08em' }}>{preset.name}</span>
+                <span className="block text-xs">{preset.name}</span>
                 {preset.artists && (
-                  <span style={{ display: 'block', fontSize: 8, marginTop: 2, color: 'inherit', opacity: 0.55 }}>{preset.artists}</span>
+                  <span className="mt-0.5 block text-[9px] opacity-60">{preset.artists}</span>
                 )}
               </PresetButton>
             ))}
           </div>
         </div>
 
-        {/* Bottom screw strip */}
-        <div style={{
-          background: '#0d0a07', borderTop: '1px solid #1a1208',
-          padding: '10px 20px',
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        }}>
-          <Screw />
-          <p style={{ margin: 0, fontSize: 9, letterSpacing: '0.2em', color: '#2a1a08', textTransform: 'uppercase' }}>SF-01 · Chromatic</p>
-          <Screw />
+        {/* Bottom strip */}
+        <div className="border-t border-ink px-5 py-2.5 text-center">
+          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-400">
+            SF-01 · Chromatic
+          </p>
         </div>
       </div>
-
-      <style>{`select option { background: #0d0a07; color: #aa7733; }`}</style>
     </div>
   );
 }
@@ -560,54 +524,26 @@ export function RetroTuner() {
 // ── Sub-components ────────────────────────────────────────────────────────
 function DisplayBox({ label, value, color }: { label: string; value: string; color: string }) {
   return (
-    <div style={{ background: '#050402', border: '1px solid #1a1208', borderRadius: 8, padding: '8px 14px' }}>
-      <p style={{ margin: '0 0 4px', fontSize: 9, letterSpacing: '0.2em', color: '#443322', textTransform: 'uppercase' }}>{label}</p>
-      <p style={{ margin: 0, fontSize: 20, color, textShadow: `0 0 12px ${color}55`, transition: 'color 0.3s', letterSpacing: '0.05em' }}>
+    <div className="border border-ink bg-paper px-3.5 py-2">
+      <p className="mb-0.5 text-[9px] uppercase tracking-[0.2em] text-neutral-500">{label}</p>
+      <p className="font-mono text-lg transition-colors duration-300" style={{ color }}>
         {value}
       </p>
     </div>
   );
 }
 
-function RetroButton({ children, onClick, danger }: { children: React.ReactNode; onClick: () => void; danger?: boolean }) {
-  return (
-    <button onClick={onClick} style={{
-      background: danger ? '#2a0800' : '#1a1208',
-      border: `1px solid ${danger ? '#5a1500' : '#3a2510'}`,
-      borderRadius: 8, padding: '8px 18px',
-      color: danger ? '#cc4400' : '#aa7733',
-      fontSize: 13, fontFamily: "'Courier New', monospace",
-      cursor: 'pointer', letterSpacing: '0.08em', transition: 'all 0.15s',
-      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04), 0 2px 4px rgba(0,0,0,0.5)',
-    }}>{children}</button>
-  );
-}
-
 function PresetButton({ children, active, onClick }: { children: React.ReactNode; active: boolean; onClick: () => void }) {
   return (
-    <button onClick={onClick} style={{
-      background: active ? '#3a2010' : '#1e1610',
-      border: `1px solid ${active ? '#cc8833' : '#5a4028'}`,
-      borderRadius: 7, padding: '7px 12px', textAlign: 'left',
-      color: active ? '#ffcc66' : '#c8a070',
-      fontFamily: "'Courier New', monospace",
-      cursor: 'pointer', transition: 'all 0.15s',
-      boxShadow: active
-        ? '0 0 14px rgba(255,160,40,0.3), inset 0 1px 0 rgba(255,200,100,0.1)'
-        : 'none',
-    }}>{children}</button>
-  );
-}
-
-function Screw() {
-  return (
-    <div style={{
-      width: 12, height: 12, borderRadius: '50%',
-      background: 'radial-gradient(circle at 40% 35%, #2a2018, #0a0806)',
-      border: '1px solid #1e1608', boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.8)',
-      position: 'relative',
-    }}>
-      <div style={{ position: 'absolute', top: '50%', left: '50%', width: '60%', height: '1px', background: '#1a1208', transform: 'translate(-50%, -50%) rotate(45deg)' }} />
-    </div>
+    <button
+      onClick={onClick}
+      className={`border px-3 py-2 text-left transition-colors ${
+        active
+          ? 'border-ink bg-ink text-paper'
+          : 'border-neutral-300 bg-paper hover:border-ink hover:bg-cream'
+      }`}
+    >
+      {children}
+    </button>
   );
 }
