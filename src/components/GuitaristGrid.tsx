@@ -33,7 +33,7 @@ export function GuitaristGrid({ guitarists }: Props) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Rechercher par nom ou style…"
-            className="min-w-0 flex-1 bg-transparent text-sm text-ink placeholder-neutral-400 outline-none"
+            className="min-w-0 flex-1 bg-transparent text-base text-ink placeholder-neutral-400 outline-none sm:text-sm"
           />
           {q !== '' && (
             <>
