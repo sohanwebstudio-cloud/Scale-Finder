@@ -110,7 +110,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="hidden border-t border-ink lg:block lg:border-l lg:border-t-0">
+        <div className="border-t border-ink lg:border-l lg:border-t-0">
           <FretboardArt />
         </div>
       </section>
@@ -121,7 +121,7 @@ export default function HomePage() {
           <Link
             key={tool.href}
             href={tool.href}
-            className="group flex flex-col items-center border border-ink px-4 py-5 text-center transition-colors hover:bg-cream sm:py-8"
+            className="group flex flex-col items-center border border-ink px-4 py-5 text-center transition-colors hover:bg-cream last:col-span-2 sm:py-8 sm:last:col-span-1"
           >
             <span
               className={`mb-4 inline-block h-9 w-9 rounded-full transition-transform group-hover:scale-110 ${'dotBorder' in tool && tool.dotBorder ? 'border-[1.5px] border-ink' : 'border-[1.5px] border-ink'}`}

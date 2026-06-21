@@ -19,3 +19,8 @@
 :root {
   --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Menlo", monospace;
 }
+
+@keyframes risoPulse {
+  from { opacity: 0; }
+  to   { opacity: 0.14; }
+}

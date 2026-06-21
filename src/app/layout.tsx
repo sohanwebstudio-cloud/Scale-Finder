@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { NavAuth } from '@/components/NavAuth';
+import { RetroGridBg } from '@/components/RetroGridBg';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <body className="bg-paper font-sans text-ink antialiased">
+        <RetroGridBg />
         <div className="p-2 sm:p-3">
           <header className="border border-ink bg-paper">
             <div className="flex items-center justify-between px-4 py-3 sm:px-6">
