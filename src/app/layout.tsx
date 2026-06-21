@@ -69,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/privacy" className="transition-colors hover:text-ink">
                 Politique de confidentialité
               </Link>
-              <span>© {new Date().getFullYear()} Sohan Jacquin</span>
+              <span>© {new Date().getFullYear()} Scale Finder</span>
             </div>
           </footer>
         </div>
