@@ -70,7 +70,7 @@ export default function SignInPage() {
                 required
                 autoComplete="email"
                 placeholder="toi@exemple.com"
-                className="w-full border border-ink bg-cream px-3 py-2.5 text-sm outline-none focus:ring-1 focus:ring-ink"
+                className="w-full border border-ink bg-cream px-3 py-2.5 text-base outline-none focus:ring-1 focus:ring-ink"
               />
             </div>
 
@@ -84,7 +84,7 @@ export default function SignInPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 autoComplete="current-password"
-                className="w-full border border-ink bg-cream px-3 py-2.5 text-sm outline-none focus:ring-1 focus:ring-ink"
+                className="w-full border border-ink bg-cream px-3 py-2.5 text-base outline-none focus:ring-1 focus:ring-ink"
               />
             </div>
 

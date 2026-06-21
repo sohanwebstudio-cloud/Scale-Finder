@@ -71,7 +71,7 @@ export default function SignUpPage() {
                 required
                 autoComplete="name"
                 placeholder="Ton prénom ou pseudo"
-                className="w-full border border-ink bg-cream px-3 py-2.5 text-sm outline-none focus:ring-1 focus:ring-ink"
+                className="w-full border border-ink bg-cream px-3 py-2.5 text-base outline-none focus:ring-1 focus:ring-ink"
               />
             </div>
 
@@ -86,7 +86,7 @@ export default function SignUpPage() {
                 required
                 autoComplete="email"
                 placeholder="toi@exemple.com"
-                className="w-full border border-ink bg-cream px-3 py-2.5 text-sm outline-none focus:ring-1 focus:ring-ink"
+                className="w-full border border-ink bg-cream px-3 py-2.5 text-base outline-none focus:ring-1 focus:ring-ink"
               />
             </div>
 
@@ -102,7 +102,7 @@ export default function SignUpPage() {
                 autoComplete="new-password"
                 minLength={8}
                 placeholder="8 caractères minimum"
-                className="w-full border border-ink bg-cream px-3 py-2.5 text-sm outline-none focus:ring-1 focus:ring-ink"
+                className="w-full border border-ink bg-cream px-3 py-2.5 text-base outline-none focus:ring-1 focus:ring-ink"
               />
             </div>
 
