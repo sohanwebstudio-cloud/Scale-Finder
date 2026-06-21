@@ -1,5 +1,6 @@
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
+import { dash } from '@better-auth/infra';
 import { prisma } from './prisma';
 
 export const auth = betterAuth({
@@ -24,6 +25,7 @@ export const auth = betterAuth({
     expiresIn: 60 * 60 * 24 * 30,
     updateAge: 60 * 60 * 24,
   },
+  plugins: [dash()],
 });
 
 export type Session = typeof auth.$Infer.Session;
