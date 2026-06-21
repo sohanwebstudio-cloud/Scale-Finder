@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 
-function intervalLabel(n: number): string {
-  if (n === 1) return '½';
-  if (n === 2) return 'T';
-  if (n === 3) return 'T½';
-  return String(n);
+function intervalBadge(n: number) {
+  if (n === 1) return { bg: '#e0301e', fg: '#fbfaf7', label: '½' };
+  if (n === 2) return { bg: '#141414', fg: '#fbfaf7', label: 'T' };
+  if (n === 3) return { bg: '#5bc8ec', fg: '#141414', label: 'T½' };
+  return { bg: '#f6a8d2', fg: '#141414', label: String(n) };
 }
 
 interface Scale {
@@ -22,6 +22,7 @@ interface SectionData {
   title: string;
   shortTitle: string;
   subtitle: string;
+  accent: string;
   scales: Scale[];
 }
 
@@ -31,6 +32,7 @@ const SECTIONS: SectionData[] = [
     title: 'Modes classiques — couleur majeure',
     shortTitle: 'Majeurs',
     subtitle: 'Trois des sept modes de la gamme majeure. Sonorité lumineuse, résolue ou planante.',
+    accent: '#5bc8ec',
     scales: [
       {
         name: 'Ionien',
@@ -59,13 +61,14 @@ const SECTIONS: SectionData[] = [
     id: 'mineurs',
     title: 'Modes classiques — couleur mineure',
     shortTitle: 'Mineurs',
-    subtitle: 'Les quatre modes mineurs de la gamme majeure. De l\'ouverture jazz au demi-diminué instable.',
+    subtitle: "Les quatre modes mineurs de la gamme majeure. De l'ouverture jazz au demi-diminué instable.",
+    accent: '#f6a8d2',
     scales: [
       {
         name: 'Dorien',
         intervals: [2, 1, 2, 2, 2, 1, 2],
         chord: 'm7',
-        desc: 'Mineur avec une 6te majeure — plus lumineux que le mineur naturel. La base de l\'improvisation jazz et du rock modal. Très polyvalent.',
+        desc: "Mineur avec une 6te majeure — plus lumineux que le mineur naturel. La base de l'improvisation jazz et du rock modal. Très polyvalent.",
         examples: 'Oye Como Va (Santana), Scarborough Fair (Simon & Garfunkel), So What (Miles Davis)',
       },
       {
@@ -79,7 +82,7 @@ const SECTIONS: SectionData[] = [
         name: 'Aeolien',
         intervals: [2, 1, 2, 2, 1, 2, 2],
         chord: 'm7',
-        desc: 'Le mineur standard. Omniprésent en rock, métal, classique. La gamme de référence pour l\'improvisation en mineur.',
+        desc: "Le mineur standard. Omniprésent en rock, métal, classique. La gamme de référence pour l'improvisation en mineur.",
         examples: 'Stairway to Heaven (Led Zeppelin), Comfortably Numb (Pink Floyd)',
       },
       {
@@ -96,12 +99,13 @@ const SECTIONS: SectionData[] = [
     title: 'Blues & Pentatoniques',
     shortTitle: 'Blues',
     subtitle: '5 à 6 notes soigneusement choisies. La base de tout guitariste rock et blues.',
+    accent: '#e0301e',
     scales: [
       {
         name: 'Pentatonique maj.',
         intervals: [2, 2, 3, 2, 3],
         chord: 'maj7',
-        desc: '5 notes du majeur (sans 4te ni 7e). Sons country, folk, soul. Fonctionne sur pratiquement tous les accords majeurs — c\'est la gamme universelle.',
+        desc: "5 notes du majeur (sans 4te ni 7e). Sons country, folk, soul. Fonctionne sur pratiquement tous les accords majeurs — c'est la gamme universelle.",
         examples: 'My Girl (Temptations), Country Roads (John Denver)',
       },
       {
@@ -115,7 +119,7 @@ const SECTIONS: SectionData[] = [
         name: 'Blues majeure',
         intervals: [2, 1, 1, 3, 2, 3],
         chord: '7',
-        desc: 'Pentatonique majeure + blue note (b3). Le son du rock\'n\'roll originel, des licks de Chuck Berry et du Chicago blues. Groove immédiat.',
+        desc: "Pentatonique majeure + blue note (b3). Le son du rock'n'roll originel, des licks de Chuck Berry et du Chicago blues. Groove immédiat.",
         examples: 'Johnny B. Goode (Chuck Berry), Roll Over Beethoven',
       },
       {
@@ -132,12 +136,13 @@ const SECTIONS: SectionData[] = [
     title: 'Jazz & Avancé',
     shortTitle: 'Jazz',
     subtitle: 'Gammes issues du mineur mélodique et harmonique. Plus de couleurs, plus de tension.',
+    accent: '#ec5fa3',
     scales: [
       {
         name: 'Mineur mélodique',
         intervals: [2, 1, 2, 2, 2, 2, 1],
         chord: 'mMaj7',
-        desc: 'Mineur naturel avec 6te ET 7e majeures. La base du jazz moderne depuis Coltrane. Ses modes couvrent toute l\'harmonie jazz contemporaine.',
+        desc: "Mineur naturel avec 6te ET 7e majeures. La base du jazz moderne depuis Coltrane. Ses modes couvrent toute l'harmonie jazz contemporaine.",
         examples: 'Footprints (Wayne Shorter), Solar (Miles Davis)',
       },
       {
@@ -172,7 +177,7 @@ const SECTIONS: SectionData[] = [
         name: 'Bebop dominant',
         intervals: [2, 2, 1, 2, 2, 1, 1, 2],
         chord: '7',
-        desc: 'Mixolydien + note de passage chromatique (maj7). Les 8 notes permettent de placer les tons de l\'accord sur les temps forts — c\'est la mécanique du bebop.',
+        desc: "Mixolydien + note de passage chromatique (maj7). Les 8 notes permettent de placer les tons de l'accord sur les temps forts — c'est la mécanique du bebop.",
         examples: 'Anthropology (Charlie Parker), Donna Lee (Parker / Miles Davis)',
       },
     ],
@@ -181,7 +186,8 @@ const SECTIONS: SectionData[] = [
     id: 'symetriques',
     title: 'Gammes symétriques',
     shortTitle: 'Symét.',
-    subtitle: 'Division égale de l\'octave. Ambiguïté tonale totale — aucun centre de gravité évident.',
+    subtitle: "Division égale de l'octave. Ambiguïté tonale totale — aucun centre de gravité évident.",
+    accent: '#5bc8ec',
     scales: [
       {
         name: 'Gamme par tons',
@@ -201,7 +207,7 @@ const SECTIONS: SectionData[] = [
         name: 'Diminuée T/½T',
         intervals: [2, 1, 2, 1, 2, 1, 2, 1],
         chord: 'dim7',
-        desc: 'Inverse de la précédente. S\'utilise sur les accords diminués (dim7). Même propriété de répétition à la tierce mineure.',
+        desc: "Inverse de la précédente. S'utilise sur les accords diminués (dim7). Même propriété de répétition à la tierce mineure.",
         examples: 'Django Reinhardt (gypsy jazz), musique orchestrale (Stravinsky)',
       },
     ],
@@ -211,13 +217,14 @@ const SECTIONS: SectionData[] = [
     title: 'Gammes exotiques',
     shortTitle: 'Exotiques',
     subtitle: 'Issues de traditions musicales du monde entier. Chaque gamme apporte une couleur culturelle unique.',
+    accent: '#f6a8d2',
     scales: [
       {
         name: 'Rock n Roll',
         intervals: [2, 1, 1, 3, 2, 3],
         chord: '7',
-        desc: 'Pentatonique majeure + blue note bémol. La formule secrète du rockabilly et du rock\'n\'roll des années 50.',
-        examples: 'Johnny B. Goode — riffs (Chuck Berry), Blue Suede Shoes (Elvis)',
+        desc: "Pentatonique majeure + blue note bémol. La formule secrète du rockabilly et du rock'n'roll des années 50.",
+        examples: "Johnny B. Goode — riffs (Chuck Berry), Blue Suede Shoes (Elvis)",
       },
       {
         name: 'Persane',
@@ -244,14 +251,14 @@ const SECTIONS: SectionData[] = [
         name: 'Bebop Dorien',
         intervals: [2, 1, 2, 2, 2, 1, 1, 1],
         chord: 'm7',
-        desc: 'Dorien avec une maj7 chromatique — 8 notes. Permet de placer les tons de l\'accord im7 sur les temps forts.',
+        desc: "Dorien avec une maj7 chromatique — 8 notes. Permet de placer les tons de l'accord im7 sur les temps forts.",
         examples: 'Impro jazz sur im7 (Wes Montgomery, Joe Pass)',
       },
       {
         name: 'Bebop Mixolydien',
         intervals: [2, 2, 1, 2, 2, 1, 1, 1],
         chord: '7',
-        desc: 'Mixolydien avec une maj7 chromatique — 8 notes. Même logique que le bebop dominant : les notes d\'accord tombent sur les temps.',
+        desc: "Mixolydien avec une maj7 chromatique — 8 notes. Même logique que le bebop dominant : les notes d'accord tombent sur les temps.",
         examples: 'How High the Moon — impro sur G7 (jazz swing), Charlie Christian',
       },
     ],
@@ -260,13 +267,14 @@ const SECTIONS: SectionData[] = [
     id: 'arpeggios',
     title: 'Arpeggios',
     shortTitle: 'Arpegg.',
-    subtitle: 'Notes d\'accords jouées séparément. La base du picking mélodique et du legato technique.',
+    subtitle: "Notes d'accords jouées séparément. La base du picking mélodique et du legato technique.",
+    accent: '#141414',
     scales: [
-      { name: 'Majeur (1–3–5)', intervals: [4, 3, 5], chord: '', desc: 'L\'arpège le plus fondamental. Ébauche de n\'importe quel accord majeur.' },
+      { name: 'Majeur (1–3–5)', intervals: [4, 3, 5], chord: '', desc: "L'arpège le plus fondamental. Ébauche de n'importe quel accord majeur." },
       { name: 'Mineur (1–b3–5)', intervals: [3, 4, 5], chord: 'm', desc: 'Couleur sombre, sobre. Soloing sur les accords mineurs.' },
       { name: 'Dominant 7 (1–3–5–b7)', intervals: [4, 3, 3, 2], chord: '7', desc: 'Tension dominante. Résout naturellement vers la tonique.' },
       { name: 'Majeur 7 (1–3–5–7)', intervals: [4, 3, 4, 1], chord: 'maj7', desc: 'Couleur jazz/bossa, douce et ouverte.' },
-      { name: 'Mineur 7 (1–b3–5–b7)', intervals: [3, 4, 3, 2], chord: 'm7', desc: 'Base de l\'impro jazz en mineur. Fluide et neutre.' },
+      { name: 'Mineur 7 (1–b3–5–b7)', intervals: [3, 4, 3, 2], chord: 'm7', desc: "Base de l'impro jazz en mineur. Fluide et neutre." },
       { name: 'Demi-diminué (1–b3–b5–b7)', intervals: [3, 3, 4, 2], chord: 'm7b5', desc: 'Sur les accords iim7b5 (vii°). Tension modérée.' },
       { name: 'Diminué 7 (1–b3–b5–bb7)', intervals: [3, 3, 3, 3], chord: 'dim7', desc: 'Tension maximale, symétrique. Se transpose à la tierce mineure.' },
       { name: 'Mineur maj7 (1–b3–5–7)', intervals: [3, 4, 4, 1], chord: 'mMaj7', desc: 'Couleur cinématique. Très utilisé par James Bond et le jazz modal.' },
@@ -274,40 +282,90 @@ const SECTIONS: SectionData[] = [
   },
 ];
 
+function IntervalBadges({ intervals }: { intervals: number[] }) {
+  return (
+    <div className="flex flex-wrap gap-0.5">
+      {intervals.map((n, i) => {
+        const b = intervalBadge(n);
+        return (
+          <span
+            key={i}
+            className="flex h-5 min-w-[22px] items-center justify-center font-mono text-[10px] font-medium"
+            style={{ background: b.bg, color: b.fg }}
+          >
+            {b.label}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+function IntervalBadgesLg({ intervals }: { intervals: number[] }) {
+  return (
+    <div className="flex flex-wrap gap-1">
+      {intervals.map((n, i) => {
+        const b = intervalBadge(n);
+        return (
+          <span
+            key={i}
+            className="flex h-6 min-w-[26px] items-center justify-center font-mono text-[11px] font-medium"
+            style={{ background: b.bg, color: b.fg }}
+          >
+            {b.label}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+function ChordBadge({ chord, accent }: { chord: string; accent: string }) {
+  if (!chord) return null;
+  const isInk = accent === '#141414';
+  return (
+    <span
+      className="inline-block px-1.5 py-0.5 font-mono text-[10px]"
+      style={{
+        background: isInk ? '#f1efe8' : accent + '33',
+        color: '#141414',
+      }}
+    >
+      {chord}
+    </span>
+  );
+}
+
 function MobileScaleCard({
   scale,
   id,
   isOpen,
   onToggle,
+  accent,
 }: {
   scale: Scale;
   id: string;
   isOpen: boolean;
   onToggle: () => void;
+  accent: string;
 }) {
   return (
-    <div className="border-b border-ink/10 last:border-b-0">
+    <div
+      className="border-b border-ink/10 last:border-b-0"
+      style={{ borderLeftWidth: 3, borderLeftColor: accent }}
+    >
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-start justify-between gap-3 px-4 py-4 text-left transition-colors duration-150 active:bg-cream"
+        className="flex w-full items-start justify-between gap-3 py-4 pl-4 pr-4 text-left transition-colors duration-150 active:bg-cream"
       >
-        <div className="min-w-0">
-          <div className="flex items-baseline gap-2">
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-baseline gap-1.5">
             <span className="text-sm font-medium text-ink">{scale.name}</span>
-            {scale.chord && (
-              <span className="font-mono text-[10px] text-neutral-400">{scale.chord}</span>
-            )}
+            <ChordBadge chord={scale.chord} accent={accent} />
           </div>
-          <div className="mt-1.5 flex flex-wrap items-center gap-0.5">
-            {scale.intervals.map((n, i) => (
-              <span
-                key={i}
-                className="flex h-5 min-w-[22px] items-center justify-center border border-ink/20 bg-paper font-mono text-[10px]"
-              >
-                {intervalLabel(n)}
-              </span>
-            ))}
+          <div className="mt-2">
+            <IntervalBadges intervals={scale.intervals} />
           </div>
         </div>
         <svg
@@ -321,7 +379,6 @@ function MobileScaleCard({
         </svg>
       </button>
 
-      {/* Accordion body — CSS grid trick for smooth height animation */}
       <div
         className="grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
         style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
@@ -342,25 +399,16 @@ function MobileScaleCard({
   );
 }
 
-function DesktopScaleRow({ scale }: { scale: Scale }) {
+function DesktopScaleRow({ scale, accent }: { scale: Scale; accent: string }) {
   return (
-    <div className="grid gap-3 border-t border-neutral-200 px-5 py-4 sm:grid-cols-[180px_1fr] sm:px-8">
+    <div className="grid gap-4 border-t border-neutral-100 px-6 py-4 sm:grid-cols-[200px_1fr] sm:px-8">
       <div>
-        <p className="text-sm font-medium text-ink">{scale.name}</p>
-        {scale.chord && (
-          <p className="mt-0.5 font-mono text-[11px] text-neutral-400">{scale.chord}</p>
-        )}
-        <div className="mt-2 flex flex-wrap items-center gap-1">
-          {scale.intervals.map((n, i) => (
-            <span key={i} className="flex items-center gap-1">
-              <span className="flex h-6 min-w-[28px] items-center justify-center border border-ink bg-cream font-mono text-[11px] font-medium">
-                {intervalLabel(n)}
-              </span>
-              {i < scale.intervals.length - 1 && (
-                <span className="text-[10px] text-neutral-300">·</span>
-              )}
-            </span>
-          ))}
+        <div className="flex flex-wrap items-baseline gap-1.5">
+          <p className="text-sm font-medium text-ink">{scale.name}</p>
+          <ChordBadge chord={scale.chord} accent={accent} />
+        </div>
+        <div className="mt-2">
+          <IntervalBadgesLg intervals={scale.intervals} />
         </div>
       </div>
       <div>
@@ -376,15 +424,28 @@ function DesktopScaleRow({ scale }: { scale: Scale }) {
   );
 }
 
+const INFO_CARDS = [
+  {
+    title: 'Pourquoi les gammes ?',
+    accent: '#5bc8ec',
+    body: "Une gamme = un ensemble de notes qui sonnent bien ensemble dans une tonalité donnée. Choisir la bonne gamme te permet d'improviser, de composer et d'analyser n'importe quel morceau.",
+  },
+  {
+    title: 'Modes vs gammes',
+    accent: '#f6a8d2',
+    body: "Un mode commence sur un degré différent de la même gamme. Les 7 modes classiques (Ionien, Dorien…) sont tous issus de la gamme majeure — même notes, autre point de départ.",
+  },
+  {
+    title: 'Sur le manche',
+    accent: '#e0301e',
+    body: "Explore chaque gamme en temps réel dans l'Explorateur de gammes. Sélectionne la tonique + le mode, et les positions s'affichent directement sur le manche de guitare.",
+  },
+];
+
 export function TheoryClient() {
   const [activeSection, setActiveSection] = useState(0);
   const [openScales, setOpenScales] = useState<Set<string>>(new Set());
   const tabsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const tab = tabsRef.current?.children[activeSection] as HTMLElement;
-    tab?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  }, [activeSection]);
 
   function toggleScale(id: string) {
     setOpenScales((prev) => {
@@ -399,7 +460,16 @@ export function TheoryClient() {
     setActiveSection(idx);
     setOpenScales(new Set());
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    const tab = tabsRef.current?.children[idx] as HTMLElement;
+    tab?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   }
+
+  function scrollToSection(id: string) {
+    document.getElementById(`section-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  const activeAccent = SECTIONS[activeSection].accent;
+  const activeTextColor = activeAccent === '#141414' ? '#fbfaf7' : '#141414';
 
   return (
     <>
@@ -410,14 +480,39 @@ export function TheoryClient() {
             Référence
           </p>
           <h1 className="text-2xl font-bold tracking-tight">Théorie des Gammes</h1>
-          <p className="mt-1.5 text-xs text-neutral-400">
-            <span className="font-mono font-medium text-ink">T</span> = 1 ton ·{' '}
-            <span className="font-mono font-medium text-ink">½</span> = ½ ton
-          </p>
+          <div className="mt-3 flex items-center gap-3 text-xs text-neutral-400">
+            <span className="flex items-center gap-1">
+              <span
+                className="inline-flex h-4 w-6 items-center justify-center font-mono text-[10px]"
+                style={{ background: '#141414', color: '#fbfaf7' }}
+              >
+                T
+              </span>
+              1 ton
+            </span>
+            <span className="flex items-center gap-1">
+              <span
+                className="inline-flex h-4 w-6 items-center justify-center font-mono text-[10px]"
+                style={{ background: '#e0301e', color: '#fbfaf7' }}
+              >
+                ½
+              </span>
+              ½ ton
+            </span>
+            <span className="flex items-center gap-1">
+              <span
+                className="inline-flex h-4 w-7 items-center justify-center font-mono text-[10px]"
+                style={{ background: '#5bc8ec', color: '#141414' }}
+              >
+                T½
+              </span>
+              1 ton ½
+            </span>
+          </div>
         </header>
 
-        {/* Sticky glass tab bar */}
-        <div className="sticky top-0 z-20 border-b border-ink/15 bg-paper/85 backdrop-blur-md">
+        {/* Sticky tab bar — fond coloré sur l'onglet actif */}
+        <div className="sticky top-0 z-20 border-b border-ink/15 bg-paper/90 backdrop-blur-md">
           <div
             ref={tabsRef}
             className="flex overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -426,20 +521,24 @@ export function TheoryClient() {
               <button
                 key={s.id}
                 onClick={() => selectSection(i)}
-                className={`relative shrink-0 whitespace-nowrap px-4 py-3 text-[10px] font-bold uppercase tracking-[0.15em] transition-colors duration-200
-                  ${activeSection === i ? 'text-ink' : 'text-neutral-400 active:text-neutral-600'}`}
+                className="relative shrink-0 whitespace-nowrap px-5 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] transition-all duration-200"
+                style={
+                  activeSection === i
+                    ? { background: s.accent, color: s.accent === '#141414' ? '#fbfaf7' : '#141414' }
+                    : { color: '#9ca3af' }
+                }
               >
                 {s.shortTitle}
-                {activeSection === i && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-ink" />
-                )}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Section subtitle */}
-        <div className="border-x border-ink border-t-0 bg-cream/40 px-4 py-3">
+        {/* Section subtitle avec accent */}
+        <div
+          className="border-x border-ink border-t-0 px-4 py-3"
+          style={{ borderLeftWidth: 4, borderLeftColor: activeAccent }}
+        >
           <p className="text-[11px] leading-snug text-neutral-500">
             {SECTIONS[activeSection].subtitle}
           </p>
@@ -456,6 +555,7 @@ export function TheoryClient() {
                 id={id}
                 isOpen={openScales.has(id)}
                 onToggle={() => toggleScale(id)}
+                accent={activeAccent}
               />
             );
           })}
@@ -463,60 +563,108 @@ export function TheoryClient() {
       </div>
 
       {/* ── DESKTOP ─────────────────────────────────────────── */}
-      <main className="hidden space-y-2 sm:block sm:space-y-3">
-        <header className="border border-ink px-6 py-10 sm:px-10">
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ink">
-            Référence
-          </p>
-          <h1 className="text-4xl font-bold tracking-tight">Théorie des Gammes</h1>
-          <p className="mt-2 max-w-2xl text-sm text-neutral-500">
-            Guide de toutes les gammes disponibles dans Scale Finder : construction, sonorité et
-            contexte d'utilisation. Légende :{' '}
-            <span className="font-mono font-medium text-ink">T</span> = 1 ton (2 demi-tons),{' '}
-            <span className="font-mono font-medium text-ink">½</span> = ½ ton (1 demi-ton).
-          </p>
-        </header>
+      <div className="hidden sm:flex sm:items-start sm:gap-3">
 
-        <div className="grid gap-px bg-neutral-200 sm:grid-cols-3">
-          {[
-            {
-              title: 'Pourquoi les gammes ?',
-              body: "Une gamme = un ensemble de notes qui sonnent bien ensemble dans une tonalité donnée. Choisir la bonne gamme te permet d'improviser, de composer et d'analyser n'importe quel morceau.",
-            },
-            {
-              title: 'Modes vs gammes',
-              body: "Un mode commence sur un degré différent de la même gamme. Les 7 modes classiques (Ionien, Dorien…) sont tous issus de la gamme majeure — même notes, autre point de départ.",
-            },
-            {
-              title: 'Sur le manche',
-              body: "Explore chaque gamme en temps réel dans l'Explorateur de gammes. Sélectionne la tonique + le mode, et les positions s'affichent directement sur le manche de guitare.",
-            },
-          ].map(({ title, body }) => (
-            <div key={title} className="bg-paper px-5 py-5">
-              <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.15em] text-ink">
-                {title}
-              </p>
-              <p className="text-xs leading-relaxed text-neutral-600">{body}</p>
-            </div>
-          ))}
-        </div>
-
-        {SECTIONS.map((section) => (
-          <section key={section.id} className="border border-ink">
-            <header className="sticky top-0 z-10 border-b border-ink bg-paper/90 px-5 py-4 backdrop-blur-sm sm:px-8">
-              <h2 className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink">
-                {section.title}
-              </h2>
-              <p className="mt-1 text-sm text-neutral-600">{section.subtitle}</p>
-            </header>
-            <div className="divide-y divide-neutral-100">
-              {section.scales.map((scale) => (
-                <DesktopScaleRow key={scale.name} scale={scale} />
+        {/* Sidebar sticky */}
+        <nav className="sticky top-4 w-44 shrink-0 border border-ink">
+          <div className="border-b border-ink px-3 py-2.5">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+              Sections
+            </p>
+          </div>
+          <div className="py-1">
+            {SECTIONS.map((s) => (
+              <button
+                key={s.id}
+                onClick={() => scrollToSection(s.id)}
+                className="flex w-full items-center gap-2.5 px-3 py-2 text-left transition-colors hover:bg-cream"
+              >
+                <span
+                  className="h-2.5 w-2.5 shrink-0 border border-ink/20"
+                  style={{ background: s.accent }}
+                />
+                <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-ink">
+                  {s.shortTitle}
+                </span>
+              </button>
+            ))}
+          </div>
+          {/* Légende intervalles */}
+          <div className="border-t border-ink px-3 py-3">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-neutral-400">
+              Intervalles
+            </p>
+            <div className="space-y-1.5">
+              {[
+                { label: '½', bg: '#e0301e', fg: '#fbfaf7', desc: '½ ton' },
+                { label: 'T', bg: '#141414', fg: '#fbfaf7', desc: '1 ton' },
+                { label: 'T½', bg: '#5bc8ec', fg: '#141414', desc: '1 ton ½' },
+                { label: '4+', bg: '#f6a8d2', fg: '#141414', desc: 'arpège' },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-2">
+                  <span
+                    className="flex h-4 min-w-[22px] items-center justify-center font-mono text-[9px] font-medium"
+                    style={{ background: item.bg, color: item.fg }}
+                  >
+                    {item.label}
+                  </span>
+                  <span className="text-[10px] text-neutral-500">{item.desc}</span>
+                </div>
               ))}
             </div>
-          </section>
-        ))}
-      </main>
+          </div>
+        </nav>
+
+        {/* Main content */}
+        <div className="min-w-0 flex-1 space-y-3">
+          <header className="border border-ink px-6 py-10 sm:px-10">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ink">
+              Référence
+            </p>
+            <h1 className="text-4xl font-bold tracking-tight">Théorie des Gammes</h1>
+            <p className="mt-2 max-w-2xl text-sm text-neutral-500">
+              Guide de toutes les gammes disponibles dans Scale Finder : construction, sonorité et
+              contexte d&apos;utilisation.
+            </p>
+          </header>
+
+          <div className="grid gap-px bg-neutral-200 sm:grid-cols-3">
+            {INFO_CARDS.map(({ title, accent, body }) => (
+              <div key={title} className="bg-paper px-5 py-5" style={{ borderTopWidth: 3, borderTopColor: accent }}>
+                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.15em] text-ink">
+                  {title}
+                </p>
+                <p className="text-xs leading-relaxed text-neutral-600">{body}</p>
+              </div>
+            ))}
+          </div>
+
+          {SECTIONS.map((section) => (
+            <section key={section.id} id={`section-${section.id}`} className="border border-ink">
+              <header
+                className="border-b border-ink px-5 py-4 sm:px-8"
+                style={{ borderLeftWidth: 4, borderLeftColor: section.accent }}
+              >
+                <div className="flex items-center gap-3">
+                  <span
+                    className="hidden h-2.5 w-2.5 shrink-0 border border-ink/20 sm:block"
+                    style={{ background: section.accent }}
+                  />
+                  <h2 className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink">
+                    {section.title}
+                  </h2>
+                </div>
+                <p className="mt-1.5 text-sm text-neutral-500">{section.subtitle}</p>
+              </header>
+              <div>
+                {section.scales.map((scale) => (
+                  <DesktopScaleRow key={scale.name} scale={scale} accent={section.accent} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </div>
     </>
   );
 }
