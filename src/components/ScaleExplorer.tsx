@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useUser } from '@clerk/nextjs';
 import { Fretboard } from './Fretboard';
 import { KEY_ROOTS } from '@/lib/music/notes';
 import { MODES, getMode } from '@/lib/music/scales';
@@ -37,12 +38,52 @@ export function ScaleExplorer({ initialScale }: ScaleExplorerProps) {
 
   const [keyIdx, setKeyIdx] = useState(initialKeyIdx);
   const [modeKey, setModeKey] = useState<ModeKey>(initialModeKey);
+  const [saved, setSaved] = useState(false);
+  const [saving, setSaving] = useState(false);
 
+  const { isSignedIn } = useUser();
   const root = KEY_ROOTS[keyIdx];
   const mode = getMode(modeKey);
   const notes = spellScale(root.idx, mode.intervals, root.name, mode.letterOffsets);
   const colors = getModeColors(modeKey, false);
   const diatonicChords = getDiatonicChords(notes, mode.intervals);
+
+  // Vérifie si la gamme courante est déjà sauvegardée
+  useEffect(() => {
+    if (!isSignedIn) { setSaved(false); return; }
+    fetch('/api/scales')
+      .then((r) => r.json())
+      .then((data: { root: string; scaleName: string }[]) => {
+        setSaved(data.some((s) => s.root === root.name && s.scaleName === mode.name));
+      })
+      .catch(() => {});
+  }, [isSignedIn, root.name, mode.name]);
+
+  const toggleSave = useCallback(async () => {
+    if (!isSignedIn) return;
+    setSaving(true);
+    try {
+      if (saved) {
+        await fetch('/api/scales', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ root: root.name, scaleName: mode.name }),
+        });
+        setSaved(false);
+      } else {
+        await fetch('/api/scales', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ root: root.name, scaleName: mode.name }),
+        });
+        setSaved(true);
+      }
+    } catch {
+      // silencieux
+    } finally {
+      setSaving(false);
+    }
+  }, [isSignedIn, saved, root.name, mode.name]);
 
   return (
     <div className="border border-ink bg-paper">
@@ -114,13 +155,31 @@ export function ScaleExplorer({ initialScale }: ScaleExplorerProps) {
             </p>
             <p className="text-xs text-neutral-500">{mode.desc}</p>
           </div>
-          <span
-            className="border border-ink px-2.5 py-1 font-mono text-xs font-medium"
-            style={{ background: colors.bg, color: colors.text }}
-          >
-            {root.name}
-            {mode.chord}
-          </span>
+          <div className="flex items-center gap-2">
+            <span
+              className="border border-ink px-2.5 py-1 font-mono text-xs font-medium"
+              style={{ background: colors.bg, color: colors.text }}
+            >
+              {root.name}
+              {mode.chord}
+            </span>
+            {isSignedIn && (
+              <button
+                onClick={toggleSave}
+                disabled={saving}
+                title={saved ? 'Retirer des favoris' : 'Sauvegarder cette gamme'}
+                className={`flex h-7 w-7 items-center justify-center border transition-colors ${
+                  saved
+                    ? 'border-ink bg-ink text-paper'
+                    : 'border-neutral-300 bg-paper text-neutral-400 hover:border-ink hover:text-ink'
+                }`}
+              >
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Notes */}

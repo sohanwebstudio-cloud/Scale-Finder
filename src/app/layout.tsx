@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ClerkProvider } from '@clerk/nextjs';
+import { NavAuth } from '@/components/NavAuth';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -17,6 +19,7 @@ const NAV = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+    <ClerkProvider>
     <html lang="fr">
       <body className="bg-paper font-sans text-ink antialiased">
         <div className="p-2 sm:p-3">
@@ -27,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 Scale Finder<span className="text-riso-pink-deep">●</span>
               </Link>
               {/* Nav inline sur desktop */}
-              <nav className="hidden gap-5 text-sm sm:flex">
+              <nav className="hidden items-center gap-5 text-sm sm:flex">
                 {NAV.map((item) => (
                   <Link
                     key={item.href}
@@ -37,10 +40,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     {item.label}
                   </Link>
                 ))}
+                <NavAuth />
               </nav>
             </div>
             {/* Nav sur mobile — seulement les pages principales */}
-            <nav className="flex gap-5 border-t border-ink px-4 pb-3 pt-2.5 text-sm sm:hidden">
+            <nav className="flex items-center gap-5 border-t border-ink px-4 pb-3 pt-2.5 text-sm sm:hidden">
               {NAV.filter((i) => i.mobile).map((item) => (
                 <Link
                   key={item.href}
@@ -50,6 +54,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   {item.label}
                 </Link>
               ))}
+              <span className="ml-auto">
+                <NavAuth mobile />
+              </span>
             </nav>
           </header>
 
@@ -73,5 +80,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
