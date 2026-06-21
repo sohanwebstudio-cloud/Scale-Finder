@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { useUser } from '@clerk/nextjs';
+import { authClient } from '@/lib/auth-client';
 import { Fretboard } from './Fretboard';
 import { KEY_ROOTS } from '@/lib/music/notes';
 import { MODES, getMode } from '@/lib/music/scales';
@@ -41,7 +41,8 @@ export function ScaleExplorer({ initialScale }: ScaleExplorerProps) {
   const [saved, setSaved] = useState(false);
   const [saving, setSaving] = useState(false);
 
-  const { isSignedIn } = useUser();
+  const { data: session } = authClient.useSession();
+  const isSignedIn = !!session;
   const root = KEY_ROOTS[keyIdx];
   const mode = getMode(modeKey);
   const notes = spellScale(root.idx, mode.intervals, root.name, mode.letterOffsets);

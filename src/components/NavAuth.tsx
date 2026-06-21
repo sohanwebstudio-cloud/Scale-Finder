@@ -1,23 +1,41 @@
 'use client';
 
-import { SignInButton, UserButton, useAuth } from '@clerk/nextjs';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { authClient } from '@/lib/auth-client';
 
 export function NavAuth({ mobile = false }: { mobile?: boolean }) {
-  const { isSignedIn, isLoaded } = useAuth();
+  const router = useRouter();
+  const { data: session, isPending } = authClient.useSession();
 
-  if (!isLoaded) return <span className="h-7 w-7" />;
+  const btnClass = `border border-ink font-bold uppercase tracking-[0.15em] transition-colors hover:bg-ink hover:text-paper ${
+    mobile ? 'px-2.5 py-1 text-[10px]' : 'px-3 py-1 text-[11px]'
+  }`;
 
-  if (isSignedIn) return <UserButton />;
+  if (isPending) return <span className="h-7 w-7" />;
+
+  if (session) {
+    return (
+      <div className="flex items-center gap-3">
+        <Link href="/profil" className={btnClass}>
+          {session.user.name?.split(' ')[0] ?? 'Profil'}
+        </Link>
+        <button
+          onClick={async () => {
+            await authClient.signOut();
+            router.refresh();
+          }}
+          className="text-[11px] text-neutral-400 transition-colors hover:text-ink"
+        >
+          ×
+        </button>
+      </div>
+    );
+  }
 
   return (
-    <SignInButton mode="modal">
-      <button
-        className={`border border-ink font-bold uppercase tracking-[0.15em] transition-colors hover:bg-ink hover:text-paper ${
-          mobile ? 'px-2.5 py-1 text-[10px]' : 'px-3 py-1 text-[11px]'
-        }`}
-      >
-        Connexion
-      </button>
-    </SignInButton>
+    <Link href="/sign-in" className={btnClass}>
+      Connexion
+    </Link>
   );
 }

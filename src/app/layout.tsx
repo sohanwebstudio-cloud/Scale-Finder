@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ClerkProvider } from '@clerk/nextjs';
 import { NavAuth } from '@/components/NavAuth';
 import './globals.css';
 
@@ -19,17 +18,14 @@ const NAV = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider>
     <html lang="fr">
       <body className="bg-paper font-sans text-ink antialiased">
         <div className="p-2 sm:p-3">
           <header className="border border-ink bg-paper">
-            {/* Ligne logo */}
             <div className="flex items-center justify-between px-4 py-3 sm:px-6">
               <Link href="/" className="text-sm font-bold uppercase tracking-[0.18em]">
                 Scale Finder<span className="text-riso-pink-deep">●</span>
               </Link>
-              {/* Nav inline sur desktop */}
               <nav className="hidden items-center gap-5 text-sm sm:flex">
                 {NAV.map((item) => (
                   <Link
@@ -43,7 +39,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <NavAuth />
               </nav>
             </div>
-            {/* Nav sur mobile — seulement les pages principales */}
             <nav className="flex items-center gap-5 border-t border-ink px-4 pb-3 pt-2.5 text-sm sm:hidden">
               {NAV.filter((i) => i.mobile).map((item) => (
                 <Link
@@ -80,6 +75,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
       </body>
     </html>
-    </ClerkProvider>
   );
 }
