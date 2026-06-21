@@ -9,12 +9,10 @@ export const metadata: Metadata = {
 };
 
 const NAV = [
-  { href: '/studio', label: 'Studio' },
-  { href: '/#guitaristes', label: 'Guitaristes' },
-  { href: '/tuner', label: 'Accordeur' },
-  { href: '/exercises', label: 'Exercices' },
-  { href: '/quintes', label: 'Quintes' },
-  { href: '/theory', label: 'Théorie' },
+  { href: '/studio',        label: 'Studio',      mobile: true  },
+  { href: '/#guitaristes',  label: 'Guitaristes',  mobile: false },
+  { href: '/tuner',         label: 'Accordeur',    mobile: true  },
+  { href: '/exercises',     label: 'Exercices',    mobile: true  },
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -41,13 +39,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 ))}
               </nav>
             </div>
-            {/* Nav scrollable sur mobile */}
-            <nav className="flex gap-5 overflow-x-auto border-t border-ink px-4 pb-3 pt-2.5 text-sm sm:hidden">
-              {NAV.map((item) => (
+            {/* Nav sur mobile — seulement les pages principales */}
+            <nav className="flex gap-5 border-t border-ink px-4 pb-3 pt-2.5 text-sm sm:hidden">
+              {NAV.filter((i) => i.mobile).map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="shrink-0 whitespace-nowrap transition-colors hover:text-riso-pink-deep"
+                  className="whitespace-nowrap transition-colors hover:text-riso-pink-deep"
                 >
                   {item.label}
                 </Link>
