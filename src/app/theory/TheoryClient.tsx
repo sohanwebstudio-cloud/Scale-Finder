@@ -282,26 +282,7 @@ const SECTIONS: SectionData[] = [
   },
 ];
 
-function IntervalBadges({ intervals }: { intervals: number[] }) {
-  return (
-    <div className="flex flex-wrap gap-0.5">
-      {intervals.map((n, i) => {
-        const b = intervalBadge(n);
-        return (
-          <span
-            key={i}
-            className="flex h-5 min-w-[22px] items-center justify-center font-mono text-[10px] font-medium"
-            style={{ background: b.bg, color: b.fg }}
-          >
-            {b.label}
-          </span>
-        );
-      })}
-    </div>
-  );
-}
-
-function IntervalBadgesLg({ intervals }: { intervals: number[] }) {
+function Intervals({ intervals, size }: { intervals: number[]; size: 'sm' | 'lg' }) {
   return (
     <div className="flex flex-wrap gap-1">
       {intervals.map((n, i) => {
@@ -309,7 +290,11 @@ function IntervalBadgesLg({ intervals }: { intervals: number[] }) {
         return (
           <span
             key={i}
-            className="flex h-6 min-w-[26px] items-center justify-center font-mono text-[11px] font-medium"
+            className={
+              size === 'lg'
+                ? 'flex h-8 min-w-[36px] items-center justify-center font-mono text-sm font-medium'
+                : 'flex h-6 min-w-[26px] items-center justify-center font-mono text-[11px] font-medium'
+            }
             style={{ background: b.bg, color: b.fg }}
           >
             {b.label}
@@ -320,52 +305,75 @@ function IntervalBadgesLg({ intervals }: { intervals: number[] }) {
   );
 }
 
-function ChordBadge({ chord, accent }: { chord: string; accent: string }) {
-  if (!chord) return null;
-  const isInk = accent === '#141414';
+function ScaleCard({ scale, accent, shortTitle }: { scale: Scale; accent: string; shortTitle: string }) {
   return (
-    <span
-      className="inline-block px-1.5 py-0.5 font-mono text-[10px]"
-      style={{
-        background: isInk ? '#f1efe8' : accent + '33',
-        color: '#141414',
-      }}
-    >
-      {chord}
-    </span>
+    <article className="bg-paper py-6 pl-5 pr-6" style={{ borderLeft: `3px solid ${accent}` }}>
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <span
+          className="px-2 py-0.5 text-[10px] uppercase tracking-[0.15em]"
+          style={{ border: `1px solid ${accent}`, color: accent }}
+        >
+          {shortTitle}
+        </span>
+        {scale.chord && (
+          <span className="border border-neutral-300 px-2 py-0.5 font-mono text-[10px] text-neutral-500">
+            {scale.chord}
+          </span>
+        )}
+      </div>
+      <h3 className="mb-4 text-lg font-medium text-ink">{scale.name}</h3>
+      <p className="mb-2 text-[11px] uppercase tracking-[0.18em] text-neutral-500">Intervalles</p>
+      <Intervals intervals={scale.intervals} size="lg" />
+      <p className="mb-4 mt-4 text-sm leading-relaxed text-neutral-600">{scale.desc}</p>
+      {scale.examples && (
+        <div className="bg-cream px-4 py-3">
+          <p className="mb-1 text-[11px] uppercase tracking-[0.18em] text-neutral-500">Exemples</p>
+          <p className="text-sm text-neutral-600">{scale.examples}</p>
+        </div>
+      )}
+    </article>
   );
 }
 
-function MobileScaleCard({
+function ScaleCardMobile({
   scale,
   id,
   isOpen,
   onToggle,
   accent,
+  shortTitle,
 }: {
   scale: Scale;
   id: string;
   isOpen: boolean;
   onToggle: () => void;
   accent: string;
+  shortTitle: string;
 }) {
   return (
-    <div
-      className="border-b border-ink/10 last:border-b-0"
-      style={{ borderLeftWidth: 3, borderLeftColor: accent }}
-    >
+    <article className="border-b border-neutral-200 last:border-b-0" style={{ borderLeft: `3px solid ${accent}` }}>
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-start justify-between gap-3 py-4 pl-4 pr-4 text-left transition-colors duration-150 active:bg-cream"
+        className="flex w-full items-start justify-between gap-3 py-4 pl-4 pr-4 text-left"
       >
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-baseline gap-1.5">
-            <span className="text-sm font-medium text-ink">{scale.name}</span>
-            <ChordBadge chord={scale.chord} accent={accent} />
+          <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
+            <span
+              className="px-1.5 py-0.5 text-[10px] uppercase tracking-[0.15em]"
+              style={{ border: `1px solid ${accent}`, color: accent }}
+            >
+              {shortTitle}
+            </span>
+            {scale.chord && (
+              <span className="border border-neutral-300 px-1.5 py-0.5 font-mono text-[10px] text-neutral-500">
+                {scale.chord}
+              </span>
+            )}
           </div>
+          <p className="text-base font-medium text-ink">{scale.name}</p>
           <div className="mt-2">
-            <IntervalBadges intervals={scale.intervals} />
+            <Intervals intervals={scale.intervals} size="sm" />
           </div>
         </div>
         <svg
@@ -384,43 +392,18 @@ function MobileScaleCard({
         style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-ink/5 bg-cream/40 px-4 pb-4 pt-3">
-            <p className="text-sm leading-relaxed text-neutral-600">{scale.desc}</p>
+          <div className="pb-4 pl-4 pr-4 pt-1">
+            <p className="mb-3 text-sm leading-relaxed text-neutral-600">{scale.desc}</p>
             {scale.examples && (
-              <p className="mt-2 text-[11px] text-neutral-400">
-                <span className="font-medium uppercase tracking-[0.12em] text-neutral-500">Ex. </span>
-                {scale.examples}
-              </p>
+              <div className="bg-cream px-4 py-3">
+                <p className="mb-1 text-[10px] uppercase tracking-[0.18em] text-neutral-500">Exemples</p>
+                <p className="text-sm text-neutral-600">{scale.examples}</p>
+              </div>
             )}
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function DesktopScaleRow({ scale, accent }: { scale: Scale; accent: string }) {
-  return (
-    <div className="grid gap-4 border-t border-neutral-100 px-6 py-4 sm:grid-cols-[200px_1fr] sm:px-8">
-      <div>
-        <div className="flex flex-wrap items-baseline gap-1.5">
-          <p className="text-sm font-medium text-ink">{scale.name}</p>
-          <ChordBadge chord={scale.chord} accent={accent} />
-        </div>
-        <div className="mt-2">
-          <IntervalBadgesLg intervals={scale.intervals} />
-        </div>
-      </div>
-      <div>
-        <p className="text-sm text-neutral-600">{scale.desc}</p>
-        {scale.examples && (
-          <p className="mt-1.5 text-[11px] text-neutral-400">
-            <span className="font-medium uppercase tracking-[0.12em] text-neutral-500">Ex. </span>
-            {scale.examples}
-          </p>
-        )}
-      </div>
-    </div>
+    </article>
   );
 }
 
@@ -464,54 +447,33 @@ export function TheoryClient() {
     tab?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   }
 
-  function scrollToSection(id: string) {
-    document.getElementById(`section-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  const activeAccent = SECTIONS[activeSection].accent;
-  const activeTextColor = activeAccent === '#141414' ? '#fbfaf7' : '#141414';
-
   return (
     <>
       {/* ── MOBILE ──────────────────────────────────────────── */}
       <div className="sm:hidden">
-        <header className="border border-ink px-5 py-6">
-          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
-            Référence
-          </p>
+        <header className="border border-ink px-4 py-6">
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">Référence</p>
           <h1 className="text-2xl font-bold tracking-tight">Théorie des Gammes</h1>
-          <div className="mt-3 flex items-center gap-3 text-xs text-neutral-400">
-            <span className="flex items-center gap-1">
-              <span
-                className="inline-flex h-4 w-6 items-center justify-center font-mono text-[10px]"
-                style={{ background: '#141414', color: '#fbfaf7' }}
-              >
-                T
+          <div className="mt-3 flex flex-wrap items-center gap-3">
+            {[
+              { bg: '#141414', fg: '#fbfaf7', label: 'T', desc: '1 ton' },
+              { bg: '#e0301e', fg: '#fbfaf7', label: '½', desc: '½ ton' },
+              { bg: '#5bc8ec', fg: '#141414', label: 'T½', desc: '1 ton ½' },
+            ].map((item) => (
+              <span key={item.label} className="flex items-center gap-1.5 text-xs text-neutral-400">
+                <span
+                  className="inline-flex h-5 min-w-[26px] items-center justify-center font-mono text-[10px]"
+                  style={{ background: item.bg, color: item.fg }}
+                >
+                  {item.label}
+                </span>
+                {item.desc}
               </span>
-              1 ton
-            </span>
-            <span className="flex items-center gap-1">
-              <span
-                className="inline-flex h-4 w-6 items-center justify-center font-mono text-[10px]"
-                style={{ background: '#e0301e', color: '#fbfaf7' }}
-              >
-                ½
-              </span>
-              ½ ton
-            </span>
-            <span className="flex items-center gap-1">
-              <span
-                className="inline-flex h-4 w-7 items-center justify-center font-mono text-[10px]"
-                style={{ background: '#5bc8ec', color: '#141414' }}
-              >
-                T½
-              </span>
-              1 ton ½
-            </span>
+            ))}
           </div>
         </header>
 
-        {/* Sticky tab bar — fond coloré sur l'onglet actif */}
+        {/* Tabs sticky */}
         <div className="sticky top-0 z-20 border-b border-ink/15 bg-paper/90 backdrop-blur-md">
           <div
             ref={tabsRef}
@@ -534,28 +496,27 @@ export function TheoryClient() {
           </div>
         </div>
 
-        {/* Section subtitle avec accent */}
+        {/* Section subtitle */}
         <div
-          className="border-x border-ink border-t-0 px-4 py-3"
-          style={{ borderLeftWidth: 4, borderLeftColor: activeAccent }}
+          className="border-x border-b border-ink px-4 py-3"
+          style={{ borderLeftWidth: 4, borderLeftColor: SECTIONS[activeSection].accent }}
         >
-          <p className="text-[11px] leading-snug text-neutral-500">
-            {SECTIONS[activeSection].subtitle}
-          </p>
+          <p className="text-[11px] leading-snug text-neutral-500">{SECTIONS[activeSection].subtitle}</p>
         </div>
 
-        {/* Scale cards */}
-        <div className="min-h-[60vh] border border-t-0 border-ink">
+        {/* Cards */}
+        <div className="border border-t-0 border-ink">
           {SECTIONS[activeSection].scales.map((scale) => {
             const id = `${activeSection}-${scale.name}`;
             return (
-              <MobileScaleCard
+              <ScaleCardMobile
                 key={id}
                 scale={scale}
                 id={id}
                 isOpen={openScales.has(id)}
                 onToggle={() => toggleScale(id)}
-                accent={activeAccent}
+                accent={SECTIONS[activeSection].accent}
+                shortTitle={SECTIONS[activeSection].shortTitle}
               />
             );
           })}
@@ -563,107 +524,52 @@ export function TheoryClient() {
       </div>
 
       {/* ── DESKTOP ─────────────────────────────────────────── */}
-      <div className="hidden sm:flex sm:items-start sm:gap-3">
+      <div className="hidden space-y-2 sm:block sm:space-y-3">
+        <header className="border border-ink px-6 py-14 sm:px-10">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ink">Référence</p>
+          <h1 className="text-4xl font-bold tracking-tight">Théorie des Gammes</h1>
+          <p className="mt-3 max-w-xl text-sm text-neutral-600 sm:mt-4 sm:text-base">
+            Guide complet des gammes et modes pour guitare. Construction, sonorité et contexte
+            d&apos;utilisation.
+          </p>
+        </header>
 
-        {/* Sidebar sticky */}
-        <nav className="sticky top-4 w-44 shrink-0 border border-ink">
-          <div className="border-b border-ink px-3 py-2.5">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
-              Sections
-            </p>
-          </div>
-          <div className="py-1">
-            {SECTIONS.map((s) => (
-              <button
-                key={s.id}
-                onClick={() => scrollToSection(s.id)}
-                className="flex w-full items-center gap-2.5 px-3 py-2 text-left transition-colors hover:bg-cream"
-              >
-                <span
-                  className="h-2.5 w-2.5 shrink-0 border border-ink/20"
-                  style={{ background: s.accent }}
-                />
-                <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-ink">
-                  {s.shortTitle}
-                </span>
-              </button>
-            ))}
-          </div>
-          {/* Légende intervalles */}
-          <div className="border-t border-ink px-3 py-3">
-            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-neutral-400">
-              Intervalles
-            </p>
-            <div className="space-y-1.5">
-              {[
-                { label: '½', bg: '#e0301e', fg: '#fbfaf7', desc: '½ ton' },
-                { label: 'T', bg: '#141414', fg: '#fbfaf7', desc: '1 ton' },
-                { label: 'T½', bg: '#5bc8ec', fg: '#141414', desc: '1 ton ½' },
-                { label: '4+', bg: '#f6a8d2', fg: '#141414', desc: 'arpège' },
-              ].map((item) => (
-                <div key={item.label} className="flex items-center gap-2">
-                  <span
-                    className="flex h-4 min-w-[22px] items-center justify-center font-mono text-[9px] font-medium"
-                    style={{ background: item.bg, color: item.fg }}
-                  >
-                    {item.label}
-                  </span>
-                  <span className="text-[10px] text-neutral-500">{item.desc}</span>
-                </div>
-              ))}
+        {/* Info cards */}
+        <div className="grid gap-px bg-neutral-200 sm:grid-cols-3">
+          {INFO_CARDS.map(({ title, accent, body }) => (
+            <div key={title} className="bg-paper px-5 py-5" style={{ borderTopWidth: 3, borderTopColor: accent }}>
+              <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.15em] text-ink">{title}</p>
+              <p className="text-xs leading-relaxed text-neutral-600">{body}</p>
             </div>
-          </div>
-        </nav>
-
-        {/* Main content */}
-        <div className="min-w-0 flex-1 space-y-3">
-          <header className="border border-ink px-6 py-10 sm:px-10">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ink">
-              Référence
-            </p>
-            <h1 className="text-4xl font-bold tracking-tight">Théorie des Gammes</h1>
-            <p className="mt-2 max-w-2xl text-sm text-neutral-500">
-              Guide de toutes les gammes disponibles dans Scale Finder : construction, sonorité et
-              contexte d&apos;utilisation.
-            </p>
-          </header>
-
-          <div className="grid gap-px bg-neutral-200 sm:grid-cols-3">
-            {INFO_CARDS.map(({ title, accent, body }) => (
-              <div key={title} className="bg-paper px-5 py-5" style={{ borderTopWidth: 3, borderTopColor: accent }}>
-                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.15em] text-ink">
-                  {title}
-                </p>
-                <p className="text-xs leading-relaxed text-neutral-600">{body}</p>
-              </div>
-            ))}
-          </div>
-
-          {SECTIONS.map((section) => (
-            <section key={section.id} id={`section-${section.id}`} className="border border-ink">
-              <header
-                className="border-b border-ink px-5 py-4 sm:px-8"
-                style={{ borderLeftWidth: 4, borderLeftColor: section.accent }}
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="hidden h-2.5 w-2.5 shrink-0 border border-ink/20 sm:block"
-                    style={{ background: section.accent }}
-                  />
-                  <h2 className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink">
-                    {section.title}
-                  </h2>
-                </div>
-                <p className="mt-1.5 text-sm text-neutral-500">{section.subtitle}</p>
-              </header>
-              <div>
-                {section.scales.map((scale) => (
-                  <DesktopScaleRow key={scale.name} scale={scale} accent={section.accent} />
-                ))}
-              </div>
-            </section>
           ))}
         </div>
+
+        {/* Sections */}
+        {SECTIONS.map((section, i) => (
+          <section key={section.id} id={`section-${section.id}`} className="border border-ink">
+            <header className="flex flex-wrap items-baseline justify-between gap-2 border-b border-ink px-4 py-3 sm:px-6">
+              <div className="flex items-center gap-2.5">
+                <span className="h-2.5 w-2.5 shrink-0" style={{ background: section.accent }} />
+                <h2 className="text-sm font-medium uppercase tracking-[0.18em]">
+                  {String(i + 1).padStart(2, '0')} — {section.title}
+                </h2>
+              </div>
+              <p className="text-xs" style={{ color: section.accent }}>
+                {section.scales.length} {section.scales.length > 1 ? 'gammes' : 'gamme'}
+              </p>
+            </header>
+            <div className="divide-y divide-neutral-200">
+              {section.scales.map((scale) => (
+                <ScaleCard
+                  key={scale.name}
+                  scale={scale}
+                  accent={section.accent}
+                  shortTitle={section.shortTitle}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     </>
   );
