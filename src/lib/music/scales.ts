@@ -1,12 +1,7 @@
-/**
- * Définitions des modes, gammes et arpeggios.
- * Source unique de vérité pour les intervalles.
- */
-
 import type { Mode, ModeKey } from '@/types';
 
 export const MODES: Mode[] = [
-  // ── Classiques majeurs (modes de la gamme majeure — couleur lumineuse) ──
+  // ── Classiques majeurs ──
   {
     key: 'ionian',
     name: 'Ionien',
@@ -14,6 +9,11 @@ export const MODES: Mode[] = [
     chord: 'maj7',
     desc: 'Le majeur classique, sage',
     category: 'classique_majeur',
+    examples: [
+      { song: 'Let It Be', artist: 'The Beatles', note: 'C ionien' },
+      { song: 'Ode to Joy', artist: 'Beethoven', note: 'ré majeur' },
+      { song: 'Happy Birthday', artist: 'traditionnel' },
+    ],
   },
   {
     key: 'lydian',
@@ -22,6 +22,11 @@ export const MODES: Mode[] = [
     chord: 'maj7#11',
     desc: 'Lumineux, flottant',
     category: 'classique_majeur',
+    examples: [
+      { song: 'Flying in a Blue Dream', artist: 'Joe Satriani', note: 'A lydien' },
+      { song: 'Misty Mountain Hop', artist: 'Led Zeppelin', note: 'riff en A lydien' },
+      { song: 'Flying', artist: 'The Beatles', note: 'instrumental, A lydien' },
+    ],
   },
   {
     key: 'mixolydian',
@@ -30,8 +35,13 @@ export const MODES: Mode[] = [
     chord: '7',
     desc: 'Blues, dominant',
     category: 'classique_majeur',
+    examples: [
+      { song: 'Norwegian Wood', artist: 'The Beatles', note: 'E mixolydien' },
+      { song: 'Sympathy for the Devil', artist: 'Rolling Stones', note: 'B mixolydien' },
+      { song: 'Baba O\'Riley', artist: 'The Who', note: 'F mixolydien, synthé d\'intro' },
+    ],
   },
-  // ── Classiques mineurs (modes de la gamme majeure — couleur sombre) ──
+  // ── Classiques mineurs ──
   {
     key: 'dorian',
     name: 'Dorien',
@@ -39,6 +49,11 @@ export const MODES: Mode[] = [
     chord: 'm7',
     desc: 'Mineur jazz, ouvert',
     category: 'classique_mineur',
+    examples: [
+      { song: 'Oye Como Va', artist: 'Carlos Santana', note: 'A dorien' },
+      { song: 'Scarborough Fair', artist: 'Simon & Garfunkel', note: 'E dorien' },
+      { song: 'So What', artist: 'Miles Davis', note: 'D dorien / Eb dorien' },
+    ],
   },
   {
     key: 'phrygian',
@@ -47,6 +62,11 @@ export const MODES: Mode[] = [
     chord: 'm7',
     desc: 'Sombre, couleur espagnole',
     category: 'classique_mineur',
+    examples: [
+      { song: 'Wherever I May Roam', artist: 'Metallica', note: 'E phrygien' },
+      { song: 'La Macarena', artist: 'Los Del Rio', note: 'couleur phrygienne' },
+      { song: 'flamenco (general)', artist: 'Paco de Lucía', note: 'E phrygien' },
+    ],
   },
   {
     key: 'aeolian',
@@ -55,6 +75,11 @@ export const MODES: Mode[] = [
     chord: 'm7',
     desc: 'Mineur naturel',
     category: 'classique_mineur',
+    examples: [
+      { song: 'Stairway to Heaven', artist: 'Led Zeppelin', note: 'Am aeolien' },
+      { song: 'Comfortably Numb', artist: 'Pink Floyd', note: 'Bm aeolien' },
+      { song: 'Nothing Else Matters', artist: 'Metallica', note: 'Em aeolien' },
+    ],
   },
   {
     key: 'locrian',
@@ -63,6 +88,11 @@ export const MODES: Mode[] = [
     chord: 'm7b5',
     desc: 'Demi-diminué, instable',
     category: 'classique_mineur',
+    examples: [
+      { song: 'The Grudge', artist: 'Tool', note: 'E locrien' },
+      { song: 'YYZ', artist: 'Rush', note: 'sections en locrien' },
+      { song: 'utilisé théoriquement sur les accords vii°', artist: 'Jazz (général)' },
+    ],
   },
   // ── Blues & Pentatoniques ──
   {
@@ -72,6 +102,11 @@ export const MODES: Mode[] = [
     chord: 'maj7',
     desc: 'Sons country/folk',
     category: 'blues',
+    examples: [
+      { song: 'My Girl', artist: 'The Temptations', note: 'C penta. maj.' },
+      { song: 'Country Roads', artist: 'John Denver', note: 'G penta. maj.' },
+      { song: 'Oh! Susanna', artist: 'traditionnel' },
+    ],
   },
   {
     key: 'pentatonic_minor',
@@ -80,6 +115,11 @@ export const MODES: Mode[] = [
     chord: 'm7',
     desc: 'La base du blues/rock',
     category: 'blues',
+    examples: [
+      { song: 'Smoke on the Water', artist: 'Deep Purple', note: 'G min pentatonique' },
+      { song: 'Purple Haze', artist: 'Jimi Hendrix', note: 'E min pentatonique' },
+      { song: 'Crazy Train', artist: 'Ozzy / Randy Rhoads', note: 'F# min pentatonique' },
+    ],
   },
   {
     key: 'blues_major',
@@ -88,6 +128,11 @@ export const MODES: Mode[] = [
     chord: '7',
     desc: 'Le son blues classique',
     category: 'blues',
+    examples: [
+      { song: 'Johnny B. Goode', artist: 'Chuck Berry', note: 'Bb blues maj.' },
+      { song: 'Roll Over Beethoven', artist: 'Chuck Berry' },
+      { song: 'Good Golly Miss Molly', artist: 'Little Richard' },
+    ],
   },
   {
     key: 'blues_minor',
@@ -96,6 +141,11 @@ export const MODES: Mode[] = [
     chord: 'm7',
     desc: 'Pentatonique + blue note',
     category: 'blues',
+    examples: [
+      { song: 'Red House', artist: 'Jimi Hendrix', note: 'B blues min.' },
+      { song: 'The Thrill Is Gone', artist: 'B.B. King', note: 'B blues min.' },
+      { song: 'La Grange', artist: 'ZZ Top', note: 'A blues min.' },
+    ],
   },
   // ── Jazz & Avancé ──
   {
@@ -105,6 +155,11 @@ export const MODES: Mode[] = [
     chord: 'mMaj7',
     desc: "Jazz minor — base de l'impro moderne",
     category: 'jazz',
+    examples: [
+      { song: 'Footprints', artist: 'Wayne Shorter', note: 'Cm mineur mélodique' },
+      { song: 'Solar', artist: 'Miles Davis', note: 'jazz modal' },
+      { song: 'base de l\'harmonie jazz moderne', artist: 'Bill Evans / Chick Corea' },
+    ],
   },
   {
     key: 'harmonic_minor',
@@ -113,6 +168,11 @@ export const MODES: Mode[] = [
     chord: 'mMaj7',
     desc: 'Seconde augmentée caractéristique',
     category: 'jazz',
+    examples: [
+      { song: 'Moonlight Sonata (mvt. 3)', artist: 'Beethoven', note: 'C# harm. min.' },
+      { song: 'Eruption', artist: 'Van Halen', note: 'sections harm. mineure' },
+      { song: 'Fiddler on the Roof', artist: 'Jerry Bock', note: 'couleur klezmer/harm. min.' },
+    ],
   },
   {
     key: 'altered',
@@ -121,6 +181,11 @@ export const MODES: Mode[] = [
     chord: '7alt',
     desc: 'Tension max, outside',
     category: 'jazz',
+    examples: [
+      { song: 'impro sur accords dominants', artist: 'John Coltrane / Charlie Parker', note: 'tension → résolution' },
+      { song: 'Giant Steps', artist: 'John Coltrane', note: 'altered sur les V7' },
+      { song: 'A Love Supreme', artist: 'John Coltrane', note: 'altered alterné' },
+    ],
   },
   {
     key: 'lydian_dom',
@@ -129,6 +194,11 @@ export const MODES: Mode[] = [
     chord: '7#11',
     desc: 'Brillant, #4 + b7',
     category: 'jazz',
+    examples: [
+      { song: 'The Simpsons Theme', artist: 'Danny Elfman', note: 'C lydien dominant' },
+      { song: 'Maiden Voyage', artist: 'Herbie Hancock', note: 'couleur lydien dom.' },
+      { song: 'solos fusion', artist: 'Joe Satriani / John Scofield' },
+    ],
   },
   {
     key: 'lydian_aug',
@@ -137,6 +207,10 @@ export const MODES: Mode[] = [
     chord: 'maj7#5',
     desc: 'Mode 3 du mél. mineur, très flottant',
     category: 'jazz',
+    examples: [
+      { song: 'musique impressionniste', artist: 'Ravel / Debussy', note: 'flottant, ambigu' },
+      { song: 'jazz fusion moderne', artist: 'Allan Holdsworth' },
+    ],
   },
   {
     key: 'mixolydian_b6',
@@ -145,6 +219,9 @@ export const MODES: Mode[] = [
     chord: '7b6',
     desc: 'Mode 5 du mél. mineur',
     category: 'jazz',
+    examples: [
+      { song: 'jazz modern (sur V7b13)', artist: 'McCoy Tyner', note: 'couleur modale' },
+    ],
   },
   {
     key: 'locrian_2',
@@ -153,6 +230,10 @@ export const MODES: Mode[] = [
     chord: 'm7b5',
     desc: 'Demi-diminué jazz — sur les m7b5',
     category: 'jazz',
+    examples: [
+      { song: 'Autumn Leaves', artist: 'jazz standard', note: 'sur les accords iim7b5' },
+      { song: 'Speak No Evil', artist: 'Wayne Shorter', note: 'locrien #2' },
+    ],
   },
   {
     key: 'phrygian_dom',
@@ -161,6 +242,11 @@ export const MODES: Mode[] = [
     chord: '7b9',
     desc: 'Mode 5 du harm. mineur — son flamenco/jazz',
     category: 'jazz',
+    examples: [
+      { song: 'flamenco (rumba, soleares)', artist: 'Paco de Lucía', note: 'E phrygien dom.' },
+      { song: 'La Bamba', artist: 'Ritchie Valens', note: 'son jarocho mexicain' },
+      { song: 'Hava Nagila', artist: 'traditionnel', note: 'musique hébraïque' },
+    ],
   },
   {
     key: 'bebop_dom',
@@ -169,6 +255,11 @@ export const MODES: Mode[] = [
     chord: '7',
     desc: '8 notes — le son bebop',
     category: 'jazz',
+    examples: [
+      { song: 'Anthropology', artist: 'Charlie Parker', note: '8 notes, phrases sur les temps forts' },
+      { song: 'Donna Lee', artist: 'Charlie Parker / Miles Davis' },
+      { song: 'Groovin\' High', artist: 'Dizzy Gillespie' },
+    ],
   },
   // ── Symétriques ──
   {
@@ -178,6 +269,11 @@ export const MODES: Mode[] = [
     chord: '7#5',
     desc: '6 notes, ambiguïté tonale totale',
     category: 'symetrique',
+    examples: [
+      { song: 'Voiles', artist: 'Claude Debussy', note: 'Préludes pour piano, livre I' },
+      { song: 'Whole Lotta Love', artist: 'Led Zeppelin', note: 'section centrale psychédélique' },
+      { song: 'improvisation sur les dom7#5', artist: 'Thelonious Monk / Herbie Hancock' },
+    ],
   },
   {
     key: 'half_whole',
@@ -186,6 +282,10 @@ export const MODES: Mode[] = [
     chord: '7b9',
     desc: '8 notes, très chromatique',
     category: 'symetrique',
+    examples: [
+      { song: 'sur les accords dom7b9', artist: 'John Scofield / Pat Metheny', note: 'jazz et fusion' },
+      { song: 'Mode 2 de Messiaen', artist: 'Olivier Messiaen', note: 'Quatuor pour la fin du temps' },
+    ],
   },
   {
     key: 'whole_half',
@@ -194,6 +294,10 @@ export const MODES: Mode[] = [
     chord: 'dim7',
     desc: '8 notes — sur les accords diminués',
     category: 'symetrique',
+    examples: [
+      { song: 'sur les accords dim7', artist: 'Django Reinhardt', note: 'gypsy jazz' },
+      { song: 'ballet et orchestre', artist: 'Igor Stravinsky', note: 'couleur dramatique' },
+    ],
   },
   // ── Exotiques ──
   {
@@ -203,6 +307,11 @@ export const MODES: Mode[] = [
     chord: '7',
     desc: '1–2–b3–3–5–6 — la pentatonique majeure + blue note',
     category: 'exotique',
+    examples: [
+      { song: 'Johnny B. Goode (riffs)', artist: 'Chuck Berry', note: 'base du rockabilly' },
+      { song: 'Rock Around the Clock', artist: 'Bill Haley & His Comets' },
+      { song: 'Blue Suede Shoes', artist: 'Elvis Presley' },
+    ],
   },
   {
     key: 'bebop_dorian',
@@ -211,6 +320,10 @@ export const MODES: Mode[] = [
     chord: 'm7',
     desc: '8 notes — Dorien + maj7 chromatique',
     category: 'exotique',
+    examples: [
+      { song: 'impro jazz sur im7 / iim7', artist: 'Wes Montgomery / Joe Pass' },
+      { song: 'So What (variante)', artist: 'Miles Davis', note: 'phrases bebop en dorien' },
+    ],
   },
   {
     key: 'bebop_mixolydian',
@@ -219,6 +332,10 @@ export const MODES: Mode[] = [
     chord: '7',
     desc: '8 notes — Mixolydien + maj7 chromatique',
     category: 'exotique',
+    examples: [
+      { song: 'impro bebop sur V7', artist: 'Charlie Christian', note: 'guitare jazz swing' },
+      { song: 'How High the Moon', artist: 'jazz standard', note: 'bebop mixolydien sur G7' },
+    ],
   },
   {
     key: 'persian',
@@ -227,6 +344,10 @@ export const MODES: Mode[] = [
     chord: 'maj7b5',
     desc: '1–b2–3–4–b5–b6–7 — couleur Proche-Orient',
     category: 'exotique',
+    examples: [
+      { song: 'The Attitude Song', artist: 'Steve Vai', note: 'gamme persane explicite' },
+      { song: 'musique classique persane', artist: 'Shajarian (traditionnel)', note: 'dastgah Shur' },
+    ],
   },
   {
     key: 'gypsy_major',
@@ -235,6 +356,10 @@ export const MODES: Mode[] = [
     chord: 'maj7',
     desc: '1–b2–3–4–5–b6–7 — Byzantine, double harmonique',
     category: 'exotique',
+    examples: [
+      { song: 'musique balkanique (generale)', artist: 'traditions bulgare / hongroise', note: 'double harmonique' },
+      { song: 'Minor Swing (influences)', artist: 'Django Reinhardt', note: 'couleur tsigane' },
+    ],
   },
   {
     key: 'gypsy_minor',
@@ -243,6 +368,11 @@ export const MODES: Mode[] = [
     chord: 'mMaj7',
     desc: '1–2–b3–#4–5–b6–7 — Hongroise, dramatique',
     category: 'exotique',
+    examples: [
+      { song: 'Minor Swing', artist: 'Django Reinhardt', note: 'Am tsigane mineure' },
+      { song: 'Hungarian Rhapsody No. 2', artist: 'Franz Liszt', note: 'gamme hongroise' },
+      { song: 'musique klezmer', artist: 'Giora Feidman', note: 'tradition ashkénaze' },
+    ],
   },
   // ── Arpeggios ──
   {

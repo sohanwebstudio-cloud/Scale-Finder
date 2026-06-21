@@ -6,6 +6,7 @@ import { KEY_ROOTS } from '@/lib/music/notes';
 import { MODES, getMode } from '@/lib/music/scales';
 import { spellScale } from '@/lib/music/spelling';
 import { getModeColors } from '@/lib/music/colors';
+import { getDiatonicChords } from '@/lib/music/diatonic';
 import type { ModeKey, ScaleCategory, SignatureScale } from '@/types';
 
 interface ScaleExplorerProps {
@@ -41,6 +42,7 @@ export function ScaleExplorer({ initialScale }: ScaleExplorerProps) {
   const mode = getMode(modeKey);
   const notes = spellScale(root.idx, mode.intervals, root.name, mode.letterOffsets);
   const colors = getModeColors(modeKey, false);
+  const diatonicChords = getDiatonicChords(notes, mode.intervals);
 
   return (
     <div className="border border-ink bg-paper">
@@ -141,6 +143,49 @@ export function ScaleExplorer({ initialScale }: ScaleExplorerProps) {
 
         {/* Manche */}
         <Fretboard notes={notes} rootIdx={root.idx} modeKey={modeKey} />
+
+        {/* Accords diatoniques */}
+        {diatonicChords && (
+          <div>
+            <p className="mb-2 text-[11px] uppercase tracking-[0.18em] text-neutral-500">
+              Accords diatoniques
+            </p>
+            <div className="overflow-x-auto">
+              <div className="grid min-w-[360px] grid-cols-7 gap-px bg-neutral-200">
+                {diatonicChords.map((chord) => (
+                  <div
+                    key={chord.numeral}
+                    className="flex flex-col items-center bg-paper px-1 py-3 text-center"
+                  >
+                    <span className="font-mono text-[10px] text-neutral-400">{chord.numeral}</span>
+                    <span className="mt-1 text-[11px] font-medium text-ink">{chord.chordName}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Exemples célèbres */}
+        {mode.examples && mode.examples.length > 0 && (
+          <div>
+            <p className="mb-2 text-[11px] uppercase tracking-[0.18em] text-neutral-500">
+              Exemples célèbres
+            </p>
+            <div className="space-y-1.5 border border-ink bg-cream px-4 py-3">
+              {mode.examples.map((ex, i) => (
+                <div key={i} className="flex flex-wrap items-baseline gap-x-2 text-sm">
+                  <span className="font-medium text-ink">«&#8202;{ex.song}&#8202;»</span>
+                  <span className="text-neutral-400">—</span>
+                  <span className="text-neutral-600">{ex.artist}</span>
+                  {ex.note && (
+                    <span className="text-[11px] text-neutral-400">({ex.note})</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

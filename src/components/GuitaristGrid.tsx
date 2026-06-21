@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Guitarist } from '@/types';
 
 interface Props {
@@ -24,14 +25,13 @@ export function GuitaristGrid({ guitarists }: Props) {
     <>
       {/* Search strip */}
       <div className="mb-10 flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/60 px-4 py-3 backdrop-blur-sm">
-        <svg
-          width="16" height="16" viewBox="0 0 16 16" fill="none"
-          className="shrink-0 text-neutral-500"
-          aria-hidden
-        >
-          <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M10.5 10.5L14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
+        <Image
+          src="/logo.png"
+          alt="Scale Finder"
+          width={24}
+          height={24}
+          className="shrink-0"
+        />
 
         <input
           type="text"

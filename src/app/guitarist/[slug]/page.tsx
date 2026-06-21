@@ -1,4 +1,7 @@
+import fs from 'fs';
+import path from 'path';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getAllSlugs, getGuitaristBySlug } from '@/data/guitarists';
 import { getMode } from '@/lib/music/scales';
@@ -22,6 +25,9 @@ export default async function GuitaristPage({
     notFound();
   }
 
+  const portraitPath = path.join(process.cwd(), 'public', 'guitarists', `${slug}.svg`);
+  const hasPortrait = fs.existsSync(portraitPath);
+
   return (
     <main className="space-y-2 sm:space-y-3">
       {/* En-tête */}
@@ -35,22 +41,36 @@ export default async function GuitaristPage({
           </Link>
           <span className="font-mono text-xs text-neutral-400">{guitarist.era}</span>
         </div>
-        <div className="px-6 py-10 sm:px-10">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            {guitarist.name}
-          </h1>
-          <p className="mt-2 text-xs uppercase tracking-[0.18em] text-neutral-500">
-            {guitarist.genres.join(' · ')}
-          </p>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-700">
-            {guitarist.bio}
-          </p>
+        <div className={`flex items-start gap-8 px-6 py-10 sm:px-10 ${hasPortrait ? 'sm:flex-row' : ''}`}>
+          <div className="min-w-0 flex-1">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              {guitarist.name}
+            </h1>
+            <p className="mt-2 text-xs uppercase tracking-[0.18em] text-neutral-500">
+              {guitarist.genres.join(' · ')}
+            </p>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-700">
+              {guitarist.bio}
+            </p>
+          </div>
+          {hasPortrait && (
+            <div className="hidden shrink-0 sm:block">
+              <Image
+                src={`/guitarists/${slug}.svg`}
+                alt={guitarist.name}
+                width={160}
+                height={220}
+                className="border border-ink"
+                unoptimized
+              />
+            </div>
+          )}
         </div>
       </header>
 
       {/* Signature Move */}
       <section className="border border-ink bg-cream px-6 py-5 sm:px-10">
-        <p className="mb-1 text-[11px] uppercase tracking-[0.18em] text-riso-red">
+        <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.18em] text-ink">
           Sa signature
         </p>
         <p className="text-base">{guitarist.signatureMove}</p>

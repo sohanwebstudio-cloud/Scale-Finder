@@ -8,7 +8,7 @@ export default function StudioPage() {
   return (
     <main className="space-y-2 sm:space-y-3">
       <header className="border border-ink px-6 py-12 text-center sm:py-16">
-        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-riso-red">
+        <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ink">
           Studio
         </p>
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Scale Studio</h1>

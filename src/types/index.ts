@@ -28,6 +28,12 @@ export type ScaleCategory =
   | 'exotique'
   | 'arpege';
 
+export interface ScaleExample {
+  song: string;
+  artist: string;
+  note?: string;
+}
+
 export interface Mode {
   key: ModeKey;
   name: string;
@@ -36,6 +42,7 @@ export interface Mode {
   desc: string;
   category: ScaleCategory;
   letterOffsets?: number[];
+  examples?: ScaleExample[];
 }
 
 export interface ColorPair {

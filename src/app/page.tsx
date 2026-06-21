@@ -61,6 +61,19 @@ const TOOLS = [
     sub: 'Technique main gauche',
     dot: '#e0301e',
   },
+  {
+    href: '/quintes',
+    label: 'Cercle des Quintes',
+    sub: 'Navigation entre tonalités',
+    dot: '#141414',
+  },
+  {
+    href: '/theory',
+    label: 'Théorie',
+    sub: 'Référence complète des gammes',
+    dot: '#f1efe8',
+    dotBorder: true,
+  },
 ];
 
 export default function HomePage() {
@@ -69,7 +82,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="grid border border-ink lg:grid-cols-2">
         <div className="flex flex-col justify-center px-6 py-14 sm:px-10 lg:py-20">
-          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.2em] text-riso-red">
+          <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-ink">
             Outil d&apos;apprentissage guitare
           </p>
           <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
@@ -102,19 +115,19 @@ export default function HomePage() {
       </section>
 
       {/* Outils */}
-      <section className="grid gap-2 sm:grid-cols-3 sm:gap-3">
+      <section className="grid gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5">
         {TOOLS.map((tool) => (
           <Link
             key={tool.href}
             href={tool.href}
-            className="group flex flex-col items-center border border-ink px-6 py-10 text-center transition-colors hover:bg-cream"
+            className="group flex flex-col items-center border border-ink px-4 py-8 text-center transition-colors hover:bg-cream"
           >
             <span
-              className="mb-5 inline-block h-10 w-10 rounded-full border-[1.5px] border-ink transition-transform group-hover:scale-110"
+              className={`mb-4 inline-block h-9 w-9 rounded-full transition-transform group-hover:scale-110 ${'dotBorder' in tool && tool.dotBorder ? 'border-[1.5px] border-ink' : 'border-[1.5px] border-ink'}`}
               style={{ background: tool.dot }}
             />
-            <p className="text-base font-medium">{tool.label}</p>
-            <p className="mt-1 text-xs text-neutral-500">{tool.sub}</p>
+            <p className="text-sm font-medium">{tool.label}</p>
+            <p className="mt-1 text-[11px] text-neutral-500">{tool.sub}</p>
           </Link>
         ))}
       </section>
@@ -125,7 +138,7 @@ export default function HomePage() {
           <h2 className="text-sm font-medium uppercase tracking-[0.18em]">
             Les guitaristes
           </h2>
-          <p className="text-xs text-riso-red">
+          <p className="text-xs font-bold text-ink">
             {ALL_GUITARISTS.length} légendes · leurs gammes signature
           </p>
         </header>
