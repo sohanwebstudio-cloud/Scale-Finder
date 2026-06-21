@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { detectPitchACF } from '@/lib/music/pitch-acf';
+import { detectPitchYIN } from '@/lib/music/yin';
 import { OutlierRemovingSmoother } from '@/lib/music/smoother';
 
 // ── Gauge geometry ─────────────────────────────────────────────────────────
@@ -13,8 +13,8 @@ const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const REF_PITCHES = [432, 435, 440, 441, 442, 443, 444] as const;
 
 // ── Smoothing constants ────────────────────────────────────────────────────
-const ALPHA_ANGLE    = 0.22;
-const SILENCE_FRAMES = 12;
+const ALPHA_ANGLE    = 0.35;
+const SILENCE_FRAMES = 8;
 
 // ── Tuning presets ────────────────────────────────────────────────────────
 interface TuningPreset {
@@ -207,9 +207,10 @@ export function RetroTuner() {
       streamRef.current = stream;
       const ctx = new AudioContext();
       ctxRef.current = ctx;
+      if (ctx.state === 'suspended') await ctx.resume();
       sampleRateRef.current = ctx.sampleRate;
       const analyser = ctx.createAnalyser();
-      analyser.fftSize = 8192;
+      analyser.fftSize = 4096;
       analyserRef.current = analyser;
       ctx.createMediaStreamSource(stream).connect(analyser);
       bufRef.current = new Float32Array(analyser.fftSize);
@@ -231,7 +232,7 @@ export function RetroTuner() {
       // Run ACF every 4 frames (~66ms at 60fps)
       if (f % 4 === 0 && analyserRef.current && bufRef.current) {
         analyserRef.current.getFloatTimeDomainData(bufRef.current);
-        const result = detectPitchACF(bufRef.current, sampleRateRef.current, refARef.current);
+        const result = detectPitchYIN(bufRef.current, sampleRateRef.current, refARef.current);
 
         if (result) {
           acfSilenceRef.current = 0;
