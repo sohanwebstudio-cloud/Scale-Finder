@@ -24,6 +24,12 @@ const DIFFICULTY_CLS: Record<Difficulty, string> = {
   avancé:        'border border-riso-red text-riso-red',
 }
 
+const DIFFICULTY_ACCENT: Record<Difficulty, string> = {
+  débutant:      '#5bc8ec',
+  intermédiaire: '#ec5fa3',
+  avancé:        '#e0301e',
+}
+
 const STRING_NAMES = ['e', 'B', 'G', 'D', 'A', 'E']
 
 // ─── Chord Diagram ─────────────────────────────────────────────────────────────
@@ -189,7 +195,10 @@ function FingerBadges({ fingers }: { fingers: number[] }) {
 
 function ScaleCard({ ex, onSetBpm }: { ex: ScaleExercise; onSetBpm: (bpm: number) => void }) {
   return (
-    <article className="bg-paper px-5 py-5 sm:px-6">
+    <article
+      className="bg-paper py-5 pl-4 pr-5 sm:pl-5 sm:pr-6"
+      style={{ borderLeft: `3px solid ${DIFFICULTY_ACCENT[ex.difficulty]}` }}
+    >
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <span className={`px-2 py-0.5 text-[10px] uppercase tracking-[0.15em] ${DIFFICULTY_CLS[ex.difficulty]}`}>
           {ex.difficulty}
@@ -224,7 +233,10 @@ function ScaleCard({ ex, onSetBpm }: { ex: ScaleExercise; onSetBpm: (bpm: number
 
 function ChordCard({ ex, onSetBpm }: { ex: ChordExercise; onSetBpm: (bpm: number) => void }) {
   return (
-    <article className="bg-paper px-5 py-5 sm:px-6">
+    <article
+      className="bg-paper py-5 pl-4 pr-5 sm:pl-5 sm:pr-6"
+      style={{ borderLeft: `3px solid ${DIFFICULTY_ACCENT[ex.difficulty]}` }}
+    >
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <span className={`px-2 py-0.5 text-[10px] uppercase tracking-[0.15em] ${DIFFICULTY_CLS[ex.difficulty]}`}>
           {ex.difficulty}
@@ -406,8 +418,11 @@ export function ExercisesClient() {
       {/* Scale exercises */}
       <section className="border border-ink">
         <header className="flex flex-wrap items-baseline justify-between gap-2 border-b border-ink px-4 py-3 sm:px-6">
-          <h2 className="text-sm font-medium uppercase tracking-[0.18em]">01 — Technique & Indépendance</h2>
-          <p className="text-xs text-riso-red">{scaleExercises.length} exercices</p>
+          <div className="flex items-center gap-2.5">
+            <span className="h-2.5 w-2.5 shrink-0" style={{ background: '#5bc8ec' }} />
+            <h2 className="text-sm font-medium uppercase tracking-[0.18em]">01 — Technique & Indépendance</h2>
+          </div>
+          <p className="text-xs" style={{ color: '#5bc8ec' }}>{scaleExercises.length} exercices</p>
         </header>
         <div className="divide-y divide-neutral-200">
           {scaleExercises.map((ex) => (
@@ -419,8 +434,11 @@ export function ExercisesClient() {
       {/* Chord exercises */}
       <section className="border border-ink">
         <header className="flex flex-wrap items-baseline justify-between gap-2 border-b border-ink px-4 py-3 sm:px-6">
-          <h2 className="text-sm font-medium uppercase tracking-[0.18em]">02 — Jazz & Blues</h2>
-          <p className="text-xs text-riso-red">{chordExercises.length} exercices</p>
+          <div className="flex items-center gap-2.5">
+            <span className="h-2.5 w-2.5 shrink-0" style={{ background: '#ec5fa3' }} />
+            <h2 className="text-sm font-medium uppercase tracking-[0.18em]">02 — Jazz & Blues</h2>
+          </div>
+          <p className="text-xs text-riso-pink-deep">{chordExercises.length} exercices</p>
         </header>
         <div className="divide-y divide-neutral-200">
           {chordExercises.map((ex) => (

@@ -65,9 +65,9 @@ export function CircleOfFifths() {
         </h2>
       </div>
 
-      <div className="flex flex-col items-center gap-6 p-5 sm:flex-row sm:items-start sm:gap-10 sm:p-8">
+      <div className="flex flex-col items-center gap-6 p-5 sm:flex-row sm:items-start sm:gap-8 sm:p-6">
         {/* SVG Circle */}
-        <div className="w-full max-w-[420px] shrink-0">
+        <div className="w-full shrink-0 sm:w-[58%]">
           <svg viewBox="0 0 500 500" className="w-full" role="img" aria-label="Cercle des quintes interactif">
             {CIRCLE_KEYS.map((key, i) => {
               const a1 = i * 30 - 90;

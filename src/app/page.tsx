@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ALL_GUITARISTS } from '@/data/guitarists';
+import { GuitaristGrid } from '@/components/GuitaristGrid';
 
 /** Manche stylisé façon riso — grille de dots rose / cyan / encre. */
 function FretboardArt() {
@@ -142,32 +143,7 @@ export default function HomePage() {
             {ALL_GUITARISTS.length} légendes · leurs gammes signature
           </p>
         </header>
-
-        <div className="grid grid-cols-1 gap-px bg-neutral-200 sm:grid-cols-2 lg:grid-cols-4">
-          {ALL_GUITARISTS.map((guitarist) => (
-            <Link
-              key={guitarist.slug}
-              href={`/guitarist/${guitarist.slug}`}
-              className="group flex flex-col bg-paper p-5 transition-colors hover:bg-cream"
-            >
-              <div className="mb-2 flex items-baseline justify-between gap-2">
-                <h3 className="text-sm font-medium">{guitarist.name}</h3>
-                <span className="shrink-0 font-mono text-[11px] text-neutral-400">
-                  {guitarist.era}
-                </span>
-              </div>
-              <p className="mb-3 text-xs text-neutral-500">
-                {guitarist.genres.join(' · ')}
-              </p>
-              <p className="line-clamp-2 text-xs leading-relaxed text-neutral-600">
-                {guitarist.bio}
-              </p>
-              <p className="mt-3 text-xs font-medium text-riso-pink-deep opacity-0 transition-opacity group-hover:opacity-100">
-                Explorer →
-              </p>
-            </Link>
-          ))}
-        </div>
+        <GuitaristGrid guitarists={ALL_GUITARISTS} />
       </section>
     </div>
   );
