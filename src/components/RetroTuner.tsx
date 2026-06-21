@@ -210,7 +210,7 @@ export function RetroTuner() {
       if (ctx.state === 'suspended') await ctx.resume();
       sampleRateRef.current = ctx.sampleRate;
       const analyser = ctx.createAnalyser();
-      analyser.fftSize = 4096;
+      analyser.fftSize = 8192;
       analyserRef.current = analyser;
       ctx.createMediaStreamSource(stream).connect(analyser);
       bufRef.current = new Float32Array(analyser.fftSize);
@@ -229,8 +229,8 @@ export function RetroTuner() {
       frameRef.current++;
       const f = frameRef.current;
 
-      // Run ACF every 4 frames (~66ms at 60fps)
-      if (f % 4 === 0 && analyserRef.current && bufRef.current) {
+      // Run YIN every 5 frames (~83ms at 60fps)
+      if (f % 5 === 0 && analyserRef.current && bufRef.current) {
         analyserRef.current.getFloatTimeDomainData(bufRef.current);
         const result = detectPitchYIN(bufRef.current, sampleRateRef.current, refARef.current);
 
@@ -253,12 +253,16 @@ export function RetroTuner() {
         }
       }
 
-      // Every frame: lerp needle, write to DOM
+      // Every frame: lerp needle — en mode preset, déviation par rapport à la corde cible
       const freq = smoothedFreqRef.current;
       let targetAngle = 0;
       if (freq !== null) {
-        const midi = freqToMidi(freq, refARef.current);
-        const cents = (midi - Math.round(midi)) * 100;
+        const midiF = freqToMidi(freq, refARef.current);
+        const preset = selectedPresetRef.current;
+        const strIdx = activeStringRef.current;
+        const cents = preset && strIdx >= 0
+          ? (midiF - preset.midi[strIdx]) * 100
+          : (midiF - Math.round(midiF)) * 100;
         targetAngle = centsToAngle(cents);
       }
       currentAngleRef.current += (targetAngle - currentAngleRef.current) * ALPHA_ANGLE;
@@ -269,13 +273,27 @@ export function RetroTuner() {
         needleGlowRef.current.style.opacity = freq !== null ? '0.6' : '0';
       }
 
-      // Every 6 frames: update React state (~100ms)
-      if (f % 6 === 0 && freq !== null) {
-        const midi = freqToMidi(freq, refARef.current);
-        const roundedMidi = Math.round(midi);
-        const cents = Math.round((midi - roundedMidi) * 1000) / 10;
-        const note = NOTES[((roundedMidi % 12) + 12) % 12];
-        const octave = Math.floor(roundedMidi / 12) - 1;
+      // Every 10 frames: update React state (~167ms)
+      if (f % 10 === 0 && freq !== null) {
+        const midiF = freqToMidi(freq, refARef.current);
+        const preset = selectedPresetRef.current;
+        const strIdx = activeStringRef.current;
+
+        let note: string, octave: number, cents: number;
+        if (preset && strIdx >= 0) {
+          // Mode preset : affiche la note cible et l'écart par rapport à elle
+          const tgt = preset.midi[strIdx];
+          cents = Math.round((midiF - tgt) * 1000) / 10;
+          note = preset.strings[strIdx];
+          octave = Math.floor(tgt / 12) - 1;
+        } else {
+          // Mode chromatique : note la plus proche
+          const roundedMidi = Math.round(midiF);
+          cents = Math.round((midiF - roundedMidi) * 1000) / 10;
+          note = NOTES[((roundedMidi % 12) + 12) % 12];
+          octave = Math.floor(roundedMidi / 12) - 1;
+        }
+
         const tune = Math.abs(cents) <= 5;
         setDisplay({ note, octave, freq: Math.round(freq * 10) / 10, cents });
         setInTune(tune);
@@ -284,8 +302,8 @@ export function RetroTuner() {
         }
 
         // Active string detection (only when a preset is selected)
-        if (selectedPresetRef.current) {
-          const idx = findActiveString(freq, selectedPresetRef.current.midi);
+        if (preset) {
+          const idx = findActiveString(freq, preset.midi);
           if (idx !== activeStringRef.current) {
             activeStringRef.current = idx;
             setActiveString(idx);
