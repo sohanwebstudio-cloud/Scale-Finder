@@ -27,7 +27,9 @@ export default function SignInPage() {
   }
 
   async function handleGoogle() {
-    await authClient.signIn.social({ provider: 'google', callbackURL: '/' });
+    setError('');
+    const { error } = await authClient.signIn.social({ provider: 'google', callbackURL: '/' });
+    if (error) setError(error.message ?? 'Erreur Google OAuth');
   }
 
   return (
