@@ -142,12 +142,16 @@ export default function ProfilPage() {
           <div className="grid gap-px bg-neutral-200">
             {scales.map((scale) => (
               <div key={scale.id} className="flex items-center justify-between bg-paper px-6 py-3">
-                <div className="flex items-center gap-3">
+                <Link
+                  href={`/studio?root=${encodeURIComponent(scale.root)}&scale=${encodeURIComponent(scale.scaleName)}`}
+                  className="flex flex-1 items-center gap-3 transition-opacity hover:opacity-70"
+                >
                   <span className="min-w-[32px] text-[11px] font-bold uppercase tracking-[0.1em] text-riso-pink-deep">
                     {scale.root}
                   </span>
                   <span className="text-sm">{scale.scaleName}</span>
-                </div>
+                  <span className="text-[11px] text-neutral-300">→</span>
+                </Link>
                 <div className="flex items-center gap-4">
                   <span className="text-[11px] text-neutral-400">
                     {new Date(scale.createdAt).toLocaleDateString('fr-FR')}

@@ -1,10 +1,26 @@
 import { ScaleDetectorSection } from '@/components/ScaleDetectorSection';
+import { MODES } from '@/lib/music/scales';
+import type { SignatureScale } from '@/types';
 
 export const metadata = {
   title: 'Scale Studio — Scale Finder',
 };
 
-export default function StudioPage() {
+interface Props {
+  searchParams: Promise<{ root?: string; scale?: string }>;
+}
+
+export default async function StudioPage({ searchParams }: Props) {
+  const { root, scale } = await searchParams;
+
+  let initialScale: SignatureScale | undefined;
+  if (root && scale) {
+    const mode = MODES.find((m) => m.name === scale);
+    if (mode) {
+      initialScale = { rootName: root, modeKey: mode.key, context: 'Depuis ton profil' };
+    }
+  }
+
   return (
     <main className="space-y-2 sm:space-y-3">
       <header className="border border-ink px-6 py-12 text-center sm:py-16">
@@ -18,7 +34,7 @@ export default function StudioPage() {
         </p>
       </header>
 
-      <ScaleDetectorSection />
+      <ScaleDetectorSection initialScale={initialScale} />
     </main>
   );
 }
