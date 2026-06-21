@@ -181,11 +181,11 @@ export function AudioDetector({ onScaleSelected }: Props) {
             <p className="mb-2 text-[11px] uppercase tracking-[0.18em] text-neutral-500">
               Notes captées ({detectedSemis.size})
             </p>
-            <div className="flex flex-wrap gap-1">
+            <div className="grid grid-cols-12 gap-px">
               {CHROMATIC.map((name, i) => (
                 <span
                   key={i}
-                  className={`flex h-8 w-10 items-center justify-center font-mono text-xs transition-colors ${
+                  className={`flex h-8 items-center justify-center font-mono text-[11px] transition-colors ${
                     detectedSemis.has(i)
                       ? 'bg-ink text-paper'
                       : 'bg-cream text-neutral-400'
@@ -252,7 +252,7 @@ export function AudioDetector({ onScaleSelected }: Props) {
                   </div>
                   <button
                     onClick={() => onScaleSelected(m.rootName, m.modeKey)}
-                    className="border border-ink px-3 py-1.5 text-xs font-medium transition-colors hover:bg-riso-pink"
+                    className="shrink-0 border border-ink px-3 py-2.5 text-xs font-medium transition-colors hover:bg-riso-pink sm:py-1.5"
                   >
                     Charger →
                   </button>

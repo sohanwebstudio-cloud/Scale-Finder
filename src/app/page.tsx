@@ -82,29 +82,29 @@ export default function HomePage() {
     <div className="space-y-2 sm:space-y-3">
       {/* Hero */}
       <section className="grid border border-ink lg:grid-cols-2">
-        <div className="flex flex-col justify-center px-6 py-14 sm:px-10 lg:py-20">
+        <div className="flex flex-col justify-center px-4 py-8 sm:px-10 sm:py-14 lg:py-20">
           <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-ink">
             Outil d&apos;apprentissage guitare
           </p>
-          <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+          <h1 className="text-3xl font-bold leading-[1.05] tracking-tight sm:text-4xl lg:text-6xl">
             Trouve la tonalité.
             <br />
             Joue la bonne gamme.
           </h1>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-neutral-600">
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-neutral-600 sm:mt-5 sm:text-base">
             Lance un morceau, Scale Finder écoute, détecte sa tonalité et te montre
             exactement quelle gamme jouer — directement sur le manche.
           </p>
-          <div className="mt-8 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-col gap-2 sm:mt-8 sm:flex-row sm:flex-wrap">
             <Link
               href="/studio"
-              className="bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-riso-pink hover:text-ink"
+              className="bg-ink px-6 py-3 text-center text-sm font-medium text-paper transition-colors hover:bg-riso-pink hover:text-ink sm:text-left"
             >
               Ouvrir le studio →
             </Link>
             <Link
               href="#guitaristes"
-              className="border border-ink px-6 py-3 text-sm font-medium transition-colors hover:bg-cream"
+              className="border border-ink px-6 py-3 text-center text-sm font-medium transition-colors hover:bg-cream sm:text-left"
             >
               Voir les guitaristes
             </Link>
@@ -116,12 +116,12 @@ export default function HomePage() {
       </section>
 
       {/* Outils */}
-      <section className="grid gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5">
+      <section className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5">
         {TOOLS.map((tool) => (
           <Link
             key={tool.href}
             href={tool.href}
-            className="group flex flex-col items-center border border-ink px-4 py-8 text-center transition-colors hover:bg-cream"
+            className="group flex flex-col items-center border border-ink px-4 py-5 text-center transition-colors hover:bg-cream sm:py-8"
           >
             <span
               className={`mb-4 inline-block h-9 w-9 rounded-full transition-transform group-hover:scale-110 ${'dotBorder' in tool && tool.dotBorder ? 'border-[1.5px] border-ink' : 'border-[1.5px] border-ink'}`}

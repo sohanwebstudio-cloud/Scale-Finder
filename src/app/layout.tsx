@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <NavAuth />
               </nav>
             </div>
-            <nav className="flex items-center gap-5 border-t border-ink px-4 pb-3 pt-2.5 text-sm sm:hidden">
+            <nav className="flex items-center gap-3 border-t border-ink px-4 pb-3 pt-2.5 text-sm sm:hidden">
               {NAV.filter((i) => i.mobile).map((item) => (
                 <Link
                   key={item.href}
